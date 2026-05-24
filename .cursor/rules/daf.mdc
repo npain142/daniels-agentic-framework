@@ -1,0 +1,12 @@
+---
+description: DAF — read project agent config and phase first
+alwaysApply: true
+---
+
+# Daniel Agent Framework (DAF)
+
+1. Read [.agent/config.json](.agent/config.json) for `phase`, `stack`, `check`, `taskCheck`, `codebaseEvery`, optional `platform`, and when in **developing** or **maintaining**, `.agent/verify-state.json` for session task totals.
+2. Load [.agent/phases/](.agent/phases/) for the matching `phase` file.
+3. Bootstrap: **Global setup:** run **`daf global-setup`** (add **`--platform cursor`** on Cursor). **Project setup:** run **`/setup`** in the IDE — greenfield copies or merges `.agent/` from `~/.config/agent/scaffold/`; brownfield interviews before populating docs, then merges scaffold.
+4. Global procedures: after `daf global-setup --platform cursor`, DAF skills live under `~/.cursor/skills/daf-*/SKILL.md` (Cursor skill picker). After generic `daf global-setup`, they are flat markdown under `~/.config/agent/skills/daf-*.md` (same `daf-` prefix as Cursor folder names).
+5. Full load order: [.agent/AGENTS.md](.agent/AGENTS.md).

@@ -1,0 +1,19 @@
+{
+  "name": "daniels-agent-framework",
+  "private": true,
+  "packageManager": "pnpm@9.15.0",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "check": "npm run typecheck && npm run lint && npm run test",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "lint": "npm run lint --workspaces --if-present",
+    "test": "npm run test --workspaces --if-present",
+    "build": "npm run build --workspaces --if-present",
+    "daf": "npm exec -w @daniels-agent-framework/cli -- daf"
+  },
+  "dependencies": {
+    "@daniels-agent-framework/cli": "workspace:*"
+  }
+}
