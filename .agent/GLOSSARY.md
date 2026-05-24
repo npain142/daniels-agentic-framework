@@ -2,36 +2,23 @@
 
 | Term | Definition |
 |------|------------|
-| **DAF** | Daniel Agent Framework — markdown-first agent rules plus the minimal `daf` CLI. |
-| **daf** | The CLI binary from `@daniels-agent-framework/cli`; v1 exposes **`daf global-setup`** only (filesystem copy). |
-| **Phase** | `planning`, `developing`, or `maintaining`; stored in `.agent/config.json` and mirrored in `.agent/phases/*.md`. |
-| **Stack** | String id matching `~/.config/agent/stacks/<id>.md` (installed from `templates/stacks`); `null` until chosen. |
-| **Skill** | Markdown procedure in `~/.config/agent/skills/daf-*.md` (from `skill-manifest.json`) invoked as `/name` in the IDE; on Cursor with `daf global-setup --platform cursor`, mirrored under `~/.cursor/skills/daf-*/SKILL.md` for the skill picker. |
-| **Improvement** | Work that makes **existing** behavior, code, or docs better (`/improvement`); distinct from **net-new capability** (`/new-feature`). |
-| **Pivot** | Restructure or redesign of an **existing** feature, concept, or architecture (`/pivot`); updates canonical docs and migration before code; distinct from incremental **improvement** and **net-new** work. |
-| **Discuss** | Exploratory dialogue on a topic or idea (`/discuss`); no implementation unless the user asks. |
-| **Remember** | User-stated standing instruction persisted in `.agent/memory/remember.md` via `/remember`. |
-| **Platform** | `generic` (default) or `cursor` on **`daf global-setup --platform cursor`**; future: other dirs under `templates/platforms/`. |
-| **Global context** | Files under `~/.config/agent/` (identity, preferences, skills, stacks, **scaffold**). |
-| **Global setup** | **`daf global-setup`** — installs `~/.config/agent/` (skills, stacks, scaffold, optional Cursor mirror); machine-wide, not per repo. |
-| **Project setup** | Skill **`/setup`** — adapts DAF to the current repo after global setup: greenfield scaffold only; brownfield interview then populated `.agent/` and docs. |
-| **Scaffold** | Default `.agent/` tree installed at `~/.config/agent/scaffold/`; agents copy or merge from here via **`/setup`**. |
-| **Setup** | Skill **`/setup`** — see **Project setup**; prerequisite is **Global setup** on the machine. |
-| **Platform dir** | `templates/platforms/<id>/` in the DAF repo; shipped beside the CLI; Cursor holds manifest + rules overlay. |
-| **Project context** | Files under `<repo>/.agent/` (config, phases, PRD, glossary, architecture, memory). |
-| **Template root** | Repository `templates/` directory shipped beside `packages/cli` for copy operations. |
-| **Task** | Current bounded work with the user in a session; goals live in dialogue only. |
-| **Goal** | One outcome within a session task; verified with `taskCheck` when behavior changes. |
-| **taskCheck** | Fast verification command in `config.json` (e.g. `npm run test`). |
-| **taskCount** | Monotonic count of completed session tasks in `verify-state.json`; incremented by the agent per `/task`. |
-| **codebaseEvery** | Positive integer in `config.json`; when `taskCount % codebaseEvery === 0` (and `taskCount > 0`), run codebase-check. |
-| **initialTaskCount** | Non-negative integer in `config.json`; seeds `verify-state.json` → `taskCount` when `/setup` creates verify-state. |
-| **Codebase check** | Two-phase verify: (A) refresh `memory/codebase-snapshot.md`, (B) run `config.check` + cleanup. |
-| **Codebase snapshot** | Bounded summary in `memory/codebase-snapshot.md` derived from glossary, stack, memory, architecture. |
-| **defaultBranch** | Optional string in `config.json`: Git branch name treated as default for **maintaining** branch guard; omit to infer from `origin/HEAD` or `main` (see `phases/maintaining.md`). |
-| **Hotfix exception** | User explicitly opts in to fix on the default branch without switching away (see **maintaining**). |
-| **Maintaining bar** | **Maintaining** phase rules: branch guard, mandatory failing test when feasible for fixes, green **`config.check`** every session task end (see `phases/maintaining.md`, `/task`). |
+| **DAF** | Daniel Agent Framework — markdown-first agent context plus minimal `daf` CLI. |
+| **daf** | CLI binary from `@daniels-agent-framework/cli`; v1 exposes **`daf global-setup`** only. |
+| **Global context** | Files under `~/.config/agent/` (identity, preferences, skills, stacks, scaffold). |
+| **Global setup** | **`daf global-setup`** — machine-wide install of global context; not per repo. |
+| **Project setup** | IDE skill **`/setup`** — adapts DAF to the current repo after global setup. |
+| **Scaffold** | Default `.agent/` tree at `~/.config/agent/scaffold/`; agents copy or merge via `/setup`. |
+| **IDE skill** | Markdown procedure invoked as `/name` in the IDE; installed from `skill-manifest.json`. Not a shell command. |
+| **Phase** | `planning`, `developing`, or `maintaining`; stored in `config.json` and `phases/*.md`. |
+| **Stack** | String id matching `~/.config/agent/stacks/<id>.md`; e.g. `typescript`. |
+| **Platform** | IDE integration layer; v1 ships **cursor** (`--platform cursor`). CLI wires platform assets only. |
+| **Layered context** | Global (`~/.config/agent/`) composes with project (`.agent/`); higher layers override lower. |
+| **taskCheck** | Fast verification command after each session goal (e.g. `npm run test`). |
+| **check** | Full verification suite (e.g. `npm run check`). |
+| **taskCount** | Completed session tasks in `verify-state.json`; updated at session task end per the current phase file. |
+| **codebaseEvery** | Interval for two-phase codebase-check when `taskCount` hits multiples. |
+| **Codebase check** | Phase A: refresh `memory/codebase-snapshot.md`; Phase B: run `config.check`. |
 
 ## Banned synonyms
 
-Use **phase** (not “mode” or “stage” for this switch). Use **stack** (not “profile” or “flavor”) for the `stacks/*.md` id.
+Use **phase** (not “mode” for this switch). Use **stack** (not “profile”) for stack ids.

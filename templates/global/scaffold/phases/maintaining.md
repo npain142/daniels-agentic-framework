@@ -21,6 +21,11 @@ Before the **first** edit in a session task:
 
 Prefer **one** focused outcome per session task (one bug, one small improvement). No drive-by refactors or broad rewrites without explicit user agreement.
 
+## Session task (no files)
+
+- **Goals** live in the chat only: short bullet list at start; one clarifying question if scope is unclear.
+- **Do not** write task lists or goals under `.agent/` or elsewhere.
+
 ## Testing bar
 
 - **Reproduce** with exact steps, expected vs actual.
@@ -29,18 +34,20 @@ Prefer **one** focused outcome per session task (one bug, one small improvement)
 
 ## Definition of done (session task)
 
-Follow **`/task`**: goals in chat only, per-goal `config.taskCheck`, read `memory/remember.md` and `memory/gotchas.md` before non-trivial edits.
+- Read `.agent/verify-state.json` and `config.json`. If `codebaseCheckPending` is `true`, a **codebase-check** is still owed — run it per the end-of-task rules below.
+- Goals in chat only; per-goal `config.taskCheck`; read `memory/remember.md` and `memory/gotchas.md` before non-trivial edits.
+- **Session-level** `taskCheck` once all goals are done.
 
-**Session task end (stricter than developing):**
+**Session task end (stricter than developing):** let **`next = taskCount + 1`**.
 
-- If a **codebase-check** is due (`taskCount % codebaseEvery === 0` with `taskCount > 0` after increment, or `codebaseCheckPending`): run **Phase A** (snapshot) then **Phase B** (`config.check`) per `/task`, then increment `taskCount` and update flags as in `/task`.
-- **Otherwise:** run **`config.check`** green before incrementing `taskCount` (no skipping full check between codebase-checks).
+- If **`next % codebaseEvery === 0`** (and `next > 0`) **or** `codebaseCheckPending` is `true`: run **codebase-check** (Phase A then Phase B — same order and snapshot rules as `phases/developing.md`), then set **`taskCount`** to **`next`**, `codebaseCheckPending` to `false`, and `lastCodebaseSnapshotAt` after phase A.
+- **Else:** run **`config.check`** via shell until green, then set **`taskCount`** to **`next`**.
 
-Never declare done with a red `config.check` without explicit user acceptance. Increment `taskCount` in `verify-state.json` only after the above.
+Never declare done with a red `config.check` without explicit user acceptance.
 
 ## Allowed
 
-- `/issue`, `/improvement`, `/pivot`, `/task`, `/discuss`, `/remember`, `/retro`
+- `/issue`, `/improvement`, `/pivot`, `/discuss`, `/remember`, `/retro`
 - Incremental glossary and architecture updates
 
 ## Forbidden
@@ -52,7 +59,6 @@ Never declare done with a red `config.check` without explicit user acceptance. I
 
 ## Active skills
 
-- `/task` — canonical session loop; maintaining adds branch guard and full `check` every session task end.
 - `/issue` — triage and fix bugs; failing test mandatory in maintaining unless user waives.
 - `/improvement` — enhance existing behavior; not net-new capability.
 - `/pivot` — restructure or redesign existing feature or concept.

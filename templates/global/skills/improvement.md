@@ -20,9 +20,9 @@ If the ask is net-new, stop and use `/new-feature` instead. If the design or con
 3. If scope is large or tradeoffs are unclear, propose 1–3 options briefly, then proceed with the best fit (or the user’s pick).
 4. Plan the smallest change that satisfies acceptance (files, tests).
 5. Prefer a failing test first when behavior is non-trivial.
-6. **Implement** in `developing` following **`/task`**: per-goal `config.taskCheck`, verify-state updates, periodic codebase-check per `.agent/verify-state.json` and `codebaseEvery`.
+6. **Implement** in `developing` or `maintaining` per **`.agent/phases/{phase}.md`**: per-goal `config.taskCheck`, verify-state updates, periodic codebase-check when due.
 7. Self-review diff vs acceptance; run `/retro` for non-trivial work.
 
 ## Stop condition
 
-Acceptance satisfied per **`/task`** in `developing` or `maintaining` (or user explicitly accepts gaps). In `planning`, deliver a concrete proposal or doc edits only — defer code until `developing` or `maintaining` unless the user asks otherwise.
+Acceptance satisfied per the current phase bar in `developing` or `maintaining` (or user explicitly accepts gaps). In `planning`, deliver a concrete proposal or doc edits only — defer code until `developing` or `maintaining` unless the user asks otherwise.

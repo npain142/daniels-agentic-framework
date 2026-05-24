@@ -17,23 +17,19 @@
   },
   "new-feature": {
     "name": "daf-new-feature",
-    "description": "Implements net-new product capability in **developing** phase (new commands, skills, flows) with acceptance checks; verification follows /task (taskCheck, verify-state, periodic codebase-check). Not for polish on existing behavior — use /improvement. In **maintaining**, use only when the user explicitly opts in. Use when the user says /new-feature or asks for scoped new capability while phase is developing."
+    "description": "Implements net-new product capability in **developing** phase (new commands, skills, flows) with acceptance checks; verification per phases/developing.md (taskCheck, verify-state, periodic codebase-check). Not for polish on existing behavior — use /improvement. In **maintaining**, use only when the user explicitly opts in. Use when the user says /new-feature or asks for scoped new capability while phase is developing."
   },
   "issue": {
     "name": "daf-issue",
-    "description": "Triages and fixes a reported issue in **developing** or **maintaining**: reproduce, narrow cause, minimal fix; verification follows /task. Use when the user says /issue or reports a bug to fix."
+    "description": "Triages and fixes a reported issue in **developing** or **maintaining**: reproduce, narrow cause, minimal fix; verification per the current phase file. Use when the user says /issue or reports a bug to fix."
   },
   "improvement": {
     "name": "daf-improvement",
-    "description": "Improves existing code, docs, or workflow (refactor, clarity, performance, ergonomics) — not bugs (/issue) and not net-new product capability (/new-feature). Verification follows /task like new-feature. Use when the user says /improvement or asks to make something existing better."
+    "description": "Improves existing code, docs, or workflow (refactor, clarity, performance, ergonomics) — not bugs (/issue) and not net-new product capability (/new-feature). Verification per the current phase file like new-feature. Use when the user says /improvement or asks to make something existing better."
   },
   "pivot": {
     "name": "daf-pivot",
-    "description": "Guides restructuring or redesign of an existing feature, concept, or architecture: from→to, blast radius, update GLOSSARY/ARCHITECTURE/PRD, migration plan, then implement via /task in developing or maintaining. Not incremental polish (/improvement), net-new capability (/new-feature), brownfield DAF adoption (/daf-migrate), or open exploration (/discuss). Use when the user says /pivot or decides to redesign something that already exists."
-  },
-  "task": {
-    "name": "daf-task",
-    "description": "Canonical workflow in **developing** or **maintaining**: session goals in chat only, per-goal config.taskCheck, monotonic taskCount in verify-state.json, modulo codebaseEvery triggers two-phase codebase-check (snapshot then config.check). In **maintaining**, also branch guard before edits and **config.check every session** — see phases/maintaining.md and /task. Use when the user says /task or when implementing under /new-feature, /issue, /improvement, or /pivot."
+    "description": "Guides restructuring or redesign of an existing feature, concept, or architecture: from→to, blast radius, update GLOSSARY/ARCHITECTURE/PRD, migration plan, then implement per the current phase file in developing or maintaining. Not incremental polish (/improvement), net-new capability (/new-feature), brownfield DAF adoption (/daf-migrate), or open exploration (/discuss). Use when the user says /pivot or decides to redesign something that already exists."
   },
   "discuss": {
     "name": "daf-discuss",
@@ -50,5 +46,13 @@
   "phase-transition": {
     "name": "daf-phase-transition",
     "description": "Validates planning exit checklist before editing config.phase to developing or maintaining (same rules as validatePlanningExit in the DAF repo). Use when the user says /phase-transition or asks to leave planning."
+  },
+  "remove": {
+    "name": "daf-remove",
+    "description": "Removes DAF from the current repo: .agent/, DAF bootstrap AGENTS.md, and .cursor/rules/daf.mdc after explicit confirmation. Not machine-wide — use /remove-global. Use when the user says /remove or wants to strip project agent structure."
+  },
+  "remove-global": {
+    "name": "daf-remove-global",
+    "description": "Uninstalls machine-wide DAF: deletes ~/.config/agent (or DAFE_GLOBAL_ROOT) and ~/.cursor/skills/daf-* folders from skill-manifest after explicit confirmation. Per-repo .agent/ remains until /remove. Use when the user says /remove-global or wants to uninstall global-setup output."
   }
 }

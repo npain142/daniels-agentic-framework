@@ -1,6 +1,6 @@
 # Skill: /setup
 
-**When:** **Project setup** — adapt DAF to the **current repo** (greenfield scaffold, brownfield adoption, or Cursor overlay only). This is an **IDE agent skill** (like `/task`), not a shell command.
+**When:** **Project setup** — adapt DAF to the **current repo** (greenfield scaffold, brownfield adoption, or Cursor overlay only). This is an **IDE agent skill**, not a shell command.
 
 **Machine prerequisite:** **`daf global-setup`** (add **`--platform cursor`** on Cursor) installs globals under `~/.config/agent/` — skills, stacks, **scaffold**. `/setup` never replaces that step.
 
@@ -83,5 +83,5 @@ If the user wants Cursor project rules / `platform: "cursor"`:
 
 ## Stop condition
 
-- **Greenfield:** `.agent/` scaffold present, `verify-state.json` when the project uses `/task`, optional Cursor overlay applied; **`/grill-me`** not required to finish `/setup`.
+- **Greenfield:** `.agent/` scaffold present, `verify-state.json`, optional Cursor overlay applied; **`/grill-me`** not required to finish `/setup`.
 - **Brownfield:** `.agent/` reflects the agreed mental model (docs populated from the session where applicable), `verify-state.json` if needed, optional Cursor overlay; next step is planning work or **`/phase-transition`** when exit criteria pass.

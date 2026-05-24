@@ -12,7 +12,7 @@ Decide what to build and how the agent should behave before production code. **`
 - `config.stack` is set to a non-null value and `~/.config/agent/stacks/{stack}.md` exists (run `daf global-setup` if needed).
 - `phases/planning.md`, `phases/developing.md`, and `phases/maintaining.md` are present.
 
-Follow **`/phase-transition`** — it enforces the same planning-exit checklist as `validatePlanningExit` in the framework repo.
+Follow **`/phase-transition`** — it enforces the planning-exit checklist.
 
 ## Allowed
 
@@ -29,8 +29,8 @@ Follow **`/phase-transition`** — it enforces the same planning-exit checklist 
 
 - `/discuss` — explore ideas before committing to PRD or implementation.
 - `/pivot` — restructure or redesign a feature or concept; update PRD/glossary/architecture before code.
-- `/setup` — **project setup:** greenfield scaffold; brownfield inventory + interview then merge scaffold and populate PRD / glossary / architecture; verify-state; optional Cursor overlay; use instead of legacy `/new-project` / `/daf-migrate` entry points.
-- `/grill-me` — focused PRD interview when `.agent/` already exists; end with stack recommendation; agent sets `config.stack` after user agrees (unless set at end of brownfield `/setup`).
+- `/setup` — **project setup:** greenfield scaffold; brownfield inventory + interview then merge scaffold and populate docs; verify-state; optional Cursor overlay.
+- `/grill-me` — interview → `PRD.md`; end with stack recommendation; agent sets `config.stack` after user agrees (unless set at end of brownfield `/setup`).
 - `/remember` — save standing instructions for the project.
 - `/retro` — capture learnings.
 - `/phase-transition` — validate exit checklist; update `config.phase` when criteria pass.

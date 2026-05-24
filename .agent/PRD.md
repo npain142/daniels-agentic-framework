@@ -2,23 +2,28 @@
 
 ## Goal
 
-Ship a **minimal CLI** (`daf global-setup`) that installs global agent context—including a **scaffold** copy under `~/.config/agent/scaffold/`—and optional **Cursor** platform integration (`--platform cursor`). Per-repo `.agent/` is created or merged by the IDE agent following **`/setup`** (**project setup**): greenfield copies scaffold; brownfield runs inventory + interview, then merges scaffold and populates PRD / glossary / architecture. **Planning exit** (to **developing** or **maintaining**) is enforced by **`/phase-transition`** using the same checklist as the unit-tested `validatePlanningExit` helper in the repo (thresholds stay in sync with that module). The IDE agent reads the same files; no duplicate “living config” beyond `.agent/config.json`.
+Ship a **portable agent IDE layer**: one-line global setup (`daf global-setup`) that installs consistent identity, skills, stacks, and scaffold across machines; per-repo `/setup` adapts `.agent/` so the user's IDE agent behaves the same in every project — same phases, skills, verification loop, and load order.
+
+Primary user: **Daniel** (solo). Open source later.
 
 ## Non-goals
 
-- Personas, JSON `gates`, task-folder workflows, or MCP ingestion in v1.
-- `/release` train automation or ADR/schema enforcement beyond the planning-exit checklist.
-- Running LLM calls, prompts, or agent sessions inside the CLI (filesystem copy only).
-- Publishing to npm in v1 (local `pnpm` / `pnpm link --global` is enough until templates stabilize).
+- **No LLM in the CLI — ever.** The CLI only copies filesystem templates; all judgment stays in the IDE agent.
+- No npm publish in v1 (local install / link is enough).
+- No personas, JSON `gates`, or task-folder workflows.
+- No running agent sessions or prompts inside the CLI.
 
 ## v1 scope
 
-- **Commands:** `daf global-setup [--platform generic|cursor] [--force]` only.
-- **Templates:** `templates/global` (identity, preferences, **`skill-manifest.json`**, skill sources under `skills/`, **scaffold** subtree for `~/.config/agent/scaffold/`), `templates/stacks` (`general`, `typescript`, `typescript-react`), `templates/platforms/cursor` (project `.cursor/rules` overlay only). Stub dirs `templates/platforms/claude`, `templates/platforms/codex` for future installers.
-- **Config contract:** `{ "phase", "stack" | null, "check", "taskCheck", "codebaseEvery", "initialTaskCount", "platform"?, "defaultBranch"? }` — `phase` may be `maintaining`; `platform` is optional (`cursor` when `/setup` applied the Cursor overlay). `defaultBranch` is optional (protected branch name for **maintaining** branch guard). `initialTaskCount` seeds `.agent/verify-state.json` when `/setup` creates verify-state.
-- **Skills (markdown):** `/setup`, `/grill-me`, `/new-project` (redirect), `/daf-migrate` (redirect), `/new-feature`, `/issue`, `/improvement`, `/pivot`, `/task`, `/discuss`, `/remember`, `/retro`, `/phase-transition`.
-- **Stack selection:** not during **greenfield** scaffold-only `/setup` (`stack` stays `null` from template); user or agent sets `config.stack` after **`/grill-me`** or at the end of **brownfield `/setup`** (interview inside that skill) when product and constraints are clear.
+- **CLI:** `daf global-setup [--platform generic|cursor] [--force]` only.
+- **Global templates:** identity, preferences, `skill-manifest.json`, skill sources, stacks (`general`, `typescript`, `typescript-react`), scaffold subtree.
+- **IDE skills:** `/setup`, `/grill-me`, `/new-project` (redirect), `/daf-migrate` (redirect), `/new-feature`, `/issue`, `/improvement`, `/pivot`, `/discuss`, `/remember`, `/retro`, `/phase-transition`, `/remove`, `/remove-global`.
+- **Phases:** `planning`, `developing`, `maintaining` with phase-specific rules in `.agent/phases/*.md`.
+- **Platform (v1):** Cursor overlay (`--platform cursor`) — project `.cursor/rules/daf.mdc` + `~/.cursor/skills/daf-*/SKILL.md`. Stub dirs for future platforms (Claude, Codex).
+- **Config contract:** `{ phase, stack, check, taskCheck, codebaseEvery, initialTaskCount, platform?, defaultBranch? }`.
 
 ## Success
 
-From an empty directory: user runs `daf global-setup` (and `daf global-setup --platform cursor` on Cursor). Agent runs **`/setup`**: **greenfield** copies from `~/.config/agent/scaffold/` into `.agent/` in **planning** with `stack: null`, writes `verify-state.json`, and optionally merges `.cursor/rules/daf.mdc` + sets `platform: "cursor"`. **Brownfield** `/setup` inventories and interviews first, then merges missing scaffold files without overwriting healthy `config.json`, and fills canonical docs from the session. After PRD + glossary + architecture meet the checklist and `config.stack` is set (e.g. `typescript`), **`/phase-transition`** to **developing** or **maintaining** succeeds. In this monorepo, `npm run check` passes with tests covering planning exit, global-setup (including scaffold), and Cursor install paths.
+1. **`npm run check` green** in this monorepo (typecheck, lint, tests covering global-install, scaffold, planning-exit, Cursor paths).
+2. **Dogfood gate:** Daniel runs `daf global-setup --platform cursor`, then `/setup` on at least two real projects; agent follows load order, phase rules, and skills consistently.
+3. Iterate from real usage; no separate vanity metrics for v1.

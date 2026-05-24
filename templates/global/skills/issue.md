@@ -9,8 +9,8 @@
 3. Isolate root cause; smallest fix first.
 4. Add regression coverage if missing.
 5. If the bug reveals a trap, append one bullet to `.agent/memory/gotchas.md`.
-6. Follow **`/task`** for verification: per-goal `config.taskCheck`, update `verify-state.json` when the session task ends. In **`developing`**, full `config.check` when codebase-check applies. In **`maintaining`**, full **`config.check` every session task** per **`/task`** (not only on codebase-check cadence).
+6. Verify per **`.agent/phases/{phase}.md`**: per-goal `config.taskCheck`, update `verify-state.json` when the session task ends. In **`developing`**, full `config.check` when codebase-check applies. In **`maintaining`**, full **`config.check` every session task** (not only on codebase-check cadence).
 
 ## Stop condition
 
-Reproduction is gone on the exercised paths; **`/task`** stop conditions met (or user explicitly accepts gaps).
+Reproduction is gone on the exercised paths; current phase stop conditions met (or user explicitly accepts gaps).

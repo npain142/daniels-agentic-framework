@@ -20,10 +20,11 @@ describe("maintaining phase v2 contract (templates)", () => {
     expect(md).toContain("regression");
   });
 
-  it("task skill includes maintaining When and Maintaining phase section", async () => {
-    const md = await readTemplate("templates/global/skills/task.md");
-    expect(md).toContain('`phase === "maintaining"`');
-    expect(md).toContain("## Maintaining phase");
+  it("developing phase documents codebase-check Phase A read order", async () => {
+    const md = await readTemplate("templates/global/scaffold/phases/developing.md");
+    expect(md).toContain("## Codebase-check (two phases)");
+    expect(md).toContain("GLOSSARY.md");
+    expect(md).toContain("ARCHITECTURE.md");
   });
 
   it("issue skill includes maintaining in When", async () => {

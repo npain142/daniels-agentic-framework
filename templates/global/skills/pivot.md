@@ -21,10 +21,10 @@ If unsure whether to pivot, use `/discuss` first.
 3. **Blast radius:** files, public APIs, tests, migrations, user-visible behavior.
 4. **Canonical docs first** (before large code churn): update `GLOSSARY.md` (propose terms), `ARCHITECTURE.md`, and `PRD.md` sections if product meaning changed.
 5. **Migration plan:** incremental vs big-bang; compatibility shims; order of operations; risks.
-6. **`planning`:** stop after docs + plan unless the user asks for code. **`developing`** or **`maintaining`:** implement via **`/task`** (goals in session, `taskCheck`, verify-state, codebase-check when due).
+6. **`planning`:** stop after docs + plan unless the user asks for code. **`developing`** or **`maintaining`:** implement per **`.agent/phases/{phase}.md`** (goals in session, `taskCheck`, verify-state, codebase-check when due).
 7. Remove or quarantine dead paths; update tests to the new model.
 8. `/retro` for non-trivial pivots (note migration gotchas in `memory/gotchas.md` when relevant).
 
 ## Stop condition
 
-The new design is reflected in canonical docs; in `developing` or `maintaining`, code and tests match the plan, verification per **`/task`** (or user accepts documented gaps). The old concept is removed or explicitly deprecated with a removal path.
+The new design is reflected in canonical docs; in `developing` or `maintaining`, code and tests match the plan, verification per the current phase bar (or user accepts documented gaps). The old concept is removed or explicitly deprecated with a removal path.

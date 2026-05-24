@@ -11,7 +11,7 @@ The repo root may duplicate this file as `AGENTS.md` for tools that only read th
 1. **Layered context** — Global (`~/.config/agent/`) composes with project (`.agent/`). Higher layers override lower ones, never the reverse.
 2. **Phase model** — Exactly one phase at a time: `planning`, `developing`, or `maintaining`. Phase-specific rules live in `.agent/phases/{phase}.md` only — no `gates` in JSON, no personas.
 
-State lives in **`.agent/config.json`**: `phase`, `stack`, `check`, `taskCheck`, `codebaseEvery`, `initialTaskCount` (seed for `verify-state.json` when **`/setup`** creates it), optional `platform` (e.g. `cursor` after **`/setup`** applied the Cursor overlay), optional **`defaultBranch`** (protected name for **maintaining** branch guard). Runtime task totals live in **`.agent/verify-state.json`** (updated by the agent per `/task`).
+State lives in **`.agent/config.json`**: `phase`, `stack`, `check`, `taskCheck`, `codebaseEvery`, `initialTaskCount` (seed for `verify-state.json` when **`/setup`** creates it), optional `platform` (e.g. `cursor` after **`/setup`** applied the Cursor overlay), optional **`defaultBranch`** (protected name for **maintaining** branch guard). Runtime task totals live in **`.agent/verify-state.json`** (updated by the agent at session task end per the current phase file).
 
 ---
 
@@ -41,7 +41,7 @@ Skills and deeper docs are **on demand**. Procedures live in `~/.config/agent/sk
 
 - `IDENTITY.md`, `PREFERENCES.md` (optional)
 - `scaffold/` — default `.agent/` tree for **`/setup`**
-- `skills/daf-*.md` — same filenames as `~/.config/agent/skills/` after **`daf global-setup`** (manifest: `~/.config/agent/skill-manifest.json`): `/setup`, `/grill-me`, `/new-project` (redirect), `/daf-migrate` (redirect), `/new-feature`, `/issue`, `/improvement`, `/pivot`, `/task`, `/discuss`, `/remember`, `/retro`, `/phase-transition`
+- `skills/daf-*.md` — same filenames as `~/.config/agent/skills/` after **`daf global-setup`** (manifest: `~/.config/agent/skill-manifest.json`): `/setup`, `/grill-me`, `/new-project` (redirect), `/daf-migrate` (redirect), `/new-feature`, `/issue`, `/improvement`, `/pivot`, `/discuss`, `/remember`, `/retro`, `/phase-transition`, `/remove`, `/remove-global`
 - `stacks/<name>.md` — stack conventions
 
 **Cursor (optional):** `~/.cursor/skills/daf-*/SKILL.md` after `daf global-setup --platform cursor`; project `.cursor/rules/` after **`/setup`** on Cursor.
@@ -68,11 +68,12 @@ Skills and deeper docs are **on demand**. Procedures live in `~/.config/agent/sk
 | `/issue` | developing or maintaining |
 | `/improvement` | any — **enhances existing**; implement in developing or maintaining |
 | `/pivot` | any — **restructure or redesign** existing feature/concept; implement in developing or maintaining |
-| `/task` | developing or maintaining — session goals, `taskCheck`, verify-state, periodic codebase-check |
 | `/discuss` | any — explore ideas; no implementation unless asked |
 | `/remember` | any — save standing instructions to `memory/remember.md` |
 | `/retro` | any |
 | `/phase-transition` | any — validate planning exit; set `config.phase` |
+| `/remove` | any — strip `.agent/`, DAF root `AGENTS.md`, Cursor `daf.mdc` from **this repo** |
+| `/remove-global` | any — uninstall `~/.config/agent/` and Cursor `daf-*` skills (machine-wide) |
 
 ---
 
@@ -81,7 +82,7 @@ Skills and deeper docs are **on demand**. Procedures live in `~/.config/agent/sk
 1. Read `.agent/config.json` first; never hardcode phase, stack, or platform.
 2. Honor `.agent/phases/{phase}.md`.
 3. Use `GLOSSARY.md` terms; propose additions before inventing synonyms.
-4. In **developing** or **maintaining**, follow **`/task`** for implementation work: goals in the session only, per-goal `config.taskCheck`, update `.agent/verify-state.json` when a session task ends, two-phase codebase-check when due; then declare done. In **maintaining**, **`config.check`** must be green every session task end, not only when codebase-check applies (see `.agent/phases/maintaining.md`). If the work is not covered by `/task`, still run `config.check` before declaring done when applicable.
+4. In **developing** or **maintaining**, follow **`.agent/phases/{phase}.md`** for implementation work: goals in the session only, per-goal `config.taskCheck`, update `.agent/verify-state.json` when a session task ends, two-phase codebase-check when due; then declare done. In **maintaining**, **`config.check`** must be green every session task end, not only when codebase-check applies (see `.agent/phases/maintaining.md`).
 5. No commit, push, merge, or destructive shell without explicit user confirmation.
 6. Never paste or commit secrets.
 7. End non-trivial tasks with `/retro` (≤3 lines for `memory/learnings.md` or `gotchas.md`).

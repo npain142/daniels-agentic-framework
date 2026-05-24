@@ -1,7 +1,7 @@
 import { writeFile } from "node:fs/promises";
 import { join } from "node:path";
 
-/** Written to `.agent/verify-state.json`; updated by the agent per `/task`. */
+/** Written to `.agent/verify-state.json`; updated by the agent at session task end. */
 export type VerifyState = {
   taskCount: number;
   codebaseCheckPending: boolean;

@@ -11,6 +11,6 @@
 | initialTaskCount | Seeds `verify-state.json` when **`/setup`** creates verify-state. |
 | defaultBranch | Optional: Git default branch name for **maintaining** branch guard; omit to infer from `origin/HEAD` or `main` (see `phases/maintaining.md`). |
 | Hotfix exception | User explicitly allows fixing on the default branch without switching (see **maintaining**). |
-| Maintaining bar | Branch guard, mandatory failing test when feasible, green **`config.check`** every session task end (see `phases/maintaining.md`, `/task`). |
+| Maintaining bar | Branch guard, mandatory failing test when feasible, green **`config.check`** every session task end (see `phases/maintaining.md`). |
 
 Expand as the product grows.
