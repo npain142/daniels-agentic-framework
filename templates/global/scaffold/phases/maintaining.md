@@ -45,6 +45,12 @@ Prefer **one** focused outcome per session task (one bug, one small improvement)
 
 Never declare done with a red `config.check` without explicit user acceptance.
 
+## Task summary
+
+When declaring done, give a brief wrap-up. If the session produced committable changes, end with the label **Suggested commit message:** then a fenced code block containing **only** the message text (nothing else inside the fence — one copyable field). Do not repeat the message outside the fence.
+
+Imperative mood; match repo commit style. Omit if nothing to commit. Do not commit unless the user asks.
+
 ## Allowed
 
 - `/issue`, `/improvement`, `/pivot`, `/discuss`, `/remember`, `/retro`

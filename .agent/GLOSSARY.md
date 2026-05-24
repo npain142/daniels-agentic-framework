@@ -18,6 +18,7 @@
 | **taskCount** | Completed session tasks in `verify-state.json`; updated at session task end per the current phase file. |
 | **codebaseEvery** | Interval for two-phase codebase-check when `taskCount` hits multiples. |
 | **Codebase check** | Phase A: refresh `memory/codebase-snapshot.md`; Phase B: run `config.check`. |
+| **Task summary** | Brief wrap-up when declaring done after a session task; may end with **Suggested commit message:** and a fenced code block (message only inside) when there are committable changes. |
 
 ## Banned synonyms
 

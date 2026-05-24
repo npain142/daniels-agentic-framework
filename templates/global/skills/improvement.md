@@ -21,7 +21,7 @@ If the ask is net-new, stop and use `/new-feature` instead. If the design or con
 4. Plan the smallest change that satisfies acceptance (files, tests).
 5. Prefer a failing test first when behavior is non-trivial.
 6. **Implement** in `developing` or `maintaining` per **`.agent/phases/{phase}.md`**: per-goal `config.taskCheck`, verify-state updates, periodic codebase-check when due.
-7. Self-review diff vs acceptance; run `/retro` for non-trivial work.
+7. Self-review diff vs acceptance; run `/retro` for non-trivial work. When declaring done, add **Suggested commit message:** and a fenced code block (message only) if there are committable changes (see phase **Task summary**).
 
 ## Stop condition
 

@@ -22,6 +22,12 @@ When implementing in this phase:
 - Read `.agent/memory/remember.md` and `.agent/memory/gotchas.md` before non-trivial edits.
 - `/retro` if non-trivial.
 
+## Task summary
+
+When declaring done, give a brief wrap-up. If the session produced committable changes, end with the label **Suggested commit message:** then a fenced code block containing **only** the message text (nothing else inside the fence — one copyable field). Do not repeat the message outside the fence.
+
+Imperative mood; match repo commit style. Omit if nothing to commit. Do not commit unless the user asks.
+
 ## Codebase-check (two phases)
 
 **Phase A — context (before `check`):** Read in order: `GLOSSARY.md` → `~/.config/agent/stacks/{stack}.md` (skip if `stack` null) → `memory/remember.md` → `memory/gotchas.md` → `memory/learnings.md` → `ARCHITECTURE.md`. Rewrite **`.agent/memory/codebase-snapshot.md`** (bounded summary: ubiquitous language, stack constraints, standing rules, traps, learnings, architecture anchors, drift/cleanup candidates). Do not run `config.check` until phase A is done.
