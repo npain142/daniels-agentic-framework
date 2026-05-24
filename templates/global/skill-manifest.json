@@ -33,7 +33,7 @@
   },
   "task": {
     "name": "daf-task",
-    "description": "Canonical workflow in **developing** or **maintaining**: session goals in chat only, per-goal config.taskCheck, monotonic taskCount in verify-state.json, modulo codebaseEvery triggers two-phase codebase-check (snapshot then config.check). Use when the user says /task or when implementing under /new-feature, /issue, /improvement, or /pivot."
+    "description": "Canonical workflow in **developing** or **maintaining**: session goals in chat only, per-goal config.taskCheck, monotonic taskCount in verify-state.json, modulo codebaseEvery triggers two-phase codebase-check (snapshot then config.check). In **maintaining**, also branch guard before edits and **config.check every session** — see phases/maintaining.md and /task. Use when the user says /task or when implementing under /new-feature, /issue, /improvement, or /pivot."
   },
   "discuss": {
     "name": "daf-discuss",

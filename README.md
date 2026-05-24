@@ -49,6 +49,8 @@ If you use **pnpm**, add a script mirroring `npm run daf` or run `pnpm exec` aga
 | `npm run check` | typecheck + lint + test |
 | `npm run daf` | Run the workspace `daf` binary (see `package.json` script) |
 
-## Verification loop (developing)
+## Verification loop
 
 `.agent/config.json` defines **`taskCheck`** (fast, e.g. tests) and **`check`** (full suite). **`codebaseEvery`** sets how often a two-phase **codebase-check** runs after completed session tasks (see `/task`). **`initialTaskCount`** seeds `.agent/verify-state.json` when **`/setup`** creates verify-state. Agents follow **`/task`** — goals stay in the session; `verify-state.json` tracks `taskCount` and pending flags.
+
+**Maintaining** adds a stricter bar: branch guard before edits, mandatory failing test when feasible for bugfixes, and green **`config.check`** after every session task (see [`.agent/phases/maintaining.md`](.agent/phases/maintaining.md)).

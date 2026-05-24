@@ -17,6 +17,8 @@ export type DafConfig = {
   initialTaskCount: number;
   /** Present when the project used the Cursor overlay from `/setup`. */
   platform?: Platform;
+  /** Protected branch name for **maintaining** branch guard; omit to infer from `origin/HEAD` or `main`. */
+  defaultBranch?: string;
 };
 
 function parsePositiveInt(value: unknown, field: string, defaultVal: number): number {
@@ -78,6 +80,15 @@ export function parseConfig(raw: string): DafConfig {
   if (platform === "generic" || platform === "cursor") {
     base.platform = platform;
   }
+
+  const defaultBranchRaw = o.defaultBranch;
+  if (defaultBranchRaw !== undefined) {
+    if (typeof defaultBranchRaw !== "string" || defaultBranchRaw.trim() === "") {
+      throw new Error("config.defaultBranch must be a non-empty string when present");
+    }
+    base.defaultBranch = defaultBranchRaw.trim();
+  }
+
   return base;
 }
 

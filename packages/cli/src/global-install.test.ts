@@ -3,6 +3,7 @@ import { join } from "node:path";
 import { tmpdir } from "node:os";
 import { describe, expect, it, afterEach } from "vitest";
 import { existsSync } from "node:fs";
+import { parseConfig } from "./config.js";
 import { installGlobalAgent } from "./global-install.js";
 
 describe("installGlobalAgent", () => {
@@ -19,6 +20,7 @@ describe("installGlobalAgent", () => {
     expect(existsSync(join(root, "scaffold", "config.json"))).toBe(true);
     const cfg = await readFile(join(root, "scaffold", "config.json"), "utf8");
     expect(cfg).toContain('"phase": "planning"');
+    expect(() => parseConfig(cfg)).not.toThrow();
     const ptr = await readFile(join(root, "root-AGENTS.md"), "utf8");
     expect(ptr).toContain(".agent/AGENTS.md");
     const setupSkill = await readFile(join(root, "skills", "daf-setup.md"), "utf8");

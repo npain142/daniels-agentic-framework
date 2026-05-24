@@ -28,6 +28,9 @@
 | **initialTaskCount** | Non-negative integer in `config.json`; seeds `verify-state.json` → `taskCount` when `/setup` creates verify-state. |
 | **Codebase check** | Two-phase verify: (A) refresh `memory/codebase-snapshot.md`, (B) run `config.check` + cleanup. |
 | **Codebase snapshot** | Bounded summary in `memory/codebase-snapshot.md` derived from glossary, stack, memory, architecture. |
+| **defaultBranch** | Optional string in `config.json`: Git branch name treated as default for **maintaining** branch guard; omit to infer from `origin/HEAD` or `main` (see `phases/maintaining.md`). |
+| **Hotfix exception** | User explicitly opts in to fix on the default branch without switching away (see **maintaining**). |
+| **Maintaining bar** | **Maintaining** phase rules: branch guard, mandatory failing test when feasible for fixes, green **`config.check`** every session task end (see `phases/maintaining.md`, `/task`). |
 
 ## Banned synonyms
 

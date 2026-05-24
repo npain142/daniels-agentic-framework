@@ -20,6 +20,45 @@ describe("parseConfig", () => {
       }),
     );
     expect(cfg.phase).toBe("maintaining");
+    expect(cfg.defaultBranch).toBeUndefined();
+  });
+
+  it("accepts optional defaultBranch", () => {
+    const cfg = parseConfig(
+      JSON.stringify({
+        phase: "maintaining",
+        stack: "typescript",
+        check: "npm run check",
+        defaultBranch: "main",
+      }),
+    );
+    expect(cfg.defaultBranch).toBe("main");
+  });
+
+  it("rejects empty defaultBranch", () => {
+    expect(() =>
+      parseConfig(
+        JSON.stringify({
+          phase: "developing",
+          stack: "typescript",
+          check: "x",
+          defaultBranch: "  ",
+        }),
+      ),
+    ).toThrow(/defaultBranch/);
+  });
+
+  it("rejects non-string defaultBranch", () => {
+    expect(() =>
+      parseConfig(
+        JSON.stringify({
+          phase: "developing",
+          stack: "typescript",
+          check: "x",
+          defaultBranch: 1,
+        }),
+      ),
+    ).toThrow(/defaultBranch/);
   });
 
   it("accepts taskCheck codebaseEvery initialTaskCount", () => {

@@ -60,6 +60,10 @@ Let `every = max(1, codebaseEvery from config)` and `seed = max(0, initialTaskCo
 
 (Same semantics as `buildInitialVerifyState` in `packages/cli/src/verify-state.ts`.)
 
+## Optional `defaultBranch`
+
+`.agent/config.json` may include **`"defaultBranch": "main"`** (or `"master"`, etc.) so **maintaining** branch guard knows the protected name without consulting `origin/HEAD`. Omit it when the remote default is discoverable or `main` is correct. Non-breaking for older configs.
+
 ## package.json inference (new config.json only)
 
 When creating a **new** `config.json` from the scaffold template:

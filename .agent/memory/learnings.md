@@ -10,3 +10,4 @@ Short bullets promoted from `/retro` after non-trivial work.
 Retro: pivot removed project-scaffold CLI commands; `/setup` + `daf global-setup` only — keep checklist text in `phase-transition` skill aligned with `planning-to-developing.ts` when thresholds change.
 - Generic and Cursor installs share **`templates/global/skill-manifest.json`**; `~/.config/agent/skills/` uses **`daf-*.md`** filenames matching Cursor skill folder names.
 - Retro: `/setup` reframed as **project setup** (greenfield scaffold vs brownfield interview-then-files); README and glossary distinguish **global setup** vs **project setup**.
+- **Maintaining v2:** optional `defaultBranch` in `config.json` (parsed in `packages/cli/src/config.ts`); `maintaining-contract.test.ts` asserts scaffold phase + `/task` + `/issue` template markers so `npm run check` guards the stricter bar.

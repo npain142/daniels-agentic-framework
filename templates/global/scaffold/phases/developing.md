@@ -10,7 +10,7 @@ When implementing in this phase:
 
 - Read `.agent/verify-state.json` and `config.json`; state **goals in the chat only** (no task files under `.agent/`).
 - **Per goal:** implement → run `config.taskCheck` via shell.
-- **Session task end:** increment `taskCount` in `verify-state.json`. If `taskCount % codebaseEvery === 0` (with `taskCount > 0`) or `codebaseCheckPending` is true, run **two-phase codebase-check** before declaring done: **Phase A** — rewrite `.agent/memory/codebase-snapshot.md` from GLOSSARY, stack, memory files, and ARCHITECTURE (order in `/task`); **Phase B** — run `config.check`, fix failures, light cleanup. Then clear `codebaseCheckPending` and set `lastCodebaseSnapshotAt` after phase A.
+- **Session task end:** increment `taskCount` in `verify-state.json`. If `taskCount % codebaseEvery === 0` (with `taskCount > 0`) or `codebaseCheckPending` is true, run **two-phase codebase-check** before declaring done: **Phase A** — rewrite `.agent/memory/codebase-snapshot.md` from GLOSSARY, stack, memory files, and ARCHITECTURE (order in `/task`); **Phase B** — run `config.check`, fix failures, light cleanup. Then clear `codebaseCheckPending` and set `lastCodebaseSnapshotAt` after phase A. Between codebase-checks, **`config.check`** is not required every session — see **`maintaining`** for the stricter bar.
 - Behavior matches agreed intent; tests where they add real coverage.
 - Read `.agent/memory/remember.md` and `.agent/memory/gotchas.md` before non-trivial edits.
 

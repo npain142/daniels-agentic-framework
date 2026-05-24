@@ -5,7 +5,7 @@
 | Area | Path | Responsibility |
 |------|------|----------------|
 | **CLI** | `packages/cli/src/` | Parse `daf global-setup`; copy templates into `~/.config/agent` (+ scaffold, stacks); optional Cursor skills. |
-| **Config** | `packages/cli/src/config.ts` | Parse `.agent/config.json` (`phase` includes `maintaining`, `stack`, `check`, `taskCheck`, `codebaseEvery`, `initialTaskCount`, optional `platform`). |
+| **Config** | `packages/cli/src/config.ts` | Parse `.agent/config.json` (`phase` includes `maintaining`, `stack`, `check`, `taskCheck`, `codebaseEvery`, `initialTaskCount`, optional `platform`, optional `defaultBranch`). |
 | **Verify state** | `packages/cli/src/verify-state.ts` | `buildInitialVerifyState` / `writeVerifyState` — used by tests; agents mirror formulas in `/setup`. |
 | **Global install** | `packages/cli/src/global-install.ts` | Copies `templates/global` except raw `skills/`; writes `~/.config/agent/skills/daf-*.md` from `templates/global/skill-manifest.json`; stacks; optional `root-AGENTS.md`; optional `platforms/cursor/project` into `~/.config/agent`. |
 | **Checklist** | `packages/cli/src/checklists/planning-to-developing.ts` | `validatePlanningExit` — checklist thresholds for leaving `planning`; duplicated in `/phase-transition` skill (see comment in TS). |
