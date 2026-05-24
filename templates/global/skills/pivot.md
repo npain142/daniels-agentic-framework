@@ -10,7 +10,7 @@
 | Rename, merge, split, or replace an existing capability | `/new-feature` — net-new to the product |
 | Replace a glossary concept or user journey with a new model | `/discuss` — still exploring whether to change |
 | Align PRD, ARCHITECTURE, and code to a new direction | `/phase-transition` — only changing `phase` |
-| Adopt DAF on an existing repo | `/daf-migrate` — scaffold and align docs, not product redesign |
+| Adopt DAF on an existing repo | `/setup` (brownfield) — scaffold and align docs, not product redesign |
 
 If unsure whether to pivot, use `/discuss` first.
 

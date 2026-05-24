@@ -41,7 +41,7 @@ Skills and deeper docs are **on demand**. Procedures live in `~/.config/agent/sk
 
 - `IDENTITY.md`, `PREFERENCES.md` (optional)
 - `scaffold/` — default `.agent/` tree for **`/setup`**
-- `skills/daf-*.md` — same filenames as `~/.config/agent/skills/` after **`daf global-setup`** (manifest: `~/.config/agent/skill-manifest.json`): `/setup`, `/grill-me`, `/new-project` (redirect), `/daf-migrate` (redirect), `/new-feature`, `/issue`, `/improvement`, `/pivot`, `/discuss`, `/remember`, `/retro`, `/phase-transition`, `/remove`, `/remove-global`
+- `skills/daf-*.md` — same filenames as `~/.config/agent/skills/` after **`daf global-setup`** (manifest: `~/.config/agent/skill-manifest.json`): `/setup`, `/grill-me`, `/new-feature`, `/issue`, `/improvement`, `/pivot`, `/discuss`, `/remember`, `/retro`, `/phase-transition`, `/remove`, `/remove-global`
 - `stacks/<name>.md` — stack conventions
 
 **Cursor (optional):** `~/.cursor/skills/daf-*/SKILL.md` after `daf global-setup --platform cursor`; project `.cursor/rules/` after **`/setup`** on Cursor.
@@ -62,8 +62,6 @@ Skills and deeper docs are **on demand**. Procedures live in `~/.config/agent/sk
 |--------|----------------|
 | `/setup` | any — **project setup:** greenfield scaffold; brownfield inventory + interview then merge scaffold and docs; verify-state; Cursor overlay |
 | `/grill-me` | planning |
-| `/new-project` | planning — **deprecated**; use `/setup` |
-| `/daf-migrate` | planning — **deprecated**; use `/setup` + doc alignment |
 | `/new-feature` | developing — **net-new** capability |
 | `/issue` | developing or maintaining |
 | `/improvement` | any — **enhances existing**; implement in developing or maintaining |

@@ -7,14 +7,6 @@
     "name": "daf-grill-me",
     "description": "Runs a structured planning interview into PRD sections (goal, non-goals, v1 scope, success) and recommends a stack id. Use when the user says grill-me, /grill-me, or is in planning and needs product clarity before implementation."
   },
-  "new-project": {
-    "name": "daf-new-project",
-    "description": "Deprecated alias for /setup — greenfield DAF bootstrap. Use /setup instead when the user says /new-project or first-time project setup."
-  },
-  "migrate": {
-    "name": "daf-migrate",
-    "description": "Deprecated alias for /setup — brownfield merge and adoption. Use /setup plus planning alignment when the user says /daf-migrate or adopts DAF on an existing codebase."
-  },
   "new-feature": {
     "name": "daf-new-feature",
     "description": "Implements net-new product capability in **developing** phase (new commands, skills, flows) with acceptance checks; verification per phases/developing.md (taskCheck, verify-state, periodic codebase-check). Not for polish on existing behavior — use /improvement. In **maintaining**, use only when the user explicitly opts in. Use when the user says /new-feature or asks for scoped new capability while phase is developing."
@@ -29,7 +21,7 @@
   },
   "pivot": {
     "name": "daf-pivot",
-    "description": "Guides restructuring or redesign of an existing feature, concept, or architecture: from→to, blast radius, update GLOSSARY/ARCHITECTURE/PRD, migration plan, then implement per the current phase file in developing or maintaining. Not incremental polish (/improvement), net-new capability (/new-feature), brownfield DAF adoption (/daf-migrate), or open exploration (/discuss). Use when the user says /pivot or decides to redesign something that already exists."
+    "description": "Guides restructuring or redesign of an existing feature, concept, or architecture: from→to, blast radius, update GLOSSARY/ARCHITECTURE/PRD, migration plan, then implement per the current phase file in developing or maintaining. Not incremental polish (/improvement), net-new capability (/new-feature), brownfield DAF adoption (/setup), or open exploration (/discuss). Use when the user says /pivot or decides to redesign something that already exists."
   },
   "discuss": {
     "name": "daf-discuss",

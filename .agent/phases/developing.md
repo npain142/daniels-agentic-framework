@@ -53,7 +53,6 @@ Imperative mood; match repo commit style. Omit if nothing to commit. Do not comm
 - `/improvement` — enhance what exists per this phase; not net-new capability (`/new-feature`).
 - `/pivot` — restructure or redesign an existing feature or concept; docs first, then implement per this phase.
 - `/discuss` — explore topics or ideas; dialogue only unless user asks to implement.
-- `/new-project` — scaffold for new repos (mostly `daf` + templates).
 - `/remember` — append user standing instructions to `memory/remember.md`.
 - `/retro` — promote notes to `memory/learnings.md` / `gotchas.md`.
 - `/phase-transition` — change phase when checklists pass (`planning`, `developing`, `maintaining`).
