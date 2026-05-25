@@ -5,7 +5,7 @@
   },
   "grill-me": {
     "name": "daf-grill-me",
-    "description": "Runs a structured planning interview into PRD sections (goal, non-goals, v1 scope, success) and recommends a stack id. Use when the user says grill-me, /grill-me, or is in planning and needs product clarity before implementation."
+    "description": "Rigorously interviews the user (one question at a time, follow-ups on vagueness, assumption audit) until product vision is unambiguous, then writes PRD sections and recommends a stack id. Use when the user says grill-me, /grill-me, or is in planning and needs the agent to grill unclear vision before implementation."
   },
   "new-feature": {
     "name": "daf-new-feature",
@@ -13,11 +13,11 @@
   },
   "issue": {
     "name": "daf-issue",
-    "description": "Triages and fixes a reported issue in **developing** or **maintaining**: reproduce, narrow cause, minimal fix; verification per the current phase file. Use when the user says /issue or reports a bug to fix."
+    "description": "Triages and fixes a reported issue in **developing** or **maintaining**: reproduce, root-cause fix (no band-aids), regression tests; verification per the current phase file. Use when the user says /issue or reports a bug to fix."
   },
   "improvement": {
     "name": "daf-improvement",
-    "description": "Improves existing code, docs, or workflow (refactor, clarity, performance, ergonomics) — not bugs (/issue) and not net-new product capability (/new-feature). Verification per the current phase file like new-feature. Use when the user says /improvement or asks to make something existing better."
+    "description": "Improves existing code, docs, or workflow at the root (refactor, clarity, patterns) — no copy-paste workarounds; not bugs (/issue) or net-new capability (/new-feature). Verification per the current phase file. Use when the user says /improvement or asks to make something existing better."
   },
   "pivot": {
     "name": "daf-pivot",

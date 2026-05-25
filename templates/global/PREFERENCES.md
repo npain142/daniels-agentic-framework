@@ -1,7 +1,8 @@
 # Preferences (global)
 
-- Plan briefly before multi-file edits.
-- Match existing code style and patterns.
+- Plan briefly before multi-file edits; state the **root cause** you intend to fix when it is not obvious from the request.
+- Match existing code style and **design patterns** in the repo — one canonical way per concern.
+- Prefer fixing or extracting shared logic over duplicating snippets (no copy-paste “fixes”).
 - Prefer explicit errors over silent failure.
 - No commits or destructive git without explicit user consent.
 - Do not announce documentation or rules file updates in chat unless the user asked for those edits or asked what changed.

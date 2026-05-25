@@ -38,7 +38,7 @@ If `~/.config/agent/scaffold/config.json` is missing (or **`~/.config/agent/skil
 Order matters: **inventory → shared mental model → files**.
 
 1. **Inventory** (before creating or overwriting user-authored content): read the codebase and existing docs; summarize what you believe (purpose, stack hints, boundaries, gaps).
-2. **Interview** (same minimum as **`/grill-me`**): one question at a time until you and the user share a mental model — problem, user, non-goals, v1 cut, success signal; then recommend **`config.stack`** and confirm (ensure `$G/stacks/<id>.md` exists).
+2. **Interview** — follow the full **`/grill-me`** protocol (skeptical one-question-at-a-time grill; assumption audit before writing PRD content; no inventing details); then recommend **`config.stack`** and confirm (ensure `$G/stacks/<id>.md` exists).
 3. **Structure + populate:** merge from `$G/scaffold/`: for each path under scaffold, if the corresponding path under `.agent/` is **missing**, copy it in. **Never overwrite** an existing `.agent/config.json`. If you **create** `config.json` because it was missing, set `phase: "planning"` and `stack: null` until the user agrees on stack, then set **`config.stack`**; apply **package.json inference** (below) for new `config.json` only. Update **`.agent/PRD.md`**, **`.agent/GLOSSARY.md`**, **`.agent/ARCHITECTURE.md`** from the session — replace empty `_TODO_` / stubs where you have answers, do not wipe user edits without explicit consent.
 4. **Force refresh:** only if the user explicitly asks; you may overwrite scaffold-shaped files **except** `config.json` and user-authored PRD/memory — confirm when unsure.
 5. Write **`verify-state.json`** if missing (see below).

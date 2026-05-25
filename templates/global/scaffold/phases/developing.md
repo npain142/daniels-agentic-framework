@@ -9,6 +9,10 @@ Build the product with a tight loop: clarify, implement, verify. Use **`maintain
 - **Goals** live in the chat only: short bullet list at start; one clarifying question if scope is unclear.
 - **Do not** write task lists or goals under `.agent/` or elsewhere.
 
+## Implementation standards
+
+Per **`~/.config/agent/IDENTITY.md`**: solve at the **root** (structure, boundary, abstraction), not with symptom patches. **Clean code → clean repo → clean product** — align with `ARCHITECTURE.md` and repo patterns; remove duplication instead of adding a second path. If the smallest honest fix is a refactor, say so briefly and do it (or split: root fix first, then acceptance) unless the user scoped a band-aid only.
+
 ## Definition of done (session task)
 
 When implementing in this phase:
@@ -45,6 +49,7 @@ Imperative mood; match repo commit style. Omit if nothing to commit. Do not comm
 - Declaring done with a red `config.check` when codebase-check applies, without explicit user acceptance.
 - Persisting session goals or task checklists to project files.
 - Silent catches, undisclosed assumptions on security or data loss.
+- Symptom-only fixes (extra flags, swallowed errors, duplicated logic) when the root cause is identifiable and fixable in scope.
 
 ## Active skills
 

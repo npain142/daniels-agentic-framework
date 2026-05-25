@@ -17,6 +17,10 @@ Before the **first** edit in a session task:
 
 **Hotfix exception:** if the user explicitly opts in (e.g. “hotfix on main”), skip the stop and proceed on the default branch.
 
+## Implementation standards
+
+Same bar as **developing** (`IDENTITY.md`): **root-cause** fixes and repo-consistent patterns — no copy-paste patches or workaround layers unless the user explicitly accepts debt for speed.
+
 ## Session scope
 
 Prefer **one** focused outcome per session task (one bug, one small improvement). No drive-by refactors or broad rewrites without explicit user agreement.
@@ -62,6 +66,7 @@ Imperative mood; match repo commit style. Omit if nothing to commit. Do not comm
 - Declaring done without green **`config.check`** (unless the user explicitly accepts documented gaps).
 - Editing on the default branch without **hotfix** opt-in.
 - Persisting session goals to project files.
+- Symptom-only fixes when a root fix fits the session scope (note accepted debt in chat if the user chooses speed).
 
 ## Active skills
 

@@ -6,6 +6,7 @@ Conventions for Node + TypeScript packages (CLIs, libraries, backend services).
 
 - Default pair when the agent sets **`config.stack`** to **`typescript`** and `taskCheck` was not in `config.json`: **`taskCheck`:** `npm run test`, **`check`:** `npm run check` (adjust to repo scripts).
 - Prefer a failing test before implementation when behavior is non-trivial.
+- Extend existing modules and types; extract shared logic instead of duplicating fixes (see **`IDENTITY.md`**).
 
 - `strict: true`; avoid `any`; justify `as` casts.
 - Prefer `node:` imports for built-ins.

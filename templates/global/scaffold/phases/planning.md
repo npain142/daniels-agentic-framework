@@ -30,7 +30,7 @@ Follow **`/phase-transition`** — it enforces the planning-exit checklist.
 - `/discuss` — explore ideas before committing to PRD or implementation.
 - `/pivot` — restructure or redesign a feature or concept; update PRD/glossary/architecture before code.
 - `/setup` — **project setup:** greenfield scaffold; brownfield inventory + interview then merge scaffold and populate docs; verify-state; optional Cursor overlay.
-- `/grill-me` — interview → `PRD.md`; end with stack recommendation; agent sets `config.stack` after user agrees (unless set at end of brownfield `/setup`).
+- `/grill-me` — rigorous interview (one question at a time, follow-ups, assumption audit) → `PRD.md`; stack recommendation; agent sets `config.stack` after user agrees (unless set at end of brownfield `/setup`).
 - `/remember` — save standing instructions for the project.
 - `/retro` — capture learnings.
 - `/phase-transition` — validate exit checklist; update `config.phase` when criteria pass.

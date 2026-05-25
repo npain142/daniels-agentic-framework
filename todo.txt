@@ -1,0 +1,3 @@
+- Todo/Backlog file 
+- /start skill to start developing after planning
+- multi agent work  

@@ -13,12 +13,14 @@
 
 If the ask is net-new, stop and use `/new-feature` instead. If the design or concept itself is changing, use `/pivot`. For open exploration before you know what to build, use `/discuss` first.
 
+**Root over workaround:** improve the **canonical** place (module, API, shared helper) — do not add a parallel path or copy-pasted variant to avoid touching messy code. If the improvement exposes a deeper flaw, fix or propose fixing the root (may overlap `/issue` or `/pivot`).
+
 ## Steps
 
 1. Restate the improvement in one sentence; list acceptance checks (bullets).
 2. Read `.agent/ARCHITECTURE.md`, `.agent/GLOSSARY.md`, and relevant code or docs.
 3. If scope is large or tradeoffs are unclear, propose 1–3 options briefly, then proceed with the best fit (or the user’s pick).
-4. Plan the smallest change that satisfies acceptance (files, tests).
+4. Plan the smallest change that satisfies acceptance **at the root** (files, tests) — match repo patterns; no duplicate logic.
 5. Prefer a failing test first when behavior is non-trivial.
 6. **Implement** in `developing` or `maintaining` per **`.agent/phases/{phase}.md`**: per-goal `config.taskCheck`, verify-state updates, periodic codebase-check when due.
 7. Self-review diff vs acceptance; run `/retro` for non-trivial work. When declaring done, add **Suggested commit message:** and a fenced code block (message only) if there are committable changes (see phase **Task summary**).

@@ -85,6 +85,7 @@ Skills and deeper docs are **on demand**. Procedures live in `~/.config/agent/sk
 6. Never paste or commit secrets.
 7. End non-trivial tasks with `/retro` (≤3 lines for `memory/learnings.md` or `gotchas.md`).
 8. Do not call out or summarize updates to documentation or rules (e.g. `.agent/*.md`, `AGENTS.md`, `.cursor/rules/`, DAF skills) in the user-facing reply unless the user explicitly asked for those edits or asked what changed.
+9. In **developing** or **maintaining**, fix **root causes** at the right layer (`IDENTITY.md`): clean code → clean repo → clean product; no symptom patches or copy-paste workarounds without explicit user opt-in.
 
 ---
 
