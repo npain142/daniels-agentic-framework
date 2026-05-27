@@ -5,8 +5,8 @@ alwaysApply: true
 
 # Daniel Agent Framework (DAF)
 
-1. Read [.agent/config.json](.agent/config.json) for `phase`, `stack`, `check`, `taskCheck`, `codebaseEvery`, optional `defaultBranch`, and when in **developing** or **maintaining**, `.agent/verify-state.json` for session task totals. Read [.agent/local.json](.agent/local.json) when present for machine-local `platforms` (gitignored).
+1. Read [.agent/config.json](.agent/config.json) for `phase`, `stack`, `check`, `taskCheck`, `codebaseEvery`, optional `defaultBranch`, and when in **developing** or **maintaining**, `.agent/verify-state.json` for session task totals.
 2. Load [.agent/phases/](.agent/phases/) for the matching `phase` file.
-3. Bootstrap: **Global setup:** run **`/onboard`** in the IDE. **Project setup:** run **`/setup`** — greenfield copies or merges `.agent/` from `~/.config/agent/scaffold/`; brownfield interviews before populating docs, then merges scaffold; writes **`local.json`** and optional IDE overlays.
-4. Global procedures: if **`local.json`** lists **`cursor`**, DAF skills live under `~/.cursor/skills/daf-*/SKILL.md`; else flat markdown under `~/.config/agent/skills/daf-*.md` after **`/onboard`**.
+3. Installed platforms are listed in `~/.config/agent/platforms.json` (from **`/onboard`**). **Project setup:** run **`/setup`** — merges `.agent/` and IDE overlays for every platform in that file.
+4. DAF skills: `~/.cursor/skills/daf-*/SKILL.md` when `cursor` is listed; also available as flat `~/.config/agent/skills/daf-*.md`.
 5. Full load order: [.agent/AGENTS.md](.agent/AGENTS.md).

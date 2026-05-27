@@ -1,6 +1,6 @@
 import { existsSync } from "node:fs";
 import { mkdir, readFile, unlink, writeFile } from "node:fs/promises";
-import { dirname, join } from "node:path";
+import { join } from "node:path";
 
 export type SkillManifestEntry = {
   name: string;
@@ -76,21 +76,6 @@ export async function installCursorGlobalSkills(opts: {
   skillsRoot: string;
   force: boolean;
 }): Promise<void> {
-  const manifest = await loadSkillManifest(opts.templatesRoot);
-  const skillsTpl = join(opts.templatesRoot, "global", "skills");
-
-  for (const [id, entry] of Object.entries(manifest)) {
-    const src = join(skillsTpl, `${id}.md`);
-    if (!existsSync(src)) {
-      throw new Error(`Missing global skill template for manifest key "${id}": ${src}`);
-    }
-    const raw = await readFile(src, "utf8");
-    const body = stripSkillTitle(raw);
-    const outFile = join(opts.skillsRoot, entry.name, "SKILL.md");
-    if (!opts.force && existsSync(outFile)) {
-      continue;
-    }
-    await mkdir(dirname(outFile), { recursive: true });
-    await writeFile(outFile, buildSkillMdBody(entry, body), "utf8");
-  }
+  const { installManifestSkillsAsSkillMd } = await import("./install-skills.js");
+  await installManifestSkillsAsSkillMd(opts);
 }

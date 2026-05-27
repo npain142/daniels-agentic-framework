@@ -34,6 +34,20 @@ export function getCursorSkillsRoot(): string {
   return join(homedir(), ".cursor", "skills");
 }
 
+/** ~/.claude/skills unless DAF_CLAUDE_SKILLS_ROOT is set. */
+export function getClaudeSkillsRoot(): string {
+  const override = process.env.DAF_CLAUDE_SKILLS_ROOT;
+  if (override && override.trim() !== "") return override.trim();
+  return join(homedir(), ".claude", "skills");
+}
+
+/** ~/.codex unless DAF_CODEX_HOME / CODEX_HOME is set. */
+export function getCodexHome(): string {
+  const override = process.env.DAF_CODEX_HOME ?? process.env.CODEX_HOME;
+  if (override && override.trim() !== "") return override.trim();
+  return join(homedir(), ".codex");
+}
+
 /**
  * Walk upward from `start` until `.agent/config.json` exists (like git discovering `.git`).
  */

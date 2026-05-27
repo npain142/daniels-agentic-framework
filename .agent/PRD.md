@@ -15,14 +15,14 @@ Primary user: **Daniel** (solo). Open source later.
 
 ## v1 scope
 
-- **Global setup:** IDE skill **`/onboard`** + onboarding script `templates/global/onboarding/global-setup.md` + `node scripts/global-install.mjs [--platform generic|cursor] [--force]`.
+- **Global setup:** IDE skill **`/onboard`** + onboarding script + `node scripts/global-install.mjs [--platforms generic,cursor,claude,codex] [--force]`; writes **`~/.config/agent/platforms.json`**.
 - **Global templates:** identity, preferences, `skill-manifest.json`, skill sources, stacks (`general`, `typescript`, `typescript-react`), scaffold subtree, onboarding script.
 - **IDE skills:** `/onboard`, `/setup`, `/help`, `/grill-me`, `/start`, `/how-it-works`, `/ltm-checkup`, `/new-feature`, `/issue`, `/improvement`, `/pivot`, `/discuss`, `/backlog-add`, `/backlog-work`, `/remember`, `/retro`, `/phase-transition`, `/remove`, `/remove-global`.
 - **Backlog / logback:** repo-root `BACKLOG.md` (`/backlog-add`, `/backlog-work`); completed items archive to `LOGBACK.md` with fading prune; greenfield `/setup` seeds from `root-BACKLOG.md` and `root-LOGBACK.md`.
 - **Phases:** `planning`, `developing`, `maintaining` with phase-specific rules in `.agent/phases/*.md`.
-- **Platform (v1):** Cursor overlay (onboard with **cursor** platform) — project `.cursor/rules/daf.mdc` + `~/.cursor/skills/daf-*/SKILL.md`. Stub dirs for future platforms (Claude, Codex).
+- **Platforms (v1):** Multi-select at **`/onboard`** — native global skills per IDE (`cursor`, `claude`, `codex`) + flat `$G/skills/`; **`/setup`** merges project overlays from `$G/platforms/<id>/project/` for every id in **`platforms.json`**.
 - **Config contract (committed):** `{ phase, stack, check, taskCheck, codebaseEvery, initialTaskCount, defaultBranch? }`.
-- **Machine-local:** `.agent/local.json` → `{ platforms: string[] }` (gitignored; one or more IDE layers chosen at **`/setup`**).
+- **Machine-wide:** `~/.config/agent/platforms.json` → `{ platforms: string[] }` (not in the repo).
 
 ## Success
 

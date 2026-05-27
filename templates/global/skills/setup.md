@@ -1,12 +1,12 @@
 # Skill: /setup
 
-**When:** **Project setup** — adapt DAF to the **current repo** (greenfield scaffold, brownfield adoption, or Cursor overlay only). This is an **IDE agent skill**, not a shell command.
+**When:** **Project setup** — adapt DAF to the **current repo** (greenfield scaffold, brownfield adoption, or IDE overlay refresh). This is an **IDE agent skill**, not a shell command.
 
-**Machine prerequisite:** **`/onboard`** installs globals under `~/.config/agent/` — skills, stacks, **scaffold**, onboarding script. On Cursor, `/onboard` uses **`--platform cursor`**. `/setup` never replaces that step.
+**Machine prerequisite:** **`/onboard`** installs globals under `~/.config/agent/` — skills, stacks, **scaffold**, **`platforms.json`**, and staged overlays under `$G/platforms/<id>/project/`. `/setup` never replaces that step.
 
-**Source of truth** for files to copy or merge is **`~/.config/agent/scaffold/`** (and optional **`~/.config/agent/platforms/cursor/project/`** on Cursor). Do not copy from the DAF monorepo path on disk unless you are developing DAF itself.
+**Source of truth** for files to copy or merge is **`~/.config/agent/scaffold/`** and **`~/.config/agent/platforms.json`**. Do not copy from the DAF monorepo path on disk unless you are developing DAF itself.
 
-**Always** work from **`$G/scaffold/`** where `$G` is `~/.config/agent` (honor env **`DAFE_GLOBAL_ROOT`** if set).
+**Always** work from **`$G`** = `~/.config/agent` (honor env **`DAFE_GLOBAL_ROOT`** if set).
 
 ## Step 0 — Detect
 
@@ -15,13 +15,15 @@
 | **Greenfield** | No `.agent/` (or empty) **and** no meaningful project docs (e.g. no product `README`, no `PRD.md`, no `docs/` with adoption context). |
 | **Brownfield adoption** | No `.agent/` but **has** other project docs; **or** partial `.agent/` needing merge; **or** user explicitly adopting DAF on existing work. |
 | **Greenfield + existing code** | Greenfield by docs, but non-trivial code exists (e.g. `src/`, app entrypoints, substantial tree): **ask** whether to review existing code; if yes → follow **Brownfield adoption** (inventory → interview → populate) before treating docs as empty. |
-| **Platform-only** | `.agent/` + `config.json` already complete → add or refresh IDE overlays and **`local.json`** if requested, or stop — DAF is present. |
+| **Overlay refresh** | `.agent/` + `config.json` already complete → re-apply IDE overlays from `platforms.json` if requested, or stop — DAF is present. |
 
 If `.agent/` already exists and is non-empty and the user did **not** ask for brownfield merge or adoption, **stop** unless the case above applies.
 
 ## Step 1 — Globals
 
-If `~/.config/agent/scaffold/config.json` is missing (or **`~/.config/agent/skills/daf-setup.md`** is missing), run **`/onboard`** once on the machine (or follow `templates/global/onboarding/global-setup.md` from the DAF repo). On Cursor, onboard with the **cursor** platform so skills and platform files exist.
+If `~/.config/agent/scaffold/config.json` is missing (or **`~/.config/agent/skills/daf-setup.md`** is missing), run **`/onboard`** once on the machine (or follow `templates/global/onboarding/global-setup.md` from the DAF repo).
+
+Read **`$G/platforms.json`**. If missing, run **`/onboard`** first.
 
 ## Step 2a — Greenfield (scaffold only)
 
@@ -31,8 +33,7 @@ If `~/.config/agent/scaffold/config.json` is missing (or **`~/.config/agent/skil
 4. If **`$G/root-BACKLOG.md`** exists and the repo root has neither **`BACKLOG.md`** nor **`todo.txt`**, copy to `<repo>/BACKLOG.md`.
 5. If **`$G/root-LOGBACK.md`** exists and the repo root has no **`LOGBACK.md`**, copy to `<repo>/LOGBACK.md`.
 6. **Do not** set `config.stack` during setup (remains `null` from scaffold until product clarity).
-7. **Machine-local platforms** (see below) — ask which IDE layers apply on **this machine**; write `.agent/local.json` (gitignored).
-8. Optional: **Platform overlays** (see below) for each id in `local.json` that has a project template under `$G/platforms/<id>/project/`.
+7. **Platform overlays** (see below) — merge every IDE platform listed in **`$G/platforms.json`**.
 
 **Handoff:** Structure is ready. **`/grill-me`** is an **optional** next step when the user wants to lock the PRD — not part of this skill’s stop condition. When planning exit criteria pass, use **`/start`** or **`/phase-transition`** to enter developing.
 
@@ -45,7 +46,7 @@ Order matters: **inventory → shared mental model → files**.
 3. **Structure + populate:** merge from `$G/scaffold/`: for each path under scaffold, if the corresponding path under `.agent/` is **missing**, copy it in. **Never overwrite** an existing `.agent/config.json`. If you **create** `config.json` because it was missing, set `phase: "planning"` and `stack: null` until the user agrees on stack, then set **`config.stack`**; apply **package.json inference** (below) for new `config.json` only. Update **`.agent/PRD.md`**, **`.agent/GLOSSARY.md`**, **`.agent/ARCHITECTURE.md`** from the session — replace empty `_TODO_` / stubs where you have answers, do not wipe user edits without explicit consent.
 4. **Force refresh:** only if the user explicitly asks; you may overwrite scaffold-shaped files **except** `config.json` and user-authored PRD/memory — confirm when unsure.
 5. Write **`verify-state.json`** if missing (see below).
-6. **Machine-local platforms** and optional **platform overlays** (see below).
+6. **Platform overlays** (see below).
 
 **Handoff:** When planning exit criteria are met, **`/start`** or **`/phase-transition`**. Do **not** require a separate **`/grill-me`** after brownfield `/setup` unless gaps remain in the PRD.
 
@@ -76,36 +77,22 @@ When creating a **new** `config.json` from the scaffold template:
 - Prefer `taskCheck`: if `test` exists → `npm run test`. If `check` exists and no test yet → `npm run check`.
 - Prefer `check`: if `check` exists → `npm run check`; else if `lint` and `test` → `npm run lint && npm run test`; else if `test` → `npm run test`. Fill the other field if still empty so both are non-null when any script matched.
 
-## Machine-local `.agent/local.json`
+## Platform overlays (from global `platforms.json`)
 
-**Committed** `.agent/` (PRD, glossary, `config.json`, phases) is **machine-agnostic** and safe in git. **IDE platform choice is not** — it lives in **`.agent/local.json`** (gitignored; never commit).
+Read **`$G/platforms.json`** → `platforms[]` (written at **`/onboard`**). For **each** id in that array that has a staged template at **`$G/platforms/<id>/project/`**, recursively merge that directory into the **repository root** (merge-safe; use **`--force`** semantics only when the user asked to refresh overlays).
 
-1. Ask which platforms apply on **this machine** (one or more). v1 ids: **`cursor`** (Cursor project rules + skill picker path), **`generic`** (flat skills under `~/.config/agent/skills/` only — no repo overlay).
-2. Write or merge **`.agent/local.json`**:
+| Platform | Staged template | Repo result (v1) |
+|----------|-----------------|------------------|
+| **`cursor`** | `$G/platforms/cursor/project/` | `.cursor/rules/daf.mdc` |
+| **`claude`** | `$G/platforms/claude/project/` | `.claude/rules/daf.md` |
+| **`codex`** | (no project tree) | Repo-root **`AGENTS.md`** from `$G/root-AGENTS.md` (step 2a/3) — Codex reads `AGENTS.md` |
+| **`generic`** | — | No overlay; flat skills at `$G/skills/daf-*.md` |
 
-```json
-{
-  "platforms": ["cursor"]
-}
-```
+**Do not** put `platform` or `platforms` in committed **`.agent/config.json`**.
 
-3. Ensure **`.agent/local.json`** is listed in the repo **`.gitignore`** (append if missing).
-4. Copy **`local.json.example`** from scaffold only as documentation; the real file is **`local.json`**.
-
-**Do not** put `platform` or `platforms` in **`config.json`**.
-
-## Platform overlays
-
-For each id in **`local.json` → `platforms`** that has a project template:
-
-| Platform | Prerequisite | Overlay |
-|----------|--------------|---------|
-| **`cursor`** | **`/onboard`** with **cursor** on this machine (`$G/platforms/cursor/project/` exists) | Merge **`$G/platforms/cursor/project/`** into the **repository root** (creates `.cursor/rules/daf.mdc`). |
-| **`generic`** | **`/onboard`** (generic or cursor) | No repo files; skills at `$G/skills/daf-*.md`. |
-
-Repeat for every listed platform that defines `$G/platforms/<id>/project/`. Multiple overlays may coexist when v1+ stubs ship (e.g. future Claude paths).
+From the DAF repo during development, the agent may run `node -e` importing `applyProjectOverlays` from built `packages/cli` — otherwise merge directories manually as above.
 
 ## Stop condition
 
-- **Greenfield:** `.agent/` scaffold present, `verify-state.json`, **`local.json`** when platforms were chosen, overlays applied; **`/grill-me`** not required to finish `/setup`.
-- **Brownfield:** `.agent/` reflects the agreed mental model (docs populated from the session where applicable), `verify-state.json` if needed, **`local.json`** and overlays when chosen; next step is planning work or **`/phase-transition`** when exit criteria pass.
+- **Greenfield:** `.agent/` scaffold present, `verify-state.json`, IDE overlays applied for every platform in `$G/platforms.json`; **`/grill-me`** not required to finish `/setup`.
+- **Brownfield:** `.agent/` reflects the agreed mental model (docs populated from the session where applicable), `verify-state.json` if needed, overlays applied; next step is planning work or **`/phase-transition`** when exit criteria pass.

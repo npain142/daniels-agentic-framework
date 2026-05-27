@@ -1,9 +1,20 @@
 import { cp, mkdir, readdir } from "node:fs/promises";
 import { dirname, join } from "node:path";
 import { existsSync } from "node:fs";
-import { installCursorGlobalSkills, installFlatMarkdownSkills } from "./platforms/cursor.js";
+import { installFlatMarkdownSkills } from "./platforms/cursor.js";
+import { installCursorGlobalSkills } from "./platforms/cursor.js";
+import { installClaudeGlobalSkills } from "./platforms/claude.js";
+import { installCodexGlobalAgents } from "./platforms/codex.js";
 import type { Platform } from "./platform.js";
-import { getCursorSkillsRoot, getGlobalAgentDir, getTemplatesRoot } from "./paths.js";
+import { writeGlobalPlatforms } from "./global-platforms.js";
+import { stashPlatformProjectTemplates } from "./project-overlays.js";
+import {
+  getClaudeSkillsRoot,
+  getCodexHome,
+  getCursorSkillsRoot,
+  getGlobalAgentDir,
+  getTemplatesRoot,
+} from "./paths.js";
 
 async function copyDirMerge(src: string, dest: string, force: boolean): Promise<void> {
   await mkdir(dest, { recursive: true });
@@ -22,7 +33,6 @@ async function copyDirMerge(src: string, dest: string, force: boolean): Promise<
   }
 }
 
-/** Copy `templates/global` into `globalDir` but not the raw `skills/` tree (skills are installed as `daf-*.md` via manifest). */
 async function copyGlobalTemplateExcludingSkills(globalTpl: string, globalDir: string, force: boolean): Promise<void> {
   await mkdir(globalDir, { recursive: true });
   const entries = await readdir(globalTpl, { withFileTypes: true });
@@ -43,20 +53,29 @@ async function copyGlobalTemplateExcludingSkills(globalTpl: string, globalDir: s
 
 export type InstallGlobalAgentOpts = {
   force: boolean;
-  platform: Platform;
+  platforms: Platform[];
 };
 
 export type InstallGlobalAgentResult = {
   globalDir: string;
+  platforms: Platform[];
   cursorSkillsRoot?: string;
+  claudeSkillsRoot?: string;
+  codexHome?: string;
 };
 
-/** Copy templates/global (incl. scaffold/), stacks, optional root-AGENTS pointer; optional Cursor platform + skills. */
+function hasIdePlatform(platforms: Platform[], id: Platform): boolean {
+  return platforms.includes(id);
+}
+
+/** Copy templates/global; install skills per platform; write platforms.json. */
 export async function installGlobalAgent(opts: InstallGlobalAgentOpts): Promise<InstallGlobalAgentResult> {
   const templates = getTemplatesRoot();
   const globalDir = getGlobalAgentDir();
   const globalTpl = join(templates, "global");
   const stacksTpl = join(templates, "stacks");
+  const platforms = opts.platforms.length > 0 ? opts.platforms : (["generic"] as Platform[]);
+
   if (!existsSync(globalTpl)) {
     throw new Error(`Missing template directory: ${globalTpl}`);
   }
@@ -81,16 +100,44 @@ export async function installGlobalAgent(opts: InstallGlobalAgentOpts): Promise<
       }
     }
   }
+
+  await stashPlatformProjectTemplates({
+    templatesRoot: templates,
+    globalDir,
+    platforms,
+    force: opts.force,
+  });
+
   let cursorSkillsRoot: string | undefined;
-  if (opts.platform === "cursor") {
-    const cursorProjTpl = join(templates, "platforms", "cursor", "project");
-    if (existsSync(cursorProjTpl)) {
-      const cursorProjDest = join(globalDir, "platforms", "cursor", "project");
-      await mkdir(cursorProjDest, { recursive: true });
-      await copyDirMerge(cursorProjTpl, cursorProjDest, opts.force);
-    }
+  let claudeSkillsRoot: string | undefined;
+  let codexHome: string | undefined;
+
+  if (hasIdePlatform(platforms, "cursor")) {
     cursorSkillsRoot = getCursorSkillsRoot();
-    await installCursorGlobalSkills({ templatesRoot: templates, skillsRoot: cursorSkillsRoot, force: opts.force });
+    await installCursorGlobalSkills({
+      templatesRoot: templates,
+      skillsRoot: cursorSkillsRoot,
+      force: opts.force,
+    });
   }
-  return { globalDir, cursorSkillsRoot };
+  if (hasIdePlatform(platforms, "claude")) {
+    claudeSkillsRoot = getClaudeSkillsRoot();
+    await installClaudeGlobalSkills({
+      templatesRoot: templates,
+      skillsRoot: claudeSkillsRoot,
+      force: opts.force,
+    });
+  }
+  if (hasIdePlatform(platforms, "codex")) {
+    codexHome = getCodexHome();
+    await installCodexGlobalAgents({
+      templatesRoot: templates,
+      codexHome,
+      force: opts.force,
+    });
+  }
+
+  await writeGlobalPlatforms(globalDir, { platforms });
+
+  return { globalDir, platforms, cursorSkillsRoot, claudeSkillsRoot, codexHome };
 }

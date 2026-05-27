@@ -17,16 +17,19 @@ From the **repository root** (walk up to find `.agent/config.json` if the sessio
 
 | Path | Action |
 |------|--------|
-| `.agent/` | Remove entire directory (all phases, memory, verify-state, docs, **`local.json`**). |
+| `.agent/` | Remove entire directory (all phases, memory, verify-state, docs). |
+| `.cursor/rules/daf.mdc` | Remove if present (Cursor overlay). |
+| `.claude/rules/daf.md` | Remove if present (Claude overlay). |
 | `AGENTS.md` at repo root | Remove **only if** it is the DAF bootstrap file: matches `~/.config/agent/root-AGENTS.md`, or is only the one-line pointer to `.agent/AGENTS.md` from **`/setup`**. If the user merged custom content into root `AGENTS.md`, **ask** before deleting. |
-| `.cursor/rules/daf.mdc` | Remove this file if present (Cursor overlay from **`/setup`**). Do **not** delete other `.cursor/` content. |
+
+Do **not** delete other `.cursor/` or `.claude/` content beyond the DAF hook files above.
 
 List every path you plan to delete; note anything skipped and why.
 
 ## Step 2 — Remove (after confirmation)
 
 1. `rm -rf` the `.agent/` directory (or equivalent delete).
-2. Delete root `AGENTS.md` and `.cursor/rules/daf.mdc` per the table above.
+2. Delete paths per the table above (including `.claude/rules/daf.md` when present).
 3. Re-list the repo root briefly to confirm targets are gone.
 
 ## Stop condition

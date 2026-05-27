@@ -15,7 +15,7 @@ describe("installGlobalAgent", () => {
   it("installs scaffold and root-AGENTS pointer under global dir", async () => {
     const root = await mkdtemp(join(tmpdir(), "daf-global-"));
     process.env.DAFE_GLOBAL_ROOT = root;
-    const { globalDir } = await installGlobalAgent({ force: true, platform: "generic" });
+    const { globalDir } = await installGlobalAgent({ force: true, platforms: ["generic"] });
     expect(globalDir).toBe(root);
     expect(existsSync(join(root, "scaffold", "config.json"))).toBe(true);
     const cfg = await readFile(join(root, "scaffold", "config.json"), "utf8");
@@ -40,7 +40,7 @@ describe("installGlobalAgent", () => {
     const root = await mkdtemp(join(tmpdir(), "daf-global-cursor-"));
     process.env.DAFE_GLOBAL_ROOT = root;
     process.env.DAF_CURSOR_SKILLS_ROOT = join(root, "cursor-skills");
-    await installGlobalAgent({ force: true, platform: "cursor" });
+    await installGlobalAgent({ force: true, platforms: ["cursor"] });
     const rule = await readFile(join(root, "platforms", "cursor", "project", ".cursor", "rules", "daf.mdc"), "utf8");
     expect(rule).toContain("alwaysApply: true");
     delete process.env.DAF_CURSOR_SKILLS_ROOT;

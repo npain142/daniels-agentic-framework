@@ -17,8 +17,12 @@ describe("parsePlatform", () => {
     expect(parsePlatform("cursor")).toBe("cursor");
     expect(parsePlatform("CURSOR")).toBe("cursor");
   });
+  it("accepts claude and codex", () => {
+    expect(parsePlatform("claude")).toBe("claude");
+    expect(parsePlatform("codex")).toBe("codex");
+  });
   it("rejects unknown", () => {
-    expect(() => parsePlatform("vscode")).toThrow(/Unknown --platform/);
+    expect(() => parsePlatform("vscode")).toThrow(/Unknown platform/);
   });
 });
 

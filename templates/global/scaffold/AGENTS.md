@@ -11,14 +11,14 @@ The repo root may duplicate this file as `AGENTS.md` for tools that only read th
 1. **Layered context** — Global (`~/.config/agent/`) composes with project (`.agent/`). Higher layers override lower ones, never the reverse.
 2. **Phase model** — Exactly one phase at a time: `planning`, `developing`, or `maintaining`. Phase-specific rules live in `.agent/phases/{phase}.md` only — no `gates` in JSON, no personas.
 
-State lives in **`.agent/config.json`**: `phase`, `stack`, `check`, `taskCheck`, `codebaseEvery`, `initialTaskCount` (seed for `verify-state.json` when **`/setup`** creates it), optional **`defaultBranch`** (protected name for **maintaining** branch guard). **Machine-local** IDE platforms live in **`.agent/local.json`** (gitignored; written by **`/setup`**). Runtime task totals live in **`.agent/verify-state.json`** (updated by the agent at session task end per the current phase file).
+State lives in **`.agent/config.json`**: `phase`, `stack`, `check`, `taskCheck`, `codebaseEvery`, `initialTaskCount` (seed for `verify-state.json` when **`/setup`** creates it), optional **`defaultBranch`** (protected name for **maintaining** branch guard). **IDE platforms** are chosen at **`/onboard`** and stored in **`~/.config/agent/platforms.json`** (machine-wide, not in the repo). Runtime task totals live in **`.agent/verify-state.json`** (updated by the agent at session task end per the current phase file).
 
 ---
 
 ## 2. Load order (every session)
 
 1. `.agent/config.json` — phase, stack, `check`, `taskCheck`, `codebaseEvery`, optional `defaultBranch`
-2. `.agent/local.json` — when present, `platforms` for this machine (skill paths / overlays; gitignored)
+2. `~/.config/agent/platforms.json` — `platforms[]` from **`/onboard`** (which IDE integrations are installed on this machine)
 3. `~/.config/agent/IDENTITY.md` — how the agent works with you
 4. `~/.config/agent/stacks/{stack}.md` — **only if** `config.stack` is non-null
 5. `.agent/AGENTS.md` — this file
@@ -32,7 +32,7 @@ State lives in **`.agent/config.json`**: `phase`, `stack`, `check`, `taskCheck`,
 10. `.agent/verify-state.json` — `taskCount`, `codebaseCheckPending`
 11. `.agent/memory/codebase-snapshot.md` — if present; prefer when fresh over re-reading every canonical doc each session
 
-Skills and deeper docs are **on demand**. If **`local.json`** lists **`cursor`**, prefer `~/.cursor/skills/daf-*`; else flat `~/.config/agent/skills/daf-*.md` after **`/onboard`**.
+Skills and deeper docs are **on demand**. Native skill paths (when listed in `platforms.json`): **`cursor`** → `~/.cursor/skills/daf-*`; **`claude`** → `~/.claude/skills/daf-*`; always available as flat `~/.config/agent/skills/daf-*.md`.
 
 ---
 
@@ -41,20 +41,20 @@ Skills and deeper docs are **on demand**. If **`local.json`** lists **`cursor`**
 **Global** `~/.config/agent/`:
 
 - `IDENTITY.md`, `PREFERENCES.md` (optional)
+- `platforms.json` — IDE platforms installed on this machine (`/onboard`)
 - `scaffold/` — default `.agent/` tree for **`/setup`**
 - `onboarding/global-setup.md` — agent script for **`/onboard`**
-- `skills/daf-*.md` — installed from manifest (`~/.config/agent/skill-manifest.json`): `/onboard`, `/setup`, `/help`, `/grill-me`, `/start`, `/how-it-works`, `/ltm-checkup`, `/new-feature`, `/issue`, `/improvement`, `/pivot`, `/discuss`, `/backlog-add`, `/backlog-work`, `/remember`, `/retro`, `/phase-transition`, `/remove`, `/remove-global`
-- `root-BACKLOG.md` — optional template copied to repo-root **`BACKLOG.md`** on greenfield **`/setup`** when no backlog file exists
-- `root-LOGBACK.md` — optional template copied to repo-root **`LOGBACK.md`** on greenfield **`/setup`** when missing
+- `platforms/<id>/project/` — staged project overlays merged by **`/setup`**
+- `skills/daf-*.md` — flat skills from manifest
 - `stacks/<name>.md` — stack conventions
 
-**Platforms (machine-local):** `local.json` → `platforms[]`; **`/onboard`** installs globals per platform. Project overlays (e.g. `.cursor/rules/daf.mdc`) come from **`/setup`**, not from committed `config.json`.
+**IDE globals (when onboarded):** `~/.cursor/skills/daf-*`, `~/.claude/skills/daf-*`, `~/.codex/AGENTS.md` (Codex).
 
-**Project** `.agent/`:
+**Project** `.agent/` (committed, machine-agnostic):
 
-- `config.json`, `local.json` (gitignored), `local.json.example`, `verify-state.json`, `AGENTS.md`, `phases/planning.md`, `phases/developing.md`, `phases/maintaining.md`
-- `PRD.md`, `GLOSSARY.md`, `ARCHITECTURE.md`
-- `memory/remember.md`, `memory/gotchas.md`, `memory/learnings.md`
+- `config.json`, `verify-state.json`, `AGENTS.md`, `phases/*.md`, `PRD.md`, `GLOSSARY.md`, `ARCHITECTURE.md`, `memory/*`
+
+**Project IDE hooks (from `/setup`, may be committed):** `.cursor/rules/daf.mdc`, `.claude/rules/daf.md`, repo-root `AGENTS.md` (Codex + tools).
 
 ---
 
@@ -62,8 +62,8 @@ Skills and deeper docs are **on demand**. If **`local.json`** lists **`cursor`**
 
 | Skill | Typical phase |
 |--------|----------------|
-| `/onboard` | any — **machine setup:** install `~/.config/agent/` (+ Cursor skills); follow onboarding script |
-| `/setup` | any — **project setup:** greenfield scaffold; brownfield inventory + interview then merge scaffold and docs; verify-state; `local.json` + platform overlays |
+| `/onboard` | any — **machine setup:** install `~/.config/agent/`, `platforms.json`, per-IDE skills/overlays |
+| `/setup` | any — **project setup:** scaffold `.agent/`; merge IDE overlays for every platform in `platforms.json` |
 | `/grill-me` | planning (product grill); **developing** / **maintaining** (realignment) |
 | `/start` | after planning — validate exit, enter **developing**, session kickoff |
 | `/help` | any — short framework guide: phases, skills, build loop |
@@ -79,21 +79,21 @@ Skills and deeper docs are **on demand**. If **`local.json`** lists **`cursor`**
 | `/remember` | any — save standing instructions to `memory/remember.md` |
 | `/retro` | any |
 | `/phase-transition` | any — validate planning exit; set `config.phase` |
-| `/remove` | any — strip `.agent/`, DAF root `AGENTS.md`, Cursor `daf.mdc` from **this repo** |
-| `/remove-global` | any — uninstall `~/.config/agent/` and Cursor `daf-*` skills (machine-wide) |
+| `/remove` | any — strip `.agent/`, DAF root `AGENTS.md`, IDE overlay files from **this repo** |
+| `/remove-global` | any — uninstall `~/.config/agent/` and IDE `daf-*` skills (machine-wide) |
 
 ---
 
 ## 5. Always-on rules
 
-1. Read `.agent/config.json` first; never hardcode phase or stack. Use **`local.json`** for IDE platforms on this machine.
+1. Read `.agent/config.json` first; never hardcode phase or stack. Read **`~/.config/agent/platforms.json`** for IDE integrations on this machine.
 2. Honor `.agent/phases/{phase}.md`.
 3. Use `GLOSSARY.md` terms; propose additions before inventing synonyms.
 4. In **developing** or **maintaining**, follow **`.agent/phases/{phase}.md`** for implementation work: goals in the session only, per-goal `config.taskCheck`, update `.agent/verify-state.json` when a session task ends, two-phase codebase-check when due; then declare done. In **maintaining**, **`config.check`** must be green every session task end, not only when codebase-check applies (see `.agent/phases/maintaining.md`).
 5. No commit, push, merge, or destructive shell without explicit user confirmation.
 6. Never paste or commit secrets.
 7. End non-trivial tasks with `/retro` (≤3 lines for `memory/learnings.md` or `gotchas.md`).
-8. Do not call out or summarize updates to documentation or rules (e.g. `.agent/*.md`, `AGENTS.md`, `.cursor/rules/`, DAF skills) in the user-facing reply unless the user explicitly asked for those edits or asked what changed.
+8. Do not call out or summarize updates to documentation or rules in the user-facing reply unless the user explicitly asked for those edits or asked what changed.
 9. In **developing** or **maintaining**, fix **root causes** at the right layer (`IDENTITY.md`): clean code → clean repo → clean product; no symptom patches or copy-paste workarounds without explicit user opt-in.
 
 ---
