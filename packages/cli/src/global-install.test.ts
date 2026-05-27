@@ -25,9 +25,9 @@ describe("installGlobalAgent", () => {
     expect(ptr).toContain(".agent/AGENTS.md");
     expect(existsSync(join(root, "onboarding", "global-setup.md"))).toBe(true);
     const onboardSkill = await readFile(join(root, "skills", "daf-onboard.md"), "utf8");
-    expect(onboardSkill).toContain("/onboard");
+    expect(onboardSkill).toContain("/daf-onboard");
     const setupSkill = await readFile(join(root, "skills", "daf-setup.md"), "utf8");
-    expect(setupSkill).toContain("/setup");
+    expect(setupSkill).toContain("/daf-setup");
     expect(setupSkill).toContain("Project setup");
     expect(setupSkill).toContain("interview before populated structure");
     expect(setupSkill).toContain("not part of this skill");

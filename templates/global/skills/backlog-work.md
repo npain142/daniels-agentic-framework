@@ -1,8 +1,8 @@
-# Skill: /backlog-work
+# Skill: /daf-backlog-work
 
 **When:** **`developing`** or **`maintaining`**. Pick one open backlog item, implement it, then close it into fading memory.
 
-**Not:** Capturing ideas only (`/backlog-add`), phase kickoff without implementation (`/start`), or planning-only exploration (`/discuss`).
+**Not:** Capturing ideas only (`/daf-backlog-add`), phase kickoff without implementation (`/daf-start`), or planning-only exploration (`/daf-discuss`).
 
 ## Steps
 
@@ -10,14 +10,14 @@
 
 1. Read repo-root **`BACKLOG.md`**. List items under **`## Open`** (numbered). If **`## In progress`** has a line, treat it as the active item or ask once whether to continue it.
 2. User picks by number, exact text, or names a new goal (then skip backlog mutation until close).
-3. **Classify** once: `/new-feature` | `/improvement` | `/issue` | `/pivot`. If wrong class, stop and hand off.
+3. **Classify** once: `/daf-new-feature` | `/daf-improvement` | `/daf-issue` | `/daf-pivot`. If wrong class, stop and hand off.
 4. Optionally move the chosen line to **`## In progress`** (at most one line); remove checkbox prefix for the working copy if needed.
 5. Restate **acceptance checks** in chat as session goals (per **`.agent/phases/{phase}.md`** — goals in chat only).
 
 ### Implement
 
 6. Follow the classified skill’s implementation bar (architecture, tests, `config.taskCheck`, `verify-state.json`, codebase-check when due).
-7. Self-review vs acceptance; `/retro` if non-trivial.
+7. Self-review vs acceptance; `/daf-retro` if non-trivial.
 
 ### Close (user accepts)
 

@@ -1,4 +1,4 @@
-# Skill: /phase-transition
+# Skill: /daf-phase-transition
 
 **When:** User asks to change **phase** in `.agent/config.json`.
 
@@ -25,7 +25,7 @@ Under `.agent/`: `PRD.md`, `GLOSSARY.md`, `ARCHITECTURE.md`, `phases/planning.md
 ### Stack
 
 - `config.stack` must be non-null and non-empty string.
-- A stack file must exist at **`~/.config/agent/stacks/{stack}.md`** **or** (for DAF repo development only) under the DAF template tree `templates/stacks/{stack}.md`. If missing, user should run **`/onboard`**.
+- A stack file must exist at **`~/.config/agent/stacks/{stack}.md`** **or** (for DAF repo development only) under the DAF template tree `templates/stacks/{stack}.md`. If missing, user should run **`/daf-onboard`**.
 
 ### When leaving `planning` for `developing` or `maintaining`
 

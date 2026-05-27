@@ -28,7 +28,7 @@ describe("parsePlatform", () => {
 
 describe("stripSkillTitle", () => {
   it("removes leading # Skill line", () => {
-    const raw = "# Skill: /grill-me\n\n**When:** planning.\n";
+    const raw = "# Skill: /daf-grill-me\n\n**When:** planning.\n";
     expect(stripSkillTitle(raw)).toBe("**When:** planning.\n");
   });
 });

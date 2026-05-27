@@ -1,8 +1,8 @@
-# Skill: /backlog-add
+# Skill: /daf-backlog-add
 
 **When:** Any phase. Capture a follow-up, idea, or task for later without starting implementation.
 
-**Not:** Building work (`/backlog-work`), bugs to fix now (`/issue`), or standing rules (`/remember`).
+**Not:** Building work (`/daf-backlog-work`), bugs to fix now (`/daf-issue`), or standing rules (`/daf-remember`).
 
 ## Steps
 

@@ -20,12 +20,12 @@ Install tooling: no LLM; no summarizing doc-only edits unless asked.
 
 ## Learnings
 
-Skills-only `/onboard`; backlog via BACKLOG.md / LOGBACK.md.
+Skills-only `/daf-onboard`; backlog via BACKLOG.md / LOGBACK.md.
 
 ## Architecture anchors
 
-Templates → `/onboard` → `~/.config/agent/` + optional Cursor skills; `/setup` → `.agent/` + `local.json` + per-platform project overlays.
+Templates → `/daf-onboard` → `~/.config/agent/` + optional Cursor skills; `/daf-setup` → `.agent/` + `local.json` + per-platform project overlays.
 
 ## Drift / cleanup candidates
 
-Re-run `/onboard` on machines after template/skill changes; migrate legacy repos: remove `platform` from `config.json`, add `local.json`.
+Re-run `/daf-onboard` on machines after template/skill changes; migrate legacy repos: remove `platform` from `config.json`, add `local.json`.

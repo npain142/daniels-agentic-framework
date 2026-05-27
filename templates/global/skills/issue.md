@@ -1,4 +1,4 @@
-# Skill: /issue
+# Skill: /daf-issue
 
 **When:** `phase === "developing"` **or** `phase === "maintaining"` and something is broken.
 

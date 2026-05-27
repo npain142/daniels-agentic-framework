@@ -1,3 +1,3 @@
 # Learnings
 
-Short bullets promoted from `/retro` after non-trivial work.
+Short bullets promoted from `/daf-retro` after non-trivial work.

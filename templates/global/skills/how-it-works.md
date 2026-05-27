@@ -1,8 +1,8 @@
-# Skill: /how-it-works
+# Skill: /daf-how-it-works
 
 **When:** Any phase. User wants a **technical, implementation-precise** explanation of how something in **this repo** works (module, flow, skill, CLI path, config contract).
 
-**Not:** Product vision interviews (`/grill-me`), open brainstorming (`/discuss`), bugs (`/issue`), or code changes unless the user asks after the explanation.
+**Not:** Product vision interviews (`/daf-grill-me`), open brainstorming (`/daf-discuss`), bugs (`/daf-issue`), or code changes unless the user asks after the explanation.
 
 ## Your job
 

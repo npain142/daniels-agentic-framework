@@ -1,8 +1,8 @@
-# Skill: /retro
+# Skill: /daf-retro
 
 **When:** After any non-trivial task.
 
-For explicit user rules the agent should always follow, use `/remember` → `memory/remember.md` instead of retro.
+For explicit user rules the agent should always follow, use `/daf-remember` → `memory/remember.md` instead of retro.
 
 ## Steps
 

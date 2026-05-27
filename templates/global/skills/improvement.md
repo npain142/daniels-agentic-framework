@@ -1,19 +1,19 @@
-# Skill: /improvement
+# Skill: /daf-improvement
 
-**When:** Any phase in principle; **implement in `developing`** when code changes are needed. Something **already exists** and should work better — not broken (`/issue`), not **net-new capability** (`/new-feature`).
+**When:** Any phase in principle; **implement in `developing`** when code changes are needed. Something **already exists** and should work better — not broken (`/daf-issue`), not **net-new capability** (`/daf-new-feature`).
 
 **Improvement vs new feature**
 
-| Use `/improvement` | Use `/new-feature` |
+| Use `/daf-improvement` | Use `/daf-new-feature` |
 |--------------------|--------------------|
 | Refactor, clarity, performance, ergonomics on existing flows | New command, skill, phase, user journey, or capability that did not exist |
 | Better errors, docs, tests, or structure around current behavior | PRD-level scope addition or v1 cut expansion |
 | “Make X nicer / faster / simpler” where X exists | “Add X” where X is new to the product |
-| Same mental model, better execution | `/pivot` — restructure or replace the design of X |
+| Same mental model, better execution | `/daf-pivot` — restructure or replace the design of X |
 
-If the ask is net-new, stop and use `/new-feature` instead. If the design or concept itself is changing, use `/pivot`. For open exploration before you know what to build, use `/discuss` first.
+If the ask is net-new, stop and use `/daf-new-feature` instead. If the design or concept itself is changing, use `/daf-pivot`. For open exploration before you know what to build, use `/daf-discuss` first.
 
-**Root over workaround:** improve the **canonical** place (module, API, shared helper) — do not add a parallel path or copy-pasted variant to avoid touching messy code. If the improvement exposes a deeper flaw, fix or propose fixing the root (may overlap `/issue` or `/pivot`).
+**Root over workaround:** improve the **canonical** place (module, API, shared helper) — do not add a parallel path or copy-pasted variant to avoid touching messy code. If the improvement exposes a deeper flaw, fix or propose fixing the root (may overlap `/daf-issue` or `/daf-pivot`).
 
 ## Steps
 
@@ -23,7 +23,7 @@ If the ask is net-new, stop and use `/new-feature` instead. If the design or con
 4. Plan the smallest change that satisfies acceptance **at the root** (files, tests) — match repo patterns; no duplicate logic.
 5. Prefer a failing test first when behavior is non-trivial.
 6. **Implement** in `developing` or `maintaining` per **`.agent/phases/{phase}.md`**: per-goal `config.taskCheck`, verify-state updates, periodic codebase-check when due.
-7. Self-review diff vs acceptance; run `/retro` for non-trivial work. When declaring done, add **Suggested commit message:** and a fenced code block (message only) if there are committable changes (see phase **Task summary**).
+7. Self-review diff vs acceptance; run `/daf-retro` for non-trivial work. When declaring done, add **Suggested commit message:** and a fenced code block (message only) if there are committable changes (see phase **Task summary**).
 
 ## Stop condition
 

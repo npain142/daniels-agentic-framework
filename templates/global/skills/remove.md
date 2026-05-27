@@ -1,14 +1,14 @@
-# Skill: /remove
+# Skill: /daf-remove
 
-**When:** Any phase. The user wants to **strip DAF from the current repository** — project `.agent/`, root bootstrap `AGENTS.md`, and Cursor overlay files added by **`/setup`**.
+**When:** Any phase. The user wants to **strip DAF from the current repository** — project `.agent/`, root bootstrap `AGENTS.md`, and Cursor overlay files added by **`/daf-setup`**.
 
-**Not** machine-wide uninstall — use **`/remove-global`**.
+**Not** machine-wide uninstall — use **`/daf-remove-global`**.
 
 **Destructive:** Requires **explicit user confirmation** before deleting anything (AGENTS.md always-on rule). Do not commit or push as part of this skill.
 
 ## Step 0 — Confirm intent
 
-1. Restate in one sentence: this removes DAF project structure from **this repo only**; globals under `~/.config/agent/` stay unless the user runs **`/remove-global`** separately.
+1. Restate in one sentence: this removes DAF project structure from **this repo only**; globals under `~/.config/agent/` stay unless the user runs **`/daf-remove-global`** separately.
 2. Ask the user to confirm (e.g. “yes, remove project DAF”) before any `rm` or delete.
 
 ## Step 1 — Inventory
@@ -20,7 +20,7 @@ From the **repository root** (walk up to find `.agent/config.json` if the sessio
 | `.agent/` | Remove entire directory (all phases, memory, verify-state, docs). |
 | `.cursor/rules/daf.mdc` | Remove if present (Cursor overlay). |
 | `.claude/rules/daf.md` | Remove if present (Claude overlay). |
-| `AGENTS.md` at repo root | Remove **only if** it is the DAF bootstrap file: matches `~/.config/agent/root-AGENTS.md`, or is only the one-line pointer to `.agent/AGENTS.md` from **`/setup`**. If the user merged custom content into root `AGENTS.md`, **ask** before deleting. |
+| `AGENTS.md` at repo root | Remove **only if** it is the DAF bootstrap file: matches `~/.config/agent/root-AGENTS.md`, or is only the one-line pointer to `.agent/AGENTS.md` from **`/daf-setup`**. If the user merged custom content into root `AGENTS.md`, **ask** before deleting. |
 
 Do **not** delete other `.cursor/` or `.claude/` content beyond the DAF hook files above.
 

@@ -1,78 +1,78 @@
 {
   "onboard": {
     "name": "daf-onboard",
-    "description": "Machine-wide DAF install: copies templates to ~/.config/agent/ and optional ~/.cursor/skills/daf-* via the onboarding script (run from DAF repo). Use when the user says /onboard, global setup, or first-time machine bootstrap — before /setup on a project."
+    "description": "Machine-wide DAF install: copies templates to ~/.config/agent/ and optional ~/.cursor/skills/daf-* via the onboarding script (run from DAF repo). Use when the user says /daf-onboard, global setup, or first-time machine bootstrap — before /daf-setup on a project."
   },
   "setup": {
     "name": "daf-setup",
-    "description": "Project setup after /onboard: greenfield copies ~/.config/agent/scaffold into .agent/ (optional /grill-me later); brownfield runs inventory + interview then merge scaffold and populate PRD/glossary/architecture; verify-state.json; optional Cursor overlay. Use when the user says /setup or needs .agent/ in the project."
+    "description": "Project setup after /daf-onboard: greenfield copies ~/.config/agent/scaffold into .agent/ (optional /daf-grill-me later); brownfield runs inventory + interview then merge scaffold and populate PRD/glossary/architecture; verify-state.json; optional Cursor overlay. Use when the user says /daf-setup or needs .agent/ in the project."
   },
   "grill-me": {
     "name": "daf-grill-me",
-    "description": "Phase-aware: in planning, skeptical PRD interview (one question at a time, assumption audit, stack recommendation). In developing or maintaining, realignment — resync intent with PRD/ARCHITECTURE/code/backlog without net-new scope unless asked. Use when the user says /grill-me or grill-me."
+    "description": "Phase-aware: in planning, skeptical PRD interview (one question at a time, assumption audit, stack recommendation). In developing or maintaining, realignment — resync intent with PRD/ARCHITECTURE/code/backlog without net-new scope unless asked. Use when the user says /daf-grill-me or grill-me."
   },
   "start": {
     "name": "daf-start",
-    "description": "Validates planning exit, sets phase to developing when ready, and kicks off the first developing session (read backlog, one goal question). Use when the user says /start or wants to begin building after planning."
+    "description": "Validates planning exit, sets phase to developing when ready, and kicks off the first developing session (read backlog, one goal question). Use when the user says /daf-start or wants to begin building after planning."
   },
   "help": {
     "name": "daf-help",
-    "description": "Very short DAF orientation: pillars, phases, bootstrap (/onboard, /setup), build loop, and which skill to use when. No code walkthrough — use /how-it-works for that. Use when the user says /help or wants a quick framework guide."
+    "description": "Very short DAF orientation: pillars, phases, bootstrap (/daf-onboard, /daf-setup), build loop, and which skill to use when. No code walkthrough — use /daf-how-it-works for that. Use when the user says /daf-help or wants a quick framework guide."
   },
   "how-it-works": {
     "name": "daf-how-it-works",
-    "description": "Technical implementation-precise explanation of a requested topic in this repo (flow, files, state) without code changes unless asked. Use when the user says /how-it-works or wants to understand how something works in the codebase."
+    "description": "Technical implementation-precise explanation of a requested topic in this repo (flow, files, state) without code changes unless asked. Use when the user says /daf-how-it-works or wants to understand how something works in the codebase."
   },
   "ltm-checkup": {
     "name": "daf-ltm-checkup",
-    "description": "Reconciles .agent/ canon and code with external long-term memory (e.g. Notion via MCP): drift inventory, one question at a time, confirmed doc updates only. Use when the user says /ltm-checkup or wants LTM vs repo alignment."
+    "description": "Reconciles .agent/ canon and code with external long-term memory (e.g. Notion via MCP): drift inventory, one question at a time, confirmed doc updates only. Use when the user says /daf-ltm-checkup or wants LTM vs repo alignment."
   },
   "new-feature": {
     "name": "daf-new-feature",
-    "description": "Implements net-new product capability in **developing** phase (new commands, skills, flows) with acceptance checks; verification per phases/developing.md (taskCheck, verify-state, periodic codebase-check). Not for polish on existing behavior — use /improvement. In **maintaining**, use only when the user explicitly opts in. Use when the user says /new-feature or asks for scoped new capability while phase is developing."
+    "description": "Implements net-new product capability in **developing** phase (new commands, skills, flows) with acceptance checks; verification per phases/developing.md (taskCheck, verify-state, periodic codebase-check). Not for polish on existing behavior — use /daf-improvement. In **maintaining**, use only when the user explicitly opts in. Use when the user says /daf-new-feature or asks for scoped new capability while phase is developing."
   },
   "issue": {
     "name": "daf-issue",
-    "description": "Triages and fixes a reported issue in **developing** or **maintaining**: reproduce, root-cause fix (no band-aids), regression tests; verification per the current phase file. Use when the user says /issue or reports a bug to fix."
+    "description": "Triages and fixes a reported issue in **developing** or **maintaining**: reproduce, root-cause fix (no band-aids), regression tests; verification per the current phase file. Use when the user says /daf-issue or reports a bug to fix."
   },
   "improvement": {
     "name": "daf-improvement",
-    "description": "Improves existing code, docs, or workflow at the root (refactor, clarity, patterns) — no copy-paste workarounds; not bugs (/issue) or net-new capability (/new-feature). Verification per the current phase file. Use when the user says /improvement or asks to make something existing better."
+    "description": "Improves existing code, docs, or workflow at the root (refactor, clarity, patterns) — no copy-paste workarounds; not bugs (/daf-issue) or net-new capability (/daf-new-feature). Verification per the current phase file. Use when the user says /daf-improvement or asks to make something existing better."
   },
   "pivot": {
     "name": "daf-pivot",
-    "description": "Guides restructuring or redesign of an existing feature, concept, or architecture: from→to, blast radius, update GLOSSARY/ARCHITECTURE/PRD, migration plan, then implement per the current phase file in developing or maintaining. Not incremental polish (/improvement), net-new capability (/new-feature), brownfield DAF adoption (/setup), or open exploration (/discuss). Use when the user says /pivot or decides to redesign something that already exists."
+    "description": "Guides restructuring or redesign of an existing feature, concept, or architecture: from→to, blast radius, update GLOSSARY/ARCHITECTURE/PRD, migration plan, then implement per the current phase file in developing or maintaining. Not incremental polish (/daf-improvement), net-new capability (/daf-new-feature), brownfield DAF adoption (/daf-setup), or open exploration (/daf-discuss). Use when the user says /daf-pivot or decides to redesign something that already exists."
   },
   "discuss": {
     "name": "daf-discuss",
-    "description": "Explores a topic, idea, or direction through dialogue — brainstorm and tradeoffs without implementing. Not bugs (/issue), ranked build plans (/improvement), PRD interviews (/grill-me), or net-new builds (/new-feature). Use when the user says /discuss or wants to think through something before committing."
+    "description": "Explores a topic, idea, or direction through dialogue — brainstorm and tradeoffs without implementing. Not bugs (/daf-issue), ranked build plans (/daf-improvement), PRD interviews (/daf-grill-me), or net-new builds (/daf-new-feature). Use when the user says /daf-discuss or wants to think through something before committing."
   },
   "backlog-add": {
     "name": "daf-backlog-add",
-    "description": "Appends a follow-up to repo-root BACKLOG.md under ## Open without implementing. Any phase. Use when the user says /backlog-add or wants to park work for later."
+    "description": "Appends a follow-up to repo-root BACKLOG.md under ## Open without implementing. Any phase. Use when the user says /daf-backlog-add or wants to park work for later."
   },
   "backlog-work": {
     "name": "daf-backlog-work",
-    "description": "In developing or maintaining: pick an open BACKLOG.md item, classify and implement (new-feature/improvement/issue/pivot bar), then on user acceptance remove from backlog and append a fading artifact to LOGBACK.md. Use when the user says /backlog-work or wants to build the next backlog item."
+    "description": "In developing or maintaining: pick an open BACKLOG.md item, classify and implement (new-feature/daf-improvement/daf-issue/daf-pivot bar), then on user acceptance remove from backlog and append a fading artifact to LOGBACK.md. Use when the user says /daf-backlog-work or wants to build the next backlog item."
   },
   "remember": {
     "name": "daf-remember",
-    "description": "Saves a user-stated standing instruction to .agent/memory/remember.md for this project. Not retro takeaways (/retro) or discovered gotchas. Use when the user says /remember or asks the agent to always follow a project rule."
+    "description": "Saves a user-stated standing instruction to .agent/memory/remember.md for this project. Not retro takeaways (/daf-retro) or discovered gotchas. Use when the user says /daf-remember or asks the agent to always follow a project rule."
   },
   "retro": {
     "name": "daf-retro",
-    "description": "Captures short retro notes for memory/learnings or gotchas after non-trivial work. Use when the user says /retro or asks for a brief retrospective."
+    "description": "Captures short retro notes for memory/learnings or gotchas after non-trivial work. Use when the user says /daf-retro or asks for a brief retrospective."
   },
   "phase-transition": {
     "name": "daf-phase-transition",
-    "description": "Validates planning exit checklist before editing config.phase to developing or maintaining (same rules as validatePlanningExit in the DAF repo). Use when the user says /phase-transition or asks to leave planning."
+    "description": "Validates planning exit checklist before editing config.phase to developing or maintaining (same rules as validatePlanningExit in the DAF repo). Use when the user says /daf-phase-transition or asks to leave planning."
   },
   "remove": {
     "name": "daf-remove",
-    "description": "Removes DAF from the current repo: .agent/, DAF bootstrap AGENTS.md, and .cursor/rules/daf.mdc after explicit confirmation. Not machine-wide — use /remove-global. Use when the user says /remove or wants to strip project agent structure."
+    "description": "Removes DAF from the current repo: .agent/, DAF bootstrap AGENTS.md, and .cursor/rules/daf.mdc after explicit confirmation. Not machine-wide — use /daf-remove-global. Use when the user says /daf-remove or wants to strip project agent structure."
   },
   "remove-global": {
     "name": "daf-remove-global",
-    "description": "Uninstalls machine-wide DAF: deletes ~/.config/agent (or DAFE_GLOBAL_ROOT) and ~/.cursor/skills/daf-* folders from skill-manifest after explicit confirmation. Per-repo .agent/ remains until /remove. Use when the user says /remove-global or wants to uninstall /onboard output."
+    "description": "Uninstalls machine-wide DAF: deletes ~/.config/agent (or DAFE_GLOBAL_ROOT) and ~/.cursor/skills/daf-* folders from skill-manifest after explicit confirmation. Per-repo .agent/ remains until /daf-remove. Use when the user says /daf-remove-global or wants to uninstall /daf-onboard output."
   }
 }

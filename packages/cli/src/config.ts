@@ -11,7 +11,7 @@ export type DafConfig = {
   taskCheck: string;
   /** Modulo interval: codebase-check when `taskCount % codebaseEvery === 0` (see verify-state). */
   codebaseEvery: number;
-  /** Used when `/setup` creates `verify-state.json` → `taskCount`. */
+  /** Used when `/daf-setup` creates `verify-state.json` → `taskCount`. */
   initialTaskCount: number;
   /** Protected branch name for **maintaining** branch guard; omit to infer from `origin/HEAD` or `main`. */
   defaultBranch?: string;
@@ -44,7 +44,7 @@ export function parseConfig(raw: string): DafConfig {
   const check = o.check;
   if (o.platform !== undefined) {
     throw new Error(
-      'config.json must not contain "platform" (machine-local). Use .agent/local.json with "platforms": ["cursor"] — see /setup.',
+      'config.json must not contain "platform" (machine-local). Use .agent/local.json with "platforms": ["cursor"] — see /daf-setup.',
     );
   }
   if (phase !== "planning" && phase !== "developing" && phase !== "maintaining") {

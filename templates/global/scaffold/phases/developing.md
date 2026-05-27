@@ -24,7 +24,7 @@ When implementing in this phase:
 - **Session task end:** increment `taskCount` in `verify-state.json` by `1`. If **`taskCount % codebaseEvery === 0`** (and `taskCount > 0`) **or** `codebaseCheckPending` was already `true`, run **codebase-check** (below), then set `codebaseCheckPending` to `false` and set `lastCodebaseSnapshotAt` after phase A. Between codebase-checks, **`config.check`** is not required every session — see **`maintaining`** for the stricter bar.
 - Behavior matches agreed intent; tests where they add real coverage.
 - Read `.agent/memory/remember.md` and `.agent/memory/gotchas.md` before non-trivial edits.
-- `/retro` if non-trivial.
+- `/daf-retro` if non-trivial.
 
 ## Task summary
 
@@ -38,7 +38,7 @@ Imperative mood; match repo commit style. Omit if nothing to commit. Do not comm
 
 **Phase B — implementation:** Run `config.check` via shell; fix failures; light cleanup aligned with the snapshot where cheap.
 
-**Seeded verify-state:** If `/setup` left `codebaseCheckPending` true because `initialTaskCount` was already a multiple of `codebaseEvery`, treat codebase-check as **optional catch-up** on first session or clear `codebaseCheckPending` after explicit user deferral — do not call out snapshot or canonical doc rewrites in the reply unless the user asked.
+**Seeded verify-state:** If `/daf-setup` left `codebaseCheckPending` true because `initialTaskCount` was already a multiple of `codebaseEvery`, treat codebase-check as **optional catch-up** on first session or clear `codebaseCheckPending` after explicit user deferral — do not call out snapshot or canonical doc rewrites in the reply unless the user asked.
 
 ## Allowed
 
@@ -53,21 +53,21 @@ Imperative mood; match repo commit style. Omit if nothing to commit. Do not comm
 
 ## Active skills
 
-- `/help` — short DAF orientation (phases, skills, build loop).
-- `/start` — enter or kick off **developing** (planning exit + first session goal).
-- `/grill-me` — **realignment** with user vs PRD/architecture/code/backlog (not greenfield PRD grill).
-- `/how-it-works` — implementation-precise explanation of a code topic; no changes unless asked.
-- `/ltm-checkup` — reconcile `.agent/` canon with external LTM (e.g. Notion MCP).
-- `/new-feature` — clarify → plan → test → implement per this phase → review → `/retro`.
-- `/issue` — reproduce → failing test → fix per this phase → regression.
-- `/improvement` — enhance what exists per this phase; not net-new capability (`/new-feature`).
-- `/pivot` — restructure or redesign an existing feature or concept; docs first, then implement per this phase.
-- `/discuss` — explore topics or ideas; dialogue only unless user asks to implement.
-- `/backlog-add` — append follow-up to repo-root `BACKLOG.md`.
-- `/backlog-work` — pick backlog item, implement, remove from `BACKLOG.md`, archive to `LOGBACK.md` on acceptance.
-- `/remember` — append user standing instructions to `memory/remember.md`.
-- `/retro` — promote notes to `memory/learnings.md` / `gotchas.md`.
-- `/phase-transition` — change phase when checklists pass (`planning`, `developing`, `maintaining`).
+- `/daf-help` — short DAF orientation (phases, skills, build loop).
+- `/daf-start` — enter or kick off **developing** (planning exit + first session goal).
+- `/daf-grill-me` — **realignment** with user vs PRD/architecture/code/backlog (not greenfield PRD grill).
+- `/daf-how-it-works` — implementation-precise explanation of a code topic; no changes unless asked.
+- `/daf-ltm-checkup` — reconcile `.agent/` canon with external LTM (e.g. Notion MCP).
+- `/daf-new-feature` — clarify → plan → test → implement per this phase → review → `/daf-retro`.
+- `/daf-issue` — reproduce → failing test → fix per this phase → regression.
+- `/daf-improvement` — enhance what exists per this phase; not net-new capability (`/daf-new-feature`).
+- `/daf-pivot` — restructure or redesign an existing feature or concept; docs first, then implement per this phase.
+- `/daf-discuss` — explore topics or ideas; dialogue only unless user asks to implement.
+- `/daf-backlog-add` — append follow-up to repo-root `BACKLOG.md`.
+- `/daf-backlog-work` — pick backlog item, implement, remove from `BACKLOG.md`, archive to `LOGBACK.md` on acceptance.
+- `/daf-remember` — append user standing instructions to `memory/remember.md`.
+- `/daf-retro` — promote notes to `memory/learnings.md` / `gotchas.md`.
+- `/daf-phase-transition` — change phase when checklists pass (`planning`, `developing`, `maintaining`).
 
 ## Merge to main
 

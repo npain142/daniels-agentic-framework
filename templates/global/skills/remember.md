@@ -1,14 +1,14 @@
-# Skill: /remember
+# Skill: /daf-remember
 
-**When:** Any phase. The user gives a **direct standing instruction** for this project — not a bug (`/issue`), not exploratory chat (`/discuss`), not a retro takeaway (`/retro`).
+**When:** Any phase. The user gives a **direct standing instruction** for this project — not a bug (`/daf-issue`), not exploratory chat (`/daf-discuss`), not a retro takeaway (`/daf-retro`).
 
 **Remember vs other memory**
 
 | File | Source | Use |
 |------|--------|-----|
-| `memory/remember.md` | User via `/remember` | Explicit rules and preferences for the agent |
-| `memory/gotchas.md` | Discovery / `/issue` / `/retro` | Landmines and fragile areas |
-| `memory/learnings.md` | `/retro` | Short lessons from past work |
+| `memory/remember.md` | User via `/daf-remember` | Explicit rules and preferences for the agent |
+| `memory/gotchas.md` | Discovery / `/daf-issue` / `/daf-retro` | Landmines and fragile areas |
+| `memory/learnings.md` | `/daf-retro` | Short lessons from past work |
 
 ## Steps
 

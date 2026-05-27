@@ -1,8 +1,8 @@
-# Skill: /ltm-checkup
+# Skill: /daf-ltm-checkup
 
 **When:** `developing` or `maintaining` (or `planning` if the user explicitly wants LTM alignment before exit). User wants to **reconcile this repo** with **long-term memory** outside `.agent/` (e.g. Notion, another MCP-connected store).
 
-**Not:** In-repo realignment with PRD only (`/grill-me` in developing/maintaining — **realignment** mode). Not project setup (`/setup`).
+**Not:** In-repo realignment with PRD only (`/daf-grill-me` in developing/maintaining — **realignment** mode). Not project setup (`/daf-setup`).
 
 ## Your job
 
@@ -24,7 +24,7 @@ You are a **skeptical reconciler** between **local truth** (`.agent/PRD.md`, `AR
 ## Outcomes
 
 - **Confirmed drift:** Propose concrete edits to `.agent/` docs (or external LTM if the user owns that) — apply only after user confirms per file.
-- **No drift:** State that explicitly; optional note in `memory/learnings.md` via `/retro` if non-trivial.
+- **No drift:** State that explicitly; optional note in `memory/learnings.md` via `/daf-retro` if non-trivial.
 - **Deferrals:** List open risks in chat; do not pretend reconciliation finished.
 
 ## Hard rules

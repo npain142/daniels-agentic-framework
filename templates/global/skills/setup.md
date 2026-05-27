@@ -1,8 +1,8 @@
-# Skill: /setup
+# Skill: /daf-setup
 
 **When:** **Project setup** — adapt DAF to the **current repo** (greenfield scaffold, brownfield adoption, or IDE overlay refresh). This is an **IDE agent skill**, not a shell command.
 
-**Machine prerequisite:** **`/onboard`** installs globals under `~/.config/agent/` — skills, stacks, **scaffold**, **`platforms.json`**, and staged overlays under `$G/platforms/<id>/project/`. `/setup` never replaces that step.
+**Machine prerequisite:** **`/daf-onboard`** installs globals under `~/.config/agent/` — skills, stacks, **scaffold**, **`platforms.json`**, and staged overlays under `$G/platforms/<id>/project/`. `/daf-setup` never replaces that step.
 
 **Source of truth** for files to copy or merge is **`~/.config/agent/scaffold/`** and **`~/.config/agent/platforms.json`**. Do not copy from the DAF monorepo path on disk unless you are developing DAF itself.
 
@@ -21,9 +21,9 @@ If `.agent/` already exists and is non-empty and the user did **not** ask for br
 
 ## Step 1 — Globals
 
-If `~/.config/agent/scaffold/config.json` is missing (or **`~/.config/agent/skills/daf-setup.md`** is missing), run **`/onboard`** once on the machine (or follow `templates/global/onboarding/global-setup.md` from the DAF repo).
+If `~/.config/agent/scaffold/config.json` is missing (or **`~/.config/agent/skills/daf-setup.md`** is missing), run **`/daf-onboard`** once on the machine (or follow `templates/global/onboarding/global-setup.md` from the DAF repo).
 
-Read **`$G/platforms.json`**. If missing, run **`/onboard`** first.
+Read **`$G/platforms.json`**. If missing, run **`/daf-onboard`** first.
 
 ## Step 2a — Greenfield (scaffold only)
 
@@ -35,20 +35,20 @@ Read **`$G/platforms.json`**. If missing, run **`/onboard`** first.
 6. **Do not** set `config.stack` during setup (remains `null` from scaffold until product clarity).
 7. **Platform overlays** (see below) — merge every IDE platform listed in **`$G/platforms.json`**.
 
-**Handoff:** Structure is ready. **`/grill-me`** is an **optional** next step when the user wants to lock the PRD — not part of this skill’s stop condition. When planning exit criteria pass, use **`/start`** or **`/phase-transition`** to enter developing.
+**Handoff:** Structure is ready. **`/daf-grill-me`** is an **optional** next step when the user wants to lock the PRD — not part of this skill’s stop condition. When planning exit criteria pass, use **`/daf-start`** or **`/daf-phase-transition`** to enter developing.
 
 ## Step 2b — Brownfield adoption (interview before populated structure)
 
 Order matters: **inventory → shared mental model → files**.
 
 1. **Inventory** (before creating or overwriting user-authored content): read the codebase and existing docs; summarize what you believe (purpose, stack hints, boundaries, gaps).
-2. **Interview** — follow the full **`/grill-me`** protocol (skeptical one-question-at-a-time grill; assumption audit before writing PRD content; no inventing details); then recommend **`config.stack`** and confirm (ensure `$G/stacks/<id>.md` exists).
+2. **Interview** — follow the full **`/daf-grill-me`** protocol (skeptical one-question-at-a-time grill; assumption audit before writing PRD content; no inventing details); then recommend **`config.stack`** and confirm (ensure `$G/stacks/<id>.md` exists).
 3. **Structure + populate:** merge from `$G/scaffold/`: for each path under scaffold, if the corresponding path under `.agent/` is **missing**, copy it in. **Never overwrite** an existing `.agent/config.json`. If you **create** `config.json` because it was missing, set `phase: "planning"` and `stack: null` until the user agrees on stack, then set **`config.stack`**; apply **package.json inference** (below) for new `config.json` only. Update **`.agent/PRD.md`**, **`.agent/GLOSSARY.md`**, **`.agent/ARCHITECTURE.md`** from the session — replace empty `_TODO_` / stubs where you have answers, do not wipe user edits without explicit consent.
 4. **Force refresh:** only if the user explicitly asks; you may overwrite scaffold-shaped files **except** `config.json` and user-authored PRD/memory — confirm when unsure.
 5. Write **`verify-state.json`** if missing (see below).
 6. **Platform overlays** (see below).
 
-**Handoff:** When planning exit criteria are met, **`/start`** or **`/phase-transition`**. Do **not** require a separate **`/grill-me`** after brownfield `/setup` unless gaps remain in the PRD.
+**Handoff:** When planning exit criteria are met, **`/daf-start`** or **`/daf-phase-transition`**. Do **not** require a separate **`/daf-grill-me`** after brownfield `/daf-setup` unless gaps remain in the PRD.
 
 ## verify-state.json
 
@@ -79,7 +79,7 @@ When creating a **new** `config.json` from the scaffold template:
 
 ## Platform overlays (from global `platforms.json`)
 
-Read **`$G/platforms.json`** → `platforms[]` (written at **`/onboard`**). For **each** id in that array that has a staged template at **`$G/platforms/<id>/project/`**, recursively merge that directory into the **repository root** (merge-safe; use **`--force`** semantics only when the user asked to refresh overlays).
+Read **`$G/platforms.json`** → `platforms[]` (written at **`/daf-onboard`**). For **each** id in that array that has a staged template at **`$G/platforms/<id>/project/`**, recursively merge that directory into the **repository root** (merge-safe; use **`--force`** semantics only when the user asked to refresh overlays).
 
 | Platform | Staged template | Repo result (v1) |
 |----------|-----------------|------------------|
@@ -94,5 +94,5 @@ From the DAF repo during development, the agent may run `node -e` importing `app
 
 ## Stop condition
 
-- **Greenfield:** `.agent/` scaffold present, `verify-state.json`, IDE overlays applied for every platform in `$G/platforms.json`; **`/grill-me`** not required to finish `/setup`.
-- **Brownfield:** `.agent/` reflects the agreed mental model (docs populated from the session where applicable), `verify-state.json` if needed, overlays applied; next step is planning work or **`/phase-transition`** when exit criteria pass.
+- **Greenfield:** `.agent/` scaffold present, `verify-state.json`, IDE overlays applied for every platform in `$G/platforms.json`; **`/daf-grill-me`** not required to finish `/daf-setup`.
+- **Brownfield:** `.agent/` reflects the agreed mental model (docs populated from the session where applicable), `verify-state.json` if needed, overlays applied; next step is planning work or **`/daf-phase-transition`** when exit criteria pass.

@@ -1,40 +1,268 @@
 # Daniels Agentic Framework (DAF)
 
-Lean, phase-based agent context for solo developers. **Global setup** is **`/onboard`** — installs `~/.config/agent/`, **`platforms.json`**, and native skills per IDE (`cursor`, `claude`, `codex`). **Project setup** is **`/setup`** — copies `.agent/` and merges IDE overlays for every platform in `platforms.json`.
+**Prototype fast. Keep a foundation that still makes sense in `maintaining`.**
 
-## Quickstart
+DAF is for **solo and small-team builders** shipping like a startup: move quickly with an AI agent in the loop, but capture enough structure (PRD, glossary, architecture, verification) that the same repo does not turn into prompt spaghetti six months later.
 
-**First time on this machine:**
+It is **markdown-first context** — instructions your IDE agent reads every session. You invoke workflows with **skills** (`/daf-onboard`, `/daf-setup`, `/daf-grill-me`, …) in chat, not a `daf` shell command (contributors only use `npm` scripts in this repo).
 
-1. Open this DAF repo in your IDE.
-2. Run **`/onboard`** — pick platforms (e.g. `cursor`, `claude`, `codex`). The agent installs dependencies, builds the CLI, and runs the global install. Run **`/help`** for a short guide.
+---
 
-**In any project** (new or existing):
+## The idea: speed now, structure that lasts
 
-1. **`/setup`** — scaffold `.agent/`; merge `.cursor/`, `.claude/`, and repo `AGENTS.md` hooks per `platforms.json`.
-2. **`/grill-me`** / **`/start`** / **`/phase-transition`** as needed.
-3. **`BACKLOG.md`** / **`LOGBACK.md`** via `/backlog-add` and `/backlog-work`.
+Most agent setups force a tradeoff:
 
-Refresh globals after template changes: **`/onboard`** again (ask the agent to pass `--force` when overwriting).
+- **Move fast** → vague rules, no shared vocabulary, “just ship it” until nothing is trustworthy.
+- **Stay careful** → heavy process that kills iteration before you have a product.
 
-## Monorepo layout
+DAF’s answer is a **phase model**: one explicit stage per project (`planning` → `developing` → `maintaining`). Each phase changes what “done” means — loose while you are finding the product, tighter while you are building v1, strictest when the codebase is the business.
 
-- [`packages/cli`](packages/cli) — `installGlobalAgent`, `applyProjectOverlays`, config helpers
-- [`scripts/global-install.mjs`](scripts/global-install.mjs) — mechanical install invoked by `/onboard`
-- [`templates/global`](templates/global) — identity, skills, scaffold, onboarding
-- [`templates/platforms`](templates/platforms) — per-IDE global + project templates
-- [`.agent/`](.agent) — this repo’s agent context
 
-## Scripts (contributors / CI)
+| Phase             | Startup mindset  | What you optimize for                                                                                                                                |
+| ----------------- | ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `**planning`**    | Idea → scoped v1 | Cheap learning: PRD, glossary, architecture sketch; spikes OK; **no net-new product features** yet                                                   |
+| `**developing`**  | Build v1 fast    | Short agent sessions, `taskCheck` every goal, periodic full `check` — ship without pretending the repo is “done forever”                             |
+| `**maintaining**` | Product is real  | Fixes and small improvements on stable software; **full `check` every session**; branch guard — the docs and habits from earlier phases pay off here |
 
-Humans normally use **`/onboard`** only. These scripts are for development and automation:
 
-| Script | Meaning |
-|--------|---------|
-| `npm run build` | Build `packages/cli` (`tsc`) |
-| `npm run check` | typecheck + lint + test |
-| `npm run global-install -- --platforms cursor,claude` | Install globals without the agent (debug / CI) |
+The agent reads `**.agent/phases/{phase}.md`** every session, so behavior matches where you are in the lifecycle — not where you wish you were.
 
-## Verification loop
+```mermaid
+flowchart LR
+  P[planning<br/>clarify v1] --> D[developing<br/>ship fast + verify]
+  D --> M[maintaining<br/>stable + strict]
+  P -.->|brownfield may skip<br/>long planning| D
+  D -.->|realignment| P
+```
 
-`.agent/config.json` defines **taskCheck**, **check**, **codebaseEvery**, and **initialTaskCount**. See `.agent/phases/developing.md` and `.agent/phases/maintaining.md`.
+
+
+**Layered context** keeps globals separate from the product:
+
+
+| Layer       | Where              | Holds                                  |
+| ----------- | ------------------ | -------------------------------------- |
+| **Global**  | `~/.config/agent/` | How you work, skills, stacks, scaffold |
+| **Project** | `.agent/`          | Phase, PRD, architecture, memory       |
+
+
+Global loads first, project wins on conflict — same machine, many repos, one consistent agent.
+
+---
+
+## Phase model (startup path)
+
+This is the spine of DAF. `**config.phase`** in `.agent/config.json` is the single source of truth.
+
+### `planning` — validate before you build the wrong thing
+
+Use this when the product is still forming (greenfield) or you are re-scoping (`/daf-pivot`, `/daf-grill-me` realignment).
+
+- `**/daf-grill-me**` — one question at a time; fills `**PRD.md**` and recommends a **stack**.
+- `**/daf-discuss`**, `**/daf-backlog-add**` — explore and park ideas without committing to implementation.
+- **Allowed:** spikes and sketches; routine fixes on brownfield adoption.
+- **Not allowed:** shipping **net-new v1 features** while still in planning (keeps “we should have written this down” from becoming “we already shipped it”).
+
+**Exit** (enforced by `**/daf-phase-transition`**): PRD, glossary, architecture, stack set, phase files present. Then `**/daf-start**` or transition to `**developing**`.
+
+### `developing` — your fast build loop
+
+Default home while shipping v1.
+
+- Goals live **in the chat only** (no task files under `.agent/`).
+- Per goal: implement → `**config.taskCheck`** (e.g. `npm run test`).
+- Session end: bump `**verify-state.json**`; every N tasks, a **codebase-check** refreshes context and runs full `**config.check`**.
+- Skills: `**/daf-new-feature**`, `**/daf-issue**`, `**/daf-improvement**`, `**/daf-backlog-work**`, etc.
+
+Optimized for **throughput with guardrails** — not paperwork for its own sake.
+
+### `maintaining` — the foundation earns its keep
+
+Switch here when work is mostly **stability, bugs, and incremental improvement** on software you already rely on.
+
+- Stricter bar: `**config.check` green every session task**, branch guard, tests when feasible.
+- The PRD, glossary, snapshot, and memory you built earlier are what keep the agent aligned without re-explaining the product every week.
+
+You do not “graduate” out of DAF in maintaining — you **tighten** the loop so speed earlier did not mortgage quality later.
+
+
+| Transition      | When                                                             |
+| --------------- | ---------------------------------------------------------------- |
+| → `developing`  | Planning exit checklist green; ready to build v1                 |
+| → `maintaining` | v1 in use; focus shifts to reliability and small changes         |
+| → `planning`    | Major realignment (`/daf-grill-me`, `/daf-pivot`) — docs before big code |
+
+
+---
+
+## What you need
+
+- **Node.js** (for `/daf-onboard` in this repo — the agent runs install/build)
+- **An agentic IDE** (Cursor, Claude Code, Codex, …)
+- **This repo cloned** once per machine for global install
+
+After setup, invoke DAF with **`/daf-<slug>`** in chat (e.g. `/daf-setup`, `/daf-issue`). Skills are **not** terminal commands; do not use unprefixed `/setup` or `/onboard` for DAF workflows.
+
+**Also useful to know**
+
+- **Skills** — Markdown playbooks (`/daf-setup`, `/daf-issue`, …).
+- **Platforms** — IDEs chosen at `**/daf-onboard`** → `~/.config/agent/platforms.json`; `**/daf-setup**` merges hooks per platform.
+- **Verification** — `taskCheck` (fast, per goal) and `check` (full suite); cadence depends on phase.
+
+---
+
+## Guided start (first time ever)
+
+**You only clone and chat**; the agent runs installs.
+
+### 1 — Clone and open this repo
+
+```bash
+git clone <your-fork-or-upstream-url> daniels-agent-framework
+cd daniels-agent-framework
+```
+
+Open in your IDE → agent chat.
+
+### 2 — Machine setup: `/daf-onboard`
+
+```text
+/daf-onboard
+```
+
+Picks platforms, installs `~/.config/agent/` and IDE skills, writes `**platforms.json**`. Once per machine.
+
+### 3 — Project setup: `/daf-setup`
+
+In **any** repo (side project, startup MVP, existing app):
+
+```text
+/daf-setup
+```
+
+Scaffolds `.agent/`, merges IDE overlays. New products usually start in `**planning**`.
+
+### 4 — Run the phase path
+
+**Greenfield startup sequence:**
+
+```text
+/daf-grill-me              # planning: shape PRD + stack
+/daf-phase-transition       # exit planning when checklist passes
+/daf-start                  # enter developing; first build session
+```
+
+**Later**, when v1 is live and you are mostly fixing and polishing:
+
+```text
+/daf-phase-transition       # → maintaining when that matches reality
+```
+
+Brownfield: `/daf-setup` interviews you and may set phase/stack immediately.
+
+### 5 — Day-to-day (by intent)
+
+
+| I want to…                     | Skill                           |
+| ------------------------------ | ------------------------------- |
+| Fix a bug                      | `/daf-issue`                        |
+| Improve existing behavior      | `/daf-improvement`                  |
+| Add net-new capability         | `/daf-new-feature`                  |
+| Redesign something that exists | `/daf-pivot`                        |
+| Think without coding           | `/daf-discuss`                      |
+| Park / pick up work            | `/daf-backlog-add`, `/daf-backlog-work` |
+| Explain code                   | `/daf-how-it-works`                 |
+| Standing project rules         | `/daf-remember`                     |
+| Capture learnings              | `/daf-retro`                        |
+
+
+`**BACKLOG.md**` / `**LOGBACK.md**` at repo root for follow-ups and done items.
+
+Refresh globals after DAF updates: `**/daf-onboard**` (ask for `**--force**` to overwrite). Remove: `**/daf-remove**` (project), `**/daf-remove-global**` (machine).
+
+---
+
+## How a session works
+
+```mermaid
+flowchart TD
+  A[Open repo] --> B[config.json → phase]
+  B --> C[Load phases/phase.md bar]
+  C --> D[IDENTITY + PRD + memory]
+  D --> E[Goal or /daf-skill]
+  E --> F[Implement + taskCheck]
+  F --> G[verify-state at task end]
+  G --> H{phase?}
+  H -->|developing| I[codebase-check on cadence]
+  H -->|maintaining| J[check every session]
+```
+
+
+
+The framework does **not** auto-commit, push, or run destructive commands without your OK.
+
+---
+
+## Where files live
+
+**Machine (`/daf-onboard`):**
+
+```
+~/.config/agent/          # identity, skills, stacks, scaffold, platforms.json
+~/.cursor/skills/daf-*/   # if cursor onboarded
+~/.claude/skills/daf-*/   # if claude onboarded
+```
+
+**Each project (`/daf-setup`):**
+
+```
+.agent/
+  config.json             # phase ← startup lifecycle knob
+  phases/*.md             # rules per phase
+  PRD.md, GLOSSARY.md, ARCHITECTURE.md
+  memory/                 # remember, gotchas, learnings, snapshot
+```
+
+---
+
+## Learn more
+
+
+| Doc                                                            | Purpose                        |
+| -------------------------------------------------------------- | ------------------------------ |
+| `[.agent/phases/planning.md](.agent/phases/planning.md)`       | Planning bar and exit criteria |
+| `[.agent/phases/developing.md](.agent/phases/developing.md)`   | Fast build loop                |
+| `[.agent/phases/maintaining.md](.agent/phases/maintaining.md)` | Stable-product bar             |
+| `[.agent/AGENTS.md](.agent/AGENTS.md)`                         | Load order and full skill list |
+| `[.agent/GLOSSARY.md](.agent/GLOSSARY.md)`                     | Canonical terms                |
+
+
+Chat: `**/daf-help**`, `**/daf-how-it-works <topic>**`.
+
+---
+
+## This repository (contributors)
+
+
+| Path                                                       | Role                              |
+| ---------------------------------------------------------- | --------------------------------- |
+| `[packages/cli](packages/cli)`                             | Install library                   |
+| `[scripts/global-install.mjs](scripts/global-install.mjs)` | Mechanical install for `/daf-onboard` |
+| `[templates/global](templates/global)`                     | Identity, skills, scaffold        |
+| `[templates/platforms](templates/platforms)`               | Per-IDE templates                 |
+| `[.agent/](.agent)`                                        | Dogfooded agent context           |
+
+
+
+| Command                                               | Meaning                          |
+| ----------------------------------------------------- | -------------------------------- |
+| `npm run build`                                       | Build CLI                        |
+| `npm run check`                                       | typecheck + lint + test          |
+| `npm run global-install -- --platforms cursor,claude` | Globals without agent (CI/debug) |
+
+
+---
+
+## License
+
+[MIT](LICENSE) — Copyright (c) 2026 Daniel Feustel.

@@ -36,11 +36,11 @@ Personas, maintaining phase, JSON schema for config, Slack ingestion, and runnin
 
 ## v1 scope
 
-Skills-only install: /onboard + global-install script. Templates: global (incl. scaffold), stacks, platforms/cursor. /setup bootstraps per-repo .agent/.
+Skills-only install: /daf-onboard + global-install script. Templates: global (incl. scaffold), stacks, platforms/cursor. /daf-setup bootstraps per-repo .agent/.
 
 ## Success
 
-From an empty directory: run /onboard, /setup, complete PRD and docs, set config.stack, /phase-transition to developing succeeds; npm run check passes in the framework repo.
+From an empty directory: run /daf-onboard, /daf-setup, complete PRD and docs, set config.stack, /daf-phase-transition to developing succeeds; npm run check passes in the framework repo.
 `;
 
 describe("validatePlanningExit", () => {

@@ -1,18 +1,18 @@
-# Skill: /pivot
+# Skill: /daf-pivot
 
-**When:** Any phase. The developer **commits to changing** how an existing feature, concept, module, or product area is **structured or designed** — not just polishing it (`/improvement`) and not adding capability that did not exist before (`/new-feature`).
+**When:** Any phase. The developer **commits to changing** how an existing feature, concept, module, or product area is **structured or designed** — not just polishing it (`/daf-improvement`) and not adding capability that did not exist before (`/daf-new-feature`).
 
 **Pivot vs other skills**
 
-| Use `/pivot` | Use instead |
+| Use `/daf-pivot` | Use instead |
 |--------------|-------------|
-| Rearchitect a module, API shape, or data model | `/improvement` — same design, better quality |
-| Rename, merge, split, or replace an existing capability | `/new-feature` — net-new to the product |
-| Replace a glossary concept or user journey with a new model | `/discuss` — still exploring whether to change |
-| Align PRD, ARCHITECTURE, and code to a new direction | `/phase-transition` — only changing `phase` |
-| Adopt DAF on an existing repo | `/setup` (brownfield) — scaffold and align docs, not product redesign |
+| Rearchitect a module, API shape, or data model | `/daf-improvement` — same design, better quality |
+| Rename, merge, split, or replace an existing capability | `/daf-new-feature` — net-new to the product |
+| Replace a glossary concept or user journey with a new model | `/daf-discuss` — still exploring whether to change |
+| Align PRD, ARCHITECTURE, and code to a new direction | `/daf-phase-transition` — only changing `phase` |
+| Adopt DAF on an existing repo | `/daf-setup` (brownfield) — scaffold and align docs, not product redesign |
 
-If unsure whether to pivot, use `/discuss` first.
+If unsure whether to pivot, use `/daf-discuss` first.
 
 ## Steps
 
@@ -23,7 +23,7 @@ If unsure whether to pivot, use `/discuss` first.
 5. **Migration plan:** incremental vs big-bang; compatibility shims; order of operations; risks.
 6. **`planning`:** stop after docs + plan unless the user asks for code. **`developing`** or **`maintaining`:** implement per **`.agent/phases/{phase}.md`** (goals in session, `taskCheck`, verify-state, codebase-check when due).
 7. Remove or quarantine dead paths; update tests to the new model.
-8. `/retro` for non-trivial pivots (note migration gotchas in `memory/gotchas.md` when relevant).
+8. `/daf-retro` for non-trivial pivots (note migration gotchas in `memory/gotchas.md` when relevant).
 
 ## Stop condition
 

@@ -1,19 +1,19 @@
-# Skill: /discuss
+# Skill: /daf-discuss
 
-**When:** Any phase. Explore a topic, idea, improvement direction, or tradeoff with the agent — **not** a bug (`/issue`), a ranked implementation plan (`/improvement`), a PRD interview (`/grill-me`), or building net-new capability (`/new-feature`).
+**When:** Any phase. Explore a topic, idea, improvement direction, or tradeoff with the agent — **not** a bug (`/daf-issue`), a ranked implementation plan (`/daf-improvement`), a PRD interview (`/daf-grill-me`), or building net-new capability (`/daf-new-feature`).
 
 **Discuss vs other skills**
 
-| Use `/discuss` | Use instead |
+| Use `/daf-discuss` | Use instead |
 |----------------|-------------|
-| Brainstorm, debate options, refine a vague idea | `/improvement` — you know what to enhance and want it built |
-| Think through “should we?” before committing | `/grill-me` (planning) — ready to lock PRD sections |
-| DAF overview | `/help` |
-| Understand how code works | `/how-it-works` |
-| Realign intent vs docs in dev | `/grill-me` (developing — realignment) |
-| Realign vs Notion / external LTM | `/ltm-checkup` |
-| Compare approaches conversationally | `/new-feature` — ready to implement new capability |
-| Decide whether to replace an existing design | `/pivot` — committed to restructure or redesign |
+| Brainstorm, debate options, refine a vague idea | `/daf-improvement` — you know what to enhance and want it built |
+| Think through “should we?” before committing | `/daf-grill-me` (planning) — ready to lock PRD sections |
+| DAF overview | `/daf-help` |
+| Understand how code works | `/daf-how-it-works` |
+| Realign intent vs docs in dev | `/daf-grill-me` (developing — realignment) |
+| Realign vs Notion / external LTM | `/daf-ltm-checkup` |
+| Compare approaches conversationally | `/daf-new-feature` — ready to implement new capability |
+| Decide whether to replace an existing design | `/daf-pivot` — committed to restructure or redesign |
 
 Prefer dialogue over long ranked lists unless the user asks to compare options.
 
@@ -23,7 +23,7 @@ Prefer dialogue over long ranked lists unless the user asks to compare options.
 2. Read `.agent/ARCHITECTURE.md`, `.agent/GLOSSARY.md`, and relevant context when the topic touches this repo.
 3. Discuss: options, tradeoffs, risks, alternatives; challenge assumptions when useful.
 4. **Do not implement** or edit project files unless the user asks.
-5. End with optional handoffs when relevant: `/help` for framework overview; `/grill-me` (planning or realignment); `/how-it-works` for code explanation; `/ltm-checkup` for external memory; `/pivot`; `/improvement`; `/new-feature`; `/backlog-add` to park an idea; `/backlog-work` when ready to build the next backlog item; `/start` when ready to build.
+5. End with optional handoffs when relevant: `/daf-help` for framework overview; `/daf-grill-me` (planning or realignment); `/daf-how-it-works` for code explanation; `/daf-ltm-checkup` for external memory; `/daf-pivot`; `/daf-improvement`; `/daf-new-feature`; `/daf-backlog-add` to park an idea; `/daf-backlog-work` when ready to build the next backlog item; `/daf-start` when ready to build.
 
 ## Stop condition
 

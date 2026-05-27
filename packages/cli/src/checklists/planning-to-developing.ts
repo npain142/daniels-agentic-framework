@@ -25,7 +25,7 @@ function hasRealSection(body: string, heading: string): boolean {
 
 /**
  * Validates planning exit criteria before leaving `planning` for `developing` or `maintaining`.
- * Checklist thresholds must stay aligned with `templates/global/skills/phase-transition.md` (/phase-transition).
+ * Checklist thresholds must stay aligned with `templates/global/skills/daf-phase-transition.md` (/daf-phase-transition).
  */
 export async function validatePlanningExit(
   agentDir: string,
@@ -75,13 +75,13 @@ export async function validatePlanningExit(
   }
 
   if (config.stack == null || config.stack === "") {
-    errors.push("config.stack is null — set stack in .agent/config.json after /grill-me");
+    errors.push("config.stack is null — set stack in .agent/config.json after /daf-grill-me");
   } else {
     const stackFileGlobal = join(globalAgentDir, "stacks", `${config.stack}.md`);
     const stackFileTpl = join(getTemplatesRoot(), "stacks", `${config.stack}.md`);
     if (!existsSync(stackFileGlobal) && !existsSync(stackFileTpl)) {
       errors.push(
-        `Stack file not found for "${config.stack}" (expected under ~/.config/agent/stacks/ or built-in templates/stacks/). Run \`/onboard\`.`,
+        `Stack file not found for "${config.stack}" (expected under ~/.config/agent/stacks/ or built-in templates/stacks/). Run \`/daf-onboard\`.`,
       );
     }
   }

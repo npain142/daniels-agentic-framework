@@ -1,4 +1,4 @@
-# Skill: /grill-me
+# Skill: /daf-grill-me
 
 **When:** Depends on `config.phase` (read `.agent/config.json` first).
 
@@ -7,7 +7,7 @@
 | **`planning`** | **Product grill** — skeptical PRD interview until v1 is unambiguous. |
 | **`developing`**, **`maintaining`** | **Realignment** — resync mental model with you; update canon when drift is confirmed. |
 
-For unstructured exploration first, use `/discuss`. **Brownfield adoption** (no `.agent/` yet): use **`/setup`** (inventory + planning grill before populate). **Standalone planning `/grill-me`** when `.agent/` exists and you need a focused PRD pass.
+For unstructured exploration first, use `/daf-discuss`. **Brownfield adoption** (no `.agent/` yet): use **`/daf-setup`** (inventory + planning grill before populate). **Standalone planning `/daf-grill-me`** when `.agent/` exists and you need a focused PRD pass.
 
 ---
 
@@ -83,8 +83,8 @@ Only after the user confirms (or you incorporate corrections) → write PRD.
 ### Write PRD and stack (planning)
 
 1. Write or update `.agent/PRD.md` with sections: **Goal**, **Non-goals**, **v1 scope**, **Success** (plus **Constraints / risks** if non-empty from the interview).
-2. Recommend a **stack id** from built-ins under `~/.config/agent/stacks/` (after **`/onboard`**) from tech constraints stated in the interview; explain in two sentences.
-3. After the user agrees, set **`config.stack`** in `.agent/config.json` to that id. If `$HOME/.config/agent/stacks/<id>.md` is missing, tell them to run **`/onboard`** (cursor platform on Cursor for skill picker mirroring).
+2. Recommend a **stack id** from built-ins under `~/.config/agent/stacks/` (after **`/daf-onboard`**) from tech constraints stated in the interview; explain in two sentences.
+3. After the user agrees, set **`config.stack`** in `.agent/config.json` to that id. If `$HOME/.config/agent/stacks/<id>.md` is missing, tell them to run **`/daf-onboard`** (cursor platform on Cursor for skill picker mirroring).
 
 ### Stop condition (planning)
 

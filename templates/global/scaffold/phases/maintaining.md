@@ -34,7 +34,7 @@ Prefer **one** focused outcome per session task (one bug, one small improvement)
 
 - **Reproduce** with exact steps, expected vs actual.
 - **Failing automated test** before the fix when feasible; add **regression** coverage for every behavior change. The user may waive only with **explicit** acceptance in the session.
-- Follow **`/issue`** when triaging bugs.
+- Follow **`/daf-issue`** when triaging bugs.
 
 ## Definition of done (session task)
 
@@ -57,12 +57,12 @@ Imperative mood; match repo commit style. Omit if nothing to commit. Do not comm
 
 ## Allowed
 
-- `/help`, `/issue`, `/improvement`, `/pivot`, `/discuss`, `/backlog-add`, `/backlog-work`, `/remember`, `/retro`, `/grill-me` (realignment), `/how-it-works`, `/ltm-checkup`
+- `/daf-help`, `/daf-issue`, `/daf-improvement`, `/daf-pivot`, `/daf-discuss`, `/daf-backlog-add`, `/daf-backlog-work`, `/daf-remember`, `/daf-retro`, `/daf-grill-me` (realignment), `/daf-how-it-works`, `/daf-ltm-checkup`
 - Incremental glossary and architecture updates
 
 ## Forbidden
 
-- Net-new product capability via **`/new-feature`** unless the user explicitly opts in for that session (then treat as exceptional; prefer moving to **developing** for sustained feature work).
+- Net-new product capability via **`/daf-new-feature`** unless the user explicitly opts in for that session (then treat as exceptional; prefer moving to **developing** for sustained feature work).
 - Declaring done without green **`config.check`** (unless the user explicitly accepts documented gaps).
 - Editing on the default branch without **hotfix** opt-in.
 - Persisting session goals to project files.
@@ -70,13 +70,13 @@ Imperative mood; match repo commit style. Omit if nothing to commit. Do not comm
 
 ## Active skills
 
-- `/issue` — triage and fix bugs; failing test mandatory in maintaining unless user waives.
-- `/improvement` — enhance existing behavior; not net-new capability.
-- `/pivot` — restructure or redesign existing feature or concept.
-- `/discuss` — explore ideas; no implementation unless asked.
-- `/backlog-add`, `/backlog-work` — same as developing (archive to `LOGBACK.md` on acceptance).
-- `/remember`, `/retro`
-- `/phase-transition` — when checklists pass (e.g. back to `planning` or forward to `developing`).
+- `/daf-issue` — triage and fix bugs; failing test mandatory in maintaining unless user waives.
+- `/daf-improvement` — enhance existing behavior; not net-new capability.
+- `/daf-pivot` — restructure or redesign existing feature or concept.
+- `/daf-discuss` — explore ideas; no implementation unless asked.
+- `/daf-backlog-add`, `/daf-backlog-work` — same as developing (archive to `LOGBACK.md` on acceptance).
+- `/daf-remember`, `/daf-retro`
+- `/daf-phase-transition` — when checklists pass (e.g. back to `planning` or forward to `developing`).
 
 ## Merge to main
 

@@ -1,10 +1,10 @@
-# Skill: /onboard
+# Skill: /daf-onboard
 
 **When:** **Machine-wide global setup** — first-time install, refresh after DAF template changes, or when `~/.config/agent/` (or IDE `daf-*` skills) is missing.
 
-**Not** per-repo setup — use **`/setup`** after globals exist.
+**Not** per-repo setup — use **`/daf-setup`** after globals exist.
 
-**Not** uninstall — use **`/remove-global`**.
+**Not** uninstall — use **`/daf-remove-global`**.
 
 ## Step 0 — Detect
 
@@ -12,7 +12,7 @@
 |-----------|--------|
 | **`$G/scaffold/config.json`** and **`$G/skills/daf-setup.md`** exist, user did not ask to refresh | Confirm globals look present; offer **`--force`** refresh only if they want to overwrite. |
 | Globals missing or user asked to install/refresh | Continue. |
-| User only wants a project | Redirect to **`/setup`** (still needs globals once). |
+| User only wants a project | Redirect to **`/daf-setup`** (still needs globals once). |
 
 Let **`$G`** = `DAFE_GLOBAL_ROOT` if set, else `~/.config/agent`.
 
@@ -52,8 +52,8 @@ Confirm the onboarding script **§3 Verify** table passes. Summarize:
 - Contents of **`$G/platforms.json`**
 - Installed skill roots (`~/.cursor/skills`, `~/.claude/skills`, `~/.codex/AGENTS.md` as applicable)
 
-**Handoff:** Run **`/setup`** in each project — it applies `.agent/` and merges IDE overlays for every platform in `platforms.json`.
+**Handoff:** Run **`/daf-setup`** in each project — it applies `.agent/` and merges IDE overlays for every platform in `platforms.json`.
 
 ## Stop condition
 
-Machine-wide install verified; user knows **`/setup`** is the next step for a repo.
+Machine-wide install verified; user knows **`/daf-setup`** is the next step for a repo.

@@ -1,6 +1,6 @@
 # PRD (template)
 
-Fill via `/grill-me` before leaving planning.
+Fill via `/daf-grill-me` before leaving planning.
 
 ## Goal
 

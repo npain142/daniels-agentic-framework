@@ -1,6 +1,6 @@
 # Onboarding script: global setup
 
-**Purpose:** Install machine-wide DAF context under `~/.config/agent/`, write **`platforms.json`**, and install native skills per IDE. The agent runs this via **`/onboard`** — there is no `daf` shell command.
+**Purpose:** Install machine-wide DAF context under `~/.config/agent/`, write **`platforms.json`**, and install native skills per IDE. The agent runs this via **`/daf-onboard`** — there is no `daf` shell command.
 
 **When to use:** First machine setup, after pulling DAF template changes, or when globals are missing/corrupt.
 
@@ -62,7 +62,7 @@ Only when **§1** is impossible and the user explicitly agrees.
 |-------|------|
 | Scaffold | `$G/scaffold/config.json` exists |
 | Platforms registry | `$G/platforms.json` exists |
-| Setup skill | `$G/skills/daf-setup.md` exists and mentions `/setup` |
+| Setup skill | `$G/skills/daf-setup.md` exists and mentions `/daf-setup` |
 | Onboard skill | `$G/skills/daf-onboard.md` exists |
 | Manifest | `$G/skill-manifest.json` exists |
 | Stacks | `$G/stacks/typescript.md` (or another built-in) exists |
@@ -70,10 +70,10 @@ Only when **§1** is impossible and the user explicitly agrees.
 | Claude (if selected) | `$G/platforms/claude/project/.claude/rules/daf.md` exists; `$CL/daf-setup/SKILL.md` exists |
 | Codex (if selected) | `$CX/AGENTS.md` mentions DAF |
 
-Report installed paths and **`platforms.json`**. **Handoff:** In any project, run **`/setup`** — it merges overlays for every platform listed there.
+Report installed paths and **`platforms.json`**. **Handoff:** In any project, run **`/daf-setup`** — it merges overlays for every platform listed there.
 
 ---
 
 ## Stop condition
 
-Globals installed and verified; user knows next step is **`/setup`** in a project repo.
+Globals installed and verified; user knows next step is **`/daf-setup`** in a project repo.

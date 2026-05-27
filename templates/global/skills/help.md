@@ -1,8 +1,8 @@
-# Skill: /help
+# Skill: /daf-help
 
 **When:** Any phase. Short DAF orientation — how it works, which skill when, how to build.
 
-**Not:** Code deep-dive (`/how-it-works`), product grill (`/grill-me`), or implementation unless asked.
+**Not:** Code deep-dive (`/daf-how-it-works`), product grill (`/daf-grill-me`), or implementation unless asked.
 
 ## Steps
 
@@ -13,7 +13,7 @@
 
 **DAF** — Global `~/.config/agent/` + project `.agent/`; one phase (`planning` | `developing` | `maintaining`) in `config.json`; bar in `.agent/phases/{phase}.md`. Load: config → IDENTITY → stack → AGENTS → phase → GLOSSARY → memory.
 
-**First run** — `/onboard` (machine) → `/setup` (project) → optional `/grill-me` in planning → `/start` or `/phase-transition`.
+**First run** — `/daf-onboard` (machine) → `/daf-setup` (project) → optional `/daf-grill-me` in planning → `/daf-start` or `/daf-phase-transition`.
 
 **Build** — One session goal; `config.taskCheck` per goal; update `.agent/verify-state.json` at task end; `config.check` on codebase-check cadence (every task in **maintaining**).
 
@@ -21,24 +21,24 @@
 
 | Use when… | Skill |
 |-----------|--------|
-| Machine install | `/onboard` |
-| Project `.agent/` | `/setup` |
-| PRD / realignment | `/grill-me` |
-| Start building | `/start`, `/phase-transition` |
-| Net-new capability | `/new-feature` |
-| Bug | `/issue` |
-| Improve existing | `/improvement` |
-| Redesign existing | `/pivot` |
-| Think, no code | `/discuss` |
-| Park / do backlog | `/backlog-add`, `/backlog-work` |
-| How code works | `/how-it-works` |
-| External memory sync | `/ltm-checkup` |
-| Standing rules | `/remember` |
-| After work | `/retro` |
-| Strip project / machine | `/remove`, `/remove-global` |
+| Machine install | `/daf-onboard` |
+| Project `.agent/` | `/daf-setup` |
+| PRD / realignment | `/daf-grill-me` |
+| Start building | `/daf-start`, `/daf-phase-transition` |
+| Net-new capability | `/daf-new-feature` |
+| Bug | `/daf-issue` |
+| Improve existing | `/daf-improvement` |
+| Redesign existing | `/daf-pivot` |
+| Think, no code | `/daf-discuss` |
+| Park / do backlog | `/daf-backlog-add`, `/daf-backlog-work` |
+| How code works | `/daf-how-it-works` |
+| External memory sync | `/daf-ltm-checkup` |
+| Standing rules | `/daf-remember` |
+| After work | `/daf-retro` |
+| Strip project / machine | `/daf-remove`, `/daf-remove-global` |
 
 **More** — `README.md`, `.agent/AGENTS.md`, `.agent/ARCHITECTURE.md`.
 
 ## Stop condition
 
-Brief delivered; offer `/how-it-works` if they name a topic.
+Brief delivered; offer `/daf-how-it-works` if they name a topic.

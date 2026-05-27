@@ -4,9 +4,9 @@ import { describe, expect, it } from "vitest";
 import { getRepoRoot } from "./paths.js";
 
 describe("onboard UX contract (templates)", () => {
-  it("README quickstart is agent-first (/onboard only)", async () => {
+  it("README quickstart is agent-first (/daf-onboard only)", async () => {
     const readme = await readFile(join(getRepoRoot(), "README.md"), "utf8");
-    expect(readme).toContain("/onboard");
+    expect(readme).toContain("/daf-onboard");
     expect(readme).not.toMatch(/^```bash\nnpm install/m);
     expect(readme).not.toContain("Optional verify:");
   });
