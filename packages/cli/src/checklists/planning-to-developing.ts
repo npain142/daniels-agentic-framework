@@ -81,7 +81,7 @@ export async function validatePlanningExit(
     const stackFileTpl = join(getTemplatesRoot(), "stacks", `${config.stack}.md`);
     if (!existsSync(stackFileGlobal) && !existsSync(stackFileTpl)) {
       errors.push(
-        `Stack file not found for "${config.stack}" (expected under ~/.config/agent/stacks/ or built-in templates/stacks/). Run \`daf global-setup\`.`,
+        `Stack file not found for "${config.stack}" (expected under ~/.config/agent/stacks/ or built-in templates/stacks/). Run \`/onboard\`.`,
       );
     }
   }

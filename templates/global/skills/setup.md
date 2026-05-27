@@ -2,7 +2,7 @@
 
 **When:** **Project setup** — adapt DAF to the **current repo** (greenfield scaffold, brownfield adoption, or Cursor overlay only). This is an **IDE agent skill**, not a shell command.
 
-**Machine prerequisite:** **`daf global-setup`** (add **`--platform cursor`** on Cursor) installs globals under `~/.config/agent/` — skills, stacks, **scaffold**. `/setup` never replaces that step.
+**Machine prerequisite:** **`/onboard`** installs globals under `~/.config/agent/` — skills, stacks, **scaffold**, onboarding script. On Cursor, `/onboard` uses **`--platform cursor`**. `/setup` never replaces that step.
 
 **Source of truth** for files to copy or merge is **`~/.config/agent/scaffold/`** (and optional **`~/.config/agent/platforms/cursor/project/`** on Cursor). Do not copy from the DAF monorepo path on disk unless you are developing DAF itself.
 
@@ -21,7 +21,7 @@ If `.agent/` already exists and is non-empty and the user did **not** ask for br
 
 ## Step 1 — Globals
 
-If `~/.config/agent/scaffold/config.json` is missing (or **`~/.config/agent/skills/daf-setup.md`** is missing), instruct the user to run **`daf global-setup`** once on the machine. On Cursor, use **`daf global-setup --platform cursor`** so skills and platform files exist.
+If `~/.config/agent/scaffold/config.json` is missing (or **`~/.config/agent/skills/daf-setup.md`** is missing), run **`/onboard`** once on the machine (or follow `templates/global/onboarding/global-setup.md` from the DAF repo). On Cursor, onboard with the **cursor** platform so skills and platform files exist.
 
 ## Step 2a — Greenfield (scaffold only)
 
@@ -79,7 +79,7 @@ When creating a **new** `config.json` from the scaffold template:
 
 If the user wants Cursor project rules / `platform: "cursor"`:
 
-1. Ensure **`daf global-setup --platform cursor`** was run (so `$G/platforms/cursor/project/` exists).
+1. Ensure **`/onboard`** with **cursor** platform was run (so `$G/platforms/cursor/project/` exists).
 2. Merge **`$G/platforms/cursor/project/`** into the **repository root** (recursive; creates `.cursor/rules/`).
 3. Set **`"platform": "cursor"`** in `.agent/config.json` (merge; do not drop other keys).
 

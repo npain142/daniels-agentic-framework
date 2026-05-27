@@ -57,7 +57,7 @@ Imperative mood; match repo commit style. Omit if nothing to commit. Do not comm
 
 ## Allowed
 
-- `/issue`, `/improvement`, `/pivot`, `/discuss`, `/backlog-add`, `/backlog-work`, `/remember`, `/retro`, `/grill-me` (realignment), `/how-it-works`, `/ltm-checkup`
+- `/help`, `/issue`, `/improvement`, `/pivot`, `/discuss`, `/backlog-add`, `/backlog-work`, `/remember`, `/retro`, `/grill-me` (realignment), `/how-it-works`, `/ltm-checkup`
 - Incremental glossary and architecture updates
 
 ## Forbidden

@@ -31,7 +31,7 @@ State lives in **`.agent/config.json`**: `phase`, `stack`, `check`, `taskCheck`,
 9. `.agent/verify-state.json` — `taskCount`, `codebaseCheckPending`
 10. `.agent/memory/codebase-snapshot.md` — if present; prefer when fresh over re-reading every canonical doc each session
 
-Skills and deeper docs are **on demand**. Procedures live in `~/.config/agent/skills/daf-*.md` after `daf global-setup`, or under `~/.cursor/skills/daf-*` after `daf global-setup --platform cursor` (and `.cursor/rules/` when **`/setup`** merged the Cursor project overlay).
+Skills and deeper docs are **on demand**. Procedures live in `~/.config/agent/skills/daf-*.md` after **`/onboard`**, or under `~/.cursor/skills/daf-*` after **`/onboard`** with cursor platform (and `.cursor/rules/` when **`/setup`** merged the Cursor project overlay).
 
 ---
 
@@ -41,12 +41,13 @@ Skills and deeper docs are **on demand**. Procedures live in `~/.config/agent/sk
 
 - `IDENTITY.md`, `PREFERENCES.md` (optional)
 - `scaffold/` — default `.agent/` tree for **`/setup`**
-- `skills/daf-*.md` — same filenames as `~/.config/agent/skills/` after **`daf global-setup`** (manifest: `~/.config/agent/skill-manifest.json`): `/setup`, `/grill-me`, `/start`, `/how-it-works`, `/ltm-checkup`, `/new-feature`, `/issue`, `/improvement`, `/pivot`, `/discuss`, `/backlog-add`, `/backlog-work`, `/remember`, `/retro`, `/phase-transition`, `/remove`, `/remove-global`
+- `onboarding/global-setup.md` — agent script for **`/onboard`**
+- `skills/daf-*.md` — installed from manifest (`~/.config/agent/skill-manifest.json`): `/onboard`, `/setup`, `/help`, `/grill-me`, `/start`, `/how-it-works`, `/ltm-checkup`, `/new-feature`, `/issue`, `/improvement`, `/pivot`, `/discuss`, `/backlog-add`, `/backlog-work`, `/remember`, `/retro`, `/phase-transition`, `/remove`, `/remove-global`
 - `root-BACKLOG.md` — optional template copied to repo-root **`BACKLOG.md`** on greenfield **`/setup`** when no backlog file exists
 - `root-LOGBACK.md` — optional template copied to repo-root **`LOGBACK.md`** on greenfield **`/setup`** when missing
 - `stacks/<name>.md` — stack conventions
 
-**Cursor (optional):** `~/.cursor/skills/daf-*/SKILL.md` after `daf global-setup --platform cursor`; project `.cursor/rules/` after **`/setup`** on Cursor.
+**Cursor (optional):** `~/.cursor/skills/daf-*/SKILL.md` after **`/onboard`** (cursor platform); project `.cursor/rules/` after **`/setup`** on Cursor.
 
 **Project** `.agent/`:
 
@@ -54,7 +55,7 @@ Skills and deeper docs are **on demand**. Procedures live in `~/.config/agent/sk
 - `PRD.md`, `GLOSSARY.md`, `ARCHITECTURE.md`
 - `memory/remember.md`, `memory/gotchas.md`, `memory/learnings.md`
 
-**CLI** `daf` — **`daf global-setup`** only (copies globals + scaffold + optional Cursor skills). It does **not** run the agent.
+**DAF repo only:** `scripts/global-install.mjs` — mechanical copy invoked by the agent during **`/onboard`** (requires `npm run build`).
 
 ---
 
@@ -62,9 +63,11 @@ Skills and deeper docs are **on demand**. Procedures live in `~/.config/agent/sk
 
 | Skill | Typical phase |
 |--------|----------------|
+| `/onboard` | any — **machine setup:** install `~/.config/agent/` (+ Cursor skills); follow onboarding script |
 | `/setup` | any — **project setup:** greenfield scaffold; brownfield inventory + interview then merge scaffold and docs; verify-state; Cursor overlay |
 | `/grill-me` | planning (product grill); **developing** / **maintaining** (realignment) |
 | `/start` | after planning — validate exit, enter **developing**, session kickoff |
+| `/help` | any — short framework guide: phases, skills, build loop |
 | `/how-it-works` | any — implementation-precise explanation of a code topic |
 | `/ltm-checkup` | developing / maintaining — reconcile with external LTM (e.g. Notion MCP) |
 | `/new-feature` | developing — **net-new** capability |

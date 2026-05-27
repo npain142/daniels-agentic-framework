@@ -9,7 +9,7 @@ Decide what to build and how the agent should behave before production code. **`
 - `PRD.md` exists with goal, non-goals, v1 scope, and a clear success signal.
 - `GLOSSARY.md` exists (short is fine; expand later).
 - `ARCHITECTURE.md` exists (module sketch and boundaries for this repo or product).
-- `config.stack` is set to a non-null value and `~/.config/agent/stacks/{stack}.md` exists (run `daf global-setup` if needed).
+- `config.stack` is set to a non-null value and `~/.config/agent/stacks/{stack}.md` exists (run `/onboard` if needed).
 - `phases/planning.md`, `phases/developing.md`, and `phases/maintaining.md` are present.
 
 Follow **`/phase-transition`** — it enforces the planning-exit checklist.
@@ -30,6 +30,7 @@ Follow **`/phase-transition`** — it enforces the planning-exit checklist.
 - `/discuss` — explore ideas before committing to PRD or implementation.
 - `/backlog-add` — park follow-ups in repo-root `BACKLOG.md`.
 - `/pivot` — restructure or redesign a feature or concept; update PRD/glossary/architecture before code.
+- `/onboard` — **machine setup:** install globals when missing (before first `/setup` on a machine).
 - `/setup` — **project setup:** greenfield scaffold; brownfield inventory + interview then merge scaffold and populate docs; verify-state; optional Cursor overlay.
 - `/grill-me` — **product grill** in planning (one question at a time, assumption audit) → `PRD.md`; stack recommendation; agent sets `config.stack` after user agrees (unless set at end of brownfield `/setup`).
 - `/start` — when exit criteria pass: validate checklist, set `developing`, kick off first build session (reads backlog if present).

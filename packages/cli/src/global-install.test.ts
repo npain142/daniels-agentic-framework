@@ -23,6 +23,9 @@ describe("installGlobalAgent", () => {
     expect(() => parseConfig(cfg)).not.toThrow();
     const ptr = await readFile(join(root, "root-AGENTS.md"), "utf8");
     expect(ptr).toContain(".agent/AGENTS.md");
+    expect(existsSync(join(root, "onboarding", "global-setup.md"))).toBe(true);
+    const onboardSkill = await readFile(join(root, "skills", "daf-onboard.md"), "utf8");
+    expect(onboardSkill).toContain("/onboard");
     const setupSkill = await readFile(join(root, "skills", "daf-setup.md"), "utf8");
     expect(setupSkill).toContain("/setup");
     expect(setupSkill).toContain("Project setup");

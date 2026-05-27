@@ -83,8 +83,8 @@ Only after the user confirms (or you incorporate corrections) → write PRD.
 ### Write PRD and stack (planning)
 
 1. Write or update `.agent/PRD.md` with sections: **Goal**, **Non-goals**, **v1 scope**, **Success** (plus **Constraints / risks** if non-empty from the interview).
-2. Recommend a **stack id** from built-ins under `~/.config/agent/stacks/` (after `daf global-setup`) from tech constraints stated in the interview; explain in two sentences.
-3. After the user agrees, set **`config.stack`** in `.agent/config.json` to that id. If `$HOME/.config/agent/stacks/<id>.md` is missing, tell them to run **`daf global-setup`** (add **`--platform cursor`** on Cursor for skill picker mirroring).
+2. Recommend a **stack id** from built-ins under `~/.config/agent/stacks/` (after **`/onboard`**) from tech constraints stated in the interview; explain in two sentences.
+3. After the user agrees, set **`config.stack`** in `.agent/config.json` to that id. If `$HOME/.config/agent/stacks/<id>.md` is missing, tell them to run **`/onboard`** (cursor platform on Cursor for skill picker mirroring).
 
 ### Stop condition (planning)
 

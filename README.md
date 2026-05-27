@@ -1,60 +1,46 @@
 # Daniel Agent Framework (DAF)
 
-Lean, phase-based agent context for solo developers. **Global setup** is `**daf global-setup`** — it copies global context (including `**skill-manifest.json**`, `**skills/daf-*.md**`, stacks, and **scaffold**) into `~/.config/agent/`. **Project setup** is the IDE skill `**/setup`** — it adapts DAF to the current repo (not a shell command). Other procedures use markdown skills under `~/.config/agent/skills/` or `~/.cursor/skills/daf-*`.
+Lean, phase-based agent context for solo developers. **Global setup** is the IDE skill **`/onboard`** — the agent follows `templates/global/onboarding/global-setup.md` and runs `node scripts/global-install.mjs` from the DAF repo to install `~/.config/agent/` (skills, stacks, scaffold) and optional `~/.cursor/skills/daf-*`. **Project setup** is **`/setup`** — the agent adapts DAF to the current repo. All other procedures are markdown skills under `~/.config/agent/skills/` or `~/.cursor/skills/daf-*`.
 
 ## Quickstart
 
 ```bash
 npm install
 npm run build
-npm run daf -- --help
 ```
 
-**First time on this machine** — install globals (add `**--platform cursor`** on Cursor for `~/.cursor/skills/daf-*` and the Cursor project overlay template under `~/.config/agent/platforms/cursor/project/`):
+**First time on this machine** — in the IDE (Cursor: skills pick up after onboard with cursor platform):
 
-```bash
-npm run daf -- global-setup
-# or:
-npm run daf -- global-setup --platform cursor
-```
+1. Open this DAF repo in your IDE.
+2. Run **`/onboard`** (agent uses **cursor** platform on Cursor, **generic** elsewhere). Run **`/help`** anytime for a short framework guide.
+3. Optionally verify from a terminal: `npm run global-install -- --platform cursor`
 
 **In any project** (new or existing):
 
-1. **Machine once (global setup):** run `**daf global-setup`** from a terminal (see above). That installs `~/.config/agent/` (scaffold, `daf-*.md` skills, etc.).
-2. **Per repo (project setup):** in the IDE, invoke `**/setup`**. The agent chooses the path:
-  - **Greenfield:** copy scaffold into `.agent/`, `verify-state.json`, optional Cursor overlay. `**/grill-me`** afterward is optional when you want to lock the PRD.
-  - **Brownfield:** inventory and interview (same minimum as `**/grill-me`**) until you share a mental model, then merge scaffold (missing paths only; never overwrite a healthy `config.json` without explicit intent), populate PRD / glossary / architecture from that session, then `verify-state` and optional Cursor overlay.
+1. **`/setup`** — greenfield copies scaffold into `.agent/`; brownfield inventory + interview then merge and populate docs; optional Cursor overlay.
+2. **`/grill-me`** in planning when you want a focused PRD pass (optional after greenfield `/setup`). In **developing** / **maintaining**, `/grill-me` is **realignment**.
+3. **`/start`** or **`/phase-transition`** when planning exit criteria pass.
+4. Repo-root **`BACKLOG.md`** / **`LOGBACK.md`** via `/backlog-add` and `/backlog-work`.
 
-Then:
-
-- `**/grill-me**` in planning when `.agent/` exists and you want a focused PRD pass (or to iterate the PRD); agent sets `**config.stack**` after agreement when not already set in brownfield `**/setup**`. In **developing** / **maintaining**, `/grill-me` is **realignment**, not a PRD interview.
-- `**/start**` when planning exit criteria pass — validates checklist, sets `developing`, and kicks off the first build session (reads `BACKLOG.md` or `todo.txt` at repo root if present).
-- `**/phase-transition**` when you only need to change phase without session kickoff.
-- Repo-root **`BACKLOG.md`** for open follow-ups (`/backlog-add`, `/backlog-work`); **`LOGBACK.md`** for fading memory from completed backlog items; greenfield `/setup` seeds both from `~/.config/agent/root-*.md`.
-
-If you use **pnpm**, add a script mirroring `npm run daf` or run `pnpm exec` against the workspace CLI after `pnpm install`.
+Refresh globals after template changes: **`/onboard`** again (add force when overwriting).
 
 ## Monorepo layout
 
-- `[packages/cli](packages/cli)` — `daf` implementation (`daf global-setup` only)
-- `[templates/global](templates/global)` — identity, preferences, `**skill-manifest.json`**, `skills/{id}.md` sources, `**daf-*.md**` output under `~/.config/agent/skills/`, `**scaffold/**` (installed to `~/.config/agent/scaffold/`)
-- `[templates/stacks](templates/stacks)` — stack conventions
-- `[templates/platforms/cursor](templates/platforms/cursor)` — Cursor project `.cursor/rules` overlay (skills use the same manifest as generic)
-- `[templates/platforms/claude](templates/platforms/claude)`, `[templates/platforms/codex](templates/platforms/codex)` — stubs for future installers
-- `[.agent/](.agent)` — this repo’s own agent context
+- [`packages/cli`](packages/cli) — install library (`installGlobalAgent`, config/verify-state helpers, planning-exit checklist); no `daf` binary
+- [`scripts/global-install.mjs`](scripts/global-install.mjs) — mechanical install invoked by `/onboard`
+- [`templates/global`](templates/global) — identity, `skill-manifest.json`, `skills/*.md`, `onboarding/global-setup.md`, `scaffold/`
+- [`templates/stacks`](templates/stacks) — stack conventions
+- [`templates/platforms/cursor`](templates/platforms/cursor) — Cursor project overlay + skill packaging
+- [`.agent/`](.agent) — this repo’s own agent context
 
 ## Scripts
 
-
-| Script          | Meaning                                                    |
-| --------------- | ---------------------------------------------------------- |
-| `npm run build` | Build the CLI (`tsc`)                                      |
-| `npm run check` | typecheck + lint + test                                    |
-| `npm run daf`   | Run the workspace `daf` binary (see `package.json` script) |
-
+| Script | Meaning |
+|--------|---------|
+| `npm run build` | Build `packages/cli` (`tsc`) |
+| `npm run check` | typecheck + lint + test |
+| `npm run global-install -- --platform cursor` | Copy globals (agent normally runs this during `/onboard`) |
 
 ## Verification loop
 
-`.agent/config.json` defines `**taskCheck**` (fast, e.g. tests) and `**check**` (full suite). `**codebaseEvery**` sets how often a two-phase **codebase-check** runs after completed session tasks (see `.agent/phases/developing.md`). `**initialTaskCount`** seeds `.agent/verify-state.json` when `**/setup**` creates verify-state. In **developing** or **maintaining**, goals stay in the session; `verify-state.json` tracks `taskCount` and pending flags per the current phase file.
-
-**Maintaining** adds a stricter bar: branch guard before edits, mandatory failing test when feasible for bugfixes, and green `**config.check`** after every session task (see `[.agent/phases/maintaining.md](.agent/phases/maintaining.md)`).
+`.agent/config.json` defines **taskCheck**, **check**, **codebaseEvery**, and **initialTaskCount** (seeds `verify-state.json` on `/setup`). See `.agent/phases/developing.md` and `.agent/phases/maintaining.md`.

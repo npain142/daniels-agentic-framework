@@ -1,6 +1,6 @@
 # Skill: /remove-global
 
-**When:** The user wants to **uninstall all machine-wide DAF files** installed by **`daf global-setup`** (and optional **`daf global-setup --platform cursor`**).
+**When:** The user wants to **uninstall all machine-wide DAF files** installed by **`/onboard`** (global setup).
 
 **Not** per-repo teardown — use **`/remove`** on each project that still has `.agent/`.
 
@@ -19,7 +19,7 @@ Let **`$CS`** = `process.env.DAF_CURSOR_SKILLS_ROOT` if set and non-empty, else 
 
 Read **`$G/skill-manifest.json`** if it exists; otherwise read **`templates/global/skill-manifest.json`** from the DAF repo only when developing DAF itself — for normal users, manifest lives under **`$G`**.
 
-| Target | Contents (installed by `daf global-setup`) |
+| Target | Contents (installed by `/onboard`) |
 |--------|------------------------------------------|
 | **`$G`** (entire tree) | `IDENTITY.md`, `PREFERENCES.md`, `scaffold/`, `stacks/`, `skills/daf-*.md`, `skill-manifest.json`, `platforms/`, `root-AGENTS.md`, etc. |
 | **`$CS/<entry.name>/`** for each manifest entry | e.g. `daf-setup/`, `daf-issue/`, … each with `SKILL.md` (Cursor platform install only) |
@@ -34,7 +34,7 @@ List paths that exist; skip missing paths without error.
 
 ## Step 3 — Verify
 
-Confirm **`$G`** is gone and listed **`daf-*`** folders under **`$CS`** are gone. Tell the user they can run **`daf global-setup`** again to reinstall.
+Confirm **`$G`** is gone and listed **`daf-*`** folders under **`$CS`** are gone. Tell the user they can run **`/onboard`** again to reinstall.
 
 ## Stop condition
 

@@ -8,6 +8,7 @@
 |----------------|-------------|
 | Brainstorm, debate options, refine a vague idea | `/improvement` — you know what to enhance and want it built |
 | Think through “should we?” before committing | `/grill-me` (planning) — ready to lock PRD sections |
+| DAF overview | `/help` |
 | Understand how code works | `/how-it-works` |
 | Realign intent vs docs in dev | `/grill-me` (developing — realignment) |
 | Realign vs Notion / external LTM | `/ltm-checkup` |
@@ -22,7 +23,7 @@ Prefer dialogue over long ranked lists unless the user asks to compare options.
 2. Read `.agent/ARCHITECTURE.md`, `.agent/GLOSSARY.md`, and relevant context when the topic touches this repo.
 3. Discuss: options, tradeoffs, risks, alternatives; challenge assumptions when useful.
 4. **Do not implement** or edit project files unless the user asks.
-5. End with optional handoffs when relevant: `/grill-me` (planning or realignment); `/how-it-works` for code explanation; `/ltm-checkup` for external memory; `/pivot`; `/improvement`; `/new-feature`; `/backlog-add` to park an idea; `/backlog-work` when ready to build the next backlog item; `/start` when ready to build.
+5. End with optional handoffs when relevant: `/help` for framework overview; `/grill-me` (planning or realignment); `/how-it-works` for code explanation; `/ltm-checkup` for external memory; `/pivot`; `/improvement`; `/new-feature`; `/backlog-add` to park an idea; `/backlog-work` when ready to build the next backlog item; `/start` when ready to build.
 
 ## Stop condition
 

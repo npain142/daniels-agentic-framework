@@ -25,7 +25,7 @@ Under `.agent/`: `PRD.md`, `GLOSSARY.md`, `ARCHITECTURE.md`, `phases/planning.md
 ### Stack
 
 - `config.stack` must be non-null and non-empty string.
-- A stack file must exist at **`~/.config/agent/stacks/{stack}.md`** **or** (for DAF repo development only) under the DAF template tree `templates/stacks/{stack}.md`. If missing, user should run **`daf global-setup`**.
+- A stack file must exist at **`~/.config/agent/stacks/{stack}.md`** **or** (for DAF repo development only) under the DAF template tree `templates/stacks/{stack}.md`. If missing, user should run **`/onboard`**.
 
 ### When leaving `planning` for `developing` or `maintaining`
 
@@ -35,4 +35,4 @@ Under `.agent/`: `PRD.md`, `GLOSSARY.md`, `ARCHITECTURE.md`, `phases/planning.md
 
 ## v1 behavior
 
-The agent is the **mechanical writer** of `config.phase` after validation (there is no `daf phase` command in v1).
+The agent is the **mechanical writer** of `config.phase` after validation (no shell phase command in v1).

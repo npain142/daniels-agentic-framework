@@ -53,6 +53,7 @@ Imperative mood; match repo commit style. Omit if nothing to commit. Do not comm
 
 ## Active skills
 
+- `/help` — short DAF orientation (phases, skills, build loop).
 - `/start` — enter or kick off **developing** (planning exit + first session goal).
 - `/grill-me` — **realignment** with user vs PRD/architecture/code/backlog (not greenfield PRD grill).
 - `/how-it-works` — implementation-precise explanation of a code topic; no changes unless asked.

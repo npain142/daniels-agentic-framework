@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "bin": {
-    "daf": "./dist/index.js"
+  "exports": {
+    "./*": "./dist/*.js"
   },
   "files": [
     "dist"
@@ -15,9 +15,6 @@
     "lint": "eslint src --max-warnings 0",
     "test": "vitest run",
     "prepublishOnly": "pnpm build"
-  },
-  "dependencies": {
-    "commander": "^13.1.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.17.0",

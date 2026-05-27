@@ -1,7 +1,11 @@
 {
+  "onboard": {
+    "name": "daf-onboard",
+    "description": "Machine-wide DAF install: copies templates to ~/.config/agent/ and optional ~/.cursor/skills/daf-* via the onboarding script (run from DAF repo). Use when the user says /onboard, global setup, or first-time machine bootstrap — before /setup on a project."
+  },
   "setup": {
     "name": "daf-setup",
-    "description": "Project setup after `daf global-setup`: greenfield copies ~/.config/agent/scaffold into .agent/ (optional /grill-me later); brownfield runs inventory + interview then merge scaffold and populate PRD/glossary/architecture; verify-state.json; optional Cursor overlay. Use when the user says /setup or needs .agent/ in the project."
+    "description": "Project setup after /onboard: greenfield copies ~/.config/agent/scaffold into .agent/ (optional /grill-me later); brownfield runs inventory + interview then merge scaffold and populate PRD/glossary/architecture; verify-state.json; optional Cursor overlay. Use when the user says /setup or needs .agent/ in the project."
   },
   "grill-me": {
     "name": "daf-grill-me",
@@ -10,6 +14,10 @@
   "start": {
     "name": "daf-start",
     "description": "Validates planning exit, sets phase to developing when ready, and kicks off the first developing session (read backlog, one goal question). Use when the user says /start or wants to begin building after planning."
+  },
+  "help": {
+    "name": "daf-help",
+    "description": "Very short DAF orientation: pillars, phases, bootstrap (/onboard, /setup), build loop, and which skill to use when. No code walkthrough — use /how-it-works for that. Use when the user says /help or wants a quick framework guide."
   },
   "how-it-works": {
     "name": "daf-how-it-works",
@@ -65,6 +73,6 @@
   },
   "remove-global": {
     "name": "daf-remove-global",
-    "description": "Uninstalls machine-wide DAF: deletes ~/.config/agent (or DAFE_GLOBAL_ROOT) and ~/.cursor/skills/daf-* folders from skill-manifest after explicit confirmation. Per-repo .agent/ remains until /remove. Use when the user says /remove-global or wants to uninstall global-setup output."
+    "description": "Uninstalls machine-wide DAF: deletes ~/.config/agent (or DAFE_GLOBAL_ROOT) and ~/.cursor/skills/daf-* folders from skill-manifest after explicit confirmation. Per-repo .agent/ remains until /remove. Use when the user says /remove-global or wants to uninstall /onboard output."
   }
 }
