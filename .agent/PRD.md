@@ -17,7 +17,8 @@ Primary user: **Daniel** (solo). Open source later.
 
 - **CLI:** `daf global-setup [--platform generic|cursor] [--force]` only.
 - **Global templates:** identity, preferences, `skill-manifest.json`, skill sources, stacks (`general`, `typescript`, `typescript-react`), scaffold subtree.
-- **IDE skills:** `/setup`, `/grill-me`, `/new-feature`, `/issue`, `/improvement`, `/pivot`, `/discuss`, `/remember`, `/retro`, `/phase-transition`, `/remove`, `/remove-global`.
+- **IDE skills:** `/setup`, `/grill-me`, `/start`, `/how-it-works`, `/ltm-checkup`, `/new-feature`, `/issue`, `/improvement`, `/pivot`, `/discuss`, `/backlog-add`, `/backlog-work`, `/remember`, `/retro`, `/phase-transition`, `/remove`, `/remove-global`.
+- **Backlog / logback:** repo-root `BACKLOG.md` (`/backlog-add`, `/backlog-work`); completed items archive to `LOGBACK.md` with fading prune; greenfield `/setup` seeds from `root-BACKLOG.md` and `root-LOGBACK.md`.
 - **Phases:** `planning`, `developing`, `maintaining` with phase-specific rules in `.agent/phases/*.md`.
 - **Platform (v1):** Cursor overlay (`--platform cursor`) — project `.cursor/rules/daf.mdc` + `~/.cursor/skills/daf-*/SKILL.md`. Stub dirs for future platforms (Claude, Codex).
 - **Config contract:** `{ phase, stack, check, taskCheck, codebaseEvery, initialTaskCount, platform?, defaultBranch? }`.

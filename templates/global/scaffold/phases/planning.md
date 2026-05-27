@@ -28,9 +28,11 @@ Follow **`/phase-transition`** — it enforces the planning-exit checklist.
 ## Active skills
 
 - `/discuss` — explore ideas before committing to PRD or implementation.
+- `/backlog-add` — park follow-ups in repo-root `BACKLOG.md`.
 - `/pivot` — restructure or redesign a feature or concept; update PRD/glossary/architecture before code.
 - `/setup` — **project setup:** greenfield scaffold; brownfield inventory + interview then merge scaffold and populate docs; verify-state; optional Cursor overlay.
-- `/grill-me` — rigorous interview (one question at a time, follow-ups, assumption audit) → `PRD.md`; stack recommendation; agent sets `config.stack` after user agrees (unless set at end of brownfield `/setup`).
+- `/grill-me` — **product grill** in planning (one question at a time, assumption audit) → `PRD.md`; stack recommendation; agent sets `config.stack` after user agrees (unless set at end of brownfield `/setup`).
+- `/start` — when exit criteria pass: validate checklist, set `developing`, kick off first build session (reads backlog if present).
 - `/remember` — save standing instructions for the project.
 - `/retro` — capture learnings.
 - `/phase-transition` — validate exit checklist; update `config.phase` when criteria pass.

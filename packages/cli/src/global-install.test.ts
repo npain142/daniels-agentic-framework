@@ -29,6 +29,8 @@ describe("installGlobalAgent", () => {
     expect(setupSkill).toContain("interview before populated structure");
     expect(setupSkill).toContain("not part of this skill");
     expect(existsSync(join(root, "skills", "setup.md"))).toBe(false);
+    expect(existsSync(join(root, "root-BACKLOG.md"))).toBe(true);
+    expect(existsSync(join(root, "root-LOGBACK.md"))).toBe(true);
   });
 
   it("with cursor platform installs Cursor project template under global dir", async () => {

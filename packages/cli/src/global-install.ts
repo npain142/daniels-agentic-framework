@@ -72,11 +72,13 @@ export async function installGlobalAgent(opts: InstallGlobalAgentOpts): Promise<
     await mkdir(stacksDest, { recursive: true });
     await copyDirMerge(stacksTpl, stacksDest, opts.force);
   }
-  const rootAgentsTpl = join(templates, "root-AGENTS.md");
-  if (existsSync(rootAgentsTpl)) {
-    const rootAgentsDest = join(globalDir, "root-AGENTS.md");
-    if (!existsSync(rootAgentsDest) || opts.force) {
-      await cp(rootAgentsTpl, rootAgentsDest);
+  for (const rootFile of ["root-AGENTS.md", "root-BACKLOG.md", "root-LOGBACK.md"] as const) {
+    const rootTpl = join(templates, rootFile);
+    if (existsSync(rootTpl)) {
+      const rootDest = join(globalDir, rootFile);
+      if (!existsSync(rootDest) || opts.force) {
+        await cp(rootTpl, rootDest);
+      }
     }
   }
   let cursorSkillsRoot: string | undefined;

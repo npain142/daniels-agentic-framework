@@ -27,8 +27,10 @@ npm run daf -- global-setup --platform cursor
 
 Then:
 
-- `**/grill-me**` in planning when `.agent/` exists and you want a focused PRD pass (or to iterate the PRD); agent sets `**config.stack**` after agreement when not already set in brownfield `**/setup**`.
-- `**/phase-transition**` when planning exit criteria pass (same checklist as `validatePlanningExit` in this repo).
+- `**/grill-me**` in planning when `.agent/` exists and you want a focused PRD pass (or to iterate the PRD); agent sets `**config.stack**` after agreement when not already set in brownfield `**/setup**`. In **developing** / **maintaining**, `/grill-me` is **realignment**, not a PRD interview.
+- `**/start**` when planning exit criteria pass — validates checklist, sets `developing`, and kicks off the first build session (reads `BACKLOG.md` or `todo.txt` at repo root if present).
+- `**/phase-transition**` when you only need to change phase without session kickoff.
+- Repo-root **`BACKLOG.md`** for open follow-ups (`/backlog-add`, `/backlog-work`); **`LOGBACK.md`** for fading memory from completed backlog items; greenfield `/setup` seeds both from `~/.config/agent/root-*.md`.
 
 If you use **pnpm**, add a script mirroring `npm run daf` or run `pnpm exec` against the workspace CLI after `pnpm install`.
 

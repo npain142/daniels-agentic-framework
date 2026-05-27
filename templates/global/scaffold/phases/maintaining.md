@@ -57,7 +57,7 @@ Imperative mood; match repo commit style. Omit if nothing to commit. Do not comm
 
 ## Allowed
 
-- `/issue`, `/improvement`, `/pivot`, `/discuss`, `/remember`, `/retro`
+- `/issue`, `/improvement`, `/pivot`, `/discuss`, `/backlog-add`, `/backlog-work`, `/remember`, `/retro`, `/grill-me` (realignment), `/how-it-works`, `/ltm-checkup`
 - Incremental glossary and architecture updates
 
 ## Forbidden
@@ -74,6 +74,7 @@ Imperative mood; match repo commit style. Omit if nothing to commit. Do not comm
 - `/improvement` — enhance existing behavior; not net-new capability.
 - `/pivot` — restructure or redesign existing feature or concept.
 - `/discuss` — explore ideas; no implementation unless asked.
+- `/backlog-add`, `/backlog-work` — same as developing (archive to `LOGBACK.md` on acceptance).
 - `/remember`, `/retro`
 - `/phase-transition` — when checklists pass (e.g. back to `planning` or forward to `developing`).
 

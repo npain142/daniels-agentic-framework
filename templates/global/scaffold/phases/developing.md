@@ -53,11 +53,17 @@ Imperative mood; match repo commit style. Omit if nothing to commit. Do not comm
 
 ## Active skills
 
+- `/start` — enter or kick off **developing** (planning exit + first session goal).
+- `/grill-me` — **realignment** with user vs PRD/architecture/code/backlog (not greenfield PRD grill).
+- `/how-it-works` — implementation-precise explanation of a code topic; no changes unless asked.
+- `/ltm-checkup` — reconcile `.agent/` canon with external LTM (e.g. Notion MCP).
 - `/new-feature` — clarify → plan → test → implement per this phase → review → `/retro`.
 - `/issue` — reproduce → failing test → fix per this phase → regression.
 - `/improvement` — enhance what exists per this phase; not net-new capability (`/new-feature`).
 - `/pivot` — restructure or redesign an existing feature or concept; docs first, then implement per this phase.
 - `/discuss` — explore topics or ideas; dialogue only unless user asks to implement.
+- `/backlog-add` — append follow-up to repo-root `BACKLOG.md`.
+- `/backlog-work` — pick backlog item, implement, remove from `BACKLOG.md`, archive to `LOGBACK.md` on acceptance.
 - `/remember` — append user standing instructions to `memory/remember.md`.
 - `/retro` — promote notes to `memory/learnings.md` / `gotchas.md`.
 - `/phase-transition` — change phase when checklists pass (`planning`, `developing`, `maintaining`).

@@ -28,10 +28,12 @@ If `~/.config/agent/scaffold/config.json` is missing (or **`~/.config/agent/skil
 1. Recursively copy `$G/scaffold/` → `<repo>/.agent/`.
 2. Write **`verify-state.json`** (see below).
 3. If `<repo>/AGENTS.md` is missing and **`$G/root-AGENTS.md`** exists, copy that file to `<repo>/AGENTS.md`. If `$G/root-AGENTS.md` is missing, write a one-line pointer: “Read `.agent/AGENTS.md` then `.agent/config.json`.”
-4. **Do not** set `config.stack` during setup (remains `null` from scaffold until product clarity).
-5. Optional: **Cursor overlay** (see below).
+4. If **`$G/root-BACKLOG.md`** exists and the repo root has neither **`BACKLOG.md`** nor **`todo.txt`**, copy to `<repo>/BACKLOG.md`.
+5. If **`$G/root-LOGBACK.md`** exists and the repo root has no **`LOGBACK.md`**, copy to `<repo>/LOGBACK.md`.
+6. **Do not** set `config.stack` during setup (remains `null` from scaffold until product clarity).
+7. Optional: **Cursor overlay** (see below).
 
-**Handoff:** Structure is ready. **`/grill-me`** is an **optional** next step when the user wants to lock the PRD — not part of this skill’s stop condition.
+**Handoff:** Structure is ready. **`/grill-me`** is an **optional** next step when the user wants to lock the PRD — not part of this skill’s stop condition. When planning exit criteria pass, use **`/start`** or **`/phase-transition`** to enter developing.
 
 ## Step 2b — Brownfield adoption (interview before populated structure)
 
@@ -44,7 +46,7 @@ Order matters: **inventory → shared mental model → files**.
 5. Write **`verify-state.json`** if missing (see below).
 6. Optional: **Cursor overlay** (see below).
 
-**Handoff:** When planning exit criteria are met, **`/phase-transition`**. Do **not** require a separate **`/grill-me`** after brownfield `/setup` unless gaps remain in the PRD.
+**Handoff:** When planning exit criteria are met, **`/start`** or **`/phase-transition`**. Do **not** require a separate **`/grill-me`** after brownfield `/setup` unless gaps remain in the PRD.
 
 ## verify-state.json
 

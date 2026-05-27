@@ -7,7 +7,10 @@
 | Use `/discuss` | Use instead |
 |----------------|-------------|
 | Brainstorm, debate options, refine a vague idea | `/improvement` — you know what to enhance and want it built |
-| Think through “should we?” before committing | `/grill-me` — ready to lock PRD sections |
+| Think through “should we?” before committing | `/grill-me` (planning) — ready to lock PRD sections |
+| Understand how code works | `/how-it-works` |
+| Realign intent vs docs in dev | `/grill-me` (developing — realignment) |
+| Realign vs Notion / external LTM | `/ltm-checkup` |
 | Compare approaches conversationally | `/new-feature` — ready to implement new capability |
 | Decide whether to replace an existing design | `/pivot` — committed to restructure or redesign |
 
@@ -19,7 +22,7 @@ Prefer dialogue over long ranked lists unless the user asks to compare options.
 2. Read `.agent/ARCHITECTURE.md`, `.agent/GLOSSARY.md`, and relevant context when the topic touches this repo.
 3. Discuss: options, tradeoffs, risks, alternatives; challenge assumptions when useful.
 4. **Do not implement** or edit project files unless the user asks.
-5. End with optional handoffs when relevant: `/grill-me` or PRD work; `/pivot` to restructure or redesign; `/improvement` to enhance existing behavior; `/new-feature` for net-new capability.
+5. End with optional handoffs when relevant: `/grill-me` (planning or realignment); `/how-it-works` for code explanation; `/ltm-checkup` for external memory; `/pivot`; `/improvement`; `/new-feature`; `/backlog-add` to park an idea; `/backlog-work` when ready to build the next backlog item; `/start` when ready to build.
 
 ## Stop condition
 

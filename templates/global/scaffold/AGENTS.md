@@ -41,7 +41,9 @@ Skills and deeper docs are **on demand**. Procedures live in `~/.config/agent/sk
 
 - `IDENTITY.md`, `PREFERENCES.md` (optional)
 - `scaffold/` — default `.agent/` tree for **`/setup`**
-- `skills/daf-*.md` — same filenames as `~/.config/agent/skills/` after **`daf global-setup`** (manifest: `~/.config/agent/skill-manifest.json`): `/setup`, `/grill-me`, `/new-feature`, `/issue`, `/improvement`, `/pivot`, `/discuss`, `/remember`, `/retro`, `/phase-transition`, `/remove`, `/remove-global`
+- `skills/daf-*.md` — same filenames as `~/.config/agent/skills/` after **`daf global-setup`** (manifest: `~/.config/agent/skill-manifest.json`): `/setup`, `/grill-me`, `/start`, `/how-it-works`, `/ltm-checkup`, `/new-feature`, `/issue`, `/improvement`, `/pivot`, `/discuss`, `/backlog-add`, `/backlog-work`, `/remember`, `/retro`, `/phase-transition`, `/remove`, `/remove-global`
+- `root-BACKLOG.md` — optional template copied to repo-root **`BACKLOG.md`** on greenfield **`/setup`** when no backlog file exists
+- `root-LOGBACK.md` — optional template copied to repo-root **`LOGBACK.md`** on greenfield **`/setup`** when missing
 - `stacks/<name>.md` — stack conventions
 
 **Cursor (optional):** `~/.cursor/skills/daf-*/SKILL.md` after `daf global-setup --platform cursor`; project `.cursor/rules/` after **`/setup`** on Cursor.
@@ -61,12 +63,17 @@ Skills and deeper docs are **on demand**. Procedures live in `~/.config/agent/sk
 | Skill | Typical phase |
 |--------|----------------|
 | `/setup` | any — **project setup:** greenfield scaffold; brownfield inventory + interview then merge scaffold and docs; verify-state; Cursor overlay |
-| `/grill-me` | planning |
+| `/grill-me` | planning (product grill); **developing** / **maintaining** (realignment) |
+| `/start` | after planning — validate exit, enter **developing**, session kickoff |
+| `/how-it-works` | any — implementation-precise explanation of a code topic |
+| `/ltm-checkup` | developing / maintaining — reconcile with external LTM (e.g. Notion MCP) |
 | `/new-feature` | developing — **net-new** capability |
 | `/issue` | developing or maintaining |
 | `/improvement` | any — **enhances existing**; implement in developing or maintaining |
 | `/pivot` | any — **restructure or redesign** existing feature/concept; implement in developing or maintaining |
 | `/discuss` | any — explore ideas; no implementation unless asked |
+| `/backlog-add` | any — append follow-up to repo-root `BACKLOG.md` |
+| `/backlog-work` | developing / maintaining — pick backlog item, implement, archive to `LOGBACK.md` |
 | `/remember` | any — save standing instructions to `memory/remember.md` |
 | `/retro` | any |
 | `/phase-transition` | any — validate planning exit; set `config.phase` |

@@ -5,7 +5,19 @@
   },
   "grill-me": {
     "name": "daf-grill-me",
-    "description": "Rigorously interviews the user (one question at a time, follow-ups on vagueness, assumption audit) until product vision is unambiguous, then writes PRD sections and recommends a stack id. Use when the user says grill-me, /grill-me, or is in planning and needs the agent to grill unclear vision before implementation."
+    "description": "Phase-aware: in planning, skeptical PRD interview (one question at a time, assumption audit, stack recommendation). In developing or maintaining, realignment — resync intent with PRD/ARCHITECTURE/code/backlog without net-new scope unless asked. Use when the user says /grill-me or grill-me."
+  },
+  "start": {
+    "name": "daf-start",
+    "description": "Validates planning exit, sets phase to developing when ready, and kicks off the first developing session (read backlog, one goal question). Use when the user says /start or wants to begin building after planning."
+  },
+  "how-it-works": {
+    "name": "daf-how-it-works",
+    "description": "Technical implementation-precise explanation of a requested topic in this repo (flow, files, state) without code changes unless asked. Use when the user says /how-it-works or wants to understand how something works in the codebase."
+  },
+  "ltm-checkup": {
+    "name": "daf-ltm-checkup",
+    "description": "Reconciles .agent/ canon and code with external long-term memory (e.g. Notion via MCP): drift inventory, one question at a time, confirmed doc updates only. Use when the user says /ltm-checkup or wants LTM vs repo alignment."
   },
   "new-feature": {
     "name": "daf-new-feature",
@@ -26,6 +38,14 @@
   "discuss": {
     "name": "daf-discuss",
     "description": "Explores a topic, idea, or direction through dialogue — brainstorm and tradeoffs without implementing. Not bugs (/issue), ranked build plans (/improvement), PRD interviews (/grill-me), or net-new builds (/new-feature). Use when the user says /discuss or wants to think through something before committing."
+  },
+  "backlog-add": {
+    "name": "daf-backlog-add",
+    "description": "Appends a follow-up to repo-root BACKLOG.md under ## Open without implementing. Any phase. Use when the user says /backlog-add or wants to park work for later."
+  },
+  "backlog-work": {
+    "name": "daf-backlog-work",
+    "description": "In developing or maintaining: pick an open BACKLOG.md item, classify and implement (new-feature/improvement/issue/pivot bar), then on user acceptance remove from backlog and append a fading artifact to LOGBACK.md. Use when the user says /backlog-work or wants to build the next backlog item."
   },
   "remember": {
     "name": "daf-remember",
