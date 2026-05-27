@@ -56,7 +56,7 @@ Skills and deeper docs are **on demand**. Native skill paths (when listed in `pl
 
 **Project IDE hooks (from `/setup`, may be committed):** `.cursor/rules/daf.mdc`, `.claude/rules/daf.md`, repo-root `AGENTS.md` (Codex + tools).
 
-**DAF repo only:** `scripts/global-install.mjs` — mechanical copy invoked during **`/onboard`** (requires `npm run build`).
+**DAF repo only:** `scripts/global-install.mjs` — mechanical copy invoked during **`/onboard`** (agent runs `npm install` / `npm run build` in the DAF repo when needed).
 
 ---
 

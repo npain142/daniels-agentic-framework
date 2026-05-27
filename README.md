@@ -4,16 +4,10 @@ Lean, phase-based agent context for solo developers. **Global setup** is **`/onb
 
 ## Quickstart
 
-```bash
-npm install
-npm run build
-```
-
 **First time on this machine:**
 
 1. Open this DAF repo in your IDE.
-2. Run **`/onboard`** — pick platforms (e.g. `cursor`, `claude`, `codex`). Run **`/help`** for a short guide.
-3. Optional verify: `npm run global-install -- --platforms cursor,claude,codex`
+2. Run **`/onboard`** — pick platforms (e.g. `cursor`, `claude`, `codex`). The agent installs dependencies, builds the CLI, and runs the global install. Run **`/help`** for a short guide.
 
 **In any project** (new or existing):
 
@@ -21,7 +15,7 @@ npm run build
 2. **`/grill-me`** / **`/start`** / **`/phase-transition`** as needed.
 3. **`BACKLOG.md`** / **`LOGBACK.md`** via `/backlog-add` and `/backlog-work`.
 
-Refresh globals after template changes: **`/onboard`** again (add `--force` when overwriting).
+Refresh globals after template changes: **`/onboard`** again (ask the agent to pass `--force` when overwriting).
 
 ## Monorepo layout
 
@@ -31,13 +25,15 @@ Refresh globals after template changes: **`/onboard`** again (add `--force` when
 - [`templates/platforms`](templates/platforms) — per-IDE global + project templates
 - [`.agent/`](.agent) — this repo’s agent context
 
-## Scripts
+## Scripts (contributors / CI)
+
+Humans normally use **`/onboard`** only. These scripts are for development and automation:
 
 | Script | Meaning |
 |--------|---------|
 | `npm run build` | Build `packages/cli` (`tsc`) |
 | `npm run check` | typecheck + lint + test |
-| `npm run global-install -- --platforms cursor,claude` | Install globals (normally via `/onboard`) |
+| `npm run global-install -- --platforms cursor,claude` | Install globals without the agent (debug / CI) |
 
 ## Verification loop
 

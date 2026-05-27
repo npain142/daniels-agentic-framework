@@ -32,13 +32,13 @@ If the user is unsure on **Cursor**, default to including **`cursor`** when runn
 ## Step 2 — Run the onboarding script
 
 1. Read **`templates/global/onboarding/global-setup.md`** from the DAF monorepo when available (walk up to `templates/global/onboarding/global-setup.md`, or use `~/.config/agent/onboarding/global-setup.md` after a prior install).
-2. From the DAF repo root (after `npm run build` if needed), run:
+2. From the **DAF repo root**, you run all shell steps — **never** ask the user to run `npm install`, `npm run build`, or `global-install` themselves.
+   - If `packages/cli/dist/global-install.js` is missing (or `node_modules` is missing), run `npm install` then `npm run build`.
+   - Then run (use only the platform ids the user chose; legacy single flag: `--platform cursor`):
 
 ```bash
 node scripts/global-install.mjs --platforms generic,cursor,claude,codex [--force]
 ```
-
-Use only the platform ids the user chose (comma-separated). Legacy single flag still works: `--platform cursor`.
 
 3. If not in the DAF repo: ask the user to open/clone the DAF repo for §1 mechanical install, or follow the script’s **manual fallback** with explicit consent.
 

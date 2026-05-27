@@ -26,7 +26,7 @@
 
 When **`$T/global/skill-manifest.json`** exists (DAF repo or clone):
 
-1. From the **DAF repo root**, ensure dependencies are built: `npm install` and `npm run build` if `packages/cli/dist/global-install.js` is missing.
+1. From the **DAF repo root**, the **agent** runs `npm install` and `npm run build` when `node_modules` or `packages/cli/dist/global-install.js` is missing — do not instruct the user to run these.
 2. Run (shell, from repo root):
 
 ```bash
