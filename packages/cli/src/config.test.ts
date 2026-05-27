@@ -90,6 +90,19 @@ describe("parseConfig", () => {
     ).toThrow(/codebaseEvery/);
   });
 
+  it("rejects legacy platform in config.json", () => {
+    expect(() =>
+      parseConfig(
+        JSON.stringify({
+          phase: "developing",
+          stack: "typescript",
+          check: "npm run check",
+          platform: "cursor",
+        }),
+      ),
+    ).toThrow(/must not contain "platform"/);
+  });
+
   it("rejects negative initialTaskCount", () => {
     expect(() =>
       parseConfig(

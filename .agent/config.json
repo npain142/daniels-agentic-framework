@@ -4,6 +4,5 @@
   "taskCheck": "npm run test",
   "check": "npm run check",
   "codebaseEvery": 5,
-  "initialTaskCount": 0,
-  "platform": "cursor"
+  "initialTaskCount": 0
 }

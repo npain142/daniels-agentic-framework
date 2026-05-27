@@ -1,31 +1,31 @@
 # Codebase snapshot
 
-Updated: (ISO-8601 when rewritten during codebase-check phase A)
+Updated: 2026-05-27
 
 ## Ubiquitous language
 
-(Derived from `GLOSSARY.md`.)
+DAF, global/project context, phases, stack, platform (IDE layer), **local.json** (machine-local `platforms[]`), IDE skills, scaffold, taskCheck/check, backlog/logback.
 
 ## Stack constraints
 
-(Bullets from `~/.config/agent/stacks/{stack}.md` when `stack` is set.)
+TypeScript monorepo: `packages/cli` install library, `scripts/global-install.mjs`, Vitest with temp dirs + `DAFE_GLOBAL_ROOT` / `DAF_CURSOR_SKILLS_ROOT`.
 
 ## Standing rules
 
-(From `memory/remember.md`.)
+Install tooling: no LLM; no summarizing doc-only edits unless asked.
 
 ## Traps
 
-(From `memory/gotchas.md`.)
+- `platform` must not live in committed `config.json` — use gitignored `.agent/local.json`.
 
 ## Learnings
 
-(Last few bullets from `memory/learnings.md`.)
+Skills-only `/onboard`; backlog via BACKLOG.md / LOGBACK.md.
 
 ## Architecture anchors
 
-(From `ARCHITECTURE.md` — modules, boundaries, data flow.)
+Templates → `/onboard` → `~/.config/agent/` + optional Cursor skills; `/setup` → `.agent/` + `local.json` + per-platform project overlays.
 
 ## Drift / cleanup candidates
 
-(Agent notes: naming drift, stale docs, missing glossary entries.)
+Re-run `/onboard` on machines after template/skill changes; migrate legacy repos: remove `platform` from `config.json`, add `local.json`.

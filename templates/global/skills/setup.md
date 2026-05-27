@@ -15,7 +15,7 @@
 | **Greenfield** | No `.agent/` (or empty) **and** no meaningful project docs (e.g. no product `README`, no `PRD.md`, no `docs/` with adoption context). |
 | **Brownfield adoption** | No `.agent/` but **has** other project docs; **or** partial `.agent/` needing merge; **or** user explicitly adopting DAF on existing work. |
 | **Greenfield + existing code** | Greenfield by docs, but non-trivial code exists (e.g. `src/`, app entrypoints, substantial tree): **ask** whether to review existing code; if yes → follow **Brownfield adoption** (inventory → interview → populate) before treating docs as empty. |
-| **Platform-only** | `.agent/` + `config.json` already complete → add Cursor overlay if requested, or stop — DAF is present. |
+| **Platform-only** | `.agent/` + `config.json` already complete → add or refresh IDE overlays and **`local.json`** if requested, or stop — DAF is present. |
 
 If `.agent/` already exists and is non-empty and the user did **not** ask for brownfield merge or adoption, **stop** unless the case above applies.
 
@@ -31,7 +31,8 @@ If `~/.config/agent/scaffold/config.json` is missing (or **`~/.config/agent/skil
 4. If **`$G/root-BACKLOG.md`** exists and the repo root has neither **`BACKLOG.md`** nor **`todo.txt`**, copy to `<repo>/BACKLOG.md`.
 5. If **`$G/root-LOGBACK.md`** exists and the repo root has no **`LOGBACK.md`**, copy to `<repo>/LOGBACK.md`.
 6. **Do not** set `config.stack` during setup (remains `null` from scaffold until product clarity).
-7. Optional: **Cursor overlay** (see below).
+7. **Machine-local platforms** (see below) — ask which IDE layers apply on **this machine**; write `.agent/local.json` (gitignored).
+8. Optional: **Platform overlays** (see below) for each id in `local.json` that has a project template under `$G/platforms/<id>/project/`.
 
 **Handoff:** Structure is ready. **`/grill-me`** is an **optional** next step when the user wants to lock the PRD — not part of this skill’s stop condition. When planning exit criteria pass, use **`/start`** or **`/phase-transition`** to enter developing.
 
@@ -44,7 +45,7 @@ Order matters: **inventory → shared mental model → files**.
 3. **Structure + populate:** merge from `$G/scaffold/`: for each path under scaffold, if the corresponding path under `.agent/` is **missing**, copy it in. **Never overwrite** an existing `.agent/config.json`. If you **create** `config.json` because it was missing, set `phase: "planning"` and `stack: null` until the user agrees on stack, then set **`config.stack`**; apply **package.json inference** (below) for new `config.json` only. Update **`.agent/PRD.md`**, **`.agent/GLOSSARY.md`**, **`.agent/ARCHITECTURE.md`** from the session — replace empty `_TODO_` / stubs where you have answers, do not wipe user edits without explicit consent.
 4. **Force refresh:** only if the user explicitly asks; you may overwrite scaffold-shaped files **except** `config.json` and user-authored PRD/memory — confirm when unsure.
 5. Write **`verify-state.json`** if missing (see below).
-6. Optional: **Cursor overlay** (see below).
+6. **Machine-local platforms** and optional **platform overlays** (see below).
 
 **Handoff:** When planning exit criteria are met, **`/start`** or **`/phase-transition`**. Do **not** require a separate **`/grill-me`** after brownfield `/setup` unless gaps remain in the PRD.
 
@@ -75,15 +76,36 @@ When creating a **new** `config.json` from the scaffold template:
 - Prefer `taskCheck`: if `test` exists → `npm run test`. If `check` exists and no test yet → `npm run check`.
 - Prefer `check`: if `check` exists → `npm run check`; else if `lint` and `test` → `npm run lint && npm run test`; else if `test` → `npm run test`. Fill the other field if still empty so both are non-null when any script matched.
 
-## Cursor overlay
+## Machine-local `.agent/local.json`
 
-If the user wants Cursor project rules / `platform: "cursor"`:
+**Committed** `.agent/` (PRD, glossary, `config.json`, phases) is **machine-agnostic** and safe in git. **IDE platform choice is not** — it lives in **`.agent/local.json`** (gitignored; never commit).
 
-1. Ensure **`/onboard`** with **cursor** platform was run (so `$G/platforms/cursor/project/` exists).
-2. Merge **`$G/platforms/cursor/project/`** into the **repository root** (recursive; creates `.cursor/rules/`).
-3. Set **`"platform": "cursor"`** in `.agent/config.json` (merge; do not drop other keys).
+1. Ask which platforms apply on **this machine** (one or more). v1 ids: **`cursor`** (Cursor project rules + skill picker path), **`generic`** (flat skills under `~/.config/agent/skills/` only — no repo overlay).
+2. Write or merge **`.agent/local.json`**:
+
+```json
+{
+  "platforms": ["cursor"]
+}
+```
+
+3. Ensure **`.agent/local.json`** is listed in the repo **`.gitignore`** (append if missing).
+4. Copy **`local.json.example`** from scaffold only as documentation; the real file is **`local.json`**.
+
+**Do not** put `platform` or `platforms` in **`config.json`**.
+
+## Platform overlays
+
+For each id in **`local.json` → `platforms`** that has a project template:
+
+| Platform | Prerequisite | Overlay |
+|----------|--------------|---------|
+| **`cursor`** | **`/onboard`** with **cursor** on this machine (`$G/platforms/cursor/project/` exists) | Merge **`$G/platforms/cursor/project/`** into the **repository root** (creates `.cursor/rules/daf.mdc`). |
+| **`generic`** | **`/onboard`** (generic or cursor) | No repo files; skills at `$G/skills/daf-*.md`. |
+
+Repeat for every listed platform that defines `$G/platforms/<id>/project/`. Multiple overlays may coexist when v1+ stubs ship (e.g. future Claude paths).
 
 ## Stop condition
 
-- **Greenfield:** `.agent/` scaffold present, `verify-state.json`, optional Cursor overlay applied; **`/grill-me`** not required to finish `/setup`.
-- **Brownfield:** `.agent/` reflects the agreed mental model (docs populated from the session where applicable), `verify-state.json` if needed, optional Cursor overlay; next step is planning work or **`/phase-transition`** when exit criteria pass.
+- **Greenfield:** `.agent/` scaffold present, `verify-state.json`, **`local.json`** when platforms were chosen, overlays applied; **`/grill-me`** not required to finish `/setup`.
+- **Brownfield:** `.agent/` reflects the agreed mental model (docs populated from the session where applicable), `verify-state.json` if needed, **`local.json`** and overlays when chosen; next step is planning work or **`/phase-transition`** when exit criteria pass.

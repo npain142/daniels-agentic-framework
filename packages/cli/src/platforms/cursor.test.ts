@@ -2,7 +2,6 @@ import { mkdtemp, readFile, writeFile } from "node:fs/promises";
 import { join } from "node:path";
 import { tmpdir } from "node:os";
 import { describe, expect, it } from "vitest";
-import { parseConfig } from "../config.js";
 import { parsePlatform } from "../platform.js";
 import { getTemplatesRoot } from "../paths.js";
 import {
@@ -66,38 +65,5 @@ describe("installCursorGlobalSkills", () => {
     await writeFile(path, "stale", "utf8");
     await installCursorGlobalSkills({ templatesRoot, skillsRoot, force: false });
     expect(await readFile(path, "utf8")).toBe("stale");
-  });
-});
-
-describe("parseConfig platform", () => {
-  it("omits platform when absent", () => {
-    const cfg = parseConfig(
-      JSON.stringify({ phase: "planning", stack: null, check: "npm run check" }),
-    );
-    expect(cfg.platform).toBeUndefined();
-  });
-  it("accepts cursor and generic", () => {
-    expect(
-      parseConfig(
-        JSON.stringify({
-          phase: "developing",
-          stack: "typescript",
-          check: "npm run check",
-          platform: "cursor",
-        }),
-      ).platform,
-    ).toBe("cursor");
-  });
-  it("rejects invalid platform", () => {
-    expect(() =>
-      parseConfig(
-        JSON.stringify({
-          phase: "planning",
-          stack: null,
-          check: "x",
-          platform: "vscode",
-        }),
-      ),
-    ).toThrow(/platform/);
   });
 });

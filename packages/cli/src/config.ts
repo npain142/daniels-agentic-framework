@@ -1,8 +1,6 @@
 import { readFile, writeFile } from "node:fs/promises";
 import { join } from "node:path";
 
-import type { Platform } from "./platform.js";
-
 export type Phase = "planning" | "developing" | "maintaining";
 
 export type DafConfig = {
@@ -15,8 +13,6 @@ export type DafConfig = {
   codebaseEvery: number;
   /** Used when `/setup` creates `verify-state.json` → `taskCount`. */
   initialTaskCount: number;
-  /** Present when the project used the Cursor overlay from `/setup`. */
-  platform?: Platform;
   /** Protected branch name for **maintaining** branch guard; omit to infer from `origin/HEAD` or `main`. */
   defaultBranch?: string;
 };
@@ -46,7 +42,11 @@ export function parseConfig(raw: string): DafConfig {
   const phase = o.phase;
   const stack = o.stack;
   const check = o.check;
-  const platform = o.platform;
+  if (o.platform !== undefined) {
+    throw new Error(
+      'config.json must not contain "platform" (machine-local). Use .agent/local.json with "platforms": ["cursor"] — see /setup.',
+    );
+  }
   if (phase !== "planning" && phase !== "developing" && phase !== "maintaining") {
     throw new Error('config.phase must be "planning", "developing", or "maintaining"');
   }
@@ -56,10 +56,6 @@ export function parseConfig(raw: string): DafConfig {
   if (typeof check !== "string" || check.trim() === "") {
     throw new Error('config.check must be a non-empty string');
   }
-  if (platform !== undefined && platform !== "generic" && platform !== "cursor") {
-    throw new Error('config.platform must be "generic", "cursor", or omitted');
-  }
-
   const taskCheckRaw = o.taskCheck;
   const taskCheck =
     typeof taskCheckRaw === "string" && taskCheckRaw.trim() !== ""
@@ -77,10 +73,6 @@ export function parseConfig(raw: string): DafConfig {
     codebaseEvery,
     initialTaskCount,
   };
-  if (platform === "generic" || platform === "cursor") {
-    base.platform = platform;
-  }
-
   const defaultBranchRaw = o.defaultBranch;
   if (defaultBranchRaw !== undefined) {
     if (typeof defaultBranchRaw !== "string" || defaultBranchRaw.trim() === "") {

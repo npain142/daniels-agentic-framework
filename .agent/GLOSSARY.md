@@ -11,7 +11,8 @@
 | **IDE skill** | Markdown procedure invoked as `/name` in the IDE; installed from `skill-manifest.json`. Not a shell command. |
 | **Phase** | `planning`, `developing`, or `maintaining`; stored in `config.json` and `phases/*.md`. |
 | **Stack** | String id matching `~/.config/agent/stacks/<id>.md`; e.g. `typescript`. |
-| **Platform** | IDE integration layer; v1 ships **cursor** (onboard with cursor platform). |
+| **Platform** | IDE integration layer (`generic`, `cursor`, …). Globals via **`/onboard`**; per-repo choice in **`.agent/local.json`** (`platforms[]`, gitignored), not in committed **`config.json`**. |
+| **local.json** | Machine-local `.agent/local.json` — which IDE platforms apply on this clone; written by **`/setup`**; never commit. |
 | **Layered context** | Global (`~/.config/agent/`) composes with project (`.agent/`); higher layers override lower. |
 | **taskCheck** | Fast verification command after each session goal (e.g. `npm run test`). |
 | **check** | Full verification suite (e.g. `npm run check`). |
