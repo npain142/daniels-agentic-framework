@@ -2,7 +2,7 @@
 
 | Term | Definition |
 |------|------------|
-| **DAF** | Daniel Agent Framework — markdown-first agent context; skills-only install (no `daf` CLI). |
+| **DAF** | Daniels Agentic Framework — markdown-first agent context; skills-only install (no `daf` CLI). |
 | **Global context** | Files under `~/.config/agent/` (identity, preferences, skills, stacks, scaffold, onboarding script). |
 | **Global setup** | IDE skill **`/onboard`** — machine-wide install of global context; not per repo. |
 | **Onboarding script** | `templates/global/onboarding/global-setup.md` (also installed under `~/.config/agent/onboarding/`). |
@@ -27,7 +27,7 @@
 
 ## Banned synonyms
 
-Use **phase** (not “mode” for this switch). Use **stack** (not “profile”) for stack ids.
+Use **phase** (not “mode” for this switch). Use **stack** (not “profile”) for stack ids. Do not use **Daniel Agent Framework** — the product is **Daniels Agentic Framework** (DAF).
 
 ## Deprecated (pivot)
 

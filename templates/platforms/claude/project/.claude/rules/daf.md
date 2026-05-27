@@ -1,4 +1,4 @@
-# Daniel Agent Framework (DAF)
+# Daniels Agentic Framework (DAF)
 
 1. Read [.agent/config.json](.agent/config.json) for `phase`, `stack`, `check`, `taskCheck`, `codebaseEvery`, optional `defaultBranch`, and when in **developing** or **maintaining**, `.agent/verify-state.json` for session task totals.
 2. Load [.agent/phases/](.agent/phases/) for the matching `phase` file.

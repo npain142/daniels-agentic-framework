@@ -2,7 +2,10 @@ import { existsSync } from "node:fs";
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { join } from "node:path";
 
-const CODEX_AGENTS_MARKER = "Daniel Agent Framework (DAF)";
+export const CODEX_AGENTS_MARKERS = [
+  "Daniels Agentic Framework (DAF)",
+  "Daniel Agent Framework (DAF)",
+] as const;
 
 export async function installCodexGlobalAgents(opts: {
   templatesRoot: string;
@@ -17,7 +20,7 @@ export async function installCodexGlobalAgents(opts: {
   const dest = join(opts.codexHome, "AGENTS.md");
   if (!opts.force && existsSync(dest)) {
     const existing = await readFile(dest, "utf8");
-    if (existing.includes(CODEX_AGENTS_MARKER)) {
+    if (CODEX_AGENTS_MARKERS.some((marker) => existing.includes(marker))) {
       return;
     }
   }

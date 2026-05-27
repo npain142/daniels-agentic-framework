@@ -1,4 +1,4 @@
-# Daniel Agent Framework (DAF) — global Codex guidance
+# Daniels Agentic Framework (DAF) — global Codex guidance
 
 Read **[~/.config/agent/IDENTITY.md](~/.config/agent/IDENTITY.md)** for how the agent works with you.
 

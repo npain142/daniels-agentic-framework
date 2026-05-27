@@ -1,4 +1,4 @@
-# PRD — Daniel Agent Framework (DAF) v1
+# PRD — Daniels Agentic Framework (DAF) v1
 
 ## Goal
 

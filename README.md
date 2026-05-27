@@ -1,4 +1,4 @@
-# Daniel Agent Framework (DAF)
+# Daniels Agentic Framework (DAF)
 
 Lean, phase-based agent context for solo developers. **Global setup** is **`/onboard`** — installs `~/.config/agent/`, **`platforms.json`**, and native skills per IDE (`cursor`, `claude`, `codex`). **Project setup** is **`/setup`** — copies `.agent/` and merges IDE overlays for every platform in `platforms.json`.
 
