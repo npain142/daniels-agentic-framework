@@ -1,0 +1,19 @@
+{
+  "outputDir": "graphify-out",
+  "bootstrap": {
+    "sources": [
+      "PRD.md",
+      "GLOSSARY.md",
+      "ARCHITECTURE.md",
+      "AGENTS.md",
+      "phases/planning.md",
+      "phases/developing.md",
+      "phases/maintaining.md"
+    ],
+    "minDomainNodes": 3
+  },
+  "ingest": {
+    "canonicalSources": ["PRD.md", "GLOSSARY.md", "ARCHITECTURE.md"],
+    "codeCommand": "graphify update ."
+  }
+}

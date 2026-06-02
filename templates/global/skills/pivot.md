@@ -20,11 +20,12 @@ If unsure whether to pivot, use `/daf-discuss` first.
 2. Read `.agent/PRD.md`, `ARCHITECTURE.md`, `GLOSSARY.md`, and affected code or docs.
 3. **Blast radius:** files, public APIs, tests, migrations, user-visible behavior.
 4. **Canonical docs first** (before large code churn): update `GLOSSARY.md` (propose terms), `ARCHITECTURE.md`, and `PRD.md` sections if product meaning changed.
-5. **Migration plan:** incremental vs big-bang; compatibility shims; order of operations; risks.
-6. **`planning`:** stop after docs + plan unless the user asks for code. **`developing`** or **`maintaining`:** implement per **`.agent/phases/{phase}.md`** (goals in session, `taskCheck`, verify-state, codebase-check when due).
-7. Remove or quarantine dead paths; update tests to the new model.
-8. `/daf-retro` for non-trivial pivots (note migration gotchas in `memory/gotchas.md` when relevant).
+5. **KG update:** run **`/daf-kg-ingest`** (agent: `npm run kg:ingest` + semantic pass when canon changed); update archive if stubs are live; mark deprecated concepts with explicit replacement edges in canonical/archive docs before ingest.
+6. **Migration plan:** incremental vs big-bang; compatibility shims; order of operations; risks.
+7. **`planning`:** stop after docs + plan (+ KG bootstrap plan) unless the user asks for code. **`developing`** or **`maintaining`:** implement per **`.agent/phases/{phase}.md`** (goals in session, `taskCheck`, verify-state, codebase-check when due).
+8. Remove or quarantine dead paths; update tests and KG mappings to the new model.
+9. `/daf-retro` for non-trivial pivots (note migration gotchas in `memory/gotchas.md` when relevant).
 
 ## Stop condition
 
-The new design is reflected in canonical docs; in `developing` or `maintaining`, code and tests match the plan, verification per the current phase bar (or user accepts documented gaps). The old concept is removed or explicitly deprecated with a removal path.
+The new design is reflected in canonical docs and latest Graphify bootstrap receipt; in `developing` or `maintaining`, code and tests match the plan, verification per the current phase bar (or user accepts documented gaps). The old concept is removed or explicitly deprecated with a removal path.

@@ -1,0 +1,497 @@
+{
+  "/home/daniel/Dokumente/Daniels Agent Framework/.agent/config.json": {
+    "mtime": 1779890470.1108668,
+    "ast_hash": "96e1282d9fb4630f7684395f8d14b93f",
+    "semantic_hash": "96e1282d9fb4630f7684395f8d14b93f"
+  },
+  "/home/daniel/Dokumente/Daniels Agent Framework/.agent/verify-state.json": {
+    "mtime": 1780402480.4596322,
+    "ast_hash": "4a127954e58398f24629806ad4cc91c1",
+    "semantic_hash": "4a127954e58398f24629806ad4cc91c1"
+  },
+  "/home/daniel/Dokumente/Daniels Agent Framework/package.json": {
+    "mtime": 1780404240.8841934,
+    "ast_hash": "90a06c78b034214faf0034858b6b4e11",
+    "semantic_hash": ""
+  },
+  "/home/daniel/Dokumente/Daniels Agent Framework/packages/cli/eslint.config.mjs": {
+    "mtime": 1779485578.5744016,
+    "ast_hash": "86fbd37e375ab63ef8209de6d1a410a7",
+    "semantic_hash": "86fbd37e375ab63ef8209de6d1a410a7"
+  },
+  "/home/daniel/Dokumente/Daniels Agent Framework/packages/cli/package.json": {
+    "mtime": 1779923243.8081439,
+    "ast_hash": "1ba637427e56ac946a306ec48aefe88d",
+    "semantic_hash": "1ba637427e56ac946a306ec48aefe88d"
+  },
+  "/home/daniel/Dokumente/Daniels Agent Framework/packages/cli/src/branding.test.ts": {
+    "mtime": 1780402480.4596322,
+    "ast_hash": "db1893d37e3f2da55280618c9f753ba4",
+    "semantic_hash": "db1893d37e3f2da55280618c9f753ba4"
+  },
+  "/home/daniel/Dokumente/Daniels Agent Framework/packages/cli/src/checklists/planning-to-developing.test.ts": {
+    "mtime": 1780404273.159593,
+    "ast_hash": "f30abc0d5578dda8adb6a6b601bb91ed",
+    "semantic_hash": ""
+  },
+  "/home/daniel/Dokumente/Daniels Agent Framework/packages/cli/src/checklists/planning-to-developing.ts": {
+    "mtime": 1780404253.9710653,
+    "ast_hash": "697e5486a6fbdc7e99615574d1cd0d61",
+    "semantic_hash": ""
+  },
+  "/home/daniel/Dokumente/Daniels Agent Framework/packages/cli/src/config.test.ts": {
+    "mtime": 1779890459.5240788,
+    "ast_hash": "38b30457e66d4bc0e782b520b34a6279",
+    "semantic_hash": "38b30457e66d4bc0e782b520b34a6279"
+  },
+  "/home/daniel/Dokumente/Daniels Agent Framework/packages/cli/src/config.ts": {
+    "mtime": 1779922939.5971975,
+    "ast_hash": "b84d859d22fda1651cf342be72770924",
+    "semantic_hash": "b84d859d22fda1651cf342be72770924"
+  },
+  "/home/daniel/Dokumente/Daniels Agent Framework/packages/cli/src/global-install.test.ts": {
+    "mtime": 1779922939.5975003,
+    "ast_hash": "b5d9a068f547ace37b6f693226c12308",
+    "semantic_hash": "b5d9a068f547ace37b6f693226c12308"
+  },
+  "/home/daniel/Dokumente/Daniels Agent Framework/packages/cli/src/global-install.ts": {
+    "mtime": 1779920706.6361485,
+    "ast_hash": "ff8cb88a62cbe5ddbd8aa30d3becda08",
+    "semantic_hash": "ff8cb88a62cbe5ddbd8aa30d3becda08"
+  },
+  "/home/daniel/Dokumente/Daniels Agent Framework/packages/cli/src/global-platforms.test.ts": {
+    "mtime": 1779920722.1065814,
+    "ast_hash": "4bb42826c9873548bd3a74772f8cdf01",
+    "semantic_hash": "4bb42826c9873548bd3a74772f8cdf01"
+  },
+  "/home/daniel/Dokumente/Daniels Agent Framework/packages/cli/src/global-platforms.ts": {
+    "mtime": 1779920512.7022738,
+    "ast_hash": "3d3bc8490c29bdb480c595015261a007",
+    "semantic_hash": "3d3bc8490c29bdb480c595015261a007"
+  },
+  "/home/daniel/Dokumente/Daniels Agent Framework/packages/cli/src/maintaining-contract.test.ts": {
+    "mtime": 1780397408.1648533,
+    "ast_hash": "c0e5c05f6d1e5a2e47654641bf823644",
+    "semantic_hash": "c0e5c05f6d1e5a2e47654641bf823644"
+  },
+  "/home/daniel/Dokumente/Daniels Agent Framework/packages/cli/src/onboard-contract.test.ts": {
+    "mtime": 1779922974.0018606,
+    "ast_hash": "313accc9c5c18a21a5bc79d4058a1b8b",
+    "semantic_hash": "313accc9c5c18a21a5bc79d4058a1b8b"
+  },
+  "/home/daniel/Dokumente/Daniels Agent Framework/packages/cli/src/paths.ts": {
+    "mtime": 1779920532.1805491,
+    "ast_hash": "286730d9e9bc1d73eec3c2b8dc8612b4",
+    "semantic_hash": "286730d9e9bc1d73eec3c2b8dc8612b4"
+  },
+  "/home/daniel/Dokumente/Daniels Agent Framework/packages/cli/src/platform.ts": {
+    "mtime": 1779920508.2368414,
+    "ast_hash": "13e3ab650da0a5f0bf21247893c4b474",
+    "semantic_hash": "13e3ab650da0a5f0bf21247893c4b474"
+  },
+  "/home/daniel/Dokumente/Daniels Agent Framework/packages/cli/src/platforms/claude.ts": {
+    "mtime": 1779920516.2435875,
+    "ast_hash": "b866048c66dc016538b7ab08503ae889",
+    "semantic_hash": "b866048c66dc016538b7ab08503ae889"
+  },
+  "/home/daniel/Dokumente/Daniels Agent Framework/packages/cli/src/platforms/codex.ts": {
+    "mtime": 1779922314.0078912,
+    "ast_hash": "12fc24c77d55f9fac905af302d159331",
+    "semantic_hash": "12fc24c77d55f9fac905af302d159331"
+  },
+  "/home/daniel/Dokumente/Daniels Agent Framework/packages/cli/src/platforms/cursor.test.ts": {
+    "mtime": 1779922939.5985553,
+    "ast_hash": "1bf7d0fbd9151a5494b38b29c3eaf41e",
+    "semantic_hash": "1bf7d0fbd9151a5494b38b29c3eaf41e"
+  },
+  "/home/daniel/Dokumente/Daniels Agent Framework/packages/cli/src/platforms/cursor.ts": {
+    "mtime": 1779920711.2220511,
+    "ast_hash": "01a53cf514338ed0f5619dd572053610",
+    "semantic_hash": "01a53cf514338ed0f5619dd572053610"
+  },
+  "/home/daniel/Dokumente/Daniels Agent Framework/packages/cli/src/platforms/install-skills.ts": {
+    "mtime": 1779920515.5392134,
+    "ast_hash": "379fd3ab7b3eb9769baae09a0a137b4e",
+    "semantic_hash": "379fd3ab7b3eb9769baae09a0a137b4e"
+  },
+  "/home/daniel/Dokumente/Daniels Agent Framework/packages/cli/src/project-overlays.test.ts": {
+    "mtime": 1779920692.827442,
+    "ast_hash": "a6f4c945f6edda0bb1cb267645061854",
+    "semantic_hash": "a6f4c945f6edda0bb1cb267645061854"
+  },
+  "/home/daniel/Dokumente/Daniels Agent Framework/packages/cli/src/project-overlays.ts": {
+    "mtime": 1779920524.514691,
+    "ast_hash": "bfcf93b6632d501717950e010cf651c4",
+    "semantic_hash": "bfcf93b6632d501717950e010cf651c4"
+  },
+  "/home/daniel/Dokumente/Daniels Agent Framework/packages/cli/src/verify-state.test.ts": {
+    "mtime": 1779637429.680216,
+    "ast_hash": "24b48ded84d4615d68f4784d981e5502",
+    "semantic_hash": "24b48ded84d4615d68f4784d981e5502"
+  },
+  "/home/daniel/Dokumente/Daniels Agent Framework/packages/cli/src/verify-state.ts": {
+    "mtime": 1779661883.0486064,
+    "ast_hash": "cdaa4d9c4b1ee12f999c6ac38a35da51",
+    "semantic_hash": "cdaa4d9c4b1ee12f999c6ac38a35da51"
+  },
+  "/home/daniel/Dokumente/Daniels Agent Framework/packages/cli/tsconfig.json": {
+    "mtime": 1779485792.4951692,
+    "ast_hash": "0264e63c327f1ee88aa6c7a560c3001e",
+    "semantic_hash": "0264e63c327f1ee88aa6c7a560c3001e"
+  },
+  "/home/daniel/Dokumente/Daniels Agent Framework/packages/cli/vitest.config.ts": {
+    "mtime": 1779485578.0584118,
+    "ast_hash": "87ccba62dfdfa1ff70c36f817875e8d2",
+    "semantic_hash": "87ccba62dfdfa1ff70c36f817875e8d2"
+  },
+  "/home/daniel/Dokumente/Daniels Agent Framework/scripts/global-install.mjs": {
+    "mtime": 1779920546.9065452,
+    "ast_hash": "0f2b4db12aff797ea185c48aefb0d6d0",
+    "semantic_hash": "0f2b4db12aff797ea185c48aefb0d6d0"
+  },
+  "/home/daniel/Dokumente/Daniels Agent Framework/templates/global/scaffold/config.json": {
+    "mtime": 1779637429.693216,
+    "ast_hash": "8d7546055e110fcc29ab4c783f2dcb59",
+    "semantic_hash": "8d7546055e110fcc29ab4c783f2dcb59"
+  },
+  "/home/daniel/Dokumente/Daniels Agent Framework/templates/global/skill-manifest.json": {
+    "mtime": 1780404341.8422036,
+    "ast_hash": "627dec0d6165533a24f1e9189071c962",
+    "semantic_hash": ""
+  },
+  "/home/daniel/Dokumente/Daniels Agent Framework/.agent/AGENTS.md": {
+    "mtime": 1780404411.081979,
+    "ast_hash": "df36cc28fe36eef8f681e94c6e7eeb61",
+    "semantic_hash": ""
+  },
+  "/home/daniel/Dokumente/Daniels Agent Framework/.agent/ARCHITECTURE.md": {
+    "mtime": 1780404378.1590016,
+    "ast_hash": "2d52c6c36761a18a0fe08abc30590f92",
+    "semantic_hash": ""
+  },
+  "/home/daniel/Dokumente/Daniels Agent Framework/.agent/GLOSSARY.md": {
+    "mtime": 1780404366.6412864,
+    "ast_hash": "76186512fe60be36eceb855fc8d81e23",
+    "semantic_hash": ""
+  },
+  "/home/daniel/Dokumente/Daniels Agent Framework/.agent/PRD.md": {
+    "mtime": 1780404382.103904,
+    "ast_hash": "1368f542c114c1f73d73afc4a89909d9",
+    "semantic_hash": ""
+  },
+  "/home/daniel/Dokumente/Daniels Agent Framework/.agent/memory/codebase-snapshot.md": {
+    "mtime": 1780402480.4596322,
+    "ast_hash": "51dd936556d1cfb78df2a2295cc0b112",
+    "semantic_hash": "51dd936556d1cfb78df2a2295cc0b112"
+  },
+  "/home/daniel/Dokumente/Daniels Agent Framework/.agent/memory/gotchas.md": {
+    "mtime": 1780404415.997065,
+    "ast_hash": "55f464a5c6fb733e9e181fb0aeefb25f",
+    "semantic_hash": ""
+  },
+  "/home/daniel/Dokumente/Daniels Agent Framework/.agent/memory/learnings.md": {
+    "mtime": 1780402480.4596322,
+    "ast_hash": "1ae6e70210dc952a8939e406ce541fac",
+    "semantic_hash": "1ae6e70210dc952a8939e406ce541fac"
+  },
+  "/home/daniel/Dokumente/Daniels Agent Framework/.agent/memory/remember.md": {
+    "mtime": 1779922939.556397,
+    "ast_hash": "14d3dfe30ccaa90bd5ae319f431d5d8e",
+    "semantic_hash": "14d3dfe30ccaa90bd5ae319f431d5d8e"
+  },
+  "/home/daniel/Dokumente/Daniels Agent Framework/.agent/phases/developing.md": {
+    "mtime": 1780404354.5935843,
+    "ast_hash": "e1e43b728ff01fa8b8da8b346565ab45",
+    "semantic_hash": ""
+  },
+  "/home/daniel/Dokumente/Daniels Agent Framework/.agent/phases/maintaining.md": {
+    "mtime": 1780402480.4596322,
+    "ast_hash": "34bc38f4a25af1bf5dea0184efb77d81",
+    "semantic_hash": "34bc38f4a25af1bf5dea0184efb77d81"
+  },
+  "/home/daniel/Dokumente/Daniels Agent Framework/.agent/phases/planning.md": {
+    "mtime": 1780404444.7183535,
+    "ast_hash": "0f802f0c5f69534cdde5b4c03d5cea0a",
+    "semantic_hash": ""
+  },
+  "/home/daniel/Dokumente/Daniels Agent Framework/AGENTS.md": {
+    "mtime": 1780402480.4596322,
+    "ast_hash": "0f0e75b6ae18c33ece562a6b772a0f14",
+    "semantic_hash": "0f0e75b6ae18c33ece562a6b772a0f14"
+  },
+  "/home/daniel/Dokumente/Daniels Agent Framework/BACKLOG.md": {
+    "mtime": 1779922939.5545282,
+    "ast_hash": "0da3b7dcc6d598da60f31bfaddd74cba",
+    "semantic_hash": "0da3b7dcc6d598da60f31bfaddd74cba"
+  },
+  "/home/daniel/Dokumente/Daniels Agent Framework/LOGBACK.md": {
+    "mtime": 1779922939.5545983,
+    "ast_hash": "d90a58a33074ca661df38f3860678926",
+    "semantic_hash": "d90a58a33074ca661df38f3860678926"
+  },
+  "/home/daniel/Dokumente/Daniels Agent Framework/README.md": {
+    "mtime": 1780402480.4596322,
+    "ast_hash": "90a2706837bf9e04750d1f82db859127",
+    "semantic_hash": "90a2706837bf9e04750d1f82db859127"
+  },
+  "/home/daniel/Dokumente/Daniels Agent Framework/pnpm-workspace.yaml": {
+    "mtime": 1779485517.5649343,
+    "ast_hash": "dce0bf8dc68c3460897eaa9135cb2be9",
+    "semantic_hash": "dce0bf8dc68c3460897eaa9135cb2be9"
+  },
+  "/home/daniel/Dokumente/Daniels Agent Framework/templates/global/IDENTITY.md": {
+    "mtime": 1780402480.4596322,
+    "ast_hash": "f1059c467afcd421fb531c2fdeee7e63",
+    "semantic_hash": "f1059c467afcd421fb531c2fdeee7e63"
+  },
+  "/home/daniel/Dokumente/Daniels Agent Framework/templates/global/PREFERENCES.md": {
+    "mtime": 1779707236.914261,
+    "ast_hash": "325c7c59be22a5935202d484b0817668",
+    "semantic_hash": "325c7c59be22a5935202d484b0817668"
+  },
+  "/home/daniel/Dokumente/Daniels Agent Framework/templates/global/onboarding/global-setup.md": {
+    "mtime": 1779922939.5963178,
+    "ast_hash": "aeb783bcde96a5f3377f3dce02781563",
+    "semantic_hash": "aeb783bcde96a5f3377f3dce02781563"
+  },
+  "/home/daniel/Dokumente/Daniels Agent Framework/templates/global/scaffold/AGENTS.md": {
+    "mtime": 1780404412.97414,
+    "ast_hash": "df36cc28fe36eef8f681e94c6e7eeb61",
+    "semantic_hash": ""
+  },
+  "/home/daniel/Dokumente/Daniels Agent Framework/templates/global/scaffold/ARCHITECTURE.md": {
+    "mtime": 1780402480.4610717,
+    "ast_hash": "00d0dac5f31d06861380b23b23bff937",
+    "semantic_hash": "00d0dac5f31d06861380b23b23bff937"
+  },
+  "/home/daniel/Dokumente/Daniels Agent Framework/templates/global/scaffold/GLOSSARY.md": {
+    "mtime": 1780402480.4610717,
+    "ast_hash": "bec1c79e5b08141a8e39fc0f6b6c6e08",
+    "semantic_hash": "bec1c79e5b08141a8e39fc0f6b6c6e08"
+  },
+  "/home/daniel/Dokumente/Daniels Agent Framework/templates/global/scaffold/PRD.md": {
+    "mtime": 1780402480.4610717,
+    "ast_hash": "a815d01c5b02638e5bb459165d6c34cb",
+    "semantic_hash": "a815d01c5b02638e5bb459165d6c34cb"
+  },
+  "/home/daniel/Dokumente/Daniels Agent Framework/templates/global/scaffold/memory/codebase-snapshot.md": {
+    "mtime": 1780402480.4610717,
+    "ast_hash": "e48f5f17e655fce839227f8eceb96311",
+    "semantic_hash": "e48f5f17e655fce839227f8eceb96311"
+  },
+  "/home/daniel/Dokumente/Daniels Agent Framework/templates/global/scaffold/memory/gotchas.md": {
+    "mtime": 1780402480.4610717,
+    "ast_hash": "3a1b1edbd3329653ae38e70f9d410abe",
+    "semantic_hash": "3a1b1edbd3329653ae38e70f9d410abe"
+  },
+  "/home/daniel/Dokumente/Daniels Agent Framework/templates/global/scaffold/memory/learnings.md": {
+    "mtime": 1779922939.5968697,
+    "ast_hash": "f9832cdf6bf666453d35fc6b2fcc5e05",
+    "semantic_hash": "f9832cdf6bf666453d35fc6b2fcc5e05"
+  },
+  "/home/daniel/Dokumente/Daniels Agent Framework/templates/global/scaffold/memory/remember.md": {
+    "mtime": 1779922939.5969107,
+    "ast_hash": "e8bebeeafe261645b20f700496a07a16",
+    "semantic_hash": "e8bebeeafe261645b20f700496a07a16"
+  },
+  "/home/daniel/Dokumente/Daniels Agent Framework/templates/global/scaffold/phases/developing.md": {
+    "mtime": 1780404346.5397832,
+    "ast_hash": "e1e43b728ff01fa8b8da8b346565ab45",
+    "semantic_hash": ""
+  },
+  "/home/daniel/Dokumente/Daniels Agent Framework/templates/global/scaffold/phases/maintaining.md": {
+    "mtime": 1780402480.4610717,
+    "ast_hash": "34bc38f4a25af1bf5dea0184efb77d81",
+    "semantic_hash": "34bc38f4a25af1bf5dea0184efb77d81"
+  },
+  "/home/daniel/Dokumente/Daniels Agent Framework/templates/global/scaffold/phases/planning.md": {
+    "mtime": 1780404349.2697158,
+    "ast_hash": "581af07275f78843a2c03a41196f3bcd",
+    "semantic_hash": ""
+  },
+  "/home/daniel/Dokumente/Daniels Agent Framework/templates/global/skills/backlog-add.md": {
+    "mtime": 1779922939.595581,
+    "ast_hash": "59fa6366703d6b3a7dbc1bc561b6b0a1",
+    "semantic_hash": "59fa6366703d6b3a7dbc1bc561b6b0a1"
+  },
+  "/home/daniel/Dokumente/Daniels Agent Framework/templates/global/skills/backlog-work.md": {
+    "mtime": 1779922939.5956655,
+    "ast_hash": "19f767de5b572c693dd370993d3ebc50",
+    "semantic_hash": "19f767de5b572c693dd370993d3ebc50"
+  },
+  "/home/daniel/Dokumente/Daniels Agent Framework/templates/global/skills/discuss.md": {
+    "mtime": 1779922939.5948002,
+    "ast_hash": "d42cd224d250493714e77769296509cf",
+    "semantic_hash": "d42cd224d250493714e77769296509cf"
+  },
+  "/home/daniel/Dokumente/Daniels Agent Framework/templates/global/skills/grill-me.md": {
+    "mtime": 1779922939.5943038,
+    "ast_hash": "30c14165c785fddd8797feae8b8abffe",
+    "semantic_hash": "30c14165c785fddd8797feae8b8abffe"
+  },
+  "/home/daniel/Dokumente/Daniels Agent Framework/templates/global/skills/help.md": {
+    "mtime": 1780402480.4616115,
+    "ast_hash": "aa037ccefa429f585265dc02344b1c49",
+    "semantic_hash": "aa037ccefa429f585265dc02344b1c49"
+  },
+  "/home/daniel/Dokumente/Daniels Agent Framework/templates/global/skills/how-it-works.md": {
+    "mtime": 1779922939.5954552,
+    "ast_hash": "ee0445aa9cb73441bd53e2ce4a803e6e",
+    "semantic_hash": "ee0445aa9cb73441bd53e2ce4a803e6e"
+  },
+  "/home/daniel/Dokumente/Daniels Agent Framework/templates/global/skills/improvement.md": {
+    "mtime": 1779922939.594711,
+    "ast_hash": "82e656605bde197add064004f3b5b3a3",
+    "semantic_hash": "82e656605bde197add064004f3b5b3a3"
+  },
+  "/home/daniel/Dokumente/Daniels Agent Framework/templates/global/skills/issue.md": {
+    "mtime": 1779922939.5945013,
+    "ast_hash": "b97e8d409a034acc3f86c301deea6303",
+    "semantic_hash": "b97e8d409a034acc3f86c301deea6303"
+  },
+  "/home/daniel/Dokumente/Daniels Agent Framework/templates/global/skills/ltm-checkup.md": {
+    "mtime": 1779922961.3454452,
+    "ast_hash": "5a29dadd0275f12c24b57e26752d3084",
+    "semantic_hash": "5a29dadd0275f12c24b57e26752d3084"
+  },
+  "/home/daniel/Dokumente/Daniels Agent Framework/templates/global/skills/new-feature.md": {
+    "mtime": 1780402480.4616115,
+    "ast_hash": "c3284ed7f0efd32b6e881b0102af9cea",
+    "semantic_hash": "c3284ed7f0efd32b6e881b0102af9cea"
+  },
+  "/home/daniel/Dokumente/Daniels Agent Framework/templates/global/skills/onboard.md": {
+    "mtime": 1779922961.3455305,
+    "ast_hash": "082519ca6294403687a6b1b2879e1413",
+    "semantic_hash": "082519ca6294403687a6b1b2879e1413"
+  },
+  "/home/daniel/Dokumente/Daniels Agent Framework/templates/global/skills/phase-transition.md": {
+    "mtime": 1780404309.5766954,
+    "ast_hash": "771360a931384534492322638cc2a554",
+    "semantic_hash": ""
+  },
+  "/home/daniel/Dokumente/Daniels Agent Framework/templates/global/skills/pivot.md": {
+    "mtime": 1780404329.4422054,
+    "ast_hash": "6c1d4eb77ea2cdae6ab61f3ecd375bcb",
+    "semantic_hash": ""
+  },
+  "/home/daniel/Dokumente/Daniels Agent Framework/templates/global/skills/remember.md": {
+    "mtime": 1779922961.3451567,
+    "ast_hash": "4e5c46e508ecc156abe7afd884abf7f5",
+    "semantic_hash": "4e5c46e508ecc156abe7afd884abf7f5"
+  },
+  "/home/daniel/Dokumente/Daniels Agent Framework/templates/global/skills/remove-global.md": {
+    "mtime": 1779922939.5953212,
+    "ast_hash": "9100fbed050fe2380b7a80839dc465f2",
+    "semantic_hash": "9100fbed050fe2380b7a80839dc465f2"
+  },
+  "/home/daniel/Dokumente/Daniels Agent Framework/templates/global/skills/remove.md": {
+    "mtime": 1779922939.5952463,
+    "ast_hash": "47656073e0a55d61e7bfbb7fe4fe9214",
+    "semantic_hash": "47656073e0a55d61e7bfbb7fe4fe9214"
+  },
+  "/home/daniel/Dokumente/Daniels Agent Framework/templates/global/skills/retro.md": {
+    "mtime": 1779922961.3450499,
+    "ast_hash": "5dbadaa64bd93b8c7fb1fba3b0c40882",
+    "semantic_hash": "5dbadaa64bd93b8c7fb1fba3b0c40882"
+  },
+  "/home/daniel/Dokumente/Daniels Agent Framework/templates/global/skills/setup.md": {
+    "mtime": 1779922961.3452458,
+    "ast_hash": "5b1faa9566ab5b079d19c8b4c2dd1e73",
+    "semantic_hash": "5b1faa9566ab5b079d19c8b4c2dd1e73"
+  },
+  "/home/daniel/Dokumente/Daniels Agent Framework/templates/global/skills/start.md": {
+    "mtime": 1780404319.3704538,
+    "ast_hash": "182b21992e166efe498702a572d25ec6",
+    "semantic_hash": ""
+  },
+  "/home/daniel/Dokumente/Daniels Agent Framework/templates/platforms/claude/README.md": {
+    "mtime": 1779922939.5937734,
+    "ast_hash": "75c1158598f3d07006fc63e75b558fe6",
+    "semantic_hash": "75c1158598f3d07006fc63e75b558fe6"
+  },
+  "/home/daniel/Dokumente/Daniels Agent Framework/templates/platforms/claude/project/.claude/rules/daf.md": {
+    "mtime": 1779923031.9216325,
+    "ast_hash": "4df1899f2949a2c3b61f8f0c2c911598",
+    "semantic_hash": "4df1899f2949a2c3b61f8f0c2c911598"
+  },
+  "/home/daniel/Dokumente/Daniels Agent Framework/templates/platforms/codex/README.md": {
+    "mtime": 1779920717.0439274,
+    "ast_hash": "2791c01ac56a67311c141bdaae79f6ea",
+    "semantic_hash": "2791c01ac56a67311c141bdaae79f6ea"
+  },
+  "/home/daniel/Dokumente/Daniels Agent Framework/templates/platforms/codex/global/AGENTS.md": {
+    "mtime": 1779922939.5939777,
+    "ast_hash": "597fa48e9c86714e33336c9d1c98c959",
+    "semantic_hash": "597fa48e9c86714e33336c9d1c98c959"
+  },
+  "/home/daniel/Dokumente/Daniels Agent Framework/templates/root-AGENTS.md": {
+    "mtime": 1779485605.93086,
+    "ast_hash": "4206f7eb3fd9b78f0662aaf0dff42045",
+    "semantic_hash": "4206f7eb3fd9b78f0662aaf0dff42045"
+  },
+  "/home/daniel/Dokumente/Daniels Agent Framework/templates/root-BACKLOG.md": {
+    "mtime": 1779922939.5547602,
+    "ast_hash": "20b9d3a29a1a43ac748cc473490911fd",
+    "semantic_hash": "20b9d3a29a1a43ac748cc473490911fd"
+  },
+  "/home/daniel/Dokumente/Daniels Agent Framework/templates/root-LOGBACK.md": {
+    "mtime": 1779922939.5548146,
+    "ast_hash": "a78b451e7c1e9d71b2b6aa0f03d2c10c",
+    "semantic_hash": "a78b451e7c1e9d71b2b6aa0f03d2c10c"
+  },
+  "/home/daniel/Dokumente/Daniels Agent Framework/templates/stacks/general.md": {
+    "mtime": 1779637429.6682162,
+    "ast_hash": "db12acc27c588c7cc9e9cdfa5f2296e2",
+    "semantic_hash": "db12acc27c588c7cc9e9cdfa5f2296e2"
+  },
+  "/home/daniel/Dokumente/Daniels Agent Framework/templates/stacks/typescript-react.md": {
+    "mtime": 1779641475.691385,
+    "ast_hash": "cd5791d549bbbbc5fde698760afa00ea",
+    "semantic_hash": "cd5791d549bbbbc5fde698760afa00ea"
+  },
+  "/home/daniel/Dokumente/Daniels Agent Framework/templates/stacks/typescript.md": {
+    "mtime": 1779707262.5832121,
+    "ast_hash": "e67aaaf44b281762aa1b4c971f245719",
+    "semantic_hash": "e67aaaf44b281762aa1b4c971f245719"
+  },
+  "/home/daniel/Dokumente/Daniels Agent Framework/.agent/graphify.config.json": {
+    "mtime": 1780404384.1538534,
+    "ast_hash": "4b043d4ea7143cec33d7a452dab64025",
+    "semantic_hash": ""
+  },
+  "/home/daniel/Dokumente/Daniels Agent Framework/.agent/kg-bootstrap.json": {
+    "mtime": 1780404398.0904434,
+    "ast_hash": "a5a3de26bde5eec446f529d18eb6eccd",
+    "semantic_hash": ""
+  },
+  "/home/daniel/Dokumente/Daniels Agent Framework/scripts/kg-bootstrap.mjs": {
+    "mtime": 1780404220.1018977,
+    "ast_hash": "d6a175e52ced2a8523b14ed31b8888cb",
+    "semantic_hash": ""
+  },
+  "/home/daniel/Dokumente/Daniels Agent Framework/scripts/kg-ingest.mjs": {
+    "mtime": 1780404232.4575942,
+    "ast_hash": "db628429cfda583496ae84ab20ea8bb3",
+    "semantic_hash": ""
+  },
+  "/home/daniel/Dokumente/Daniels Agent Framework/scripts/kg-lib.mjs": {
+    "mtime": 1780404239.77898,
+    "ast_hash": "b089b71f70d186d5787f5313fdca0f78",
+    "semantic_hash": ""
+  },
+  "/home/daniel/Dokumente/Daniels Agent Framework/templates/global/scaffold/graphify.config.json": {
+    "mtime": 1780404235.2145264,
+    "ast_hash": "4b043d4ea7143cec33d7a452dab64025",
+    "semantic_hash": ""
+  },
+  "/home/daniel/Dokumente/Daniels Agent Framework/templates/global/skills/kg-ingest.md": {
+    "mtime": 1780404293.677668,
+    "ast_hash": "ff68313b2ad1416b9848192c64976099",
+    "semantic_hash": ""
+  },
+  "/home/daniel/Dokumente/Daniels Agent Framework/.agent/kg-ingest-state.json": {
+    "mtime": 1780404854.2318301,
+    "ast_hash": "62d822910420bce80b53b2f8f551e8e7",
+    "semantic_hash": ""
+  }
+}

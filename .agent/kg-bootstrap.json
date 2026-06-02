@@ -1,0 +1,28 @@
+{
+  "status": "ok",
+  "at": "2026-06-02T12:46:38.089Z",
+  "command": "npm run kg:bootstrap -- --write-receipt",
+  "sources": [
+    "PRD.md",
+    "GLOSSARY.md",
+    "ARCHITECTURE.md",
+    "AGENTS.md",
+    "phases/planning.md",
+    "phases/developing.md",
+    "phases/maintaining.md"
+  ],
+  "fingerprints": {
+    "PRD.md": "1b205503ae102f0e",
+    "GLOSSARY.md": "45e3340fea0413cb",
+    "ARCHITECTURE.md": "36cb00b7ea73eb2a",
+    "AGENTS.md": "62275eddb9ee1be9",
+    "phases/planning.md": "de2e41aa6a3f7303",
+    "phases/developing.md": "6cbf398d2d6a3d57",
+    "phases/maintaining.md": "6dbeaf53f458c1cf"
+  },
+  "graph": {
+    "nodes": 603,
+    "edges": 815,
+    "domainNodes": 443
+  }
+}

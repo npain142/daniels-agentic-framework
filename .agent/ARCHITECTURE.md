@@ -11,13 +11,23 @@
 | **Verify state** | `packages/cli/src/verify-state.ts` | `buildInitialVerifyState` for tests; agents mirror in `/daf-setup`. |
 | **Global install** | `packages/cli/src/global-install.ts` | Copy `templates/global`, write `daf-*.md` skills from manifest, stacks, scaffold. |
 | **Cursor install** | `packages/cli/src/platforms/cursor.ts` | Build `~/.cursor/skills/daf-*/SKILL.md` + platform project overlay. |
-| **Checklist** | `packages/cli/src/checklists/planning-to-developing.ts` | `validatePlanningExit` thresholds for leaving planning. |
+| **Checklist** | `packages/cli/src/checklists/planning-to-developing.ts` | `validatePlanningExit` thresholds for leaving planning (incl. `kg-bootstrap.json`). |
+| **KG scripts** | `scripts/kg-bootstrap.mjs`, `scripts/kg-ingest.mjs` | Mechanical Graphify hooks; no LLM. Semantic extraction is agent-driven per skills. |
 | **Paths** | `packages/cli/src/paths.ts` | Repo root, `DAFE_GLOBAL_ROOT`, `DAF_CURSOR_SKILLS_ROOT`. |
 | **Templates** | `templates/` | Source of truth; copied to `~/.config/agent/` on `/daf-onboard`. |
 
+## Knowledge graph (Graphify)
+
+Two layers merged in `graphify-out/graph.json`:
+
+1. **Domain graph** — bootstrapped when leaving **planning** (`/daf-phase-transition` / `/daf-start`): agent semantic extraction on `.agent/graphify.config.json` → `bootstrap.sources`; receipt in `kg-bootstrap.json`.
+2. **Code graph** — updated during **developing** via `npm run kg:ingest` (`graphify update .`, AST only).
+
+Canonical doc edits trigger **`/daf-kg-ingest`** (semantic merge + re-ingest). Config: `.agent/graphify.config.json`. Query: `graphify query` (see `.cursor/rules/graphify.mdc`).
+
 ## Boundaries
 
-- **Install tooling must not** embed LLM clients, run agents, or make network calls.
+- **Install tooling must not** embed LLM clients, run agents, or make network calls (`kg:*` scripts invoke graphify AST only).
 - **Agents** read/write `.agent/config.json` per skills; they do not invent phase or stack.
 - **`/daf-onboard`** is machine-wide; **`/daf-setup`** is per-repo (greenfield scaffold or brownfield interview).
 - **Templates** in repo are canonical; `~/.config/agent/` is an installed copy.

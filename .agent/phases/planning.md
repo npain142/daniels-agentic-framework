@@ -11,8 +11,9 @@ Decide what to build and how the agent should behave before production code. **`
 - `ARCHITECTURE.md` exists (module sketch and boundaries for this repo or product).
 - `config.stack` is set to a non-null value and `~/.config/agent/stacks/{stack}.md` exists (run `/daf-onboard` if needed).
 - `phases/planning.md`, `phases/developing.md`, and `phases/maintaining.md` are present.
+- **Knowledge graph:** `graphify.config.json` present; domain graph bootstrapped at exit with valid `kg-bootstrap.json` (`status: ok`).
 
-Follow **`/daf-phase-transition`** — it enforces the planning-exit checklist.
+Follow **`/daf-phase-transition`** — it enforces the planning-exit checklist and KG bootstrap.
 
 ## Allowed
 

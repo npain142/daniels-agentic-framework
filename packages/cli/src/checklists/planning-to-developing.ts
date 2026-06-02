@@ -40,11 +40,14 @@ export async function validatePlanningExit(
   const planningPhase = join(agentDir, "phases", "planning.md");
   const developingPhase = join(agentDir, "phases", "developing.md");
   const maintainingPhase = join(agentDir, "phases", "maintaining.md");
+  const graphifyConfigPath = join(agentDir, "graphify.config.json");
+  const kgBootstrapPath = join(agentDir, "kg-bootstrap.json");
 
   for (const [label, p] of [
     ["PRD.md", prdPath],
     ["GLOSSARY.md", glossaryPath],
     ["ARCHITECTURE.md", archPath],
+    ["graphify.config.json", graphifyConfigPath],
     ["phases/planning.md", planningPhase],
     ["phases/developing.md", developingPhase],
     ["phases/maintaining.md", maintainingPhase],
@@ -86,6 +89,45 @@ export async function validatePlanningExit(
     }
   }
 
+  const kgResult = await validateKgBootstrap(kgBootstrapPath);
+  if (!kgResult.ok) errors.push(...kgResult.errors);
+
+  if (errors.length) return { ok: false, errors };
+  return { ok: true };
+}
+
+type KgBootstrapReceipt = {
+  status?: string;
+  command?: string;
+  sources?: string[];
+};
+
+export async function validateKgBootstrap(kgBootstrapPath: string): Promise<ChecklistResult> {
+  const errors: string[] = [];
+  if (!existsSync(kgBootstrapPath)) {
+    errors.push("Missing kg-bootstrap.json — run planning→developing KG bootstrap (/daf-phase-transition)");
+    return { ok: false, errors };
+  }
+  let receipt: KgBootstrapReceipt;
+  try {
+    receipt = JSON.parse(await readFile(kgBootstrapPath, "utf8")) as KgBootstrapReceipt;
+  } catch {
+    errors.push("kg-bootstrap.json is not valid JSON");
+    return { ok: false, errors };
+  }
+  if (receipt.status !== "ok") {
+    errors.push('kg-bootstrap.json status must be "ok" (domain graph bootstrap incomplete)');
+  }
+  const cmd = (receipt.command ?? "").toLowerCase();
+  if (!cmd.includes("graphify") && !cmd.includes("kg:bootstrap")) {
+    errors.push("kg-bootstrap.json command must mention graphify or kg:bootstrap");
+  }
+  const sources = receipt.sources ?? [];
+  for (const required of ["PRD.md", "GLOSSARY.md", "ARCHITECTURE.md"] as const) {
+    if (!sources.includes(required)) {
+      errors.push(`kg-bootstrap.json sources must include ${required}`);
+    }
+  }
   if (errors.length) return { ok: false, errors };
   return { ok: true };
 }

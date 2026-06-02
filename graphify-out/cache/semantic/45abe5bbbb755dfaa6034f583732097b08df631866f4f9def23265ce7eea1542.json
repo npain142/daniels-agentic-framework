@@ -1,0 +1,1 @@
+{"nodes": [{"id": "templates_root_backlog_md", "label": "root-BACKLOG.md template", "file_type": "document", "source_file": "templates/root-BACKLOG.md"}], "edges": [{"source": "templates_root_backlog_md", "target": "templates_root_logback_md", "relation": "conceptually_related_to", "confidence_score": 0.86, "source_file": "templates/root-BACKLOG.md"}], "hyperedges": []}

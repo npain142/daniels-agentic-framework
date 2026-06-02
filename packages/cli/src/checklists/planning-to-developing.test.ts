@@ -3,7 +3,7 @@ import { join } from "node:path";
 import { tmpdir } from "node:os";
 import { describe, expect, it } from "vitest";
 import type { DafConfig } from "../config.js";
-import { validatePlanningExit } from "./planning-to-developing.js";
+import { validateKgBootstrap, validatePlanningExit } from "./planning-to-developing.js";
 
 async function agentFixture(agentDir: string, prdBody: string): Promise<void> {
   await mkdir(join(agentDir, "phases"), { recursive: true });
@@ -20,6 +20,20 @@ async function agentFixture(agentDir: string, prdBody: string): Promise<void> {
   await writeFile(
     join(agentDir, "ARCHITECTURE.md"),
     "# Architecture\n\nModules and boundaries described here with enough characters to pass the minimum length gate for developing transition.",
+    "utf8",
+  );
+  await writeFile(
+    join(agentDir, "graphify.config.json"),
+    JSON.stringify({ outputDir: "graphify-out", bootstrap: { sources: ["PRD.md"], minDomainNodes: 1 }, ingest: {} }),
+    "utf8",
+  );
+  await writeFile(
+    join(agentDir, "kg-bootstrap.json"),
+    JSON.stringify({
+      status: "ok",
+      command: "npm run kg:bootstrap -- --write-receipt",
+      sources: ["PRD.md", "GLOSSARY.md", "ARCHITECTURE.md"],
+    }),
     "utf8",
   );
 }
@@ -62,6 +76,43 @@ describe("validatePlanningExit", () => {
     };
     const r = await validatePlanningExit(agentDir, globalDir, config);
     expect(r).toEqual({ ok: true });
+  });
+
+  it("fails when kg-bootstrap.json is missing or incomplete", async () => {
+    const root = await mkdtemp(join(tmpdir(), "daf-test-"));
+    const agentDir = join(root, ".agent");
+    const globalDir = join(root, "global");
+    await mkdir(agentDir, { recursive: true });
+    await mkdir(join(globalDir, "stacks"), { recursive: true });
+    await agentFixture(agentDir, validPrd);
+    await writeFile(join(globalDir, "stacks", "typescript.md"), "# ts\n", "utf8");
+    await writeFile(join(agentDir, "kg-bootstrap.json"), JSON.stringify({ status: "incomplete" }), "utf8");
+    const config: DafConfig = {
+      phase: "planning",
+      stack: "typescript",
+      check: "npm run check",
+      taskCheck: "npm run test",
+      codebaseEvery: 5,
+      initialTaskCount: 0,
+    };
+    const r = await validatePlanningExit(agentDir, globalDir, config);
+    expect(r.ok).toBe(false);
+    if (!r.ok) expect(r.errors.some((e) => e.includes("kg-bootstrap"))).toBe(true);
+  });
+
+  it("validateKgBootstrap passes for a valid receipt", async () => {
+    const root = await mkdtemp(join(tmpdir(), "daf-test-"));
+    const path = join(root, "kg-bootstrap.json");
+    await writeFile(
+      path,
+      JSON.stringify({
+        status: "ok",
+        command: "graphify + npm run kg:bootstrap",
+        sources: ["PRD.md", "GLOSSARY.md", "ARCHITECTURE.md"],
+      }),
+      "utf8",
+    );
+    expect(await validateKgBootstrap(path)).toEqual({ ok: true });
   });
 
   it("fails when a PRD section still contains TBD-style placeholders", async () => {

@@ -67,6 +67,10 @@
     "name": "daf-phase-transition",
     "description": "Validates planning exit checklist before editing config.phase to developing or maintaining (same rules as validatePlanningExit in the DAF repo). Use when the user says /daf-phase-transition or asks to leave planning."
   },
+  "kg-ingest": {
+    "name": "daf-kg-ingest",
+    "description": "In developing or maintaining: refresh graphify-out/ after code (npm run kg:ingest) and canonical doc changes (semantic /graphify pass). Use when the user says /daf-kg-ingest or after edits that should update the knowledge graph."
+  },
   "remove": {
     "name": "daf-remove",
     "description": "Removes DAF from the current repo: .agent/, DAF bootstrap AGENTS.md, and .cursor/rules/daf.mdc after explicit confirmation. Not machine-wide — use /daf-remove-global. Use when the user says /daf-remove or wants to strip project agent structure."

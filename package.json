@@ -12,7 +12,9 @@
     "lint": "npm run lint --workspaces --if-present",
     "test": "npm run test --workspaces --if-present",
     "build": "npm run build --workspaces --if-present",
-    "global-install": "node scripts/global-install.mjs"
+    "global-install": "node scripts/global-install.mjs",
+    "kg:bootstrap": "node scripts/kg-bootstrap.mjs",
+    "kg:ingest": "node scripts/kg-ingest.mjs"
   },
   "dependencies": {
     "@daniels-agent-framework/cli": "workspace:*"

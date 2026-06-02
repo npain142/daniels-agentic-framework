@@ -25,6 +25,7 @@ When implementing in this phase:
 - Behavior matches agreed intent; tests where they add real coverage.
 - Read `.agent/memory/remember.md` and `.agent/memory/gotchas.md` before non-trivial edits.
 - `/daf-retro` if non-trivial.
+- **Knowledge graph:** after code changes run `npm run kg:ingest` (AST code graph). After canonical doc changes (PRD, GLOSSARY, ARCHITECTURE) run **`/daf-kg-ingest`**. Prefer `graphify query` / `graphify explain` over rereading the whole repo when `graphify-out/graph.json` exists.
 
 ## Task summary
 
@@ -68,6 +69,7 @@ Imperative mood; match repo commit style. Omit if nothing to commit. Do not comm
 - `/daf-remember` — append user standing instructions to `memory/remember.md`.
 - `/daf-retro` — promote notes to `memory/learnings.md` / `gotchas.md`.
 - `/daf-phase-transition` — change phase when checklists pass (`planning`, `developing`, `maintaining`).
+- `/daf-kg-ingest` — merge code and canonical-doc changes into `graphify-out/`.
 
 ## Merge to main
 

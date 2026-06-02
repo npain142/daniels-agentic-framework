@@ -13,3 +13,7 @@ When a symptom has multiple possible causes, narrow to one (reproduce, read call
 ## Clean code → clean repo → clean product
 
 Work in that order: **local change** respects existing patterns and boundaries; **repo** stays consistent (one way to do a thing, no stray duplication); **product** behavior stays coherent with `PRD.md` and `ARCHITECTURE.md`. Prefer extending the right module over inventing a one-off. Match established design patterns in the codebase; propose a small refactor at the root when the fix would otherwise spread hacks.
+
+## Task endings
+
+When a task produced committable changes, end with **Suggested commit message:** then a fenced code block containing **only** one short imperative line (precise, easy to copy). Match repo commit style. Omit if nothing to commit. Do not commit unless the user asks.

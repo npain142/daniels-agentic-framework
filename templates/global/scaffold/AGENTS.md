@@ -80,7 +80,8 @@ Skills and deeper docs are **on demand**. Invoke DAF skills only as **`/daf-<slu
 | `/daf-backlog-work` | developing / maintaining — pick backlog item, implement, archive to `LOGBACK.md` |
 | `/daf-remember` | any — save standing instructions to `memory/remember.md` |
 | `/daf-retro` | any |
-| `/daf-phase-transition` | any — validate planning exit; set `config.phase` |
+| `/daf-phase-transition` | any — validate planning exit; KG bootstrap; set `config.phase` |
+| `/daf-kg-ingest` | developing / maintaining — refresh `graphify-out/` after code or canonical doc changes |
 | `/daf-remove` | any — strip `.agent/`, DAF root `AGENTS.md`, IDE overlay files from **this repo** |
 | `/daf-remove-global` | any — uninstall `~/.config/agent/` and IDE `daf-*` skills (machine-wide) |
 

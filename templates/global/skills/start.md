@@ -8,14 +8,17 @@
 
 1. Read `.agent/config.json` and planning exit criteria (same checklist as **`/daf-phase-transition`** — keep aligned with `validatePlanningExit` in the DAF repo).
 2. If `phase === "planning"`:
-   - Run the checklist; if any check fails, list gaps and **stop** (do not change phase).
+   - Run the planning-exit checklist for docs and stack (same as **`/daf-phase-transition`**).
+   - Run the **KG bootstrap** sequence from **`/daf-phase-transition`** (`kg:bootstrap` → semantic domain graph → `kg:bootstrap -- --write-receipt`) when `kg-bootstrap.json` is missing or stale vs canonical fingerprints.
+   - Re-validate full checklist including `kg-bootstrap.json`; if any check fails, list gaps and **stop** (do not change phase).
    - If all pass, set `phase` to `"developing"` in `.agent/config.json`.
 3. If `phase` is already `developing` or `maintaining`, confirm with the user they want a **developing kickoff** (not a phase change); skip checklist unless they asked to re-validate planning exit.
 4. **Kickoff (developing session):**
-   - Read `.agent/verify-state.json`, `PRD.md`, `ARCHITECTURE.md`, and repo-root **`BACKLOG.md`** or **`todo.txt`** if present (user may point at one).
-   - Post a short **inventory**: current phase, stack, open backlog lines (if any), and one sentence on what the PRD says v1 is.
+   - Read `.agent/verify-state.json`, `PRD.md`, `ARCHITECTURE.md`, `graphify-out/GRAPH_REPORT.md` or run `graphify query` for orientation if the graph exists.
+   - Read repo-root **`BACKLOG.md`** or **`todo.txt`** if present (user may point at one).
+   - Post a short **inventory**: current phase, stack, graph stats (`kg-bootstrap.json` / `graph.json`), open backlog lines (if any), and one sentence on what the PRD says v1 is.
    - Ask **one** question: what is the **first goal** for this session (or pick from backlog if the user wants you to propose; or use **`/daf-backlog-work`** to take the next item).
-   - Remind: session **goals live in chat only**; follow `.agent/phases/developing.md` for implementation work.
+   - Remind: session **goals live in chat only**; follow `.agent/phases/developing.md` for implementation work; run **`npm run kg:ingest`** after code changes, **`/daf-kg-ingest`** when canon docs change.
 
 ## Hard rules
 

@@ -24,6 +24,11 @@
 | **Logback** | Fading archive at repo root in `LOGBACK.md`: short artifacts from completed backlog items; auto-pruned (7d untagged, 14d tagged, `#keep` retained). |
 | **Realignment** | `/daf-grill-me` in **developing** or **maintaining**: resync user intent with PRD, architecture, code, and backlog. |
 | **LTM** | Long-term memory outside `.agent/` (e.g. Notion); reconciled via `/daf-ltm-checkup`. |
+| **Knowledge graph (KG)** | Project graph in `graphify-out/` (Graphify): domain/concept nodes from canonical `.agent/` docs + code nodes from AST. |
+| **Domain graph** | Semantic layer: concepts, phases, skills, rationale from PRD/GLOSSARY/ARCHITECTURE and bootstrap sources — created at **planning → developing** transition. |
+| **Code graph** | Structural layer: imports, calls, symbols — grows via `npm run kg:ingest` / `graphify update .` during **developing**. |
+| **KG bootstrap** | Planning-exit ritual: `kg:bootstrap` + agent semantic extraction + `kg-bootstrap.json` receipt (`status: ok`). |
+| **KG ingest** | Developing/maintaining refresh: `npm run kg:ingest` + `/daf-kg-ingest` when canonical docs change. |
 
 ## Banned synonyms
 
