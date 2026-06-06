@@ -23,14 +23,26 @@ State lives in **`.agent/config.json`**: `phase`, `stack`, `check`, `taskCheck`,
 4. `~/.config/agent/stacks/{stack}.md` — **only if** `config.stack` is non-null
 5. `.agent/AGENTS.md` — this file
 6. `.agent/phases/{config.phase}.md` — current phase bar
-7. `.agent/GLOSSARY.md` — canonical terms (stub OK late in planning; keep current in developing / maintaining)
-8. `.agent/memory/remember.md` — user standing instructions for this project
-9. `.agent/memory/gotchas.md` — before non-trivial edits
+7. `.agent/memory/remember.md` — user standing instructions for this project
+8. `.agent/memory/gotchas.md` — before non-trivial edits
 
-**When `config.phase` is `developing` or `maintaining`**, also read before implementing work:
+**Canon** (PRD, GLOSSARY, ARCHITECTURE, product README): **§2.1 KG-first** when `graphify-out/graph.json` exists; otherwise read those files when a task needs them.
 
-10. `.agent/verify-state.json` — `taskCount`, `codebaseCheckPending`
-11. `.agent/memory/codebase-snapshot.md` — if present; prefer when fresh over re-reading every canonical doc each session
+**When `config.phase` is `developing` or `maintaining`**, also before implementing work:
+
+9. `.agent/verify-state.json` — `taskCount`, `codebaseCheckPending`
+10. `.agent/memory/codebase-snapshot.md` — if present; prefer when fresh over re-loading full canon
+
+### 2.1 KG-first canon (when the graph exists)
+
+When **`graphify-out/graph.json`** exists:
+
+- **Do not** bulk-read `.agent/PRD.md`, `.agent/GLOSSARY.md`, `.agent/ARCHITECTURE.md`, or project `README` for orientation, session start, or DAF skills (`/daf-grill-me`, `/daf-start`, `/daf-how-it-works`, etc.).
+- Use Graphify first: `graphify query "…"`, `graphify explain "<term>"`, or `graphify path` as needed; use `graphify-out/wiki/index.md` when present.
+- **Read a canonical file** only when you are **editing** it, the graph cites a path and you need exact wording, or queries return insufficient context.
+- After canonical doc edits, run **`/daf-kg-ingest`**.
+
+When the graph is **missing** (early **planning** before bootstrap, or no Graphify setup), read canon files directly as needed.
 
 Skills and deeper docs are **on demand**. Invoke DAF skills only as **`/daf-<slug>`** in chat (see §4). Native paths (when listed in `platforms.json`): **`cursor`** → `~/.cursor/skills/daf-*`; **`claude`** → `~/.claude/skills/daf-*`; always available as flat `~/.config/agent/skills/daf-*.md`. Do not document or use unprefixed `/setup`, `/onboard`, etc. for DAF.
 
@@ -91,7 +103,7 @@ Skills and deeper docs are **on demand**. Invoke DAF skills only as **`/daf-<slu
 
 1. Read `.agent/config.json` first; never hardcode phase or stack. Read **`~/.config/agent/platforms.json`** for IDE integrations on this machine. For DAF workflows, use only **`/daf-<slug>`** skills and **`daf-*`** rules (not unprefixed `/setup`, `/onboard`, or non-`daf` project rules).
 2. Honor `.agent/phases/{phase}.md`.
-3. Use `GLOSSARY.md` terms; propose additions before inventing synonyms.
+3. Use glossary terms from `graphify explain` or `GLOSSARY.md`; propose additions before inventing synonyms.
 4. In **developing** or **maintaining**, follow **`.agent/phases/{phase}.md`** for implementation work: goals in the session only, per-goal `config.taskCheck`, update `.agent/verify-state.json` when a session task ends, two-phase codebase-check when due; then declare done. In **maintaining**, **`config.check`** must be green every session task end, not only when codebase-check applies (see `.agent/phases/maintaining.md`).
 5. No commit, push, merge, or destructive shell without explicit user confirmation.
 6. Never paste or commit secrets.

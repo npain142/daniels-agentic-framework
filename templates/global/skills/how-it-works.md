@@ -11,7 +11,7 @@ Deliver an accurate **how it works** brief for the requested topic — dense eno
 ## Steps
 
 1. Restate the topic in one sentence; if ambiguous, ask **one** narrowing question.
-2. Read in order: `.agent/ARCHITECTURE.md`, `.agent/GLOSSARY.md`, relevant source under the repo, and any manifest/skill files the topic references.
+2. If `graphify-out/graph.json` exists: `graphify query` / `graphify explain` on the topic, then read only **cited** source paths and manifest/skill files. Else read `.agent/ARCHITECTURE.md`, `.agent/GLOSSARY.md`, relevant source, and referenced skills.
 3. Trace the real execution path (entry → boundaries → outputs). Name **files and symbols** that matter; avoid hand-wavy “the system does X.”
 4. Output structure (use headings):
    - **Purpose** — what this piece is for in one paragraph.

@@ -29,6 +29,7 @@
 | **Code graph** | Structural layer: imports, calls, symbols — grows via `npm run kg:ingest` / `graphify update .` during **developing**. |
 | **KG bootstrap** | Planning-exit ritual: `kg:bootstrap` + agent semantic extraction + `kg-bootstrap.json` receipt (`status: ok`). |
 | **KG ingest** | Developing/maintaining refresh: `npm run kg:ingest` + `/daf-kg-ingest` when canonical docs change. |
+| **KG-first canon** | When `graphify-out/graph.json` exists, load PRD/architecture/glossary via `graphify query` / `explain` instead of bulk-reading canonical `.md` files (AGENTS.md §2.1). |
 
 ## Banned synonyms
 

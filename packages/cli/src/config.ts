@@ -44,7 +44,7 @@ export function parseConfig(raw: string): DafConfig {
   const check = o.check;
   if (o.platform !== undefined) {
     throw new Error(
-      'config.json must not contain "platform" (machine-local). Use .agent/local.json with "platforms": ["cursor"] — see /daf-setup.',
+      'config.json must not contain "platform". Run /daf-onboard to set IDE platforms in ~/.config/agent/platforms.json — see /daf-setup.',
     );
   }
   if (phase !== "planning" && phase !== "developing" && phase !== "maintaining") {

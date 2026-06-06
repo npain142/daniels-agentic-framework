@@ -17,7 +17,7 @@ If unsure whether to pivot, use `/daf-discuss` first.
 ## Steps
 
 1. **From → to:** one sentence each; list what is deprecated, renamed, or removed (bullets).
-2. Read `.agent/PRD.md`, `ARCHITECTURE.md`, `GLOSSARY.md`, and affected code or docs.
+2. Load canon **KG-first** (`.agent/AGENTS.md` §2.1), then read affected source paths the graph cites or you will edit.
 3. **Blast radius:** files, public APIs, tests, migrations, user-visible behavior.
 4. **Canonical docs first** (before large code churn): update `GLOSSARY.md` (propose terms), `ARCHITECTURE.md`, and `PRD.md` sections if product meaning changed.
 5. **KG update:** run **`/daf-kg-ingest`** (agent: `npm run kg:ingest` + semantic pass when canon changed); update archive if stubs are live; mark deprecated concepts with explicit replacement edges in canonical/archive docs before ingest.

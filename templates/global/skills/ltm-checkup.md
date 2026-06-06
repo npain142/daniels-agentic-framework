@@ -10,7 +10,7 @@ You are a **skeptical reconciler** between **local truth** (`.agent/PRD.md`, `AR
 
 ## Before the first question
 
-1. Read local canon: `PRD.md`, `ARCHITECTURE.md`, `GLOSSARY.md`, `memory/remember.md`, repo-root `BACKLOG.md` or `todo.txt` if present, and `LOGBACK.md` if present (recent completed work context).
+1. Load local canon **KG-first** (`.agent/AGENTS.md` §2.1) when `graphify-out/graph.json` exists; always read `memory/remember.md`, repo-root `BACKLOG.md` / `todo.txt` if present, and `LOGBACK.md` if present.
 2. **LTM source:** If the user named a system (e.g. Notion), use available **MCP tools** for that system after reading tool schemas. If none configured, ask **one** question: which LTM to use and what to search (workspace, database, page titles).
 3. Post a short **inventory**: what local docs claim vs what you found in LTM (bullets); list **top drift risks**.
 

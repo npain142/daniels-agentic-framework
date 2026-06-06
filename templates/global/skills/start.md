@@ -14,7 +14,7 @@
    - If all pass, set `phase` to `"developing"` in `.agent/config.json`.
 3. If `phase` is already `developing` or `maintaining`, confirm with the user they want a **developing kickoff** (not a phase change); skip checklist unless they asked to re-validate planning exit.
 4. **Kickoff (developing session):**
-   - Read `.agent/verify-state.json`, `PRD.md`, `ARCHITECTURE.md`, `graphify-out/GRAPH_REPORT.md` or run `graphify query` for orientation if the graph exists.
+   - Read `.agent/verify-state.json`. Orient via **KG-first** (`.agent/AGENTS.md` §2.1): `graphify query` for product goal, v1 scope, and architecture — not bulk reads of PRD/ARCHITECTURE/GLOSSARY when `graphify-out/graph.json` exists.
    - Read repo-root **`BACKLOG.md`** or **`todo.txt`** if present (user may point at one).
    - Post a short **inventory**: current phase, stack, graph stats (`kg-bootstrap.json` / `graph.json`), open backlog lines (if any), and one sentence on what the PRD says v1 is.
    - Ask **one** question: what is the **first goal** for this session (or pick from backlog if the user wants you to propose; or use **`/daf-backlog-work`** to take the next item).

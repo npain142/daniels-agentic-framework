@@ -35,7 +35,7 @@ Imperative mood; match repo commit style. Omit if nothing to commit. Do not comm
 
 ## Codebase-check (two phases)
 
-**Phase A — context (before `check`):** Read in order: `GLOSSARY.md` → `~/.config/agent/stacks/{stack}.md` (skip if `stack` null) → `memory/remember.md` → `memory/gotchas.md` → `memory/learnings.md` → `ARCHITECTURE.md`. Rewrite **`.agent/memory/codebase-snapshot.md`** (bounded summary: ubiquitous language, stack constraints, standing rules, traps, learnings, architecture anchors, drift/cleanup candidates). Do not run `config.check` until phase A is done.
+**Phase A — context (before `check`):** If `graphify-out/graph.json` exists, use `graphify query` / `graphify explain` for glossary, architecture anchors, and product constraints; always read `memory/remember.md`, `memory/gotchas.md`, `memory/learnings.md`, and `~/.config/agent/stacks/{stack}.md` (skip if `stack` null). If no graph, read in order: `GLOSSARY.md` → stack → remember → gotchas → learnings → `ARCHITECTURE.md`. Rewrite **`.agent/memory/codebase-snapshot.md`** (bounded summary: ubiquitous language, stack constraints, standing rules, traps, learnings, architecture anchors, drift/cleanup candidates). Do not run `config.check` until phase A is done.
 
 **Phase B — implementation:** Run `config.check` via shell; fix failures; light cleanup aligned with the snapshot where cheap.
 

@@ -2,7 +2,8 @@
 
 Add landmines and fragile areas as you discover them.
 
-- Do not put `platform` / `platforms` in committed `.agent/config.json` — IDE list lives in `~/.config/agent/platforms.json` from `/daf-onboard`.
+- Do not put `platform` / `platforms` in committed `.agent/config.json` — IDE list lives in `~/.config/agent/platforms.json` from `/daf-onboard`. No `.agent/local.json` (legacy removed).
 - Product name is **Daniels Agentic Framework** (DAF), not “Daniel Agent Framework”.
 - Planning exit requires **`kg-bootstrap.json`** (`status: ok`) — bootstrap domain graph before setting `developing`; code-only `graphify update` is not enough alone.
 - `kg:*` scripts never call LLMs; semantic graph passes are agent `/graphify` or `/daf-kg-ingest`, not `npm run kg:bootstrap` alone.
+- When `graphify-out/graph.json` exists, do **not** bulk-read PRD/GLOSSARY/ARCHITECTURE for orientation — use `graphify query` per AGENTS.md §2.1 (skills were updated to match).

@@ -9,6 +9,12 @@
 
 For unstructured exploration first, use `/daf-discuss`. **Brownfield adoption** (no `.agent/` yet): use **`/daf-setup`** (inventory + planning grill before populate). **Standalone planning `/daf-grill-me`** when `.agent/` exists and you need a focused PRD pass.
 
+### Context load (all phases)
+
+1. Read `.agent/config.json` and `.agent/phases/{phase}.md`.
+2. **KG-first** (`.agent/AGENTS.md` §2.1): when `graphify-out/graph.json` exists, run targeted `graphify query` / `graphify explain` for product goal, v1 scope, architecture, and glossary — **do not** sequentially read PRD, ARCHITECTURE, GLOSSARY, or README for orientation.
+3. Always read `memory/remember.md` and `memory/gotchas.md`. In **developing** / **maintaining**, read `verify-state.json`. Read repo-root `BACKLOG.md` / `todo.txt` if present (short).
+
 ---
 
 ## Planning — product grill
@@ -28,7 +34,7 @@ You are a **skeptical product interviewer**, not a co-author. The user has the v
 
 ### Before the first question (planning)
 
-1. Read what exists: `.agent/PRD.md`, project `README`, `.agent/ARCHITECTURE.md` / `GLOSSARY.md` if present, and anything the user pointed at.
+1. Load existing canon via **Context load** above (KG-first when the graph exists; else read `.agent/PRD.md`, README, ARCHITECTURE, GLOSSARY, and anything the user pointed at).
 2. Post a **short inventory** (bullets): what you believe the product is, who it’s for, and **what is still unknown or contradictory**.
 3. Ask **one** question on the **highest-risk** unknown (the thing that would most change v1 scope or success criteria).
 
@@ -105,11 +111,11 @@ You are a **realignment partner**, not a greenfield interviewer. The user alread
 1. **One question per message**.
 2. **No net-new product scope** unless the user explicitly expands v1 — capture expansions as PRD risks or deferrals, not silent scope creep.
 3. **No implementation** unless the user asks in the same thread.
-4. Read before asking: `PRD.md`, `ARCHITECTURE.md`, `GLOSSARY.md`, recent code paths the user cares about, `BACKLOG.md` / `todo.txt` at repo root if present.
+4. Load canon via **Context load** (KG-first); use `graphify query` for code/architecture drift when the user names an area — do not bulk-read canon `.md` files when the graph exists.
 
 ### Before the first question (realignment)
 
-1. Post **Current canon** (bullets): goal, v1 scope, architecture anchors, and what you infer changed since last alignment.
+1. Post **Current canon** (bullets) from graph query results: goal, v1 scope, architecture anchors, and what you infer changed since last alignment.
 2. Ask **one** question on the **largest mismatch** between what they want now and what the docs/code say.
 
 ### Realignment loop

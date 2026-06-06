@@ -83,7 +83,7 @@ Read **`$G/platforms.json`** → `platforms[]` (written at **`/daf-onboard`**). 
 
 | Platform | Staged template | Repo result (v1) |
 |----------|-----------------|------------------|
-| **`cursor`** | `$G/platforms/cursor/project/` | `.cursor/rules/daf.mdc` |
+| **`cursor`** | `$G/platforms/cursor/project/` | `.cursor/rules/daf.mdc`, `.cursor/rules/graphify.mdc` |
 | **`claude`** | `$G/platforms/claude/project/` | `.claude/rules/daf.md` |
 | **`codex`** | (no project tree) | Repo-root **`AGENTS.md`** from `$G/root-AGENTS.md` (step 2a/3) — Codex reads `AGENTS.md` |
 | **`generic`** | — | No overlay; flat skills at `$G/skills/daf-*.md` |

@@ -20,7 +20,7 @@ Prefer dialogue over long ranked lists unless the user asks to compare options.
 ## Steps
 
 1. Restate the topic in one sentence; ask **one** clarifying question only if scope is unclear.
-2. Read `.agent/ARCHITECTURE.md`, `.agent/GLOSSARY.md`, and relevant context when the topic touches this repo.
+2. When the topic touches this repo, load context **KG-first** (`.agent/AGENTS.md` §2.1) or read canon files only if the graph is missing.
 3. Discuss: options, tradeoffs, risks, alternatives; challenge assumptions when useful.
 4. **Do not implement** or edit project files unless the user asks.
 5. End with optional handoffs when relevant: `/daf-help` for framework overview; `/daf-grill-me` (planning or realignment); `/daf-how-it-works` for code explanation; `/daf-ltm-checkup` for external memory; `/daf-pivot`; `/daf-improvement`; `/daf-new-feature`; `/daf-backlog-add` to park an idea; `/daf-backlog-work` when ready to build the next backlog item; `/daf-start` when ready to build.

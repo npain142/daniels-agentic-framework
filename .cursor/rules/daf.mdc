@@ -10,3 +10,4 @@ alwaysApply: true
 3. Installed platforms are listed in `~/.config/agent/platforms.json` (from **`/daf-onboard`**). **Project setup:** run **`/daf-setup`** — merges `.agent/` and IDE overlays for every platform in that file.
 4. DAF skills: invoke only **`/daf-<slug>`** in chat; files at `~/.cursor/skills/daf-*/SKILL.md` (when `cursor` is listed) or `~/.config/agent/skills/daf-*.md`. Do not use unprefixed `/setup`, `/onboard`, etc. Project rules: **`daf.mdc`** / **`daf.md`** only for DAF bootstrap.
 5. Full load order: [.agent/AGENTS.md](.agent/AGENTS.md).
+6. When `graphify-out/graph.json` exists, load canon via Graphify (§2.1 + [.cursor/rules/graphify.mdc](.cursor/rules/graphify.mdc)) — not bulk reads of PRD/GLOSSARY/ARCHITECTURE.

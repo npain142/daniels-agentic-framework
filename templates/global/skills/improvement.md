@@ -18,7 +18,7 @@ If the ask is net-new, stop and use `/daf-new-feature` instead. If the design or
 ## Steps
 
 1. Restate the improvement in one sentence; list acceptance checks (bullets).
-2. Read `.agent/ARCHITECTURE.md`, `.agent/GLOSSARY.md`, and relevant code or docs.
+2. Load context **KG-first** (`.agent/AGENTS.md` §2.1), then read relevant code or docs the graph cites or you will change.
 3. If scope is large or tradeoffs are unclear, propose 1–3 options briefly, then proceed with the best fit (or the user’s pick).
 4. Plan the smallest change that satisfies acceptance **at the root** (files, tests) — match repo patterns; no duplicate logic.
 5. Prefer a failing test first when behavior is non-trivial.

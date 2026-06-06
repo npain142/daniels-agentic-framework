@@ -11,7 +11,7 @@
 
 ## Sections (use these headings)
 
-**DAF** — Global `~/.config/agent/` + project `.agent/`; one phase (`planning` | `developing` | `maintaining`) in `config.json`; bar in `.agent/phases/{phase}.md`. Load: config → IDENTITY → stack → AGENTS → phase → GLOSSARY → memory.
+**DAF** — Global `~/.config/agent/` + project `.agent/`; one phase in `config.json`; bar in `.agent/phases/{phase}.md`. Load: config → IDENTITY → stack → AGENTS → phase → memory; **KG-first canon** when `graphify-out/graph.json` exists (AGENTS.md §2.1).
 
 **First run** — `/daf-onboard` (machine) → `/daf-setup` (project) → optional `/daf-grill-me` in planning → `/daf-start` or `/daf-phase-transition`.
 
