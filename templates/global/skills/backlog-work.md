@@ -25,7 +25,7 @@
    - **Remove** the item completely from `BACKLOG.md` (from **Open** or **In progress**).
    - **Append** a short artifact to repo-root **`LOGBACK.md`** (create from **`~/.config/agent/root-LOGBACK.md`** if missing) — see **Logback entry** below.
    - Run **prune** on `LOGBACK.md` (see **Fading** below).
-9. When declaring done, add **Suggested commit message:** per the phase **Task summary** if there are committable changes.
+9. **Commit** committable changes per **`IDENTITY.md`** (Task endings) and phase **Task summary** before declaring done.
 
 ## Logback entry
 

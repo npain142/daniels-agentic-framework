@@ -25,6 +25,7 @@ If unsure whether to pivot, use `/daf-discuss` first.
 7. **`planning`:** stop after docs + plan (+ KG bootstrap plan) unless the user asks for code. **`developing`** or **`maintaining`:** implement per **`.agent/phases/{phase}.md`** (goals in session, `taskCheck`, verify-state, codebase-check when due).
 8. Remove or quarantine dead paths; update tests and KG mappings to the new model.
 9. `/daf-retro` for non-trivial pivots (note migration gotchas in `memory/gotchas.md` when relevant).
+10. In **`developing`** or **`maintaining`**, when code changed: **commit** per **`IDENTITY.md`** (Task endings) and phase **Task summary** before declaring done.
 
 ## Stop condition
 

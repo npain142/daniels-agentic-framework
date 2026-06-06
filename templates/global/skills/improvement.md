@@ -23,7 +23,7 @@ If the ask is net-new, stop and use `/daf-new-feature` instead. If the design or
 4. Plan the smallest change that satisfies acceptance **at the root** (files, tests) — match repo patterns; no duplicate logic.
 5. Prefer a failing test first when behavior is non-trivial.
 6. **Implement** in `developing` or `maintaining` per **`.agent/phases/{phase}.md`**: per-goal `config.taskCheck`, verify-state updates, periodic codebase-check when due.
-7. Self-review diff vs acceptance; run `/daf-retro` for non-trivial work. When declaring done, add **Suggested commit message:** and a fenced code block (message only) if there are committable changes (see phase **Task summary**).
+7. Self-review diff vs acceptance; run `/daf-retro` for non-trivial work. **Commit** committable changes per **`IDENTITY.md`** (Task endings) and phase **Task summary** before declaring done.
 
 ## Stop condition
 

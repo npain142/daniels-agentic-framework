@@ -10,7 +10,7 @@
 4. Add regression coverage if missing.
 5. If the bug reveals a trap, append one bullet to `.agent/memory/gotchas.md`.
 6. Verify per **`.agent/phases/{phase}.md`**: per-goal `config.taskCheck`, update `verify-state.json` when the session task ends. In **`developing`**, full `config.check` when codebase-check applies. In **`maintaining`**, full **`config.check` every session task** (not only on codebase-check cadence).
-7. When declaring done, add **Suggested commit message:** and a fenced code block (message only) if there are committable changes (see phase **Task summary**).
+7. **Commit** committable changes per **`IDENTITY.md`** (Task endings) and phase **Task summary** before declaring done.
 
 ## Stop condition
 

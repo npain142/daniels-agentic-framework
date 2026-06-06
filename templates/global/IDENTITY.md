@@ -14,6 +14,12 @@ When a symptom has multiple possible causes, narrow to one (reproduce, read call
 
 Work in that order: **local change** respects existing patterns and boundaries; **repo** stays consistent (one way to do a thing, no stray duplication); **product** behavior stays coherent with `PRD.md` and `ARCHITECTURE.md`. Prefer extending the right module over inventing a one-off. Match established design patterns in the codebase; propose a small refactor at the root when the fix would otherwise spread hacks.
 
-## Task endings
+## Task endings (implementation work)
 
-When a task produced committable changes, end with **Suggested commit message:** then a fenced code block containing **only** one short imperative line (precise, easy to copy). Match repo commit style. Omit if nothing to commit. Do not commit unless the user asks.
+When a **developing** or **maintaining** session task produces committable changes — including via `/daf-issue`, `/daf-improvement`, `/daf-new-feature`, `/daf-pivot`, or `/daf-backlog-work` — **commit before declaring done**. Do not only suggest a message.
+
+**Commit protocol:** run `git status` and `git diff` (and `git log -1 --oneline` to match style). Stage relevant files; never commit secrets. Message via HEREDOC (`git commit -m "$(cat <<'EOF'…EOF)"`); imperative mood; focus on why. If a pre-commit hook fails, fix and create a **new** commit (no amend unless hook/amend rules apply).
+
+In the task summary, report **Committed:** `<short hash>` — `<subject line>`. Omit if nothing to commit.
+
+**No push, merge, or destructive git** without explicit user confirmation.

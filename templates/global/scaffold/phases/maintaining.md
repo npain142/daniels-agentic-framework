@@ -51,9 +51,9 @@ Never declare done with a red `config.check` without explicit user acceptance.
 
 ## Task summary
 
-When declaring done, give a brief wrap-up. If the session produced committable changes, end with the label **Suggested commit message:** then a fenced code block containing **only** the message text (nothing else inside the fence — one copyable field). Do not repeat the message outside the fence.
+When declaring done, give a brief wrap-up. If the session produced committable changes, **commit** per **`~/.config/agent/IDENTITY.md`** (Task endings) before wrapping up; end with **Committed:** `<hash>` — `<subject>`. Do not only suggest a commit message.
 
-Imperative mood; match repo commit style. Omit if nothing to commit. Do not commit unless the user asks.
+Imperative mood; match repo commit style. Omit the commit line if nothing to commit.
 
 ## Allowed
 

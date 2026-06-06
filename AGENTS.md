@@ -104,7 +104,7 @@ Skills and deeper docs are **on demand**. Invoke DAF skills only as **`/daf-<slu
 2. Honor `.agent/phases/{phase}.md`.
 3. Use glossary terms from `graphify explain` or `GLOSSARY.md`; propose additions before inventing synonyms.
 4. In **developing** or **maintaining**, follow **`.agent/phases/{phase}.md`** for implementation work: goals in the session only, per-goal `config.taskCheck`, update `.agent/verify-state.json` when a session task ends, two-phase codebase-check when due; then declare done. In **maintaining**, **`config.check`** must be green every session task end, not only when codebase-check applies (see `.agent/phases/maintaining.md`).
-5. No commit, push, merge, or destructive shell without explicit user confirmation.
+5. No push, merge, or destructive shell without explicit user confirmation. In **developing** or **maintaining**, commit committable changes at session task end per **`~/.config/agent/IDENTITY.md`** (Task endings); do not push unless asked.
 6. Never paste or commit secrets.
 7. End non-trivial tasks with `/daf-retro` (≤3 lines for `memory/learnings.md` or `gotchas.md`).
 8. Do not call out or summarize updates to documentation or rules in the user-facing reply unless the user explicitly asked for those edits or asked what changed.

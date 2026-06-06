@@ -11,7 +11,7 @@ Not for polish, refactors, or ergonomics on existing behavior — use `/daf-impr
 3. Plan the smallest change that satisfies acceptance (files, tests) — hook into existing boundaries and patterns; no copy-paste forks of similar behavior.
 4. Prefer failing test first when behavior is non-trivial.
 5. **Implement** per **`.agent/phases/developing.md`**: goals in session only, per-goal `config.taskCheck`, update `.agent/verify-state.json` when the session task ends, run two-phase codebase-check when due.
-6. Self-review diff vs acceptance; run `/daf-retro` for non-trivial work. When declaring done, add **Suggested commit message:** and a fenced code block (message only) if there are committable changes (see phase **Task summary**).
+6. Self-review diff vs acceptance; run `/daf-retro` for non-trivial work. **Commit** committable changes per **`IDENTITY.md`** (Task endings) and phase **Task summary** before declaring done.
 
 ## Stop condition
 

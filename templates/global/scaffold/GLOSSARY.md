@@ -12,6 +12,6 @@
 | defaultBranch | Optional: Git default branch name for **maintaining** branch guard; omit to infer from `origin/HEAD` or `main` (see `phases/maintaining.md`). |
 | Hotfix exception | User explicitly allows fixing on the default branch without switching (see **maintaining**). |
 | Maintaining bar | Branch guard, mandatory failing test when feasible, green **`config.check`** every session task end (see `phases/maintaining.md`). |
-| Task summary | Brief wrap-up when declaring done; may end with **Suggested commit message:** and a fenced code block (message only inside) when there are committable changes (see phase files). |
+| Task summary | Brief wrap-up when declaring done; commits committable changes per `IDENTITY.md` and ends with **Committed:** `<hash>` — `<subject>` (see phase files). |
 
 Expand as the product grows.
