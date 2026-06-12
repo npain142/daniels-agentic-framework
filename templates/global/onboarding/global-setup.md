@@ -65,6 +65,8 @@ Only when **§1** is impossible and the user explicitly agrees.
 | Setup skill | `$G/skills/daf-setup.md` exists and mentions `/daf-setup` |
 | Onboard skill | `$G/skills/daf-onboard.md` exists |
 | Manifest | `$G/skill-manifest.json` exists |
+| Version pin | `$G/daf-pin` is a 40-char git SHA |
+| Version check | `$G/daf-version-check.mjs` exists |
 | Stacks | `$G/stacks/typescript.md` (or another built-in) exists |
 | Cursor (if selected) | `$G/platforms/cursor/project/.cursor/rules/daf.mdc` exists; `$CS/daf-setup/SKILL.md` exists |
 | Claude (if selected) | `$G/platforms/claude/project/.claude/rules/daf.md` exists; `$CL/daf-setup/SKILL.md` exists |

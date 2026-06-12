@@ -9,7 +9,9 @@
 | **Onboarding script** | `templates/global/onboarding/global-setup.md` | Agent-readable procedure for global setup (paths, verify, handoff to `/daf-setup`). |
 | **Config** | `packages/cli/src/config.ts` | Parse/write `.agent/config.json` contract. |
 | **Verify state** | `packages/cli/src/verify-state.ts` | `buildInitialVerifyState` for tests; agents mirror in `/daf-setup`. |
-| **Global install** | `packages/cli/src/global-install.ts` | Copy `templates/global`, write `daf-*.md` skills from manifest, stacks, scaffold. |
+| **DAF version** | `packages/cli/src/daf-version.ts`, `scripts/daf-version-check.mjs` | `daf-pin` SHA at onboard/setup; one-line stale check (`ok` / `global-stale` / `project-stale`). |
+| **Project update** | `packages/cli/src/project-update.ts`, `scripts/daf-project-update.mjs` | Overlay + scaffold refresh; rewrite `.agent/daf-pin` (`/daf-update`). |
+| **Global install** | `packages/cli/src/global-install.ts` | Copy `templates/global`, write `daf-*.md` skills from manifest, stacks, scaffold, `daf-pin`. |
 | **Cursor install** | `packages/cli/src/platforms/cursor.ts` | Build `~/.cursor/skills/daf-*/SKILL.md` + platform project overlay. |
 | **Checklist** | `packages/cli/src/checklists/planning-to-developing.ts` | `validatePlanningExit` thresholds for leaving planning (incl. `kg-bootstrap.json`). |
 | **KG scripts** | `scripts/kg-bootstrap.mjs`, `scripts/kg-ingest.mjs` | Mechanical Graphify hooks; no LLM. Semantic extraction is agent-driven per skills. |

@@ -13,6 +13,8 @@
     "test": "npm run test --workspaces --if-present",
     "build": "npm run build --workspaces --if-present",
     "global-install": "node scripts/global-install.mjs",
+    "daf:version-check": "node scripts/daf-version-check.mjs",
+    "daf:project-update": "node scripts/daf-project-update.mjs",
     "kg:bootstrap": "node scripts/kg-bootstrap.mjs",
     "kg:ingest": "node scripts/kg-ingest.mjs"
   },

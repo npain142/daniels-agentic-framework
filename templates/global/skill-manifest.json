@@ -7,6 +7,10 @@
     "name": "daf-setup",
     "description": "Project setup after /daf-onboard: greenfield copies ~/.config/agent/scaffold into .agent/ (optional /daf-grill-me later); brownfield runs inventory + interview then merge scaffold and populate PRD/glossary/architecture; verify-state.json; optional Cursor overlay. Use when the user says /daf-setup or needs .agent/ in the project."
   },
+  "update": {
+    "name": "daf-update",
+    "description": "Refresh DAF after /daf-onboard: one-line daf-pin check (ok | global-stale | project-stale), re-run /daf-onboard when global is stale, then daf-project-update for overlays/scaffold and .agent/daf-pin. Use when the user says /daf-update or daf-version-check is not ok."
+  },
   "grill-me": {
     "name": "daf-grill-me",
     "description": "Phase-aware: in planning, skeptical PRD interview (one question at a time, assumption audit, stack recommendation). In developing or maintaining, realignment — resync intent with PRD/ARCHITECTURE/code/backlog without net-new scope unless asked. Use when the user says /daf-grill-me or grill-me."

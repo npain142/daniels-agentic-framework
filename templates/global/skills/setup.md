@@ -29,11 +29,12 @@ Read **`$G/platforms.json`**. If missing, run **`/daf-onboard`** first.
 
 1. Recursively copy `$G/scaffold/` → `<repo>/.agent/`.
 2. Write **`verify-state.json`** (see below).
-3. If `<repo>/AGENTS.md` is missing and **`$G/root-AGENTS.md`** exists, copy that file to `<repo>/AGENTS.md`. If `$G/root-AGENTS.md` is missing, write a one-line pointer: “Read `.agent/AGENTS.md` then `.agent/config.json`.”
-4. If **`$G/root-BACKLOG.md`** exists and the repo root has neither **`BACKLOG.md`** nor **`todo.txt`**, copy to `<repo>/BACKLOG.md`.
-5. If **`$G/root-LOGBACK.md`** exists and the repo root has no **`LOGBACK.md`**, copy to `<repo>/LOGBACK.md`.
-6. **Do not** set `config.stack` during setup (remains `null` from scaffold until product clarity).
-7. **Platform overlays** (see below) — merge every IDE platform listed in **`$G/platforms.json`**.
+3. Write **`.agent/daf-pin`** — copy `$G/daf-pin` when present (pins DAF commit at setup time; see **`/daf-update`**).
+4. If `<repo>/AGENTS.md` is missing and **`$G/root-AGENTS.md`** exists, copy that file to `<repo>/AGENTS.md`. If `$G/root-AGENTS.md` is missing, write a one-line pointer: “Read `.agent/AGENTS.md` then `.agent/config.json`.”
+5. If **`$G/root-BACKLOG.md`** exists and the repo root has neither **`BACKLOG.md`** nor **`todo.txt`**, copy to `<repo>/BACKLOG.md`.
+6. If **`$G/root-LOGBACK.md`** exists and the repo root has no **`LOGBACK.md`**, copy to `<repo>/LOGBACK.md`.
+7. **Do not** set `config.stack` during setup (remains `null` from scaffold until product clarity).
+8. **Platform overlays** (see below) — merge every IDE platform listed in **`$G/platforms.json`**.
 
 **Handoff:** Structure is ready. **`/daf-grill-me`** is an **optional** next step when the user wants to lock the PRD — not part of this skill’s stop condition. When planning exit criteria pass, use **`/daf-start`** or **`/daf-phase-transition`** to enter developing.
 
@@ -46,7 +47,8 @@ Order matters: **inventory → shared mental model → files**.
 3. **Structure + populate:** merge from `$G/scaffold/`: for each path under scaffold, if the corresponding path under `.agent/` is **missing**, copy it in. **Never overwrite** an existing `.agent/config.json`. If you **create** `config.json` because it was missing, set `phase: "planning"` and `stack: null` until the user agrees on stack, then set **`config.stack`**; apply **package.json inference** (below) for new `config.json` only. Update **`.agent/PRD.md`**, **`.agent/GLOSSARY.md`**, **`.agent/ARCHITECTURE.md`** from the session — replace empty `_TODO_` / stubs where you have answers, do not wipe user edits without explicit consent.
 4. **Force refresh:** only if the user explicitly asks; you may overwrite scaffold-shaped files **except** `config.json` and user-authored PRD/memory — confirm when unsure.
 5. Write **`verify-state.json`** if missing (see below).
-6. **Platform overlays** (see below).
+6. Write **`.agent/daf-pin`** from `$G/daf-pin` when present.
+7. **Platform overlays** (see below).
 
 **Handoff:** When planning exit criteria are met, **`/daf-start`** or **`/daf-phase-transition`**. Do **not** require a separate **`/daf-grill-me`** after brownfield `/daf-setup` unless gaps remain in the PRD.
 

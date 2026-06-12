@@ -51,13 +51,14 @@ Skills and deeper docs are **on demand**. Invoke DAF skills only as **`/daf-<slu
 - `onboarding/global-setup.md` — agent script for **`/daf-onboard`**
 - `platforms/<id>/project/` — staged project overlays merged by **`/daf-setup`**
 - `skills/daf-*.md` — flat skills from manifest
+- `daf-pin`, `daf-version-check.mjs` — install revision + one-line stale check
 - `stacks/<name>.md` — stack conventions
 
 **IDE globals (when onboarded):** `~/.cursor/skills/daf-*`, `~/.claude/skills/daf-*`, `~/.codex/AGENTS.md` (Codex).
 
 **Project** `.agent/` (committed, machine-agnostic):
 
-- `config.json`, `verify-state.json`, `AGENTS.md`, `phases/*.md`, `PRD.md`, `GLOSSARY.md`, `ARCHITECTURE.md`, `memory/*`
+- `config.json`, `verify-state.json`, `daf-pin`, `AGENTS.md`, `phases/*.md`, `PRD.md`, `GLOSSARY.md`, `ARCHITECTURE.md`, `memory/*`
 
 **Project IDE hooks (from `/daf-setup`, may be committed):** `.cursor/rules/daf.mdc`, `.cursor/rules/graphify.mdc`, `.claude/rules/daf.md`, repo-root `AGENTS.md` (Codex + tools).
 
