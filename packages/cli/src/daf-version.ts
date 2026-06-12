@@ -4,6 +4,7 @@ import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { join } from "node:path";
 
 export const DAF_PIN_FILENAME = "daf-pin";
+export const DAF_REPO_FILENAME = "daf-repo";
 
 export type DafVersionStatus = "ok" | "global-stale" | "project-stale" | "both-stale";
 
@@ -72,4 +73,35 @@ export function checkDafVersion(opts: {
 /** One token for agents: `ok` | `global-stale` | `project-stale` | `both-stale`. */
 export function formatStatusLine(status: DafVersionStatus): string {
   return status;
+}
+
+export async function readDafRepoPath(globalDir: string): Promise<string | null> {
+  try {
+    const raw = await readFile(join(globalDir, DAF_REPO_FILENAME), "utf8");
+    const path = raw.trim().split(/\s/)[0] ?? "";
+    return path !== "" ? path : null;
+  } catch (err) {
+    const code = (err as NodeJS.ErrnoException).code;
+    if (code === "ENOENT") return null;
+    throw err;
+  }
+}
+
+export async function writeDafRepoPath(globalDir: string, repoPath: string): Promise<void> {
+  const trimmed = repoPath.trim();
+  if (trimmed === "") {
+    throw new Error("daf-repo path must be non-empty");
+  }
+  await mkdir(globalDir, { recursive: true });
+  await writeFile(join(globalDir, DAF_REPO_FILENAME), `${trimmed}\n`, "utf8");
+}
+
+/** `DAF_REPO` env overrides `daf-repo` file under global dir. */
+export async function resolveDafRepoRoot(
+  globalDir: string,
+  envOverride?: string | null,
+): Promise<string | null> {
+  const fromEnv = envOverride?.trim();
+  if (fromEnv) return fromEnv;
+  return readDafRepoPath(globalDir);
 }

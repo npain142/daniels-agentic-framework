@@ -38,6 +38,8 @@ describe("installGlobalAgent", () => {
     expect(existsSync(join(root, "daf-version-lib.mjs"))).toBe(true);
     const pin = await readFile(join(root, "daf-pin"), "utf8");
     expect(pin.trim()).toMatch(/^[0-9a-f]{40}$/);
+    const repoPath = await readFile(join(root, "daf-repo"), "utf8");
+    expect(repoPath.trim()).not.toBe("");
   });
 
   it("with cursor platform installs Cursor project template under global dir", async () => {

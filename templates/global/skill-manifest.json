@@ -9,7 +9,7 @@
   },
   "update": {
     "name": "daf-update",
-    "description": "Refresh DAF after /daf-onboard: one-line daf-pin check (ok | global-stale | project-stale), re-run /daf-onboard when global is stale, then daf-project-update for overlays/scaffold and .agent/daf-pin. Use when the user says /daf-update or daf-version-check is not ok."
+    "description": "Apply DAF template refresh when daf.mdc step 0 detected staleness and the user agreed, or when invoked manually: one-line daf-pin check, /daf-onboard if global-stale, daf-project-update for overlays/scaffold. Use when the user says /daf-update or accepts the session-start stale prompt."
   },
   "grill-me": {
     "name": "daf-grill-me",

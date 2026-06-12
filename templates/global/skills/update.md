@@ -1,6 +1,8 @@
 # Skill: /daf-update
 
-**When:** Refresh DAF templates in the **current project** after **`/daf-onboard`** (or when pins differ). Not machine uninstall — use **`/daf-remove-global`**. Not first-time project bootstrap — use **`/daf-setup`**.
+**When:** Refresh DAF templates in the **current project** after **`/daf-onboard`**, when **`daf.mdc`** / **`daf.md`** step 0 detected staleness and the user agreed, or when pins differ and the user asked. Not machine uninstall — use **`/daf-remove-global`**. Not first-time project bootstrap — use **`/daf-setup`**.
+
+**Automatic detection:** **`daf.mdc`** / **`daf.md`** step 0 runs the one-line check every session and prompts once if stale — you normally reach this skill via that prompt, not manual invocation.
 
 ## Step 0 — One-line check (no tokens)
 
@@ -16,7 +18,7 @@ Honor **`DAFE_GLOBAL_ROOT`** if set instead of `~/.config/agent`. When developin
 node scripts/daf-version-check.mjs
 ```
 
-Optional: set **`DAF_REPO=/path/to/daf-clone`** (or `--repo`) so **`global-stale`** compares `~/.config/agent/daf-pin` to that clone’s `git rev-parse HEAD`.
+**`global-stale`** compares `~/.config/agent/daf-pin` to `git rev-parse HEAD` at the path in **`~/.config/agent/daf-repo`** (written at **`/daf-onboard`**). Override with **`DAF_REPO`** or `--repo`.
 
 | Output | Meaning |
 |--------|---------|

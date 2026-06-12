@@ -11,6 +11,17 @@ describe("onboard UX contract (templates)", () => {
     expect(readme).not.toContain("Optional verify:");
   });
 
+  it("daf.mdc auto-prompts once per session when version check is not ok", async () => {
+    const rule = await readFile(
+      join(getRepoRoot(), "templates/platforms/cursor/project/.cursor/rules/daf.mdc"),
+      "utf8",
+    );
+    expect(rule).toContain("daf-version-check.mjs");
+    expect(rule).toContain("once per session");
+    expect(rule).toContain("/daf-update");
+    expect(rule).toContain("do not read `daf-pin`");
+  });
+
   it("onboard skill tells agent to run npm install/build, not the user", async () => {
     const skill = await readFile(
       join(getRepoRoot(), "templates/global/skills/onboard.md"),

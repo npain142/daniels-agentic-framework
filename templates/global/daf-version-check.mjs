@@ -3,7 +3,7 @@
  * Token-minimal DAF version check — installed to ~/.config/agent/daf-version-check.mjs
  * Output one line: ok | global-stale | project-stale | both-stale
  */
-import { existsSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 import { homedir } from "node:os";
 import { dirname, join, resolve } from "node:path";
 import { checkDafVersion, formatStatusLine, readPin, resolveRepoHead } from "./daf-version-lib.mjs";
@@ -16,6 +16,17 @@ function findAgentDir(start) {
     const parent = dirname(dir);
     if (parent === dir) return null;
     dir = parent;
+  }
+}
+
+function readDafRepoFile(globalDir) {
+  const path = join(globalDir, "daf-repo");
+  if (!existsSync(path)) return null;
+  try {
+    const line = readFileSync(path, "utf8").trim().split(/\s/)[0] ?? "";
+    return line !== "" ? line : null;
+  } catch {
+    return null;
   }
 }
 
@@ -44,9 +55,10 @@ function parseArgs(argv) {
   return { cwd, repoRoot };
 }
 
-const { cwd, repoRoot } = parseArgs(process.argv.slice(2));
+const { cwd, repoRoot: repoArg } = parseArgs(process.argv.slice(2));
 const globalDir = process.env.DAFE_GLOBAL_ROOT?.trim() || join(homedir(), ".config", "agent");
 const agentDir = findAgentDir(cwd);
+const repoRoot = repoArg ?? readDafRepoFile(globalDir);
 
 const globalPin = await readPin(globalDir);
 const projectPin = agentDir ? await readPin(agentDir) : null;

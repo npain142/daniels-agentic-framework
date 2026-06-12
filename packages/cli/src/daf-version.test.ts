@@ -1,5 +1,15 @@
+import { mkdtemp, writeFile } from "node:fs/promises";
+import { join } from "node:path";
+import { tmpdir } from "node:os";
 import { describe, expect, it } from "vitest";
-import { checkDafVersion, formatStatusLine, normalizePin } from "./daf-version.js";
+import {
+  checkDafVersion,
+  formatStatusLine,
+  normalizePin,
+  readDafRepoPath,
+  resolveDafRepoRoot,
+  writeDafRepoPath,
+} from "./daf-version.js";
 
 const A = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
 const B = "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb";
@@ -48,5 +58,20 @@ describe("formatStatusLine", () => {
   it("prints a single status token", () => {
     expect(formatStatusLine("ok")).toBe("ok");
     expect(formatStatusLine("project-stale")).toBe("project-stale");
+  });
+});
+
+describe("daf-repo path", () => {
+  it("reads and writes daf-repo under global dir", async () => {
+    const dir = await mkdtemp(join(tmpdir(), "daf-repo-"));
+    await writeDafRepoPath(dir, "/home/user/daf");
+    expect(await readDafRepoPath(dir)).toBe("/home/user/daf");
+  });
+
+  it("resolveDafRepoRoot prefers env override", async () => {
+    const dir = await mkdtemp(join(tmpdir(), "daf-repo-env-"));
+    await writeFile(join(dir, "daf-repo"), "/from/file\n", "utf8");
+    expect(await resolveDafRepoRoot(dir, "/from/env")).toBe("/from/env");
+    expect(await resolveDafRepoRoot(dir)).toBe("/from/file");
   });
 });

@@ -8,7 +8,8 @@
 | **Onboarding script** | `templates/global/onboarding/global-setup.md` (also installed under `~/.config/agent/onboarding/`). |
 | **Project setup** | IDE skill **`/daf-setup`** — adapts DAF to the current repo after global setup. |
 | **daf-pin** | Single-line git SHA: `~/.config/agent/daf-pin` (last **`/daf-onboard`**) and `.agent/daf-pin` (last **`/daf-setup`** or **`/daf-update`**). Compared by `daf-version-check` (one token, no LLM). |
-| **DAF update** | IDE skill **`/daf-update`** — refresh globals/project when pins are stale; mechanical `daf-project-update.mjs`. |
+| **daf-repo** | Path to the DAF monorepo clone used at last **`/daf-onboard`** (`~/.config/agent/daf-repo`); version check compares global pin to that clone’s `HEAD`. |
+| **DAF update** | **`daf.mdc`** step 0 detects staleness each session and prompts once; **`/daf-update`** applies refresh when the user agrees. |
 | **Scaffold** | Default `.agent/` tree at `~/.config/agent/scaffold/`; agents copy or merge via `/daf-setup`. |
 | **DAF skill** | Markdown procedure invoked in chat as **`/daf-<slug>`** (e.g. `/daf-setup`); installed as `daf-<slug>.md` under `$G/skills/` or `~/.cursor/skills/daf-<slug>/`. Not a shell command. Do not document or invoke unprefixed `/setup`, `/onboard`, etc. |
 | **Phase** | `planning`, `developing`, or `maintaining`; stored in `config.json` and `phases/*.md`. |

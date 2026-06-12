@@ -18,20 +18,21 @@ State lives in **`.agent/config.json`**: `phase`, `stack`, `check`, `taskCheck`,
 ## 2. Load order (every session)
 
 1. `.agent/config.json` — phase, stack, `check`, `taskCheck`, `codebaseEvery`, optional `defaultBranch`
-2. `~/.config/agent/platforms.json` — `platforms[]` from **`/daf-onboard`** (which IDE integrations are installed on this machine)
-3. `~/.config/agent/IDENTITY.md` — how the agent works with you
-4. `~/.config/agent/stacks/{stack}.md` — **only if** `config.stack` is non-null
-5. `.agent/AGENTS.md` — this file
-6. `.agent/phases/{config.phase}.md` — current phase bar
-7. `.agent/memory/remember.md` — user standing instructions for this project
-8. `.agent/memory/gotchas.md` — before non-trivial edits
+2. **DAF version gate** — **`daf.mdc`** / **`daf.md`** step 0: one-line shell check; if stale, ask once whether to run **`/daf-update`** for this repo
+3. `~/.config/agent/platforms.json` — `platforms[]` from **`/daf-onboard`** (which IDE integrations are installed on this machine)
+4. `~/.config/agent/IDENTITY.md` — how the agent works with you
+5. `~/.config/agent/stacks/{stack}.md` — **only if** `config.stack` is non-null
+6. `.agent/AGENTS.md` — this file
+7. `.agent/phases/{config.phase}.md` — current phase bar
+8. `.agent/memory/remember.md` — user standing instructions for this project
+9. `.agent/memory/gotchas.md` — before non-trivial edits
 
 **Canon** (PRD, GLOSSARY, ARCHITECTURE, product README): **§2.1 KG-first** when `graphify-out/graph.json` exists; otherwise read those files when a task needs them.
 
 **When `config.phase` is `developing` or `maintaining`**, also before implementing work:
 
-9. `.agent/verify-state.json` — `taskCount`, `codebaseCheckPending`
-10. `.agent/memory/codebase-snapshot.md` — if present; prefer when fresh over re-loading full canon
+10. `.agent/verify-state.json` — `taskCount`, `codebaseCheckPending`
+11. `.agent/memory/codebase-snapshot.md` — if present; prefer when fresh over re-loading full canon
 
 ### 2.1 KG-first canon (when the graph exists)
 
@@ -51,7 +52,7 @@ Skills and deeper docs are **on demand**. Invoke DAF skills only as **`/daf-<slu
 - `onboarding/global-setup.md` — agent script for **`/daf-onboard`**
 - `platforms/<id>/project/` — staged project overlays merged by **`/daf-setup`**
 - `skills/daf-*.md` — flat skills from manifest
-- `daf-pin`, `daf-version-check.mjs` — install revision + one-line stale check
+- `daf-pin`, `daf-repo`, `daf-version-check.mjs` — install revision, clone path, one-line stale check
 - `stacks/<name>.md` — stack conventions
 
 **IDE globals (when onboarded):** `~/.cursor/skills/daf-*`, `~/.claude/skills/daf-*`, `~/.codex/AGENTS.md` (Codex).

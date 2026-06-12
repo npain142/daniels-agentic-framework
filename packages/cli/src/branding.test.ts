@@ -14,6 +14,7 @@ const BRANDED_PATHS = [
   ".cursor/rules/daf.mdc",
   ".cursor/rules/graphify.mdc",
   "templates/platforms/cursor/project/.cursor/rules/daf.mdc",
+  "templates/platforms/claude/project/.claude/rules/daf.md",
   "templates/platforms/cursor/project/.cursor/rules/graphify.mdc",
   "templates/platforms/claude/project/.claude/rules/daf.md",
   "templates/platforms/codex/global/AGENTS.md",

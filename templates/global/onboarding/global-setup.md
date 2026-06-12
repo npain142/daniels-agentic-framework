@@ -66,6 +66,7 @@ Only when **§1** is impossible and the user explicitly agrees.
 | Onboard skill | `$G/skills/daf-onboard.md` exists |
 | Manifest | `$G/skill-manifest.json` exists |
 | Version pin | `$G/daf-pin` is a 40-char git SHA |
+| DAF repo path | `$G/daf-repo` points at the clone used for install |
 | Version check | `$G/daf-version-check.mjs` exists |
 | Stacks | `$G/stacks/typescript.md` (or another built-in) exists |
 | Cursor (if selected) | `$G/platforms/cursor/project/.cursor/rules/daf.mdc` exists; `$CS/daf-setup/SKILL.md` exists |

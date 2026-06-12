@@ -1,7 +1,7 @@
 import { cp, mkdir, readdir } from "node:fs/promises";
 import { dirname, join } from "node:path";
 import { existsSync } from "node:fs";
-import { resolveRepoHead, writePin } from "./daf-version.js";
+import { resolveRepoHead, writeDafRepoPath, writePin } from "./daf-version.js";
 import { installFlatMarkdownSkills } from "./platforms/cursor.js";
 import { installCursorGlobalSkills } from "./platforms/cursor.js";
 import { installClaudeGlobalSkills } from "./platforms/claude.js";
@@ -157,10 +157,12 @@ export async function installGlobalAgent(opts: InstallGlobalAgentOpts): Promise<
 
   await writeGlobalPlatforms(globalDir, { platforms });
 
-  const head = resolveRepoHead(getRepoRoot());
+  const dafRepoRoot = getRepoRoot();
+  const head = resolveRepoHead(dafRepoRoot);
   if (head) {
     await writePin(globalDir, head);
   }
+  await writeDafRepoPath(globalDir, dafRepoRoot);
   await installVersionCheckTools(globalDir, opts.force);
 
   return { globalDir, platforms, cursorSkillsRoot, claudeSkillsRoot, codexHome };

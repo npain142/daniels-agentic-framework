@@ -17,6 +17,7 @@ Primary user: **Daniel** (solo). Open source later.
 
 - **Global setup:** IDE skill **`/daf-onboard`** + onboarding script + `node scripts/global-install.mjs [--platforms generic,cursor,claude,codex] [--force]`; writes **`~/.config/agent/platforms.json`**.
 - **Global templates:** identity, preferences, `skill-manifest.json`, skill sources, stacks (`general`, `typescript`, `typescript-react`), scaffold subtree, onboarding script.
+- **Version / update:** `daf-pin` + `daf-repo` at onboard; **`daf.mdc`** step 0 runs one-line stale check each session and prompts once to apply **`/daf-update`** per repo.
 - **IDE skills:** `/daf-onboard`, `/daf-setup`, `/daf-update`, `/daf-help`, `/daf-grill-me`, `/daf-start`, `/daf-how-it-works`, `/daf-ltm-checkup`, `/daf-new-feature`, `/daf-issue`, `/daf-improvement`, `/daf-pivot`, `/daf-discuss`, `/daf-backlog-add`, `/daf-backlog-work`, `/daf-remember`, `/daf-retro`, `/daf-phase-transition`, `/daf-kg-ingest`, `/daf-remove`, `/daf-remove-global`.
 - **Knowledge graph:** Graphify-backed `graphify-out/`; domain graph at planning exit; code graph grows in developing (`npm run kg:ingest`, `/daf-kg-ingest`).
 - **Backlog / logback:** repo-root `BACKLOG.md` (`/daf-backlog-add`, `/daf-backlog-work`); completed items archive to `LOGBACK.md` with fading prune; greenfield `/daf-setup` seeds from `root-BACKLOG.md` and `root-LOGBACK.md`.
