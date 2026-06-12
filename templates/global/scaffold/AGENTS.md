@@ -2,7 +2,7 @@
 
 > **Step 1:** Read `.agent/config.json`. **Step 2:** Follow the load order below. **Step 3:** Act.
 
-The repo root may duplicate this file as `AGENTS.md` for tools that only read the root.
+Repo-root `AGENTS.md` (when present) is a thin pointer to this file for tools that only read the root.
 
 ---
 
@@ -35,14 +35,7 @@ State lives in **`.agent/config.json`**: `phase`, `stack`, `check`, `taskCheck`,
 
 ### 2.1 KG-first canon (when the graph exists)
 
-When **`graphify-out/graph.json`** exists:
-
-- **Do not** bulk-read `.agent/PRD.md`, `.agent/GLOSSARY.md`, `.agent/ARCHITECTURE.md`, or project `README` for orientation, session start, or DAF skills (`/daf-grill-me`, `/daf-start`, `/daf-how-it-works`, etc.).
-- Use Graphify first: `graphify query "…"`, `graphify explain "<term>"`, or `graphify path` as needed; use `graphify-out/wiki/index.md` when present.
-- **Read a canonical file** only when you are **editing** it, the graph cites a path and you need exact wording, or queries return insufficient context.
-- After canonical doc edits, run **`/daf-kg-ingest`**.
-
-When the graph is **missing** (early **planning** before bootstrap, or no Graphify setup), read canon files directly as needed.
+When **`graphify-out/graph.json`** exists, do **not** bulk-read `.agent/PRD.md`, `.agent/GLOSSARY.md`, `.agent/ARCHITECTURE.md`, or project `README` for orientation — use Graphify first (`graphify query`, `explain`, `path`; see **`.cursor/rules/graphify.mdc`** when Cursor is onboarded). Read a canonical file only when **editing** it, the graph cites a path and you need exact wording, or queries return insufficient context. After canonical doc edits, run **`/daf-kg-ingest`**. When the graph is **missing**, read canon files directly as needed.
 
 Skills and deeper docs are **on demand**. Invoke DAF skills only as **`/daf-<slug>`** in chat (see §4). Native paths (when listed in `platforms.json`): **`cursor`** → `~/.cursor/skills/daf-*`; **`claude`** → `~/.claude/skills/daf-*`; always available as flat `~/.config/agent/skills/daf-*.md`. Do not document or use unprefixed `/setup`, `/onboard`, etc. for DAF.
 
@@ -66,7 +59,7 @@ Skills and deeper docs are **on demand**. Invoke DAF skills only as **`/daf-<slu
 
 - `config.json`, `verify-state.json`, `AGENTS.md`, `phases/*.md`, `PRD.md`, `GLOSSARY.md`, `ARCHITECTURE.md`, `memory/*`
 
-**Project IDE hooks (from `/daf-setup`, may be committed):** `.cursor/rules/daf.mdc`, `.claude/rules/daf.md`, repo-root `AGENTS.md` (Codex + tools).
+**Project IDE hooks (from `/daf-setup`, may be committed):** `.cursor/rules/daf.mdc`, `.cursor/rules/graphify.mdc`, `.claude/rules/daf.md`, repo-root `AGENTS.md` (Codex + tools).
 
 **DAF repo only:** `scripts/global-install.mjs` — mechanical copy invoked during **`/daf-onboard`** (agent runs `npm install` / `npm run build` in the DAF repo when needed).
 
@@ -74,28 +67,7 @@ Skills and deeper docs are **on demand**. Invoke DAF skills only as **`/daf-<slu
 
 ## 4. Skills (v1)
 
-| Skill | Typical phase |
-|--------|----------------|
-| `/daf-onboard` | any — **machine setup:** install `~/.config/agent/`, `platforms.json`, per-IDE skills/overlays |
-| `/daf-setup` | any — **project setup:** scaffold `.agent/`; merge IDE overlays for every platform in `platforms.json` |
-| `/daf-grill-me` | planning (product grill); **developing** / **maintaining** (realignment) |
-| `/daf-start` | after planning — validate exit, enter **developing**, session kickoff |
-| `/daf-help` | any — short framework guide: phases, skills, build loop |
-| `/daf-how-it-works` | any — implementation-precise explanation of a code topic |
-| `/daf-ltm-checkup` | developing / maintaining — reconcile with external LTM (e.g. Notion MCP) |
-| `/daf-new-feature` | developing — **net-new** capability |
-| `/daf-issue` | developing or maintaining |
-| `/daf-improvement` | any — **enhances existing**; implement in developing or maintaining |
-| `/daf-pivot` | any — **restructure or redesign** existing feature/concept; implement in developing or maintaining |
-| `/daf-discuss` | any — explore ideas; no implementation unless asked |
-| `/daf-backlog-add` | any — append follow-up to repo-root `BACKLOG.md` |
-| `/daf-backlog-work` | developing / maintaining — pick backlog item, implement, archive to `LOGBACK.md` |
-| `/daf-remember` | any — save standing instructions to `memory/remember.md` |
-| `/daf-retro` | any |
-| `/daf-phase-transition` | any — validate planning exit; KG bootstrap; set `config.phase` |
-| `/daf-kg-ingest` | developing / maintaining — refresh `graphify-out/` after code or canonical doc changes |
-| `/daf-remove` | any — strip `.agent/`, DAF root `AGENTS.md`, IDE overlay files from **this repo** |
-| `/daf-remove-global` | any — uninstall `~/.config/agent/` and IDE `daf-*` skills (machine-wide) |
+Authoritative catalog: **`~/.config/agent/skill-manifest.json`** (manifest keys → `/daf-<key>`; descriptions in each value). Invoke only **`/daf-<slug>`** in chat. Phase-relevant skills are listed under **Active skills** in `.agent/phases/{phase}.md`. Human intent map: `README.md` § Guided start.
 
 ---
 

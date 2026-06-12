@@ -19,6 +19,7 @@ From the **repository root** (walk up to find `.agent/config.json` if the sessio
 |------|--------|
 | `.agent/` | Remove entire directory (all phases, memory, verify-state, docs). |
 | `.cursor/rules/daf.mdc` | Remove if present (Cursor overlay). |
+| `.cursor/rules/graphify.mdc` | Remove if present (Cursor overlay). |
 | `.claude/rules/daf.md` | Remove if present (Claude overlay). |
 | `AGENTS.md` at repo root | Remove **only if** it is the DAF bootstrap file: matches `~/.config/agent/root-AGENTS.md`, or is only the one-line pointer to `.agent/AGENTS.md` from **`/daf-setup`**. If the user merged custom content into root `AGENTS.md`, **ask** before deleting. |
 

@@ -28,6 +28,7 @@ describe("applyProjectOverlays", () => {
     });
     expect(applied.sort()).toEqual(["claude", "cursor"]);
     expect(existsSync(join(repoRoot, ".cursor", "rules", "daf.mdc"))).toBe(true);
+    expect(existsSync(join(repoRoot, ".cursor", "rules", "graphify.mdc"))).toBe(true);
     const claudeRule = await readFile(join(repoRoot, ".claude", "rules", "daf.md"), "utf8");
     expect(claudeRule).toContain("platforms.json");
 

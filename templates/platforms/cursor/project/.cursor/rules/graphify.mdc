@@ -1,0 +1,14 @@
+---
+description: graphify knowledge graph context
+alwaysApply: true
+---
+
+This Daniels Agentic Framework (DAF) project has a Graphify knowledge graph at `graphify-out/` (domain graph from planning exit + code graph in developing).
+
+**Canon loading policy:** `.agent/AGENTS.md` §2.1 — do not bulk-read PRD/GLOSSARY/ARCHITECTURE/README for orientation when `graphify-out/graph.json` exists.
+
+- For codebase or architecture questions, first run `graphify query "<question>"` (or `graphify path "<A>" "<B>"` / `graphify explain "<concept>"`). These return a scoped subgraph, usually much smaller than `GRAPH_REPORT.md` or raw grep output.
+- If `graphify-out/wiki/index.md` exists, navigate it instead of reading raw files.
+- Read `graphify-out/GRAPH_REPORT.md` only for broad architecture review or when query/path/explain do not surface enough context.
+- **After code changes:** `npm run kg:ingest` (or `graphify update .`).
+- **After canonical `.agent/` doc changes (PRD, GLOSSARY, ARCHITECTURE):** `/daf-kg-ingest` (semantic merge + ingest).

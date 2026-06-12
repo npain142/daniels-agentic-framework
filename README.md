@@ -18,14 +18,14 @@ Most agent setups force a tradeoff:
 DAF’s answer is a **phase model**: one explicit stage per project (`planning` → `developing` → `maintaining`). Each phase changes what “done” means — loose while you are finding the product, tighter while you are building v1, strictest when the codebase is the business.
 
 
-| Phase             | Startup mindset  | What you optimize for                                                                                                                                |
-| ----------------- | ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `**planning`**    | Idea → scoped v1 | Cheap learning: PRD, glossary, architecture sketch; spikes OK; **no net-new product features** yet                                                   |
-| `**developing`**  | Build v1 fast    | Short agent sessions, `taskCheck` every goal, periodic full `check` — ship without pretending the repo is “done forever”                             |
-| `**maintaining**` | Product is real  | Fixes and small improvements on stable software; **full `check` every session**; branch guard — the docs and habits from earlier phases pay off here |
+| Phase        | Startup mindset  | What you optimize for                                                                                                                                |
+| ------------ | ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `planning`   | Idea → scoped v1 | Cheap learning: PRD, glossary, architecture sketch; spikes OK; **no net-new product features** yet                                                   |
+| `developing` | Build v1 fast    | Short agent sessions, `taskCheck` every goal, periodic full `check` — ship without pretending the repo is “done forever”                             |
+| `maintaining` | Product is real  | Fixes and small improvements on stable software; **full `check` every session**; branch guard — the docs and habits from earlier phases pay off here |
 
 
-The agent reads `**.agent/phases/{phase}.md`** every session, so behavior matches where you are in the lifecycle — not where you wish you were.
+The agent reads `.agent/phases/{phase}.md` every session, so behavior matches where you are in the lifecycle — not where you wish you were.
 
 ```mermaid
 flowchart LR
@@ -52,27 +52,27 @@ Global loads first, project wins on conflict — same machine, many repos, one c
 
 ## Phase model (startup path)
 
-This is the spine of DAF. `**config.phase`** in `.agent/config.json` is the single source of truth.
+This is the spine of DAF. `config.phase` in `.agent/config.json` is the single source of truth.
 
 ### `planning` — validate before you build the wrong thing
 
 Use this when the product is still forming (greenfield) or you are re-scoping (`/daf-pivot`, `/daf-grill-me` realignment).
 
-- `**/daf-grill-me**` — one question at a time; fills `**PRD.md**` and recommends a **stack**.
-- `**/daf-discuss`**, `**/daf-backlog-add**` — explore and park ideas without committing to implementation.
+- `/daf-grill-me` — one question at a time; fills `PRD.md` and recommends a **stack**.
+- `/daf-discuss`, `/daf-backlog-add` — explore and park ideas without committing to implementation.
 - **Allowed:** spikes and sketches; routine fixes on brownfield adoption.
 - **Not allowed:** shipping **net-new v1 features** while still in planning (keeps “we should have written this down” from becoming “we already shipped it”).
 
-**Exit** (enforced by `**/daf-phase-transition`**): PRD, glossary, architecture, stack set, phase files present. Then `**/daf-start**` or transition to `**developing**`.
+**Exit** (enforced by `/daf-phase-transition`): PRD, glossary, architecture, stack set, phase files present. Then `/daf-start` or transition to `developing`.
 
 ### `developing` — your fast build loop
 
 Default home while shipping v1.
 
 - Goals live **in the chat only** (no task files under `.agent/`).
-- Per goal: implement → `**config.taskCheck`** (e.g. `npm run test`).
-- Session end: bump `**verify-state.json**`; every N tasks, a **codebase-check** refreshes context and runs full `**config.check`**.
-- Skills: `**/daf-new-feature**`, `**/daf-issue**`, `**/daf-improvement**`, `**/daf-backlog-work**`, etc.
+- Per goal: implement → `config.taskCheck` (e.g. `npm run test`).
+- Session end: bump `verify-state.json`; every N tasks, a **codebase-check** refreshes context and runs full `config.check`.
+- Skills: `/daf-new-feature`, `/daf-issue`, `/daf-improvement`, `/daf-backlog-work`, etc.
 
 Optimized for **throughput with guardrails** — not paperwork for its own sake.
 
@@ -80,7 +80,7 @@ Optimized for **throughput with guardrails** — not paperwork for its own sake.
 
 Switch here when work is mostly **stability, bugs, and incremental improvement** on software you already rely on.
 
-- Stricter bar: `**config.check` green every session task**, branch guard, tests when feasible.
+- Stricter bar: `config.check` green every session task, branch guard, tests when feasible.
 - The PRD, glossary, snapshot, and memory you built earlier are what keep the agent aligned without re-explaining the product every week.
 
 You do not “graduate” out of DAF in maintaining — you **tighten** the loop so speed earlier did not mortgage quality later.
@@ -106,7 +106,7 @@ After setup, invoke DAF with **`/daf-<slug>`** in chat (e.g. `/daf-setup`, `/daf
 **Also useful to know**
 
 - **Skills** — Markdown playbooks (`/daf-setup`, `/daf-issue`, …).
-- **Platforms** — IDEs chosen at `**/daf-onboard`** → `~/.config/agent/platforms.json`; `**/daf-setup**` merges hooks per platform.
+- **Platforms** — IDEs chosen at `/daf-onboard` → `~/.config/agent/platforms.json`; `/daf-setup` merges hooks per platform.
 - **Verification** — `taskCheck` (fast, per goal) and `check` (full suite); cadence depends on phase.
 
 ---
@@ -130,7 +130,7 @@ Open in your IDE → agent chat.
 /daf-onboard
 ```
 
-Picks platforms, installs `~/.config/agent/` and IDE skills, writes `**platforms.json**`. Once per machine.
+Picks platforms, installs `~/.config/agent/` and IDE skills, writes `platforms.json`. Once per machine.
 
 ### 3 — Project setup: `/daf-setup`
 
@@ -140,7 +140,7 @@ In **any** repo (side project, startup MVP, existing app):
 /daf-setup
 ```
 
-Scaffolds `.agent/`, merges IDE overlays. New products usually start in `**planning**`.
+Scaffolds `.agent/`, merges IDE overlays. New products usually start in `planning`.
 
 ### 4 — Run the phase path
 
@@ -176,9 +176,9 @@ Brownfield: `/daf-setup` interviews you and may set phase/stack immediately.
 | Capture learnings              | `/daf-retro`                        |
 
 
-`**BACKLOG.md**` / `**LOGBACK.md**` at repo root for follow-ups and done items.
+`BACKLOG.md` / `LOGBACK.md` at repo root for follow-ups and done items.
 
-Refresh globals after DAF updates: `**/daf-onboard**` (ask for `**--force**` to overwrite). Remove: `**/daf-remove**` (project), `**/daf-remove-global**` (machine).
+Refresh globals after DAF updates: `/daf-onboard` (ask for `--force` to overwrite). Remove: `/daf-remove` (project), `/daf-remove-global` (machine).
 
 ---
 
@@ -233,11 +233,11 @@ The framework does **not** auto-commit, push, or run destructive commands withou
 | `[.agent/phases/planning.md](.agent/phases/planning.md)`       | Planning bar and exit criteria |
 | `[.agent/phases/developing.md](.agent/phases/developing.md)`   | Fast build loop                |
 | `[.agent/phases/maintaining.md](.agent/phases/maintaining.md)` | Stable-product bar             |
-| `[.agent/AGENTS.md](.agent/AGENTS.md)`                         | Load order and full skill list |
+| `[.agent/AGENTS.md](.agent/AGENTS.md)`                         | Load order and agent contract |
 | `[.agent/GLOSSARY.md](.agent/GLOSSARY.md)`                     | Canonical terms                |
 
 
-Chat: `**/daf-help**`, `**/daf-how-it-works <topic>**`.
+Chat: `/daf-help`, `/daf-how-it-works <topic>`.
 
 ---
 
