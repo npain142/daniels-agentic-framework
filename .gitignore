@@ -5,10 +5,10 @@ dist
 coverage
 .env
 .env.*
-.cursor
+# Cursor local state (committed DAF rules are exceptions)
+.cursor/*
 !.cursor/rules/
-!.cursor/rules/daf.mdc
-!.cursor/rules/graphify.mdc
+!.cursor/rules/*.mdc
 
 # Graphify derived artifacts (regenerate: npm run kg:ingest / /daf-kg-ingest)
 graphify-out/cache/
