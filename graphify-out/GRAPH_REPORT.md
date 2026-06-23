@@ -1,16 +1,16 @@
 # Graph Report - Daniels Agent Framework  (2026-06-23)
 
 ## Corpus Check
-- 108 files · ~29,625 words
+- 108 files · ~29,877 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 881 nodes · 1305 edges · 71 communities (60 shown, 11 thin omitted)
+- 885 nodes · 1311 edges · 78 communities (67 shown, 11 thin omitted)
 - Extraction: 93% EXTRACTED · 7% INFERRED · 0% AMBIGUOUS · INFERRED: 95 edges (avg confidence: 0.92)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `4d5632a2`
+- Built from commit: `a98e5e83`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -83,7 +83,14 @@
 - [[_COMMUNITY_Community 67|Community 67]]
 - [[_COMMUNITY_Community 68|Community 68]]
 - [[_COMMUNITY_Community 69|Community 69]]
+- [[_COMMUNITY_Community 70|Community 70]]
 - [[_COMMUNITY_Community 71|Community 71]]
+- [[_COMMUNITY_Community 72|Community 72]]
+- [[_COMMUNITY_Community 73|Community 73]]
+- [[_COMMUNITY_Community 74|Community 74]]
+- [[_COMMUNITY_Community 75|Community 75]]
+- [[_COMMUNITY_Community 76|Community 76]]
+- [[_COMMUNITY_Community 77|Community 77]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `AGENTS.md (project)` - 26 edges
@@ -116,7 +123,7 @@
 - **Planning exit domain graph bootstrap and receipt** — phases_planning_kg_exit_criterion, phases_planning_graphify_config_required, agent_graphify_config_bootstrap_sources, agent_glossary_kg_bootstrap, agent_kg_bootstrap_receipt, agent_kg_bootstrap_status_ok, skill_daf_phase_transition, skill_daf_start, agent_glossary_phase_planning, agent_glossary_phase_developing [EXTRACTED 1.00]
 - **Graphify two-layer knowledge graph (domain + code)** — agent_glossary_knowledge_graph, agent_glossary_domain_graph, agent_glossary_code_graph, agent_architecture_merged_graph_json, agent_graphify_config_document, agent_glossary_kg_bootstrap, agent_glossary_kg_ingest, skill_daf_kg_ingest, phases_developing_kg_refresh_rules [EXTRACTED 1.00]
 
-## Communities (71 total, 11 thin omitted)
+## Communities (78 total, 11 thin omitted)
 
 ### Community 0 - "Community 0"
 Cohesion: 0.06
@@ -191,8 +198,8 @@ Cohesion: 0.14
 Nodes (18): Skill: /daf-backlog-add, Hard rules, Skill: /daf-backlog-add, Steps, Stop condition, Close (user accepts), Fading (prune on every close), Hard rules (+10 more)
 
 ### Community 18 - "Community 18"
-Cohesion: 0.06
-Nodes (52): Codebase-check (two phases), Phase: developing, Phase: maintaining, Skill: /daf-discuss, Skill: /daf-discuss, Steps, Stop condition, Realignment (developing/maintaining) (+44 more)
+Cohesion: 0.11
+Nodes (27): Codebase-check (two phases), Phase: developing, Skill: /daf-how-it-works, Hard rules, Skill: /daf-how-it-works, Steps, Stop condition, Your job (+19 more)
 
 ### Community 19 - "Community 19"
 Cohesion: 0.36
@@ -207,8 +214,8 @@ Cohesion: 0.20
 Nodes (10): Optional `defaultBranch`, package.json inference (new config.json only), Platform overlays (from global `platforms.json`), Skill: /daf-setup, Step 0 — Detect, Step 1 — Globals, Step 2a — Greenfield (scaffold only), Step 2b — Brownfield adoption (interview before populated structure) (+2 more)
 
 ### Community 22 - "Community 22"
-Cohesion: 0.25
-Nodes (7): Close (user accepts), Hard rules, Implement, Skill: /daf-linear-work, Start, Steps, Stop condition
+Cohesion: 0.20
+Nodes (11): Close (user accepts), Hard rules, Implement, Monitor, Multi-issue flow, Single-issue flow, Skill: /daf-linear-work, Spawn subagents (+3 more)
 
 ### Community 23 - "Community 23"
 Cohesion: 0.53
@@ -219,8 +226,8 @@ Cohesion: 0.40
 Nodes (6): cursor platform, skill-manifest.json, ~/.cursor/skills/daf-*/SKILL.md, remove-global is machine-wide; remove is single-repo only, /daf-remove, /daf-remove-global
 
 ### Community 25 - "Community 25"
-Cohesion: 0.07
-Nodes (37): Phase: planning, Architecture (starter), Boundaries, Modules, Architecture (starter), Fill via /daf-grill-me before leaving planning, Goal, Non-goals (+29 more)
+Cohesion: 0.20
+Nodes (10): Before the first question (realignment), Context load (all phases), Skill: /daf-grill-me, Developing / maintaining — realignment, Hard rules (realignment), Product grill (planning), Realignment (developing/maintaining), Realignment loop (+2 more)
 
 ### Community 26 - "Community 26"
 Cohesion: 0.22
@@ -243,8 +250,8 @@ Cohesion: 0.25
 Nodes (7): bootstrap, minDomainNodes, sources, ingest, canonicalSources, codeCommand, outputDir
 
 ### Community 31 - "Community 31"
-Cohesion: 0.67
-Nodes (3): linear-work, description, name
+Cohesion: 0.22
+Nodes (14): Phase: maintaining, Active skills, Allowed, Branch guard, Definition of done (session task), Forbidden, Implementation standards, Merge to main (+6 more)
 
 ### Community 32 - "Community 32"
 Cohesion: 0.33
@@ -279,8 +286,8 @@ Cohesion: 0.29
 Nodes (6): Skill: /daf-remove-global, Step 0 — Confirm intent, Step 1 — Inventory, Step 2 — Remove (after confirmation), Step 3 — Verify, Stop condition
 
 ### Community 40 - "Community 40"
-Cohesion: 0.67
-Nodes (3): remove, description, name
+Cohesion: 0.31
+Nodes (8): Phase: planning, Active skills, Allowed, Definition of done (exit to developing or maintaining), Forbidden, Merge / release, Phase: planning, Purpose
 
 ### Community 41 - "Community 41"
 Cohesion: 0.29
@@ -336,7 +343,7 @@ Nodes (6): Goal, Knowledge graph v1 scope, Non-goals, PRD — Daniels Agentic Fr
 
 ### Community 67 - "Community 67"
 Cohesion: 0.27
-Nodes (6): issue, description, name, onboard, description, name
+Nodes (6): ltm-checkup, description, name, onboard, description, name
 
 ### Community 68 - "Community 68"
 Cohesion: 0.25
@@ -346,9 +353,37 @@ Nodes (4): agentDir, { cwd, repoRoot }, { cwd, repoRoot: repoArg }, status
 Cohesion: 0.40
 Nodes (4): Banned synonyms, DAF (Daniels Agentic Framework), Deprecated (pivot), Glossary — DAF monorepo
 
+### Community 70 - "Community 70"
+Cohesion: 0.22
+Nodes (9): Assumption audit (planning — gate before PRD), Before the first question (planning), Hard rules (planning), Interview loop (planning), Planning — product grill, Stop condition (planning), Topic checklist (planning — depth, not tick-box), When an answer is too weak (planning) (+1 more)
+
 ### Community 71 - "Community 71"
 Cohesion: 0.67
 Nodes (3): improvement, description, name
+
+### Community 72 - "Community 72"
+Cohesion: 0.39
+Nodes (7): Fill via /daf-grill-me before leaving planning, Goal, Non-goals, PRD (template), Success, PRD (template), v1 scope
+
+### Community 73 - "Community 73"
+Cohesion: 0.43
+Nodes (6): Skill: /daf-help, Sections (use these headings), Skill: /daf-help, Skills table (v1), Steps, Stop condition
+
+### Community 74 - "Community 74"
+Cohesion: 0.80
+Nodes (4): Architecture (starter), Boundaries, Modules, Architecture (starter)
+
+### Community 75 - "Community 75"
+Cohesion: 0.60
+Nodes (4): Skill: /daf-discuss, Skill: /daf-discuss, Steps, Stop condition
+
+### Community 76 - "Community 76"
+Cohesion: 0.67
+Nodes (3): issue, description, name
+
+### Community 77 - "Community 77"
+Cohesion: 0.67
+Nodes (3): remove-global, description, name
 
 ## Ambiguous Edges - Review These
 - `platforms.json` → `local.json (machine-local platforms)`  [AMBIGUOUS]
@@ -365,11 +400,11 @@ _Questions this graph is uniquely positioned to answer:_
 - **What is the exact relationship between `platforms.json` and `local.json (machine-local platforms)`?**
   _Edge tagged AMBIGUOUS (relation: semantically_similar_to) - confidence is low._
 - **Why does `platforms.json` connect `Community 15` to `Community 0`?**
-  _High betweenness centrality (0.162) - this node is a cross-community bridge._
+  _High betweenness centrality (0.161) - this node is a cross-community bridge._
 - **Why does `Platform (IDE)` connect `Community 0` to `Community 15`?**
-  _High betweenness centrality (0.162) - this node is a cross-community bridge._
+  _High betweenness centrality (0.160) - this node is a cross-community bridge._
 - **Why does `scripts` connect `Community 5` to `Community 0`?**
-  _High betweenness centrality (0.150) - this node is a cross-community bridge._
+  _High betweenness centrality (0.149) - this node is a cross-community bridge._
 - **Are the 2 inferred relationships involving `AGENTS.md (project)` (e.g. with `AGENTS.md (repo root)` and `AGENTS.md (scaffold)`) actually correct?**
   _`AGENTS.md (project)` has 2 INFERRED edges - model-reasoned connections that need verification._
 - **What connects `phase`, `stack`, `taskCheck` to the rest of the system?**
