@@ -814,7 +814,7 @@
       "label": "assertDeprecatedSpelling()",
       "file_type": "code",
       "source_file": "packages/cli/src/branding.test.ts",
-      "source_location": "L22",
+      "source_location": "L23",
       "id": "src_branding_test_assertdeprecatedspelling",
       "community": 0,
       "norm_label": "assertdeprecatedspelling()"
@@ -994,7 +994,7 @@
       "label": "DafVersionStatus",
       "file_type": "code",
       "source_file": "packages/cli/src/daf-version.ts",
-      "source_location": "L8",
+      "source_location": "L9",
       "id": "src_daf_version_dafversionstatus",
       "community": 0,
       "norm_label": "dafversionstatus"
@@ -1003,7 +1003,7 @@
       "label": "normalizePin()",
       "file_type": "code",
       "source_file": "packages/cli/src/daf-version.ts",
-      "source_location": "L12",
+      "source_location": "L13",
       "id": "src_daf_version_normalizepin",
       "community": 0,
       "norm_label": "normalizepin()"
@@ -1012,7 +1012,7 @@
       "label": "readPin()",
       "file_type": "code",
       "source_file": "packages/cli/src/daf-version.ts",
-      "source_location": "L17",
+      "source_location": "L18",
       "id": "src_daf_version_readpin",
       "community": 0,
       "norm_label": "readpin()"
@@ -1021,7 +1021,7 @@
       "label": "writePin()",
       "file_type": "code",
       "source_file": "packages/cli/src/daf-version.ts",
-      "source_location": "L28",
+      "source_location": "L29",
       "id": "src_daf_version_writepin",
       "community": 0,
       "norm_label": "writepin()"
@@ -1030,7 +1030,7 @@
       "label": "resolveRepoHead()",
       "file_type": "code",
       "source_file": "packages/cli/src/daf-version.ts",
-      "source_location": "L38",
+      "source_location": "L39",
       "id": "src_daf_version_resolverepohead",
       "community": 0,
       "norm_label": "resolverepohead()"
@@ -1039,7 +1039,7 @@
       "label": "checkDafVersion()",
       "file_type": "code",
       "source_file": "packages/cli/src/daf-version.ts",
-      "source_location": "L52",
+      "source_location": "L53",
       "id": "src_daf_version_checkdafversion",
       "community": 0,
       "norm_label": "checkdafversion()"
@@ -1048,10 +1048,37 @@
       "label": "formatStatusLine()",
       "file_type": "code",
       "source_file": "packages/cli/src/daf-version.ts",
-      "source_location": "L73",
+      "source_location": "L74",
       "id": "src_daf_version_formatstatusline",
       "community": 0,
       "norm_label": "formatstatusline()"
+    },
+    {
+      "label": "readDafRepoPath()",
+      "file_type": "code",
+      "source_file": "packages/cli/src/daf-version.ts",
+      "source_location": "L78",
+      "id": "src_daf_version_readdafrepopath",
+      "community": 0,
+      "norm_label": "readdafrepopath()"
+    },
+    {
+      "label": "writeDafRepoPath()",
+      "file_type": "code",
+      "source_file": "packages/cli/src/daf-version.ts",
+      "source_location": "L90",
+      "id": "src_daf_version_writedafrepopath",
+      "community": 0,
+      "norm_label": "writedafrepopath()"
+    },
+    {
+      "label": "resolveDafRepoRoot()",
+      "file_type": "code",
+      "source_file": "packages/cli/src/daf-version.ts",
+      "source_location": "L100",
+      "id": "src_daf_version_resolvedafreporoot",
+      "community": 0,
+      "norm_label": "resolvedafreporoot()"
     },
     {
       "label": "global-install.test.ts",
@@ -1948,7 +1975,7 @@
       "label": "findAgentDir()",
       "file_type": "code",
       "source_file": "scripts/daf-version-check.mjs",
-      "source_location": "L11",
+      "source_location": "L17",
       "id": "scripts_daf_version_check_findagentdir",
       "community": 46,
       "norm_label": "findagentdir()"
@@ -1957,7 +1984,7 @@
       "label": "parseArgs()",
       "file_type": "code",
       "source_file": "scripts/daf-version-check.mjs",
-      "source_location": "L22",
+      "source_location": "L28",
       "id": "scripts_daf_version_check_parseargs",
       "community": 46,
       "norm_label": "parseargs()"
@@ -1966,25 +1993,25 @@
       "label": "here",
       "file_type": "code",
       "source_file": "scripts/daf-version-check.mjs",
-      "source_location": "L47",
+      "source_location": "L53",
       "id": "scripts_daf_version_check_here",
       "community": 46,
       "norm_label": "here"
     },
     {
-      "label": "{ cwd, repoRoot }",
+      "label": "{ cwd, repoRoot: repoArg }",
       "file_type": "code",
       "source_file": "scripts/daf-version-check.mjs",
-      "source_location": "L53",
-      "id": "scripts_daf_version_check_cwd_reporoot",
+      "source_location": "L59",
+      "id": "scripts_daf_version_check_cwd_reporoot_repoarg",
       "community": 46,
-      "norm_label": "{ cwd, reporoot }"
+      "norm_label": "{ cwd, reporoot: repoarg }"
     },
     {
       "label": "globalDir",
       "file_type": "code",
       "source_file": "scripts/daf-version-check.mjs",
-      "source_location": "L54",
+      "source_location": "L60",
       "id": "scripts_daf_version_check_globaldir",
       "community": 46,
       "norm_label": "globaldir"
@@ -1993,7 +2020,7 @@
       "label": "agentDir",
       "file_type": "code",
       "source_file": "scripts/daf-version-check.mjs",
-      "source_location": "L55",
+      "source_location": "L61",
       "id": "scripts_daf_version_check_agentdir",
       "community": 46,
       "norm_label": "agentdir"
@@ -2002,7 +2029,7 @@
       "label": "status",
       "file_type": "code",
       "source_file": "scripts/daf-version-check.mjs",
-      "source_location": "L61",
+      "source_location": "L68",
       "id": "scripts_daf_version_check_status",
       "community": 46,
       "norm_label": "status"
@@ -2251,28 +2278,37 @@
       "norm_label": "findagentdir()"
     },
     {
-      "label": "parseArgs()",
+      "label": "readDafRepoFile()",
       "file_type": "code",
       "source_file": "templates/global/daf-version-check.mjs",
       "source_location": "L22",
+      "id": "global_daf_version_check_readdafrepofile",
+      "community": 68,
+      "norm_label": "readdafrepofile()"
+    },
+    {
+      "label": "parseArgs()",
+      "file_type": "code",
+      "source_file": "templates/global/daf-version-check.mjs",
+      "source_location": "L33",
       "id": "global_daf_version_check_parseargs",
       "community": 68,
       "norm_label": "parseargs()"
     },
     {
-      "label": "{ cwd, repoRoot }",
+      "label": "{ cwd, repoRoot: repoArg }",
       "file_type": "code",
       "source_file": "templates/global/daf-version-check.mjs",
-      "source_location": "L47",
-      "id": "global_daf_version_check_cwd_reporoot",
+      "source_location": "L58",
+      "id": "global_daf_version_check_cwd_reporoot_repoarg",
       "community": 68,
-      "norm_label": "{ cwd, reporoot }"
+      "norm_label": "{ cwd, reporoot: repoarg }"
     },
     {
       "label": "agentDir",
       "file_type": "code",
       "source_file": "templates/global/daf-version-check.mjs",
-      "source_location": "L49",
+      "source_location": "L60",
       "id": "global_daf_version_check_agentdir",
       "community": 68,
       "norm_label": "agentdir"
@@ -2281,7 +2317,7 @@
       "label": "status",
       "file_type": "code",
       "source_file": "templates/global/daf-version-check.mjs",
-      "source_location": "L55",
+      "source_location": "L67",
       "id": "global_daf_version_check_status",
       "community": 68,
       "norm_label": "status"
@@ -2436,7 +2472,7 @@
       "source_file": "templates/global/skill-manifest.json",
       "source_location": "L2",
       "id": "global_skill_manifest_onboard",
-      "community": 3,
+      "community": 67,
       "norm_label": "onboard"
     },
     {
@@ -2445,7 +2481,7 @@
       "source_file": "templates/global/skill-manifest.json",
       "source_location": "L3",
       "id": "global_skill_manifest_onboard_name",
-      "community": 3,
+      "community": 67,
       "norm_label": "name"
     },
     {
@@ -2454,7 +2490,7 @@
       "source_file": "templates/global/skill-manifest.json",
       "source_location": "L4",
       "id": "global_skill_manifest_onboard_description",
-      "community": 3,
+      "community": 67,
       "norm_label": "description"
     },
     {
@@ -2463,7 +2499,7 @@
       "source_file": "templates/global/skill-manifest.json",
       "source_location": "L6",
       "id": "global_skill_manifest_setup",
-      "community": 72,
+      "community": 3,
       "norm_label": "setup"
     },
     {
@@ -2472,7 +2508,7 @@
       "source_file": "templates/global/skill-manifest.json",
       "source_location": "L7",
       "id": "global_skill_manifest_setup_name",
-      "community": 72,
+      "community": 3,
       "norm_label": "name"
     },
     {
@@ -2481,7 +2517,7 @@
       "source_file": "templates/global/skill-manifest.json",
       "source_location": "L8",
       "id": "global_skill_manifest_setup_description",
-      "community": 72,
+      "community": 3,
       "norm_label": "description"
     },
     {
@@ -2490,7 +2526,7 @@
       "source_file": "templates/global/skill-manifest.json",
       "source_location": "L10",
       "id": "global_skill_manifest_update",
-      "community": 14,
+      "community": 45,
       "norm_label": "update"
     },
     {
@@ -2499,7 +2535,7 @@
       "source_file": "templates/global/skill-manifest.json",
       "source_location": "L11",
       "id": "global_skill_manifest_update_name",
-      "community": 14,
+      "community": 45,
       "norm_label": "name"
     },
     {
@@ -2508,7 +2544,7 @@
       "source_file": "templates/global/skill-manifest.json",
       "source_location": "L12",
       "id": "global_skill_manifest_update_description",
-      "community": 14,
+      "community": 45,
       "norm_label": "description"
     },
     {
@@ -2625,7 +2661,7 @@
       "source_file": "templates/global/skill-manifest.json",
       "source_location": "L30",
       "id": "global_skill_manifest_ltm_checkup",
-      "community": 22,
+      "community": 3,
       "norm_label": "ltm-checkup"
     },
     {
@@ -2634,7 +2670,7 @@
       "source_file": "templates/global/skill-manifest.json",
       "source_location": "L31",
       "id": "global_skill_manifest_ltm_checkup_name",
-      "community": 22,
+      "community": 3,
       "norm_label": "name"
     },
     {
@@ -2643,7 +2679,7 @@
       "source_file": "templates/global/skill-manifest.json",
       "source_location": "L32",
       "id": "global_skill_manifest_ltm_checkup_description",
-      "community": 22,
+      "community": 3,
       "norm_label": "description"
     },
     {
@@ -2868,7 +2904,7 @@
       "source_file": "templates/global/skill-manifest.json",
       "source_location": "L66",
       "id": "global_skill_manifest_retro",
-      "community": 22,
+      "community": 3,
       "norm_label": "retro"
     },
     {
@@ -2877,7 +2913,7 @@
       "source_file": "templates/global/skill-manifest.json",
       "source_location": "L67",
       "id": "global_skill_manifest_retro_name",
-      "community": 22,
+      "community": 3,
       "norm_label": "name"
     },
     {
@@ -2886,7 +2922,7 @@
       "source_file": "templates/global/skill-manifest.json",
       "source_location": "L68",
       "id": "global_skill_manifest_retro_description",
-      "community": 22,
+      "community": 3,
       "norm_label": "description"
     },
     {
@@ -2949,7 +2985,7 @@
       "source_file": "templates/global/skill-manifest.json",
       "source_location": "L78",
       "id": "global_skill_manifest_remove",
-      "community": 3,
+      "community": 40,
       "norm_label": "remove"
     },
     {
@@ -2958,7 +2994,7 @@
       "source_file": "templates/global/skill-manifest.json",
       "source_location": "L79",
       "id": "global_skill_manifest_remove_name",
-      "community": 3,
+      "community": 40,
       "norm_label": "name"
     },
     {
@@ -2967,7 +3003,7 @@
       "source_file": "templates/global/skill-manifest.json",
       "source_location": "L80",
       "id": "global_skill_manifest_remove_description",
-      "community": 3,
+      "community": 40,
       "norm_label": "description"
     },
     {
@@ -2995,6 +3031,60 @@
       "source_location": "L84",
       "id": "global_skill_manifest_remove_global_description",
       "community": 14,
+      "norm_label": "description"
+    },
+    {
+      "label": "linear-setup",
+      "file_type": "code",
+      "source_file": "templates/global/skill-manifest.json",
+      "source_location": "L86",
+      "id": "global_skill_manifest_linear_setup",
+      "community": 14,
+      "norm_label": "linear-setup"
+    },
+    {
+      "label": "name",
+      "file_type": "code",
+      "source_file": "templates/global/skill-manifest.json",
+      "source_location": "L87",
+      "id": "global_skill_manifest_linear_setup_name",
+      "community": 14,
+      "norm_label": "name"
+    },
+    {
+      "label": "description",
+      "file_type": "code",
+      "source_file": "templates/global/skill-manifest.json",
+      "source_location": "L88",
+      "id": "global_skill_manifest_linear_setup_description",
+      "community": 14,
+      "norm_label": "description"
+    },
+    {
+      "label": "linear-work",
+      "file_type": "code",
+      "source_file": "templates/global/skill-manifest.json",
+      "source_location": "L90",
+      "id": "global_skill_manifest_linear_work",
+      "community": 31,
+      "norm_label": "linear-work"
+    },
+    {
+      "label": "name",
+      "file_type": "code",
+      "source_file": "templates/global/skill-manifest.json",
+      "source_location": "L91",
+      "id": "global_skill_manifest_linear_work_name",
+      "community": 31,
+      "norm_label": "name"
+    },
+    {
+      "label": "description",
+      "file_type": "code",
+      "source_file": "templates/global/skill-manifest.json",
+      "source_location": "L92",
+      "id": "global_skill_manifest_linear_work_description",
+      "community": 31,
       "norm_label": "description"
     },
     {
@@ -3037,7 +3127,7 @@
       "label": "2.1 KG-first canon (when the graph exists)",
       "file_type": "document",
       "source_file": ".agent/AGENTS.md",
-      "source_location": "L36",
+      "source_location": "L37",
       "id": "agent_agents_2_1_kg_first_canon_when_the_graph_exists",
       "community": 15,
       "norm_label": "2.1 kg-first canon (when the graph exists)"
@@ -3046,7 +3136,7 @@
       "label": "3. Layout (lean)",
       "file_type": "document",
       "source_file": ".agent/AGENTS.md",
-      "source_location": "L44",
+      "source_location": "L45",
       "id": "agent_agents_3_layout_lean",
       "community": 15,
       "norm_label": "3. layout (lean)"
@@ -3055,7 +3145,7 @@
       "label": "4. Skills (v1)",
       "file_type": "document",
       "source_file": ".agent/AGENTS.md",
-      "source_location": "L69",
+      "source_location": "L70",
       "id": "agent_agents_4_skills_v1",
       "community": 15,
       "norm_label": "4. skills (v1)"
@@ -3064,7 +3154,7 @@
       "label": "5. Always-on rules",
       "file_type": "document",
       "source_file": ".agent/AGENTS.md",
-      "source_location": "L75",
+      "source_location": "L76",
       "id": "agent_agents_5_always_on_rules",
       "community": 15,
       "norm_label": "5. always-on rules"
@@ -3073,7 +3163,7 @@
       "label": "6. For humans",
       "file_type": "document",
       "source_file": ".agent/AGENTS.md",
-      "source_location": "L89",
+      "source_location": "L90",
       "id": "agent_agents_6_for_humans",
       "community": 15,
       "norm_label": "6. for humans"
@@ -3163,7 +3253,7 @@
       "label": "Banned synonyms",
       "file_type": "document",
       "source_file": ".agent/GLOSSARY.md",
-      "source_location": "L36",
+      "source_location": "L37",
       "id": "agent_glossary_banned_synonyms",
       "community": 69,
       "norm_label": "banned synonyms"
@@ -3172,7 +3262,7 @@
       "label": "Deprecated (pivot)",
       "file_type": "document",
       "source_file": ".agent/GLOSSARY.md",
-      "source_location": "L40",
+      "source_location": "L41",
       "id": "agent_glossary_deprecated_pivot",
       "community": 69,
       "norm_label": "deprecated (pivot)"
@@ -3226,7 +3316,7 @@
       "label": "Success",
       "file_type": "document",
       "source_file": ".agent/PRD.md",
-      "source_location": "L28",
+      "source_location": "L29",
       "id": "agent_prd_success",
       "community": 66,
       "norm_label": "success"
@@ -3469,7 +3559,7 @@
       "label": "Merge to main",
       "file_type": "document",
       "source_file": ".agent/phases/developing.md",
-      "source_location": "L74",
+      "source_location": "L76",
       "id": "agent_phases_developing_md_phases_developing_merge_to_main",
       "community": 2,
       "norm_label": "merge to main"
@@ -4045,7 +4135,7 @@
       "label": "Stop condition",
       "file_type": "document",
       "source_file": "templates/global/onboarding/global-setup.md",
-      "source_location": "L79",
+      "source_location": "L80",
       "id": "onboarding_global_setup_stop_condition",
       "community": 33,
       "norm_label": "stop condition"
@@ -4090,7 +4180,7 @@
       "label": "2.1 KG-first canon (when the graph exists)",
       "file_type": "document",
       "source_file": "templates/global/scaffold/AGENTS.md",
-      "source_location": "L36",
+      "source_location": "L37",
       "id": "scaffold_agents_2_1_kg_first_canon_when_the_graph_exists",
       "community": 29,
       "norm_label": "2.1 kg-first canon (when the graph exists)"
@@ -4099,7 +4189,7 @@
       "label": "3. Layout (lean)",
       "file_type": "document",
       "source_file": "templates/global/scaffold/AGENTS.md",
-      "source_location": "L44",
+      "source_location": "L45",
       "id": "scaffold_agents_3_layout_lean",
       "community": 29,
       "norm_label": "3. layout (lean)"
@@ -4108,7 +4198,7 @@
       "label": "4. Skills (v1)",
       "file_type": "document",
       "source_file": "templates/global/scaffold/AGENTS.md",
-      "source_location": "L69",
+      "source_location": "L70",
       "id": "scaffold_agents_4_skills_v1",
       "community": 29,
       "norm_label": "4. skills (v1)"
@@ -4117,7 +4207,7 @@
       "label": "5. Always-on rules",
       "file_type": "document",
       "source_file": "templates/global/scaffold/AGENTS.md",
-      "source_location": "L75",
+      "source_location": "L76",
       "id": "scaffold_agents_5_always_on_rules",
       "community": 29,
       "norm_label": "5. always-on rules"
@@ -4126,7 +4216,7 @@
       "label": "6. For humans",
       "file_type": "document",
       "source_file": "templates/global/scaffold/AGENTS.md",
-      "source_location": "L89",
+      "source_location": "L90",
       "id": "scaffold_agents_6_for_humans",
       "community": 29,
       "norm_label": "6. for humans"
@@ -4137,7 +4227,7 @@
       "source_file": "templates/global/scaffold/ARCHITECTURE.md",
       "source_location": "L1",
       "id": "scaffold_architecture",
-      "community": 70,
+      "community": 25,
       "norm_label": "architecture.md"
     },
     {
@@ -4146,7 +4236,7 @@
       "source_file": "templates/global/scaffold/ARCHITECTURE.md",
       "source_location": "L1",
       "id": "scaffold_architecture_architecture_starter",
-      "community": 70,
+      "community": 25,
       "norm_label": "architecture (starter)"
     },
     {
@@ -4155,7 +4245,7 @@
       "source_file": "templates/global/scaffold/ARCHITECTURE.md",
       "source_location": "L5",
       "id": "scaffold_architecture_modules",
-      "community": 70,
+      "community": 25,
       "norm_label": "modules"
     },
     {
@@ -4164,7 +4254,7 @@
       "source_file": "templates/global/scaffold/ARCHITECTURE.md",
       "source_location": "L9",
       "id": "scaffold_architecture_boundaries",
-      "community": 70,
+      "community": 25,
       "norm_label": "boundaries"
     },
     {
@@ -4191,7 +4281,7 @@
       "source_file": "templates/global/scaffold/PRD.md",
       "source_location": "L1",
       "id": "scaffold_prd",
-      "community": 45,
+      "community": 25,
       "norm_label": "prd.md"
     },
     {
@@ -4200,7 +4290,7 @@
       "source_file": "templates/global/scaffold/PRD.md",
       "source_location": "L1",
       "id": "scaffold_prd_prd_template",
-      "community": 45,
+      "community": 25,
       "norm_label": "prd (template)"
     },
     {
@@ -4209,7 +4299,7 @@
       "source_file": "templates/global/scaffold/PRD.md",
       "source_location": "L5",
       "id": "scaffold_prd_goal",
-      "community": 45,
+      "community": 25,
       "norm_label": "goal"
     },
     {
@@ -4218,7 +4308,7 @@
       "source_file": "templates/global/scaffold/PRD.md",
       "source_location": "L9",
       "id": "scaffold_prd_non_goals",
-      "community": 45,
+      "community": 25,
       "norm_label": "non-goals"
     },
     {
@@ -4227,7 +4317,7 @@
       "source_file": "templates/global/scaffold/PRD.md",
       "source_location": "L13",
       "id": "scaffold_prd_v1_scope",
-      "community": 45,
+      "community": 25,
       "norm_label": "v1 scope"
     },
     {
@@ -4236,7 +4326,7 @@
       "source_file": "templates/global/scaffold/PRD.md",
       "source_location": "L17",
       "id": "scaffold_prd_success",
-      "community": 45,
+      "community": 25,
       "norm_label": "success"
     },
     {
@@ -4477,7 +4567,7 @@
       "label": "Merge to main",
       "file_type": "document",
       "source_file": "templates/global/scaffold/phases/developing.md",
-      "source_location": "L74",
+      "source_location": "L76",
       "id": "templates_global_scaffold_phases_developing_md_phases_developing_merge_to_main",
       "community": 18,
       "norm_label": "merge to main"
@@ -4488,7 +4578,7 @@
       "source_file": "templates/global/scaffold/phases/maintaining.md",
       "source_location": "L1",
       "id": "templates_global_scaffold_phases_maintaining_md_phases_maintaining",
-      "community": 13,
+      "community": 18,
       "norm_label": "maintaining.md"
     },
     {
@@ -4497,7 +4587,7 @@
       "source_file": "templates/global/scaffold/phases/maintaining.md",
       "source_location": "L1",
       "id": "templates_global_scaffold_phases_maintaining_md_phases_maintaining_phase_maintaining",
-      "community": 13,
+      "community": 18,
       "norm_label": "phase: maintaining"
     },
     {
@@ -4506,7 +4596,7 @@
       "source_file": "templates/global/scaffold/phases/maintaining.md",
       "source_location": "L3",
       "id": "templates_global_scaffold_phases_maintaining_md_phases_maintaining_purpose",
-      "community": 13,
+      "community": 18,
       "norm_label": "purpose"
     },
     {
@@ -4515,7 +4605,7 @@
       "source_file": "templates/global/scaffold/phases/maintaining.md",
       "source_location": "L7",
       "id": "templates_global_scaffold_phases_maintaining_md_phases_maintaining_branch_guard",
-      "community": 13,
+      "community": 18,
       "norm_label": "branch guard"
     },
     {
@@ -4524,7 +4614,7 @@
       "source_file": "templates/global/scaffold/phases/maintaining.md",
       "source_location": "L20",
       "id": "templates_global_scaffold_phases_maintaining_md_phases_maintaining_implementation_standards",
-      "community": 13,
+      "community": 18,
       "norm_label": "implementation standards"
     },
     {
@@ -4533,7 +4623,7 @@
       "source_file": "templates/global/scaffold/phases/maintaining.md",
       "source_location": "L24",
       "id": "templates_global_scaffold_phases_maintaining_md_phases_maintaining_session_scope",
-      "community": 13,
+      "community": 18,
       "norm_label": "session scope"
     },
     {
@@ -4542,7 +4632,7 @@
       "source_file": "templates/global/scaffold/phases/maintaining.md",
       "source_location": "L28",
       "id": "templates_global_scaffold_phases_maintaining_md_phases_maintaining_session_task_no_files",
-      "community": 13,
+      "community": 18,
       "norm_label": "session task (no files)"
     },
     {
@@ -4551,7 +4641,7 @@
       "source_file": "templates/global/scaffold/phases/maintaining.md",
       "source_location": "L33",
       "id": "templates_global_scaffold_phases_maintaining_md_phases_maintaining_testing_bar",
-      "community": 13,
+      "community": 18,
       "norm_label": "testing bar"
     },
     {
@@ -4560,7 +4650,7 @@
       "source_file": "templates/global/scaffold/phases/maintaining.md",
       "source_location": "L39",
       "id": "templates_global_scaffold_phases_maintaining_md_phases_maintaining_definition_of_done_session_task",
-      "community": 13,
+      "community": 18,
       "norm_label": "definition of done (session task)"
     },
     {
@@ -4569,7 +4659,7 @@
       "source_file": "templates/global/scaffold/phases/maintaining.md",
       "source_location": "L52",
       "id": "templates_global_scaffold_phases_maintaining_md_phases_maintaining_task_summary",
-      "community": 13,
+      "community": 18,
       "norm_label": "task summary"
     },
     {
@@ -4578,7 +4668,7 @@
       "source_file": "templates/global/scaffold/phases/maintaining.md",
       "source_location": "L58",
       "id": "templates_global_scaffold_phases_maintaining_md_phases_maintaining_allowed",
-      "community": 13,
+      "community": 18,
       "norm_label": "allowed"
     },
     {
@@ -4587,7 +4677,7 @@
       "source_file": "templates/global/scaffold/phases/maintaining.md",
       "source_location": "L63",
       "id": "templates_global_scaffold_phases_maintaining_md_phases_maintaining_forbidden",
-      "community": 13,
+      "community": 18,
       "norm_label": "forbidden"
     },
     {
@@ -4596,7 +4686,7 @@
       "source_file": "templates/global/scaffold/phases/maintaining.md",
       "source_location": "L71",
       "id": "templates_global_scaffold_phases_maintaining_md_phases_maintaining_active_skills",
-      "community": 13,
+      "community": 18,
       "norm_label": "active skills"
     },
     {
@@ -4605,7 +4695,7 @@
       "source_file": "templates/global/scaffold/phases/maintaining.md",
       "source_location": "L81",
       "id": "templates_global_scaffold_phases_maintaining_md_phases_maintaining_merge_to_main",
-      "community": 13,
+      "community": 18,
       "norm_label": "merge to main"
     },
     {
@@ -4614,7 +4704,7 @@
       "source_file": "templates/global/scaffold/phases/planning.md",
       "source_location": "L1",
       "id": "templates_global_scaffold_phases_planning_md_phases_planning",
-      "community": 31,
+      "community": 25,
       "norm_label": "planning.md"
     },
     {
@@ -4623,7 +4713,7 @@
       "source_file": "templates/global/scaffold/phases/planning.md",
       "source_location": "L1",
       "id": "templates_global_scaffold_phases_planning_md_phases_planning_phase_planning",
-      "community": 31,
+      "community": 25,
       "norm_label": "phase: planning"
     },
     {
@@ -4632,7 +4722,7 @@
       "source_file": "templates/global/scaffold/phases/planning.md",
       "source_location": "L3",
       "id": "templates_global_scaffold_phases_planning_md_phases_planning_purpose",
-      "community": 31,
+      "community": 25,
       "norm_label": "purpose"
     },
     {
@@ -4641,7 +4731,7 @@
       "source_file": "templates/global/scaffold/phases/planning.md",
       "source_location": "L7",
       "id": "templates_global_scaffold_phases_planning_md_phases_planning_definition_of_done_exit_to_developing_or_maintaining",
-      "community": 31,
+      "community": 25,
       "norm_label": "definition of done (exit to developing or maintaining)"
     },
     {
@@ -4650,7 +4740,7 @@
       "source_file": "templates/global/scaffold/phases/planning.md",
       "source_location": "L18",
       "id": "templates_global_scaffold_phases_planning_md_phases_planning_allowed",
-      "community": 31,
+      "community": 25,
       "norm_label": "allowed"
     },
     {
@@ -4659,7 +4749,7 @@
       "source_file": "templates/global/scaffold/phases/planning.md",
       "source_location": "L24",
       "id": "templates_global_scaffold_phases_planning_md_phases_planning_forbidden",
-      "community": 31,
+      "community": 25,
       "norm_label": "forbidden"
     },
     {
@@ -4668,7 +4758,7 @@
       "source_file": "templates/global/scaffold/phases/planning.md",
       "source_location": "L29",
       "id": "templates_global_scaffold_phases_planning_md_phases_planning_active_skills",
-      "community": 31,
+      "community": 25,
       "norm_label": "active skills"
     },
     {
@@ -4677,7 +4767,7 @@
       "source_file": "templates/global/scaffold/phases/planning.md",
       "source_location": "L42",
       "id": "templates_global_scaffold_phases_planning_md_phases_planning_merge_release",
-      "community": 31,
+      "community": 25,
       "norm_label": "merge / release"
     },
     {
@@ -4821,7 +4911,7 @@
       "source_file": "templates/global/skills/discuss.md",
       "source_location": "L1",
       "id": "skills_discuss",
-      "community": 13,
+      "community": 18,
       "norm_label": "discuss.md"
     },
     {
@@ -4830,7 +4920,7 @@
       "source_file": "templates/global/skills/discuss.md",
       "source_location": "L1",
       "id": "skills_discuss_skill_daf_discuss",
-      "community": 13,
+      "community": 18,
       "norm_label": "skill: /daf-discuss"
     },
     {
@@ -4839,7 +4929,7 @@
       "source_file": "templates/global/skills/discuss.md",
       "source_location": "L20",
       "id": "skills_discuss_steps",
-      "community": 13,
+      "community": 18,
       "norm_label": "steps"
     },
     {
@@ -4848,7 +4938,7 @@
       "source_file": "templates/global/skills/discuss.md",
       "source_location": "L28",
       "id": "skills_discuss_stop_condition",
-      "community": 13,
+      "community": 18,
       "norm_label": "stop condition"
     },
     {
@@ -4884,7 +4974,7 @@
       "source_file": "templates/global/skills/grill-me.md",
       "source_location": "L20",
       "id": "skills_grill_me_planning_product_grill",
-      "community": 40,
+      "community": 25,
       "norm_label": "planning \u2014 product grill"
     },
     {
@@ -4893,7 +4983,7 @@
       "source_file": "templates/global/skills/grill-me.md",
       "source_location": "L26",
       "id": "skills_grill_me_hard_rules_planning",
-      "community": 40,
+      "community": 25,
       "norm_label": "hard rules (planning)"
     },
     {
@@ -4902,7 +4992,7 @@
       "source_file": "templates/global/skills/grill-me.md",
       "source_location": "L35",
       "id": "skills_grill_me_before_the_first_question_planning",
-      "community": 40,
+      "community": 25,
       "norm_label": "before the first question (planning)"
     },
     {
@@ -4911,7 +5001,7 @@
       "source_file": "templates/global/skills/grill-me.md",
       "source_location": "L41",
       "id": "skills_grill_me_interview_loop_planning",
-      "community": 40,
+      "community": 25,
       "norm_label": "interview loop (planning)"
     },
     {
@@ -4920,7 +5010,7 @@
       "source_file": "templates/global/skills/grill-me.md",
       "source_location": "L50",
       "id": "skills_grill_me_when_an_answer_is_too_weak_planning",
-      "community": 40,
+      "community": 25,
       "norm_label": "when an answer is too weak (planning)"
     },
     {
@@ -4929,7 +5019,7 @@
       "source_file": "templates/global/skills/grill-me.md",
       "source_location": "L62",
       "id": "skills_grill_me_topic_checklist_planning_depth_not_tick_box",
-      "community": 40,
+      "community": 25,
       "norm_label": "topic checklist (planning \u2014 depth, not tick-box)"
     },
     {
@@ -4938,7 +5028,7 @@
       "source_file": "templates/global/skills/grill-me.md",
       "source_location": "L80",
       "id": "skills_grill_me_assumption_audit_planning_gate_before_prd",
-      "community": 40,
+      "community": 25,
       "norm_label": "assumption audit (planning \u2014 gate before prd)"
     },
     {
@@ -4947,7 +5037,7 @@
       "source_file": "templates/global/skills/grill-me.md",
       "source_location": "L89",
       "id": "skills_grill_me_write_prd_and_stack_planning",
-      "community": 40,
+      "community": 25,
       "norm_label": "write prd and stack (planning)"
     },
     {
@@ -4956,7 +5046,7 @@
       "source_file": "templates/global/skills/grill-me.md",
       "source_location": "L95",
       "id": "skills_grill_me_stop_condition_planning",
-      "community": 40,
+      "community": 25,
       "norm_label": "stop condition (planning)"
     },
     {
@@ -5010,7 +5100,7 @@
       "source_file": "templates/global/skills/help.md",
       "source_location": "L1",
       "id": "skills_help",
-      "community": 13,
+      "community": 18,
       "norm_label": "help.md"
     },
     {
@@ -5019,7 +5109,7 @@
       "source_file": "templates/global/skills/help.md",
       "source_location": "L1",
       "id": "skills_help_skill_daf_help",
-      "community": 13,
+      "community": 18,
       "norm_label": "skill: /daf-help"
     },
     {
@@ -5028,7 +5118,7 @@
       "source_file": "templates/global/skills/help.md",
       "source_location": "L7",
       "id": "skills_help_steps",
-      "community": 13,
+      "community": 18,
       "norm_label": "steps"
     },
     {
@@ -5037,7 +5127,7 @@
       "source_file": "templates/global/skills/help.md",
       "source_location": "L12",
       "id": "skills_help_sections_use_these_headings",
-      "community": 13,
+      "community": 18,
       "norm_label": "sections (use these headings)"
     },
     {
@@ -5046,7 +5136,7 @@
       "source_file": "templates/global/skills/help.md",
       "source_location": "L42",
       "id": "skills_help_stop_condition",
-      "community": 13,
+      "community": 18,
       "norm_label": "stop condition"
     },
     {
@@ -5227,6 +5317,150 @@
       "source_location": "L31",
       "id": "skills_kg_ingest_stop_condition",
       "community": 5,
+      "norm_label": "stop condition"
+    },
+    {
+      "label": "linear-setup.md",
+      "file_type": "document",
+      "source_file": "templates/global/skills/linear-setup.md",
+      "source_location": "L1",
+      "id": "skills_linear_setup",
+      "community": 13,
+      "norm_label": "linear-setup.md"
+    },
+    {
+      "label": "Skill: /daf-linear-setup",
+      "file_type": "document",
+      "source_file": "templates/global/skills/linear-setup.md",
+      "source_location": "L1",
+      "id": "skills_linear_setup_skill_daf_linear_setup",
+      "community": 13,
+      "norm_label": "skill: /daf-linear-setup"
+    },
+    {
+      "label": "Steps",
+      "file_type": "document",
+      "source_file": "templates/global/skills/linear-setup.md",
+      "source_location": "L7",
+      "id": "skills_linear_setup_steps",
+      "community": 13,
+      "norm_label": "steps"
+    },
+    {
+      "label": "Check current state",
+      "file_type": "document",
+      "source_file": "templates/global/skills/linear-setup.md",
+      "source_location": "L9",
+      "id": "skills_linear_setup_check_current_state",
+      "community": 13,
+      "norm_label": "check current state"
+    },
+    {
+      "label": "Configure",
+      "file_type": "document",
+      "source_file": "templates/global/skills/linear-setup.md",
+      "source_location": "L13",
+      "id": "skills_linear_setup_configure",
+      "community": 13,
+      "norm_label": "configure"
+    },
+    {
+      "label": "Write config",
+      "file_type": "document",
+      "source_file": "templates/global/skills/linear-setup.md",
+      "source_location": "L20",
+      "id": "skills_linear_setup_write_config",
+      "community": 13,
+      "norm_label": "write config"
+    },
+    {
+      "label": "Best practices",
+      "file_type": "document",
+      "source_file": "templates/global/skills/linear-setup.md",
+      "source_location": "L28",
+      "id": "skills_linear_setup_best_practices",
+      "community": 13,
+      "norm_label": "best practices"
+    },
+    {
+      "label": "Stop condition",
+      "file_type": "document",
+      "source_file": "templates/global/skills/linear-setup.md",
+      "source_location": "L42",
+      "id": "skills_linear_setup_stop_condition",
+      "community": 13,
+      "norm_label": "stop condition"
+    },
+    {
+      "label": "linear-work.md",
+      "file_type": "document",
+      "source_file": "templates/global/skills/linear-work.md",
+      "source_location": "L1",
+      "id": "skills_linear_work",
+      "community": 22,
+      "norm_label": "linear-work.md"
+    },
+    {
+      "label": "Skill: /daf-linear-work",
+      "file_type": "document",
+      "source_file": "templates/global/skills/linear-work.md",
+      "source_location": "L1",
+      "id": "skills_linear_work_skill_daf_linear_work",
+      "community": 22,
+      "norm_label": "skill: /daf-linear-work"
+    },
+    {
+      "label": "Steps",
+      "file_type": "document",
+      "source_file": "templates/global/skills/linear-work.md",
+      "source_location": "L7",
+      "id": "skills_linear_work_steps",
+      "community": 22,
+      "norm_label": "steps"
+    },
+    {
+      "label": "Start",
+      "file_type": "document",
+      "source_file": "templates/global/skills/linear-work.md",
+      "source_location": "L9",
+      "id": "skills_linear_work_start",
+      "community": 22,
+      "norm_label": "start"
+    },
+    {
+      "label": "Implement",
+      "file_type": "document",
+      "source_file": "templates/global/skills/linear-work.md",
+      "source_location": "L27",
+      "id": "skills_linear_work_implement",
+      "community": 22,
+      "norm_label": "implement"
+    },
+    {
+      "label": "Close (user accepts)",
+      "file_type": "document",
+      "source_file": "templates/global/skills/linear-work.md",
+      "source_location": "L37",
+      "id": "skills_linear_work_close_user_accepts",
+      "community": 22,
+      "norm_label": "close (user accepts)"
+    },
+    {
+      "label": "Hard rules",
+      "file_type": "document",
+      "source_file": "templates/global/skills/linear-work.md",
+      "source_location": "L57",
+      "id": "skills_linear_work_hard_rules",
+      "community": 22,
+      "norm_label": "hard rules"
+    },
+    {
+      "label": "Stop condition",
+      "file_type": "document",
+      "source_file": "templates/global/skills/linear-work.md",
+      "source_location": "L64",
+      "id": "skills_linear_work_stop_condition",
+      "community": 22,
       "norm_label": "stop condition"
     },
     {
@@ -5881,7 +6115,7 @@
       "label": "Step 0 \u2014 One-line check (no tokens)",
       "file_type": "document",
       "source_file": "templates/global/skills/update.md",
-      "source_location": "L5",
+      "source_location": "L7",
       "id": "skills_update_step_0_one_line_check_no_tokens",
       "community": 65,
       "norm_label": "step 0 \u2014 one-line check (no tokens)"
@@ -5890,7 +6124,7 @@
       "label": "Step 1 \u2014 Refresh globals if needed",
       "file_type": "document",
       "source_file": "templates/global/skills/update.md",
-      "source_location": "L34",
+      "source_location": "L36",
       "id": "skills_update_step_1_refresh_globals_if_needed",
       "community": 65,
       "norm_label": "step 1 \u2014 refresh globals if needed"
@@ -5899,7 +6133,7 @@
       "label": "Step 2 \u2014 Refresh project",
       "file_type": "document",
       "source_file": "templates/global/skills/update.md",
-      "source_location": "L38",
+      "source_location": "L40",
       "id": "skills_update_step_2_refresh_project",
       "community": 65,
       "norm_label": "step 2 \u2014 refresh project"
@@ -5908,7 +6142,7 @@
       "label": "What is pinned",
       "file_type": "document",
       "source_file": "templates/global/skills/update.md",
-      "source_location": "L56",
+      "source_location": "L58",
       "id": "skills_update_what_is_pinned",
       "community": 65,
       "norm_label": "what is pinned"
@@ -5917,7 +6151,7 @@
       "label": "Stop condition",
       "file_type": "document",
       "source_file": "templates/global/skills/update.md",
-      "source_location": "L65",
+      "source_location": "L67",
       "id": "skills_update_stop_condition",
       "community": 65,
       "norm_label": "stop condition"
@@ -6173,6 +6407,24 @@
       "id": "checklists_planning_to_developing_validateplanningtodeveloping",
       "community": 59,
       "norm_label": "validateplanningtodeveloping"
+    },
+    {
+      "label": "{ cwd, repoRoot }",
+      "file_type": "code",
+      "source_file": "scripts/daf-version-check.mjs",
+      "source_location": "L53",
+      "community": 46,
+      "norm_label": "{ cwd, reporoot }",
+      "id": "scripts_daf_version_check_cwd_reporoot"
+    },
+    {
+      "label": "{ cwd, repoRoot }",
+      "file_type": "code",
+      "source_file": "templates/global/daf-version-check.mjs",
+      "source_location": "L47",
+      "community": 68,
+      "norm_label": "{ cwd, reporoot }",
+      "id": "global_daf_version_check_cwd_reporoot"
     },
     {
       "label": "AGENTS.md (project)",
@@ -7073,7 +7325,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 13,
+      "community": 18,
       "norm_label": "maintaining.md",
       "id": "phases_maintaining"
     },
@@ -7086,7 +7338,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 31,
+      "community": 25,
       "norm_label": "planning.md",
       "id": "phases_planning"
     },
@@ -7112,7 +7364,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 13,
+      "community": 18,
       "norm_label": "skill: /daf-discuss",
       "id": "skills_discuss_daf_discuss"
     },
@@ -7138,7 +7390,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 13,
+      "community": 18,
       "norm_label": "skill: /daf-help",
       "id": "skills_help_daf_help"
     },
@@ -7216,7 +7468,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 70,
+      "community": 25,
       "norm_label": "architecture (starter)",
       "id": "scaffold_architecture_starter"
     },
@@ -7229,7 +7481,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 45,
+      "community": 25,
       "norm_label": "prd (template)",
       "id": "scaffold_prd_template"
     },
@@ -7242,7 +7494,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 45,
+      "community": 25,
       "norm_label": "fill via /daf-grill-me before leaving planning",
       "id": "scaffold_prd_fill_via_grill_me"
     },
@@ -7409,7 +7661,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 31,
+      "community": 25,
       "norm_label": "phase: planning",
       "id": "phases_planning_phase_planning"
     },
@@ -7435,7 +7687,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 13,
+      "community": 18,
       "norm_label": "phase: maintaining",
       "id": "phases_maintaining_phase_maintaining"
     },
@@ -7528,7 +7780,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 25,
+      "community": 18,
       "norm_label": "realignment (developing/maintaining)",
       "id": "skills_grill_me_realignment"
     },
@@ -7541,7 +7793,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 13,
+      "community": 18,
       "norm_label": "skills table (v1)",
       "id": "skills_help_skills_table"
     },
@@ -8694,9 +8946,9 @@
       "source_file": "package.json",
       "source_location": "L17",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "package_scripts",
-      "target": "package_scripts_daf_project_update",
-      "confidence_score": 1.0
+      "target": "package_scripts_daf_project_update"
     },
     {
       "relation": "contains",
@@ -8704,9 +8956,9 @@
       "source_file": "package.json",
       "source_location": "L16",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "package_scripts",
-      "target": "package_scripts_daf_version_check",
-      "confidence_score": 1.0
+      "target": "package_scripts_daf_version_check"
     },
     {
       "relation": "contains",
@@ -9430,9 +9682,9 @@
       "source_file": "packages/cli/src/daf-version.test.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_daf_version_test",
-      "target": "src_daf_version",
-      "confidence_score": 1.0
+      "target": "src_daf_version"
     },
     {
       "relation": "imports",
@@ -9441,9 +9693,9 @@
       "source_file": "packages/cli/src/daf-version.test.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_daf_version_test",
-      "target": "src_daf_version_checkdafversion",
-      "confidence_score": 1.0
+      "target": "src_daf_version_checkdafversion"
     },
     {
       "relation": "imports",
@@ -9452,9 +9704,9 @@
       "source_file": "packages/cli/src/daf-version.test.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_daf_version_test",
-      "target": "src_daf_version_formatstatusline",
-      "confidence_score": 1.0
+      "target": "src_daf_version_formatstatusline"
     },
     {
       "relation": "imports",
@@ -9463,8 +9715,41 @@
       "source_file": "packages/cli/src/daf-version.test.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_daf_version_test",
-      "target": "src_daf_version_normalizepin",
+      "target": "src_daf_version_normalizepin"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "packages/cli/src/daf-version.test.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "src_daf_version_test",
+      "target": "src_daf_version_readdafrepopath",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "packages/cli/src/daf-version.test.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "src_daf_version_test",
+      "target": "src_daf_version_resolvedafreporoot",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "packages/cli/src/daf-version.test.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "src_daf_version_test",
+      "target": "src_daf_version_writedafrepopath",
       "confidence_score": 1.0
     },
     {
@@ -9473,9 +9758,9 @@
       "source_file": "packages/cli/src/daf-version.ts",
       "source_location": "L52",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_daf_version",
-      "target": "src_daf_version_checkdafversion",
-      "confidence_score": 1.0
+      "target": "src_daf_version_checkdafversion"
     },
     {
       "relation": "contains",
@@ -9483,9 +9768,9 @@
       "source_file": "packages/cli/src/daf-version.ts",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_daf_version",
-      "target": "src_daf_version_dafversionstatus",
-      "confidence_score": 1.0
+      "target": "src_daf_version_dafversionstatus"
     },
     {
       "relation": "contains",
@@ -9493,9 +9778,9 @@
       "source_file": "packages/cli/src/daf-version.ts",
       "source_location": "L73",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_daf_version",
-      "target": "src_daf_version_formatstatusline",
-      "confidence_score": 1.0
+      "target": "src_daf_version_formatstatusline"
     },
     {
       "relation": "contains",
@@ -9503,8 +9788,18 @@
       "source_file": "packages/cli/src/daf-version.ts",
       "source_location": "L12",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_daf_version",
-      "target": "src_daf_version_normalizepin",
+      "target": "src_daf_version_normalizepin"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "packages/cli/src/daf-version.ts",
+      "source_location": "L78",
+      "weight": 1.0,
+      "source": "src_daf_version",
+      "target": "src_daf_version_readdafrepopath",
       "confidence_score": 1.0
     },
     {
@@ -9513,8 +9808,18 @@
       "source_file": "packages/cli/src/daf-version.ts",
       "source_location": "L17",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_daf_version",
-      "target": "src_daf_version_readpin",
+      "target": "src_daf_version_readpin"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "packages/cli/src/daf-version.ts",
+      "source_location": "L100",
+      "weight": 1.0,
+      "source": "src_daf_version",
+      "target": "src_daf_version_resolvedafreporoot",
       "confidence_score": 1.0
     },
     {
@@ -9523,8 +9828,18 @@
       "source_file": "packages/cli/src/daf-version.ts",
       "source_location": "L38",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_daf_version",
-      "target": "src_daf_version_resolverepohead",
+      "target": "src_daf_version_resolverepohead"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "packages/cli/src/daf-version.ts",
+      "source_location": "L90",
+      "weight": 1.0,
+      "source": "src_daf_version",
+      "target": "src_daf_version_writedafrepopath",
       "confidence_score": 1.0
     },
     {
@@ -9533,9 +9848,9 @@
       "source_file": "packages/cli/src/daf-version.ts",
       "source_location": "L28",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_daf_version",
-      "target": "src_daf_version_writepin",
-      "confidence_score": 1.0
+      "target": "src_daf_version_writepin"
     },
     {
       "relation": "imports_from",
@@ -9544,9 +9859,9 @@
       "source_file": "packages/cli/src/global-install.ts",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_global_install",
-      "target": "src_daf_version",
-      "confidence_score": 1.0
+      "target": "src_daf_version"
     },
     {
       "relation": "imports_from",
@@ -9555,9 +9870,9 @@
       "source_file": "packages/cli/src/project-update.ts",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_project_update",
-      "target": "src_daf_version",
-      "confidence_score": 1.0
+      "target": "src_daf_version"
     },
     {
       "relation": "imports_from",
@@ -9566,9 +9881,9 @@
       "source_file": "packages/cli/src/project-update.test.ts",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_project_update_test",
-      "target": "src_daf_version",
-      "confidence_score": 1.0
+      "target": "src_daf_version"
     },
     {
       "relation": "calls",
@@ -9577,9 +9892,9 @@
       "source_file": "packages/cli/src/daf-version.ts",
       "source_location": "L20",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_daf_version_readpin",
-      "target": "src_daf_version_normalizepin",
-      "confidence_score": 1.0
+      "target": "src_daf_version_normalizepin"
     },
     {
       "relation": "calls",
@@ -9588,9 +9903,9 @@
       "source_file": "packages/cli/src/daf-version.ts",
       "source_location": "L46",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_daf_version_resolverepohead",
-      "target": "src_daf_version_normalizepin",
-      "confidence_score": 1.0
+      "target": "src_daf_version_normalizepin"
     },
     {
       "relation": "calls",
@@ -9599,9 +9914,9 @@
       "source_file": "packages/cli/src/daf-version.ts",
       "source_location": "L29",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_daf_version_writepin",
-      "target": "src_daf_version_normalizepin",
-      "confidence_score": 1.0
+      "target": "src_daf_version_normalizepin"
     },
     {
       "relation": "imports",
@@ -9610,9 +9925,9 @@
       "source_file": "packages/cli/src/project-update.ts",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_project_update",
-      "target": "src_daf_version_readpin",
-      "confidence_score": 1.0
+      "target": "src_daf_version_readpin"
     },
     {
       "relation": "calls",
@@ -9632,9 +9947,9 @@
       "source_file": "packages/cli/src/global-install.ts",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_global_install",
-      "target": "src_daf_version_writepin",
-      "confidence_score": 1.0
+      "target": "src_daf_version_writepin"
     },
     {
       "relation": "calls",
@@ -9654,9 +9969,9 @@
       "source_file": "packages/cli/src/project-update.ts",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_project_update",
-      "target": "src_daf_version_writepin",
-      "confidence_score": 1.0
+      "target": "src_daf_version_writepin"
     },
     {
       "relation": "calls",
@@ -9676,9 +9991,9 @@
       "source_file": "packages/cli/src/project-update.test.ts",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_project_update_test",
-      "target": "src_daf_version_writepin",
-      "confidence_score": 1.0
+      "target": "src_daf_version_writepin"
     },
     {
       "relation": "imports",
@@ -9687,9 +10002,9 @@
       "source_file": "packages/cli/src/global-install.ts",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_global_install",
-      "target": "src_daf_version_resolverepohead",
-      "confidence_score": 1.0
+      "target": "src_daf_version_resolverepohead"
     },
     {
       "relation": "calls",
@@ -9701,6 +10016,39 @@
       "weight": 1.0,
       "source": "src_global_install_installglobalagent",
       "target": "src_daf_version_resolverepohead"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "packages/cli/src/daf-version.ts",
+      "source_location": "L106",
+      "weight": 1.0,
+      "source": "src_daf_version_resolvedafreporoot",
+      "target": "src_daf_version_readdafrepopath",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "packages/cli/src/global-install.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "src_global_install",
+      "target": "src_daf_version_writedafrepopath",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "packages/cli/src/global-install.ts",
+      "source_location": "L165",
+      "weight": 1.0,
+      "source": "src_global_install_installglobalagent",
+      "target": "src_daf_version_writedafrepopath"
     },
     {
       "relation": "imports_from",
@@ -9887,9 +10235,9 @@
       "source_file": "packages/cli/src/global-install.ts",
       "source_location": "L21",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_global_install",
-      "target": "src_global_install_installversionchecktools",
-      "confidence_score": 1.0
+      "target": "src_global_install_installversionchecktools"
     },
     {
       "relation": "imports_from",
@@ -9975,9 +10323,9 @@
       "source_file": "packages/cli/src/global-install.ts",
       "source_location": "L12",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_global_install",
-      "target": "src_paths_getreporoot",
-      "confidence_score": 1.0
+      "target": "src_paths_getreporoot"
     },
     {
       "relation": "imports",
@@ -10052,9 +10400,9 @@
       "source_file": "packages/cli/src/global-install.ts",
       "source_location": "L164",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_global_install_installglobalagent",
-      "target": "src_global_install_installversionchecktools",
-      "confidence_score": 1.0
+      "target": "src_global_install_installversionchecktools"
     },
     {
       "relation": "calls",
@@ -10063,9 +10411,9 @@
       "source_file": "packages/cli/src/global-install.ts",
       "source_location": "L22",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_global_install_installversionchecktools",
-      "target": "src_paths_getreporoot",
-      "confidence_score": 1.0
+      "target": "src_paths_getreporoot"
     },
     {
       "relation": "calls",
@@ -10074,9 +10422,9 @@
       "source_file": "packages/cli/src/global-install.ts",
       "source_location": "L24",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_global_install_installversionchecktools",
-      "target": "src_paths_gettemplatesroot",
-      "confidence_score": 1.0
+      "target": "src_paths_gettemplatesroot"
     },
     {
       "relation": "calls",
@@ -10822,9 +11170,9 @@
       "source_file": "packages/cli/src/project-update.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_project_update",
-      "target": "src_platform",
-      "confidence_score": 1.0
+      "target": "src_platform"
     },
     {
       "relation": "imports",
@@ -10844,9 +11192,9 @@
       "source_file": "packages/cli/src/project-update.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_project_update",
-      "target": "src_platform_platform",
-      "confidence_score": 1.0
+      "target": "src_platform_platform"
     },
     {
       "relation": "imports",
@@ -11290,9 +11638,9 @@
       "source_file": "packages/cli/src/project-update.ts",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_project_update",
-      "target": "src_project_overlays",
-      "confidence_score": 1.0
+      "target": "src_project_overlays"
     },
     {
       "relation": "calls",
@@ -11323,9 +11671,9 @@
       "source_file": "packages/cli/src/project-update.ts",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_project_update",
-      "target": "src_project_overlays_applyprojectoverlays",
-      "confidence_score": 1.0
+      "target": "src_project_overlays_applyprojectoverlays"
     },
     {
       "relation": "calls",
@@ -11345,9 +11693,9 @@
       "source_file": "packages/cli/src/project-update.test.ts",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_project_update_test",
-      "target": "src_project_update",
-      "confidence_score": 1.0
+      "target": "src_project_update"
     },
     {
       "relation": "imports",
@@ -11356,9 +11704,9 @@
       "source_file": "packages/cli/src/project-update.test.ts",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_project_update_test",
-      "target": "src_project_update_refreshprojectdaf",
-      "confidence_score": 1.0
+      "target": "src_project_update_refreshprojectdaf"
     },
     {
       "relation": "contains",
@@ -11366,9 +11714,9 @@
       "source_file": "packages/cli/src/project-update.ts",
       "source_location": "L11",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_project_update",
-      "target": "src_project_update_copydirmergeskip",
-      "confidence_score": 1.0
+      "target": "src_project_update_copydirmergeskip"
     },
     {
       "relation": "contains",
@@ -11376,9 +11724,9 @@
       "source_file": "packages/cli/src/project-update.ts",
       "source_location": "L45",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_project_update",
-      "target": "src_project_update_refreshprojectdaf",
-      "confidence_score": 1.0
+      "target": "src_project_update_refreshprojectdaf"
     },
     {
       "relation": "contains",
@@ -11386,9 +11734,9 @@
       "source_file": "packages/cli/src/project-update.ts",
       "source_location": "L31",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_project_update",
-      "target": "src_project_update_refreshprojectdafopts",
-      "confidence_score": 1.0
+      "target": "src_project_update_refreshprojectdafopts"
     },
     {
       "relation": "contains",
@@ -11396,9 +11744,9 @@
       "source_file": "packages/cli/src/project-update.ts",
       "source_location": "L39",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_project_update",
-      "target": "src_project_update_refreshprojectdafresult",
-      "confidence_score": 1.0
+      "target": "src_project_update_refreshprojectdafresult"
     },
     {
       "relation": "contains",
@@ -11406,9 +11754,9 @@
       "source_file": "packages/cli/src/project-update.ts",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_project_update",
-      "target": "src_project_update_scaffold_skip_files",
-      "confidence_score": 1.0
+      "target": "src_project_update_scaffold_skip_files"
     },
     {
       "relation": "calls",
@@ -11417,9 +11765,9 @@
       "source_file": "packages/cli/src/project-update.ts",
       "source_location": "L61",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_project_update_refreshprojectdaf",
-      "target": "src_project_update_copydirmergeskip",
-      "confidence_score": 1.0
+      "target": "src_project_update_copydirmergeskip"
     },
     {
       "relation": "imports_from",
@@ -11659,9 +12007,9 @@
       "source_file": "scripts/daf-project-update.mjs",
       "source_location": "L33",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scripts_daf_project_update",
-      "target": "scripts_daf_project_update_cwd",
-      "confidence_score": 1.0
+      "target": "scripts_daf_project_update_cwd"
     },
     {
       "relation": "contains",
@@ -11669,9 +12017,9 @@
       "source_file": "scripts/daf-project-update.mjs",
       "source_location": "L12",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scripts_daf_project_update",
-      "target": "scripts_daf_project_update_findreporoot",
-      "confidence_score": 1.0
+      "target": "scripts_daf_project_update_findreporoot"
     },
     {
       "relation": "contains",
@@ -11679,9 +12027,9 @@
       "source_file": "scripts/daf-project-update.mjs",
       "source_location": "L60",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scripts_daf_project_update",
-      "target": "scripts_daf_project_update_globaldir",
-      "confidence_score": 1.0
+      "target": "scripts_daf_project_update_globaldir"
     },
     {
       "relation": "contains",
@@ -11689,9 +12037,9 @@
       "source_file": "scripts/daf-project-update.mjs",
       "source_location": "L27",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scripts_daf_project_update",
-      "target": "scripts_daf_project_update_here",
-      "confidence_score": 1.0
+      "target": "scripts_daf_project_update_here"
     },
     {
       "relation": "contains",
@@ -11699,9 +12047,9 @@
       "source_file": "scripts/daf-project-update.mjs",
       "source_location": "L54",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scripts_daf_project_update",
-      "target": "scripts_daf_project_update_reporoot",
-      "confidence_score": 1.0
+      "target": "scripts_daf_project_update_reporoot"
     },
     {
       "relation": "contains",
@@ -11709,9 +12057,9 @@
       "source_file": "scripts/daf-project-update.mjs",
       "source_location": "L22",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scripts_daf_project_update",
-      "target": "scripts_daf_project_update_usage",
-      "confidence_score": 1.0
+      "target": "scripts_daf_project_update_usage"
     },
     {
       "relation": "contains",
@@ -11719,9 +12067,9 @@
       "source_file": "scripts/daf-version-check.mjs",
       "source_location": "L55",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scripts_daf_version_check",
-      "target": "scripts_daf_version_check_agentdir",
-      "confidence_score": 1.0
+      "target": "scripts_daf_version_check_agentdir"
     },
     {
       "relation": "contains",
@@ -11729,8 +12077,18 @@
       "source_file": "scripts/daf-version-check.mjs",
       "source_location": "L53",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scripts_daf_version_check",
-      "target": "scripts_daf_version_check_cwd_reporoot",
+      "target": "scripts_daf_version_check_cwd_reporoot"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/daf-version-check.mjs",
+      "source_location": "L59",
+      "weight": 1.0,
+      "source": "scripts_daf_version_check",
+      "target": "scripts_daf_version_check_cwd_reporoot_repoarg",
       "confidence_score": 1.0
     },
     {
@@ -11739,9 +12097,9 @@
       "source_file": "scripts/daf-version-check.mjs",
       "source_location": "L11",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scripts_daf_version_check",
-      "target": "scripts_daf_version_check_findagentdir",
-      "confidence_score": 1.0
+      "target": "scripts_daf_version_check_findagentdir"
     },
     {
       "relation": "contains",
@@ -11749,9 +12107,9 @@
       "source_file": "scripts/daf-version-check.mjs",
       "source_location": "L54",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scripts_daf_version_check",
-      "target": "scripts_daf_version_check_globaldir",
-      "confidence_score": 1.0
+      "target": "scripts_daf_version_check_globaldir"
     },
     {
       "relation": "contains",
@@ -11759,9 +12117,9 @@
       "source_file": "scripts/daf-version-check.mjs",
       "source_location": "L47",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scripts_daf_version_check",
-      "target": "scripts_daf_version_check_here",
-      "confidence_score": 1.0
+      "target": "scripts_daf_version_check_here"
     },
     {
       "relation": "contains",
@@ -11769,9 +12127,9 @@
       "source_file": "scripts/daf-version-check.mjs",
       "source_location": "L22",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scripts_daf_version_check",
-      "target": "scripts_daf_version_check_parseargs",
-      "confidence_score": 1.0
+      "target": "scripts_daf_version_check_parseargs"
     },
     {
       "relation": "contains",
@@ -11779,9 +12137,9 @@
       "source_file": "scripts/daf-version-check.mjs",
       "source_location": "L61",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scripts_daf_version_check",
-      "target": "scripts_daf_version_check_status",
-      "confidence_score": 1.0
+      "target": "scripts_daf_version_check_status"
     },
     {
       "relation": "contains",
@@ -12406,9 +12764,9 @@
       "source_file": "templates/global/daf-version-check.mjs",
       "source_location": "L49",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "global_daf_version_check",
-      "target": "global_daf_version_check_agentdir",
-      "confidence_score": 1.0
+      "target": "global_daf_version_check_agentdir"
     },
     {
       "relation": "contains",
@@ -12416,8 +12774,18 @@
       "source_file": "templates/global/daf-version-check.mjs",
       "source_location": "L47",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "global_daf_version_check",
-      "target": "global_daf_version_check_cwd_reporoot",
+      "target": "global_daf_version_check_cwd_reporoot"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "templates/global/daf-version-check.mjs",
+      "source_location": "L58",
+      "weight": 1.0,
+      "source": "global_daf_version_check",
+      "target": "global_daf_version_check_cwd_reporoot_repoarg",
       "confidence_score": 1.0
     },
     {
@@ -12426,9 +12794,19 @@
       "source_file": "templates/global/daf-version-check.mjs",
       "source_location": "L11",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "global_daf_version_check",
-      "target": "global_daf_version_check_findagentdir",
-      "confidence_score": 1.0
+      "target": "global_daf_version_check_findagentdir"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "templates/global/daf-version-check.mjs",
+      "source_location": "L22",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "global_daf_version_check",
+      "target": "global_daf_version_check_parseargs"
     },
     {
       "relation": "contains",
@@ -12437,7 +12815,7 @@
       "source_location": "L22",
       "weight": 1.0,
       "source": "global_daf_version_check",
-      "target": "global_daf_version_check_parseargs",
+      "target": "global_daf_version_check_readdafrepofile",
       "confidence_score": 1.0
     },
     {
@@ -12446,9 +12824,9 @@
       "source_file": "templates/global/daf-version-check.mjs",
       "source_location": "L55",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "global_daf_version_check",
-      "target": "global_daf_version_check_status",
-      "confidence_score": 1.0
+      "target": "global_daf_version_check_status"
     },
     {
       "relation": "contains",
@@ -12674,6 +13052,26 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "templates/global/skill-manifest.json",
+      "source_location": "L86",
+      "weight": 1.0,
+      "source": "global_skill_manifest",
+      "target": "global_skill_manifest_linear_setup",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "templates/global/skill-manifest.json",
+      "source_location": "L90",
+      "weight": 1.0,
+      "source": "global_skill_manifest",
+      "target": "global_skill_manifest_linear_work",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "templates/global/skill-manifest.json",
       "source_location": "L26",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -12786,9 +13184,9 @@
       "source_file": "templates/global/skill-manifest.json",
       "source_location": "L10",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "global_skill_manifest",
-      "target": "global_skill_manifest_update",
-      "confidence_score": 1.0
+      "target": "global_skill_manifest_update"
     },
     {
       "relation": "contains",
@@ -12946,9 +13344,9 @@
       "source_file": "templates/global/skill-manifest.json",
       "source_location": "L12",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "global_skill_manifest_update",
-      "target": "global_skill_manifest_update_description",
-      "confidence_score": 1.0
+      "target": "global_skill_manifest_update_description"
     },
     {
       "relation": "contains",
@@ -12956,9 +13354,9 @@
       "source_file": "templates/global/skill-manifest.json",
       "source_location": "L11",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "global_skill_manifest_update",
-      "target": "global_skill_manifest_update_name",
-      "confidence_score": 1.0
+      "target": "global_skill_manifest_update_name"
     },
     {
       "relation": "contains",
@@ -13659,6 +14057,46 @@
       "confidence_score": 1.0,
       "source": "global_skill_manifest_remove_global",
       "target": "global_skill_manifest_remove_global_name"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "templates/global/skill-manifest.json",
+      "source_location": "L88",
+      "weight": 1.0,
+      "source": "global_skill_manifest_linear_setup",
+      "target": "global_skill_manifest_linear_setup_description",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "templates/global/skill-manifest.json",
+      "source_location": "L87",
+      "weight": 1.0,
+      "source": "global_skill_manifest_linear_setup",
+      "target": "global_skill_manifest_linear_setup_name",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "templates/global/skill-manifest.json",
+      "source_location": "L92",
+      "weight": 1.0,
+      "source": "global_skill_manifest_linear_work",
+      "target": "global_skill_manifest_linear_work_description",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "templates/global/skill-manifest.json",
+      "source_location": "L91",
+      "weight": 1.0,
+      "source": "global_skill_manifest_linear_work",
+      "target": "global_skill_manifest_linear_work_name",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -17513,6 +17951,146 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "templates/global/skills/linear-setup.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "skills_linear_setup",
+      "target": "skills_linear_setup_skill_daf_linear_setup",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "templates/global/skills/linear-setup.md",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "skills_linear_setup_skill_daf_linear_setup",
+      "target": "skills_linear_setup_steps",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "templates/global/skills/linear-setup.md",
+      "source_location": "L42",
+      "weight": 1.0,
+      "source": "skills_linear_setup_skill_daf_linear_setup",
+      "target": "skills_linear_setup_stop_condition",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "templates/global/skills/linear-setup.md",
+      "source_location": "L28",
+      "weight": 1.0,
+      "source": "skills_linear_setup_steps",
+      "target": "skills_linear_setup_best_practices",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "templates/global/skills/linear-setup.md",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "skills_linear_setup_steps",
+      "target": "skills_linear_setup_check_current_state",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "templates/global/skills/linear-setup.md",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "skills_linear_setup_steps",
+      "target": "skills_linear_setup_configure",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "templates/global/skills/linear-setup.md",
+      "source_location": "L20",
+      "weight": 1.0,
+      "source": "skills_linear_setup_steps",
+      "target": "skills_linear_setup_write_config",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "templates/global/skills/linear-work.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "skills_linear_work",
+      "target": "skills_linear_work_skill_daf_linear_work",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "templates/global/skills/linear-work.md",
+      "source_location": "L57",
+      "weight": 1.0,
+      "source": "skills_linear_work_skill_daf_linear_work",
+      "target": "skills_linear_work_hard_rules",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "templates/global/skills/linear-work.md",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "skills_linear_work_skill_daf_linear_work",
+      "target": "skills_linear_work_steps",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "templates/global/skills/linear-work.md",
+      "source_location": "L64",
+      "weight": 1.0,
+      "source": "skills_linear_work_skill_daf_linear_work",
+      "target": "skills_linear_work_stop_condition",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "templates/global/skills/linear-work.md",
+      "source_location": "L37",
+      "weight": 1.0,
+      "source": "skills_linear_work_steps",
+      "target": "skills_linear_work_close_user_accepts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "templates/global/skills/linear-work.md",
+      "source_location": "L27",
+      "weight": 1.0,
+      "source": "skills_linear_work_steps",
+      "target": "skills_linear_work_implement",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "templates/global/skills/linear-work.md",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "skills_linear_work_steps",
+      "target": "skills_linear_work_start",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "templates/global/skills/ltm-checkup.md",
       "source_location": "L1",
       "weight": 1.0,
@@ -18288,9 +18866,9 @@
       "source_file": "templates/global/skills/update.md",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "skills_update",
-      "target": "skills_update_skill_daf_update",
-      "confidence_score": 1.0
+      "target": "skills_update_skill_daf_update"
     },
     {
       "relation": "contains",
@@ -18298,9 +18876,9 @@
       "source_file": "templates/global/skills/update.md",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "skills_update_skill_daf_update",
-      "target": "skills_update_step_0_one_line_check_no_tokens",
-      "confidence_score": 1.0
+      "target": "skills_update_step_0_one_line_check_no_tokens"
     },
     {
       "relation": "contains",
@@ -18308,9 +18886,9 @@
       "source_file": "templates/global/skills/update.md",
       "source_location": "L34",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "skills_update_skill_daf_update",
-      "target": "skills_update_step_1_refresh_globals_if_needed",
-      "confidence_score": 1.0
+      "target": "skills_update_step_1_refresh_globals_if_needed"
     },
     {
       "relation": "contains",
@@ -18318,9 +18896,9 @@
       "source_file": "templates/global/skills/update.md",
       "source_location": "L38",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "skills_update_skill_daf_update",
-      "target": "skills_update_step_2_refresh_project",
-      "confidence_score": 1.0
+      "target": "skills_update_step_2_refresh_project"
     },
     {
       "relation": "contains",
@@ -18328,9 +18906,9 @@
       "source_file": "templates/global/skills/update.md",
       "source_location": "L65",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "skills_update_skill_daf_update",
-      "target": "skills_update_stop_condition",
-      "confidence_score": 1.0
+      "target": "skills_update_stop_condition"
     },
     {
       "relation": "contains",
@@ -18338,9 +18916,9 @@
       "source_file": "templates/global/skills/update.md",
       "source_location": "L56",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "skills_update_skill_daf_update",
-      "target": "skills_update_what_is_pinned",
-      "confidence_score": 1.0
+      "target": "skills_update_what_is_pinned"
     },
     {
       "relation": "contains",
@@ -20886,5 +21464,5 @@
       "source_file": ".agent/ARCHITECTURE.md"
     }
   ],
-  "built_at_commit": "938d368888b72dd34e41c879ebc191445c9a3d3a"
+  "built_at_commit": "4d5632a2c857419f24f5cecdbf5160789fe23b03"
 }

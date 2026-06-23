@@ -11,13 +11,13 @@ Repo-root `AGENTS.md` (when present) is a thin pointer to this file for tools th
 1. **Layered context** — Global (`~/.config/agent/`) composes with project (`.agent/`). Higher layers override lower ones, never the reverse.
 2. **Phase model** — Exactly one phase at a time: `planning`, `developing`, or `maintaining`. Phase-specific rules live in `.agent/phases/{phase}.md` only — no `gates` in JSON, no personas.
 
-State lives in **`.agent/config.json`**: `phase`, `stack`, `check`, `taskCheck`, `codebaseEvery`, `initialTaskCount` (seed for `verify-state.json` when **`/daf-setup`** creates it), optional **`defaultBranch`** (protected name for **maintaining** branch guard). **IDE platforms** are chosen at **`/daf-onboard`** and stored in **`~/.config/agent/platforms.json`** (machine-wide, not in the repo). Runtime task totals live in **`.agent/verify-state.json`** (updated by the agent at session task end per the current phase file).
+State lives in **`.agent/config.json`**: `phase`, `stack`, `check`, `taskCheck`, `codebaseEvery`, `initialTaskCount` (seed for `verify-state.json` when **`/daf-setup`** creates it), optional **`defaultBranch`** (protected name for **maintaining** branch guard), optional **`integrations`** (array of enabled integrations, e.g. `["linear"]`), optional **`linearTeam`** and **`linearTestingState`** (set by **`/daf-linear-setup`** when Linear integration is active). **IDE platforms** are chosen at **`/daf-onboard`** and stored in **`~/.config/agent/platforms.json`** (machine-wide, not in the repo). Runtime task totals live in **`.agent/verify-state.json`** (updated by the agent at session task end per the current phase file).
 
 ---
 
 ## 2. Load order (every session)
 
-1. `.agent/config.json` — phase, stack, `check`, `taskCheck`, `codebaseEvery`, optional `defaultBranch`
+1. `.agent/config.json` — phase, stack, `check`, `taskCheck`, `codebaseEvery`, optional `defaultBranch`, optional `integrations`/`linearTeam`/`linearTestingState`
 2. **DAF version gate** — **`daf.mdc`** / **`daf.md`** step 0: one-line shell check; if stale, ask once whether to run **`/daf-update`** for this repo
 3. `~/.config/agent/platforms.json` — `platforms[]` from **`/daf-onboard`** (which IDE integrations are installed on this machine)
 4. `~/.config/agent/IDENTITY.md` — how the agent works with you

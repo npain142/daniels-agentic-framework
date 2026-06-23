@@ -82,5 +82,13 @@
   "remove-global": {
     "name": "daf-remove-global",
     "description": "Uninstalls machine-wide DAF: deletes ~/.config/agent (or DAFE_GLOBAL_ROOT) and ~/.cursor/skills/daf-* folders from skill-manifest after explicit confirmation. Per-repo .agent/ remains until /daf-remove. Use when the user says /daf-remove-global or wants to uninstall /daf-onboard output."
+  },
+  "linear-setup": {
+    "name": "daf-linear-setup",
+    "description": "Enable and configure the optional Linear integration for a DAF project: lists teams and workflow states, writes linearTeam and linearTestingState to .agent/config.json, and outputs Linear + DAF best practices. Use when the user says /daf-linear-setup, wants to integrate Linear, or needs best practices for Linear-driven development."
+  },
+  "linear-work": {
+    "name": "daf-linear-work",
+    "description": "Work a Linear issue inside the DAF dev loop: pick an assigned issue, set it to In Progress, implement per the current phase bar (taskCheck, verify-state, codebase-check), then move to the configured testing state and post a commit comment on acceptance. Requires config.json.integrations to include 'linear' — run /daf-linear-setup first if not configured. Use when the user says /daf-linear-work or wants to start working a Linear issue."
   }
 }

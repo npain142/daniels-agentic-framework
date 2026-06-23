@@ -70,6 +70,8 @@ Imperative mood; match repo commit style. Omit the commit line if nothing to com
 - `/daf-retro` — promote notes to `memory/learnings.md` / `gotchas.md`.
 - `/daf-phase-transition` — change phase when checklists pass (`planning`, `developing`, `maintaining`).
 - `/daf-kg-ingest` — merge code and canonical-doc changes into `graphify-out/`.
+- `/daf-linear-setup` — enable/configure Linear integration for this project and see best practices.
+- `/daf-linear-work` — pick an assigned Linear issue, implement per this phase, set to "In Testing" on user acceptance. Requires `integrations: ["linear"]` in `config.json`.
 
 ## Merge to main
 
