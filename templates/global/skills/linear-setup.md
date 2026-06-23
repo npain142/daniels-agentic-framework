@@ -23,7 +23,8 @@ Sets up or reviews the Linear integration for this project and outputs workflow 
    - `"integrations": ["linear"]` (append `"linear"` to any existing integrations array)
    - `"linearTeam": "<chosen team name or ID>"`
    - `"linearTestingState": "<chosen state name>"`
-7. Do **not** commit — user decides when to commit the config change.
+7. **Retire markdown backlog:** Delete repo-root **`BACKLOG.md`** and **`LOGBACK.md`** if present (Linear replaces them). Tell the user which files were removed; do not commit unless asked.
+8. Do **not** commit — user decides when to commit the config change.
 
 ### Best practices
 
@@ -31,6 +32,8 @@ Output the following as a formatted list:
 
 **Linear + DAF best practices:**
 
+- **Park ideas in Linear.** Use `/daf-backlog-add` to create backlog issues (replaces repo-root `BACKLOG.md`).
+- **Work issues in Linear.** Use `/daf-linear-work` to pick and implement assigned issues (replaces `/daf-backlog-work` and `LOGBACK.md` archival).
 - **One issue per session goal.** Use `/daf-linear-work` to pick one "In Progress" or "Todo" issue at a time; resist loading multiple issues in one session.
 - **Write titles imperatively.** Issue titles become session goals in chat — prefer "Add auth middleware" over "Auth middleware broken".
 - **Put acceptance criteria in the description.** Use a checklist in the Linear issue description; `/daf-linear-work` reads it directly as acceptance checks.
@@ -41,4 +44,4 @@ Output the following as a formatted list:
 
 ## Stop condition
 
-`config.json` has `integrations` containing `"linear"`, `linearTeam`, and `linearTestingState` set, and best practices have been shown to the user.
+`config.json` has `integrations` containing `"linear"`, `linearTeam`, and `linearTestingState` set, markdown backlog files removed if they existed, and best practices have been shown to the user.

@@ -15,7 +15,8 @@
 3. If `phase` is already `developing` or `maintaining`, confirm with the user they want a **developing kickoff** (not a phase change); skip checklist unless they asked to re-validate planning exit.
 4. **Kickoff (developing session):**
    - Read `.agent/verify-state.json`. Orient via **KG-first** (`.agent/AGENTS.md` §2.1): `graphify query` for product goal, v1 scope, and architecture — not bulk reads of PRD/ARCHITECTURE/GLOSSARY when `graphify-out/graph.json` exists.
-   - Read repo-root **`BACKLOG.md`** or **`todo.txt`** if present (user may point at one).
+   - If `integrations` includes `"linear"`, skip repo-root backlog files; optionally call `list_issues` (assigned, unstarted/started on `linearTeam`) to propose a first goal.
+   - Otherwise read repo-root **`BACKLOG.md`** or **`todo.txt`** if present (user may point at one).
    - Post a short **inventory**: current phase, stack, graph stats (`kg-bootstrap.json` / `graph.json`), open backlog lines (if any), and one sentence on what the PRD says v1 is.
    - Ask **one** question: what is the **first goal** for this session (or pick from backlog if the user wants you to propose; or use **`/daf-backlog-work`** to take the next item).
    - Remind: session **goals live in chat only**; follow `.agent/phases/developing.md` for implementation work; run **`npm run kg:ingest`** after code changes, **`/daf-kg-ingest`** when canon docs change.

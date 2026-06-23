@@ -1,16 +1,16 @@
 # Graph Report - Daniels Agent Framework  (2026-06-23)
 
 ## Corpus Check
-- 108 files · ~29,877 words
+- 108 files · ~30,283 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 885 nodes · 1311 edges · 78 communities (67 shown, 11 thin omitted)
+- 887 nodes · 1313 edges · 76 communities (65 shown, 11 thin omitted)
 - Extraction: 93% EXTRACTED · 7% INFERRED · 0% AMBIGUOUS · INFERRED: 95 edges (avg confidence: 0.92)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `a98e5e83`
+- Built from commit: `e442159e`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -86,9 +86,7 @@
 - [[_COMMUNITY_Community 70|Community 70]]
 - [[_COMMUNITY_Community 71|Community 71]]
 - [[_COMMUNITY_Community 72|Community 72]]
-- [[_COMMUNITY_Community 73|Community 73]]
 - [[_COMMUNITY_Community 74|Community 74]]
-- [[_COMMUNITY_Community 75|Community 75]]
 - [[_COMMUNITY_Community 76|Community 76]]
 - [[_COMMUNITY_Community 77|Community 77]]
 
@@ -123,7 +121,7 @@
 - **Planning exit domain graph bootstrap and receipt** — phases_planning_kg_exit_criterion, phases_planning_graphify_config_required, agent_graphify_config_bootstrap_sources, agent_glossary_kg_bootstrap, agent_kg_bootstrap_receipt, agent_kg_bootstrap_status_ok, skill_daf_phase_transition, skill_daf_start, agent_glossary_phase_planning, agent_glossary_phase_developing [EXTRACTED 1.00]
 - **Graphify two-layer knowledge graph (domain + code)** — agent_glossary_knowledge_graph, agent_glossary_domain_graph, agent_glossary_code_graph, agent_architecture_merged_graph_json, agent_graphify_config_document, agent_glossary_kg_bootstrap, agent_glossary_kg_ingest, skill_daf_kg_ingest, phases_developing_kg_refresh_rules [EXTRACTED 1.00]
 
-## Communities (78 total, 11 thin omitted)
+## Communities (76 total, 11 thin omitted)
 
 ### Community 0 - "Community 0"
 Cohesion: 0.06
@@ -187,15 +185,15 @@ Nodes (21): backlog-add, description, name, backlog-work, description, name, how
 
 ### Community 15 - "Community 15"
 Cohesion: 0.05
-Nodes (48): 1. Two pillars, 2.1 KG-first canon (when the graph exists), 2. Load order (every session), 3. Layout (lean), 4. Skills (v1), 5. Always-on rules, 6. For humans, AGENTS.md (project) (+40 more)
+Nodes (47): 1. Two pillars, 2.1 KG-first canon (when the graph exists), 2. Load order (every session), 3. Layout (lean), 4. Skills (v1), 5. Always-on rules, 6. For humans, AGENTS.md (project) (+39 more)
 
 ### Community 16 - "Community 16"
 Cohesion: 0.15
 Nodes (12): codebaseEvery, defaultBranch, Global setup, Glossary (starter), Hotfix exception, initialTaskCount, Maintaining bar, Phase (+4 more)
 
 ### Community 17 - "Community 17"
-Cohesion: 0.14
-Nodes (18): Skill: /daf-backlog-add, Hard rules, Skill: /daf-backlog-add, Steps, Stop condition, Close (user accepts), Fading (prune on every close), Hard rules (+10 more)
+Cohesion: 0.13
+Nodes (20): Skill: /daf-backlog-add, Hard rules, Linear mode (`integrations` includes `"linear"`), Markdown mode (default), Skill: /daf-backlog-add, Steps, Stop condition, Close (user accepts) (+12 more)
 
 ### Community 18 - "Community 18"
 Cohesion: 0.11
@@ -250,12 +248,12 @@ Cohesion: 0.25
 Nodes (7): bootstrap, minDomainNodes, sources, ingest, canonicalSources, codeCommand, outputDir
 
 ### Community 31 - "Community 31"
-Cohesion: 0.22
-Nodes (14): Phase: maintaining, Active skills, Allowed, Branch guard, Definition of done (session task), Forbidden, Implementation standards, Merge to main (+6 more)
+Cohesion: 0.11
+Nodes (24): Phase: maintaining, Skill: /daf-discuss, Skill: /daf-discuss, Steps, Stop condition, Skill: /daf-help, Sections (use these headings), Skill: /daf-help (+16 more)
 
 ### Community 32 - "Community 32"
-Cohesion: 0.33
-Nodes (9): /daf-phase-transition includes KG bootstrap, Domain graph layer, KG bootstrap, kg-bootstrap.json (planning-exit receipt), kg-bootstrap.json status: ok, Planning Exit Criteria, Planning exit: domain graph bootstrapped with valid kg-bootstrap.json, /daf-phase-transition (+1 more)
+Cohesion: 0.29
+Nodes (10): /daf-phase-transition includes KG bootstrap, Domain graph layer, KG bootstrap, kg-bootstrap.json (planning-exit receipt), kg-bootstrap.json status: ok, Planning exit requires kg-bootstrap.json before developing, Planning Exit Criteria, Planning exit: domain graph bootstrapped with valid kg-bootstrap.json (+2 more)
 
 ### Community 33 - "Community 33"
 Cohesion: 0.29
@@ -365,17 +363,9 @@ Nodes (3): improvement, description, name
 Cohesion: 0.39
 Nodes (7): Fill via /daf-grill-me before leaving planning, Goal, Non-goals, PRD (template), Success, PRD (template), v1 scope
 
-### Community 73 - "Community 73"
-Cohesion: 0.43
-Nodes (6): Skill: /daf-help, Sections (use these headings), Skill: /daf-help, Skills table (v1), Steps, Stop condition
-
 ### Community 74 - "Community 74"
 Cohesion: 0.80
 Nodes (4): Architecture (starter), Boundaries, Modules, Architecture (starter)
-
-### Community 75 - "Community 75"
-Cohesion: 0.60
-Nodes (4): Skill: /daf-discuss, Skill: /daf-discuss, Steps, Stop condition
 
 ### Community 76 - "Community 76"
 Cohesion: 0.67
@@ -390,7 +380,7 @@ Nodes (3): remove-global, description, name
   .agent/memory/codebase-snapshot.md · relation: semantically_similar_to
 
 ## Knowledge Gaps
-- **353 isolated node(s):** `phase`, `stack`, `taskCheck`, `check`, `codebaseEvery` (+348 more)
+- **355 isolated node(s):** `phase`, `stack`, `taskCheck`, `check`, `codebaseEvery` (+350 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **11 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
@@ -400,7 +390,7 @@ _Questions this graph is uniquely positioned to answer:_
 - **What is the exact relationship between `platforms.json` and `local.json (machine-local platforms)`?**
   _Edge tagged AMBIGUOUS (relation: semantically_similar_to) - confidence is low._
 - **Why does `platforms.json` connect `Community 15` to `Community 0`?**
-  _High betweenness centrality (0.161) - this node is a cross-community bridge._
+  _High betweenness centrality (0.160) - this node is a cross-community bridge._
 - **Why does `Platform (IDE)` connect `Community 0` to `Community 15`?**
   _High betweenness centrality (0.160) - this node is a cross-community bridge._
 - **Why does `scripts` connect `Community 5` to `Community 0`?**
@@ -408,6 +398,6 @@ _Questions this graph is uniquely positioned to answer:_
 - **Are the 2 inferred relationships involving `AGENTS.md (project)` (e.g. with `AGENTS.md (repo root)` and `AGENTS.md (scaffold)`) actually correct?**
   _`AGENTS.md (project)` has 2 INFERRED edges - model-reasoned connections that need verification._
 - **What connects `phase`, `stack`, `taskCheck` to the rest of the system?**
-  _354 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _356 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 0` be split into smaller, more focused modules?**
   _Cohesion score 0.06398390342052314 - nodes in this community are weakly interconnected._

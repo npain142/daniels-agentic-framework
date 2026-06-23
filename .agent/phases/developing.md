@@ -64,8 +64,8 @@ Imperative mood; match repo commit style. Omit the commit line if nothing to com
 - `/daf-improvement` — enhance what exists per this phase; not net-new capability (`/daf-new-feature`).
 - `/daf-pivot` — restructure or redesign an existing feature or concept; docs first, then implement per this phase.
 - `/daf-discuss` — explore topics or ideas; dialogue only unless user asks to implement.
-- `/daf-backlog-add` — append follow-up to repo-root `BACKLOG.md`.
-- `/daf-backlog-work` — pick backlog item, implement, remove from `BACKLOG.md`, archive to `LOGBACK.md` on acceptance.
+- `/daf-backlog-add` — park follow-up (`BACKLOG.md`, or Linear backlog issue when `integrations` includes `"linear"`).
+- `/daf-backlog-work` — pick markdown backlog item, implement, archive to `LOGBACK.md` on acceptance (use `/daf-linear-work` when Linear is active).
 - `/daf-remember` — append user standing instructions to `memory/remember.md`.
 - `/daf-retro` — promote notes to `memory/learnings.md` / `gotchas.md`.
 - `/daf-phase-transition` — change phase when checklists pass (`planning`, `developing`, `maintaining`).

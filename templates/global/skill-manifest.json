@@ -53,11 +53,11 @@
   },
   "backlog-add": {
     "name": "daf-backlog-add",
-    "description": "Appends a follow-up to repo-root BACKLOG.md under ## Open without implementing. Any phase. Use when the user says /daf-backlog-add or wants to park work for later."
+    "description": "Park a follow-up without implementing. Markdown mode: append to repo-root BACKLOG.md. Linear mode (config.integrations includes 'linear'): create a backlog issue via Linear MCP — run /daf-linear-setup first. Any phase. Use when the user says /daf-backlog-add or wants to park work for later."
   },
   "backlog-work": {
     "name": "daf-backlog-work",
-    "description": "In developing or maintaining: pick an open BACKLOG.md item, classify and implement (new-feature/daf-improvement/daf-issue/daf-pivot bar), then on user acceptance remove from backlog and append a fading artifact to LOGBACK.md. Use when the user says /daf-backlog-work or wants to build the next backlog item."
+    "description": "In developing or maintaining: pick an open BACKLOG.md item, classify and implement (new-feature/daf-improvement/daf-issue/daf-pivot bar), then on user acceptance remove from backlog and append a fading artifact to LOGBACK.md. When Linear is active, use /daf-linear-work instead. Use when the user says /daf-backlog-work or wants to build the next backlog item."
   },
   "remember": {
     "name": "daf-remember",
@@ -85,7 +85,7 @@
   },
   "linear-setup": {
     "name": "daf-linear-setup",
-    "description": "Enable and configure the optional Linear integration for a DAF project: lists teams and workflow states, writes linearTeam and linearTestingState to .agent/config.json, and outputs Linear + DAF best practices. Use when the user says /daf-linear-setup, wants to integrate Linear, or needs best practices for Linear-driven development."
+    "description": "Enable and configure the optional Linear integration for a DAF project: lists teams and workflow states, writes linearTeam and linearTestingState to .agent/config.json, removes repo-root BACKLOG.md/LOGBACK.md, and outputs Linear + DAF best practices. Use when the user says /daf-linear-setup, wants to integrate Linear, or needs best practices for Linear-driven development."
   },
   "linear-work": {
     "name": "daf-linear-work",

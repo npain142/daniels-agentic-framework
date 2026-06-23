@@ -23,8 +23,8 @@
 | **codebaseEvery** | Interval for two-phase codebase-check when `taskCount` hits multiples. |
 | **Codebase check** | Phase A: refresh `memory/codebase-snapshot.md`; Phase B: run `config.check`. |
 | **Task summary** | Brief wrap-up when declaring done after a session task; commits committable changes per `IDENTITY.md` and ends with **Committed:** `<hash>` — `<subject>`. |
-| **Backlog** | Open follow-ups at repo root in `BACKLOG.md` (`## Open`, optional `## In progress`); not session goals in `.agent/`. Managed via `/daf-backlog-add` and `/daf-backlog-work`. |
-| **Logback** | Fading archive at repo root in `LOGBACK.md`: short artifacts from completed backlog items; auto-pruned (7d untagged, 14d tagged, `#keep` retained). |
+| **Backlog** | Open follow-ups: repo-root `BACKLOG.md` (`## Open`, optional `## In progress`) via `/daf-backlog-add` and `/daf-backlog-work`; or Linear backlog issues via `/daf-backlog-add` when `integrations` includes `"linear"`. Not session goals in `.agent/`. |
+| **Logback** | Fading archive at repo root in `LOGBACK.md` (markdown mode only): short artifacts from completed backlog items; auto-pruned (7d untagged, 14d tagged, `#keep` retained). Superseded by Linear issue history when Linear is active. |
 | **Realignment** | `/daf-grill-me` in **developing** or **maintaining**: resync user intent with PRD, architecture, code, and backlog. |
 | **LTM** | Long-term memory outside `.agent/` (e.g. Notion); reconciled via `/daf-ltm-checkup`. |
 | **Knowledge graph (KG)** | Project graph in `graphify-out/` (Graphify): domain/concept nodes from canonical `.agent/` docs + code nodes from AST. |

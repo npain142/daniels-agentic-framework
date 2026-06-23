@@ -4,6 +4,8 @@
 
 **Not:** Capturing ideas only (`/daf-backlog-add`), phase kickoff without implementation (`/daf-start`), or planning-only exploration (`/daf-discuss`).
 
+If **`config.json.integrations`** includes **`"linear"`**, stop — use **`/daf-linear-work`** instead (Linear replaces markdown backlog and logback).
+
 ## Steps
 
 ### Pick and plan

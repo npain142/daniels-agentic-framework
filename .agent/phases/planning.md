@@ -29,7 +29,7 @@ Follow **`/daf-phase-transition`** — it enforces the planning-exit checklist a
 ## Active skills
 
 - `/daf-discuss` — explore ideas before committing to PRD or implementation.
-- `/daf-backlog-add` — park follow-ups in repo-root `BACKLOG.md`.
+- `/daf-backlog-add` — park follow-ups (`BACKLOG.md`, or Linear backlog issue when `integrations` includes `"linear"`).
 - `/daf-pivot` — restructure or redesign a feature or concept; update PRD/glossary/architecture before code.
 - `/daf-onboard` — **machine setup:** install globals when missing (before first `/daf-setup` on a machine).
 - `/daf-setup` — **project setup:** greenfield scaffold; brownfield inventory + interview then merge scaffold and populate docs; verify-state; optional Cursor overlay.

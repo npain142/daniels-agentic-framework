@@ -31,10 +31,9 @@ Read **`$G/platforms.json`**. If missing, run **`/daf-onboard`** first.
 2. Write **`verify-state.json`** (see below).
 3. Write **`.agent/daf-pin`** — copy `$G/daf-pin` when present (pins DAF commit at setup time; see **`/daf-update`**).
 4. If `<repo>/AGENTS.md` is missing and **`$G/root-AGENTS.md`** exists, copy that file to `<repo>/AGENTS.md`. If `$G/root-AGENTS.md` is missing, write a one-line pointer: “Read `.agent/AGENTS.md` then `.agent/config.json`.”
-5. If **`$G/root-BACKLOG.md`** exists and the repo root has neither **`BACKLOG.md`** nor **`todo.txt`**, copy to `<repo>/BACKLOG.md`.
-6. If **`$G/root-LOGBACK.md`** exists and the repo root has no **`LOGBACK.md`**, copy to `<repo>/LOGBACK.md`.
-7. **Do not** set `config.stack` during setup (remains `null` from scaffold until product clarity).
-8. **Platform overlays** (see below) — merge every IDE platform listed in **`$G/platforms.json`**.
+5. **Backlog files (markdown mode only):** If `.agent/config.json` has `integrations` containing `"linear"`, skip backlog file setup and delete repo-root **`BACKLOG.md`** and **`LOGBACK.md`** if present. Otherwise: if **`$G/root-BACKLOG.md`** exists and the repo root has neither **`BACKLOG.md`** nor **`todo.txt`**, copy to `<repo>/BACKLOG.md`; if **`$G/root-LOGBACK.md`** exists and the repo root has no **`LOGBACK.md`**, copy to `<repo>/LOGBACK.md`.
+6. **Do not** set `config.stack` during setup (remains `null` from scaffold until product clarity).
+7. **Platform overlays** (see below) — merge every IDE platform listed in **`$G/platforms.json`**.
 
 **Handoff:** Structure is ready. **`/daf-grill-me`** is an **optional** next step when the user wants to lock the PRD — not part of this skill’s stop condition. When planning exit criteria pass, use **`/daf-start`** or **`/daf-phase-transition`** to enter developing.
 

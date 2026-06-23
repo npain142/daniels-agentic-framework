@@ -30,7 +30,7 @@
 | Improve existing | `/daf-improvement` |
 | Redesign existing | `/daf-pivot` |
 | Think, no code | `/daf-discuss` |
-| Park / do backlog | `/daf-backlog-add`, `/daf-backlog-work` |
+| Park / do backlog | `/daf-backlog-add`, `/daf-backlog-work` (or `/daf-linear-setup` + `/daf-linear-work` when Linear is active) |
 | How code works | `/daf-how-it-works` |
 | External memory sync | `/daf-ltm-checkup` |
 | Standing rules | `/daf-remember` |

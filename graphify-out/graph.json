@@ -4798,22 +4798,31 @@
       "norm_label": "steps"
     },
     {
+      "label": "Linear mode (`integrations` includes `\"linear\"`)",
+      "file_type": "document",
+      "source_file": "templates/global/skills/backlog-add.md",
+      "source_location": "L12",
+      "id": "skills_backlog_add_linear_mode_integrations_includes_linear",
+      "community": 17,
+      "norm_label": "linear mode (`integrations` includes `\"linear\"`)"
+    },
+    {
+      "label": "Markdown mode (default)",
+      "file_type": "document",
+      "source_file": "templates/global/skills/backlog-add.md",
+      "source_location": "L24",
+      "id": "skills_backlog_add_markdown_mode_default",
+      "community": 17,
+      "norm_label": "markdown mode (default)"
+    },
+    {
       "label": "Hard rules",
       "file_type": "document",
       "source_file": "templates/global/skills/backlog-add.md",
-      "source_location": "L16",
+      "source_location": "L35",
       "id": "skills_backlog_add_hard_rules",
       "community": 17,
       "norm_label": "hard rules"
-    },
-    {
-      "label": "Stop condition",
-      "file_type": "document",
-      "source_file": "templates/global/skills/backlog-add.md",
-      "source_location": "L21",
-      "id": "skills_backlog_add_stop_condition",
-      "community": 17,
-      "norm_label": "stop condition"
     },
     {
       "label": "backlog-work.md",
@@ -4837,7 +4846,7 @@
       "label": "Steps",
       "file_type": "document",
       "source_file": "templates/global/skills/backlog-work.md",
-      "source_location": "L7",
+      "source_location": "L9",
       "id": "skills_backlog_work_steps",
       "community": 17,
       "norm_label": "steps"
@@ -4846,7 +4855,7 @@
       "label": "Pick and plan",
       "file_type": "document",
       "source_file": "templates/global/skills/backlog-work.md",
-      "source_location": "L9",
+      "source_location": "L11",
       "id": "skills_backlog_work_pick_and_plan",
       "community": 17,
       "norm_label": "pick and plan"
@@ -4855,7 +4864,7 @@
       "label": "Implement",
       "file_type": "document",
       "source_file": "templates/global/skills/backlog-work.md",
-      "source_location": "L17",
+      "source_location": "L19",
       "id": "skills_backlog_work_implement",
       "community": 17,
       "norm_label": "implement"
@@ -4864,7 +4873,7 @@
       "label": "Close (user accepts)",
       "file_type": "document",
       "source_file": "templates/global/skills/backlog-work.md",
-      "source_location": "L22",
+      "source_location": "L24",
       "id": "skills_backlog_work_close_user_accepts",
       "community": 17,
       "norm_label": "close (user accepts)"
@@ -4873,7 +4882,7 @@
       "label": "Logback entry",
       "file_type": "document",
       "source_file": "templates/global/skills/backlog-work.md",
-      "source_location": "L30",
+      "source_location": "L32",
       "id": "skills_backlog_work_logback_entry",
       "community": 17,
       "norm_label": "logback entry"
@@ -4882,7 +4891,7 @@
       "label": "Fading (prune on every close)",
       "file_type": "document",
       "source_file": "templates/global/skills/backlog-work.md",
-      "source_location": "L43",
+      "source_location": "L45",
       "id": "skills_backlog_work_fading_prune_on_every_close",
       "community": 17,
       "norm_label": "fading (prune on every close)"
@@ -4891,7 +4900,7 @@
       "label": "Hard rules",
       "file_type": "document",
       "source_file": "templates/global/skills/backlog-work.md",
-      "source_location": "L55",
+      "source_location": "L57",
       "id": "skills_backlog_work_hard_rules",
       "community": 17,
       "norm_label": "hard rules"
@@ -4900,7 +4909,7 @@
       "label": "Stop condition",
       "file_type": "document",
       "source_file": "templates/global/skills/backlog-work.md",
-      "source_location": "L61",
+      "source_location": "L63",
       "id": "skills_backlog_work_stop_condition",
       "community": 17,
       "norm_label": "stop condition"
@@ -4911,7 +4920,7 @@
       "source_file": "templates/global/skills/discuss.md",
       "source_location": "L1",
       "id": "skills_discuss",
-      "community": 75,
+      "community": 31,
       "norm_label": "discuss.md"
     },
     {
@@ -4920,7 +4929,7 @@
       "source_file": "templates/global/skills/discuss.md",
       "source_location": "L1",
       "id": "skills_discuss_skill_daf_discuss",
-      "community": 75,
+      "community": 31,
       "norm_label": "skill: /daf-discuss"
     },
     {
@@ -4929,7 +4938,7 @@
       "source_file": "templates/global/skills/discuss.md",
       "source_location": "L20",
       "id": "skills_discuss_steps",
-      "community": 75,
+      "community": 31,
       "norm_label": "steps"
     },
     {
@@ -4938,7 +4947,7 @@
       "source_file": "templates/global/skills/discuss.md",
       "source_location": "L28",
       "id": "skills_discuss_stop_condition",
-      "community": 75,
+      "community": 31,
       "norm_label": "stop condition"
     },
     {
@@ -5100,7 +5109,7 @@
       "source_file": "templates/global/skills/help.md",
       "source_location": "L1",
       "id": "skills_help",
-      "community": 73,
+      "community": 31,
       "norm_label": "help.md"
     },
     {
@@ -5109,7 +5118,7 @@
       "source_file": "templates/global/skills/help.md",
       "source_location": "L1",
       "id": "skills_help_skill_daf_help",
-      "community": 73,
+      "community": 31,
       "norm_label": "skill: /daf-help"
     },
     {
@@ -5118,7 +5127,7 @@
       "source_file": "templates/global/skills/help.md",
       "source_location": "L7",
       "id": "skills_help_steps",
-      "community": 73,
+      "community": 31,
       "norm_label": "steps"
     },
     {
@@ -5127,7 +5136,7 @@
       "source_file": "templates/global/skills/help.md",
       "source_location": "L12",
       "id": "skills_help_sections_use_these_headings",
-      "community": 73,
+      "community": 31,
       "norm_label": "sections (use these headings)"
     },
     {
@@ -5136,7 +5145,7 @@
       "source_file": "templates/global/skills/help.md",
       "source_location": "L42",
       "id": "skills_help_stop_condition",
-      "community": 73,
+      "community": 31,
       "norm_label": "stop condition"
     },
     {
@@ -5377,7 +5386,7 @@
       "label": "Best practices",
       "file_type": "document",
       "source_file": "templates/global/skills/linear-setup.md",
-      "source_location": "L28",
+      "source_location": "L29",
       "id": "skills_linear_setup_best_practices",
       "community": 13,
       "norm_label": "best practices"
@@ -5386,7 +5395,7 @@
       "label": "Stop condition",
       "file_type": "document",
       "source_file": "templates/global/skills/linear-setup.md",
-      "source_location": "L42",
+      "source_location": "L45",
       "id": "skills_linear_setup_stop_condition",
       "community": 13,
       "norm_label": "stop condition"
@@ -6034,7 +6043,7 @@
       "label": "Step 2b \u2014 Brownfield adoption (interview before populated structure)",
       "file_type": "document",
       "source_file": "templates/global/skills/setup.md",
-      "source_location": "L41",
+      "source_location": "L40",
       "id": "skills_setup_step_2b_brownfield_adoption_interview_before_populated_structure",
       "community": 21,
       "norm_label": "step 2b \u2014 brownfield adoption (interview before populated structure)"
@@ -6043,7 +6052,7 @@
       "label": "verify-state.json",
       "file_type": "document",
       "source_file": "templates/global/skills/setup.md",
-      "source_location": "L55",
+      "source_location": "L54",
       "id": "skills_setup_verify_state_json",
       "community": 21,
       "norm_label": "verify-state.json"
@@ -6052,7 +6061,7 @@
       "label": "Optional `defaultBranch`",
       "file_type": "document",
       "source_file": "templates/global/skills/setup.md",
-      "source_location": "L69",
+      "source_location": "L68",
       "id": "skills_setup_optional_defaultbranch",
       "community": 21,
       "norm_label": "optional `defaultbranch`"
@@ -6061,7 +6070,7 @@
       "label": "package.json inference (new config.json only)",
       "file_type": "document",
       "source_file": "templates/global/skills/setup.md",
-      "source_location": "L73",
+      "source_location": "L72",
       "id": "skills_setup_package_json_inference_new_config_json_only",
       "community": 21,
       "norm_label": "package.json inference (new config.json only)"
@@ -6070,7 +6079,7 @@
       "label": "Platform overlays (from global `platforms.json`)",
       "file_type": "document",
       "source_file": "templates/global/skills/setup.md",
-      "source_location": "L82",
+      "source_location": "L81",
       "id": "skills_setup_platform_overlays_from_global_platforms_json",
       "community": 21,
       "norm_label": "platform overlays (from global `platforms.json`)"
@@ -6079,7 +6088,7 @@
       "label": "Stop condition",
       "file_type": "document",
       "source_file": "templates/global/skills/setup.md",
-      "source_location": "L97",
+      "source_location": "L96",
       "id": "skills_setup_stop_condition",
       "community": 21,
       "norm_label": "stop condition"
@@ -6115,7 +6124,7 @@
       "label": "Hard rules",
       "file_type": "document",
       "source_file": "templates/global/skills/start.md",
-      "source_location": "L23",
+      "source_location": "L24",
       "id": "skills_start_hard_rules",
       "community": 48,
       "norm_label": "hard rules"
@@ -6124,7 +6133,7 @@
       "label": "Stop condition",
       "file_type": "document",
       "source_file": "templates/global/skills/start.md",
-      "source_location": "L29",
+      "source_location": "L30",
       "id": "skills_start_stop_condition",
       "community": 48,
       "norm_label": "stop condition"
@@ -6443,6 +6452,15 @@
       "id": "checklists_planning_to_developing_validateplanningtodeveloping",
       "community": 59,
       "norm_label": "validateplanningtodeveloping"
+    },
+    {
+      "label": "Stop condition",
+      "file_type": "document",
+      "source_file": "templates/global/skills/backlog-add.md",
+      "source_location": "L21",
+      "community": 17,
+      "norm_label": "stop condition",
+      "id": "skills_backlog_add_stop_condition"
     },
     {
       "label": "{ cwd, repoRoot }",
@@ -7400,7 +7418,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 75,
+      "community": 31,
       "norm_label": "skill: /daf-discuss",
       "id": "skills_discuss_daf_discuss"
     },
@@ -7426,7 +7444,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 73,
+      "community": 31,
       "norm_label": "skill: /daf-help",
       "id": "skills_help_daf_help"
     },
@@ -7829,7 +7847,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 73,
+      "community": 31,
       "norm_label": "skills table (v1)",
       "id": "skills_help_skills_table"
     },
@@ -8326,7 +8344,7 @@
       "file_type": "rationale",
       "source_file": ".agent/memory/gotchas.md",
       "source_location": "L7",
-      "community": 15,
+      "community": 32,
       "norm_label": "planning exit requires kg-bootstrap.json before developing",
       "id": "memory_gotchas_kg_bootstrap_required"
     },
@@ -17208,21 +17226,31 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "templates/global/skills/backlog-add.md",
-      "source_location": "L16",
+      "source_location": "L12",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "skills_backlog_add_daf_backlog_add",
-      "target": "skills_backlog_add_hard_rules"
+      "source": "skills_backlog_add_steps",
+      "target": "skills_backlog_add_linear_mode_integrations_includes_linear",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "templates/global/skills/backlog-add.md",
-      "source_location": "L21",
+      "source_location": "L24",
+      "weight": 1.0,
+      "source": "skills_backlog_add_steps",
+      "target": "skills_backlog_add_markdown_mode_default",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "templates/global/skills/backlog-add.md",
+      "source_location": "L16",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "skills_backlog_add_daf_backlog_add",
-      "target": "skills_backlog_add_stop_condition"
+      "target": "skills_backlog_add_hard_rules"
     },
     {
       "relation": "contains",
@@ -18080,9 +18108,9 @@
       "source_file": "templates/global/skills/linear-work.md",
       "source_location": "L59",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "skills_linear_work_skill_daf_linear_work",
-      "target": "skills_linear_work_multi_issue_flow",
-      "confidence_score": 1.0
+      "target": "skills_linear_work_multi_issue_flow"
     },
     {
       "relation": "contains",
@@ -18090,9 +18118,9 @@
       "source_file": "templates/global/skills/linear-work.md",
       "source_location": "L22",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "skills_linear_work_skill_daf_linear_work",
-      "target": "skills_linear_work_single_issue_flow",
-      "confidence_score": 1.0
+      "target": "skills_linear_work_single_issue_flow"
     },
     {
       "relation": "contains",
@@ -18150,9 +18178,9 @@
       "source_file": "templates/global/skills/linear-work.md",
       "source_location": "L37",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "skills_linear_work_single_issue_flow",
-      "target": "skills_linear_work_close_user_accepts",
-      "confidence_score": 1.0
+      "target": "skills_linear_work_close_user_accepts"
     },
     {
       "relation": "contains",
@@ -18160,9 +18188,9 @@
       "source_file": "templates/global/skills/linear-work.md",
       "source_location": "L28",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "skills_linear_work_single_issue_flow",
-      "target": "skills_linear_work_implement",
-      "confidence_score": 1.0
+      "target": "skills_linear_work_implement"
     },
     {
       "relation": "contains",
@@ -18170,9 +18198,9 @@
       "source_file": "templates/global/skills/linear-work.md",
       "source_location": "L91",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "skills_linear_work_multi_issue_flow",
-      "target": "skills_linear_work_monitor",
-      "confidence_score": 1.0
+      "target": "skills_linear_work_monitor"
     },
     {
       "relation": "contains",
@@ -18180,9 +18208,9 @@
       "source_file": "templates/global/skills/linear-work.md",
       "source_location": "L63",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "skills_linear_work_multi_issue_flow",
-      "target": "skills_linear_work_spawn_subagents",
-      "confidence_score": 1.0
+      "target": "skills_linear_work_spawn_subagents"
     },
     {
       "relation": "contains",
@@ -19311,6 +19339,16 @@
       "confidence_score": 1.0,
       "source": "stacks_typescript_stack_typescript",
       "target": "stacks_typescript_verification_daf"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "templates/global/skills/backlog-add.md",
+      "source_location": "L21",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "skills_backlog_add_daf_backlog_add",
+      "target": "skills_backlog_add_stop_condition"
     },
     {
       "relation": "contains",
@@ -21560,5 +21598,5 @@
       "source_file": ".agent/ARCHITECTURE.md"
     }
   ],
-  "built_at_commit": "a98e5e83d8f7860ef702c38a10a6bd9aedf8dfb0"
+  "built_at_commit": "e442159eb86b1849d1b0b4cb16894169bcac640f"
 }

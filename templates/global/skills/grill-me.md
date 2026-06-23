@@ -13,7 +13,7 @@ For unstructured exploration first, use `/daf-discuss`. **Brownfield adoption** 
 
 1. Read `.agent/config.json` and `.agent/phases/{phase}.md`.
 2. **KG-first** (`.agent/AGENTS.md` §2.1): when `graphify-out/graph.json` exists, run targeted `graphify query` / `graphify explain` for product goal, v1 scope, architecture, and glossary — **do not** sequentially read PRD, ARCHITECTURE, GLOSSARY, or README for orientation.
-3. Always read `memory/remember.md` and `memory/gotchas.md`. In **developing** / **maintaining**, read `verify-state.json`. Read repo-root `BACKLOG.md` / `todo.txt` if present (short).
+3. Always read `memory/remember.md` and `memory/gotchas.md`. In **developing** / **maintaining**, read `verify-state.json`. If `integrations` includes `"linear"`, use Linear issues for backlog context; otherwise read repo-root `BACKLOG.md` / `todo.txt` if present (short).
 
 ---
 
