@@ -9,6 +9,7 @@ import {
   checkDafVersion,
   formatStatusLine,
   readPin,
+  resolveDafRepoForVersionCheck,
   resolveDafRepoRoot,
   resolveRepoHead,
 } from "../packages/cli/dist/daf-version.js";
@@ -59,7 +60,12 @@ if (!existsSync(join(here, "..", "packages", "cli", "dist", "daf-version.js"))) 
 const { cwd, repoRoot: repoArg } = parseArgs(process.argv.slice(2));
 const globalDir = getGlobalAgentDir();
 const agentDir = findAgentDir(cwd);
-const repoRoot = repoArg ?? (await resolveDafRepoRoot(globalDir)) ?? getRepoRoot();
+const fileRepo = await resolveDafRepoRoot(globalDir);
+const repoRoot = resolveDafRepoForVersionCheck({
+  cwd,
+  envRepo: repoArg ?? process.env.DAF_REPO,
+  fileRepo,
+}) ?? getRepoRoot();
 
 const globalPin = await readPin(globalDir);
 const projectPin = agentDir ? await readPin(agentDir) : null;

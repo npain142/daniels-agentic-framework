@@ -15,6 +15,7 @@ describe("maintaining phase v2 contract (templates)", () => {
     expect(md).toContain("## Branch guard");
     expect(md).toContain("defaultBranch");
     expect(md).toContain("Hotfix exception");
+    expect(md).toContain("git worktree add");
     expect(md).toContain("config.check");
     expect(md).toContain("Failing automated test");
     expect(md).toContain("regression");

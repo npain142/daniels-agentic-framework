@@ -18,7 +18,13 @@ Honor **`DAFE_GLOBAL_ROOT`** if set instead of `~/.config/agent`. When developin
 node scripts/daf-version-check.mjs
 ```
 
-**`global-stale`** compares `~/.config/agent/daf-pin` to `git rev-parse HEAD` at the path in **`~/.config/agent/daf-repo`** (written at **`/daf-onboard`**). Override with **`DAF_REPO`** or `--repo`.
+**`global-stale`** compares `~/.config/agent/daf-pin` to `git rev-parse HEAD` at the resolved DAF checkout:
+
+1. **`DAF_REPO`** or `--repo` when set
+2. Else **`git rev-parse --show-toplevel`** when `cwd` is inside the DAF monorepo (main clone or linked worktree — detects `templates/global/skill-manifest.json`)
+3. Else the path in **`~/.config/agent/daf-repo`** (written at **`/daf-onboard`**)
+
+Override with **`DAF_REPO`** or `--repo` when auto-detection is wrong.
 
 | Output | Meaning |
 |--------|---------|
@@ -59,8 +65,10 @@ cp ~/.config/agent/daf-pin .agent/daf-pin
 
 | File | Written by |
 |------|------------|
-| `~/.config/agent/daf-pin` | `global-install` at **`/daf-onboard`** (DAF repo `git rev-parse HEAD`) |
+| `~/.config/agent/daf-pin` | `global-install` at **`/daf-onboard`** (DAF checkout `git rev-parse HEAD` — main or worktree used for onboard) |
 | `.agent/daf-pin` | **`/daf-setup`**, **`/daf-project-update`**, or copy from global |
+
+**Worktrees:** Consumer projects and the DAF monorepo may use linked worktrees. Version check and `.agent/` discovery walk from `cwd`; `daf-repo` is a fallback when `cwd` is not inside the DAF monorepo. Each worktree keeps its own `.agent/` working tree when checked out on a branch that carries it.
 
 Single line: 40-char git SHA. No JSON, no semver.
 

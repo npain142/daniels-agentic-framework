@@ -7,3 +7,4 @@ Add landmines and fragile areas as you discover them.
 - Planning exit requires **`kg-bootstrap.json`** (`status: ok`) — bootstrap domain graph before setting `developing`; code-only `graphify update` is not enough alone.
 - `kg:*` scripts never call LLMs; semantic graph passes are agent `/graphify` or `/daf-kg-ingest`, not `npm run kg:bootstrap` alone.
 - When `graphify-out/graph.json` exists, do **not** bulk-read PRD/GLOSSARY/ARCHITECTURE for orientation — use `graphify query` per AGENTS.md §2.1 (skills were updated to match).
+- **Git worktrees:** use `git rev-parse --show-toplevel` as the repo root; version check prefers the active DAF worktree over stale `daf-repo`; each worktree has its own `.agent/` working tree.

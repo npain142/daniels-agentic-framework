@@ -13,7 +13,7 @@ Before the **first** edit in a session task:
    - If **`config.defaultBranch`** is set in `.agent/config.json` → use it (trimmed).
    - Else if `git symbolic-ref --short refs/remotes/origin/HEAD` succeeds → use the branch name after `origin/` (e.g. `main`, `master`).
    - Else assume **`main`** (set **`defaultBranch`** in config if that guess is wrong).
-3. If the current branch equals that protected name, **stop** and tell the user to create or switch to a topic branch (e.g. `git switch -c fix/short-description` or `git switch existing-branch`). Do not edit until off the default branch.
+3. If the current branch equals that protected name, **stop** and tell the user to create or switch to a topic branch (e.g. `git switch -c fix/short-description` or `git switch existing-branch`). Suggest **`git worktree add <path> <branch>`** when they want to keep the default branch checked out elsewhere while starting parallel work (each linked worktree has its own working tree and `.agent/` when present). Do not edit until off the default branch.
 
 **Hotfix exception:** if the user explicitly opts in (e.g. “hotfix on main”), skip the stop and proceed on the default branch.
 

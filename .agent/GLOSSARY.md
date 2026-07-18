@@ -8,7 +8,7 @@
 | **Onboarding script** | `templates/global/onboarding/global-setup.md` (also installed under `~/.config/agent/onboarding/`). |
 | **Project setup** | IDE skill **`/daf-setup`** — adapts DAF to the current repo after global setup. |
 | **daf-pin** | Single-line git SHA: `~/.config/agent/daf-pin` (last **`/daf-onboard`**) and `.agent/daf-pin` (last **`/daf-setup`** or **`/daf-update`**). Compared by `daf-version-check` (one token, no LLM). |
-| **daf-repo** | Path to the DAF monorepo clone used at last **`/daf-onboard`** (`~/.config/agent/daf-repo`); version check compares global pin to that clone’s `HEAD`. |
+| **daf-repo** | Default path to the DAF monorepo checkout recorded at last **`/daf-onboard`** (`~/.config/agent/daf-repo`). Version check compares global pin to that checkout’s `HEAD` **unless** `cwd` is inside the DAF monorepo (main or linked worktree) or **`DAF_REPO`** / `--repo` overrides. |
 | **DAF update** | **`daf.mdc`** step 0 detects staleness each session and prompts once; **`/daf-update`** applies refresh when the user agrees. |
 | **Scaffold** | Default `.agent/` tree at `~/.config/agent/scaffold/`; agents copy or merge via `/daf-setup`. |
 | **DAF skill** | Markdown procedure invoked in chat as **`/daf-<slug>`** (e.g. `/daf-setup`); installed as `daf-<slug>.md` under `$G/skills/` or `~/.cursor/skills/daf-<slug>/`. Not a shell command. Do not document or invoke unprefixed `/setup`, `/onboard`, etc. |
@@ -33,6 +33,8 @@
 | **KG bootstrap** | Planning-exit ritual: `kg:bootstrap` + agent semantic extraction + `kg-bootstrap.json` receipt (`status: ok`). |
 | **KG ingest** | Developing/maintaining refresh: `npm run kg:ingest` + `/daf-kg-ingest` when canonical docs change. |
 | **KG-first canon** | When `graphify-out/graph.json` exists, load PRD/architecture/glossary via `graphify query` / `explain` instead of bulk-reading canonical `.md` files (AGENTS.md §2.1). |
+| **Git worktree** | Linked checkout sharing one `.git` directory with the main worktree (`git worktree add`). Each worktree has its own working tree (and its own `.agent/` when present). DAF resolves the active worktree via `git rev-parse --show-toplevel`. |
+| **Worktree root** | Git root of the current checkout (`git rev-parse --show-toplevel`). Use this as the project or DAF monorepo root — not the path stored in `daf-repo` when it differs. |
 
 ## Banned synonyms
 

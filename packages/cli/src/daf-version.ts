@@ -1,10 +1,51 @@
 import { execSync } from "node:child_process";
 import { existsSync } from "node:fs";
 import { mkdir, readFile, writeFile } from "node:fs/promises";
-import { join } from "node:path";
+import { join, resolve } from "node:path";
 
 export const DAF_PIN_FILENAME = "daf-pin";
 export const DAF_REPO_FILENAME = "daf-repo";
+
+const DAF_MONOREPO_MARKER = join("templates", "global", "skill-manifest.json");
+
+/** Git root of `cwd` (`git rev-parse --show-toplevel`); null when not in a repo. */
+export function resolveGitTopLevel(cwd: string): string | null {
+  try {
+    const out = execSync("git rev-parse --show-toplevel", {
+      cwd,
+      encoding: "utf8",
+      stdio: ["ignore", "pipe", "ignore"],
+    });
+    const top = out.trim();
+    return top !== "" ? resolve(top) : null;
+  } catch {
+    return null;
+  }
+}
+
+/** True when `root` looks like the DAF monorepo (main or linked worktree). */
+export function isDafMonorepo(root: string): boolean {
+  return existsSync(join(root, DAF_MONOREPO_MARKER));
+}
+
+/**
+ * Resolve which DAF checkout to compare for global-stale:
+ * `DAF_REPO` / `--repo` → cwd inside DAF monorepo worktree → `daf-repo` file.
+ */
+export function resolveDafRepoForVersionCheck(opts: {
+  cwd: string;
+  envRepo?: string | null;
+  fileRepo?: string | null;
+}): string | null {
+  const fromEnv = opts.envRepo?.trim();
+  if (fromEnv) return fromEnv;
+
+  const top = resolveGitTopLevel(opts.cwd);
+  if (top && isDafMonorepo(top)) return top;
+
+  const fromFile = opts.fileRepo?.trim();
+  return fromFile && fromFile !== "" ? fromFile : null;
+}
 
 export type DafVersionStatus = "ok" | "global-stale" | "project-stale" | "both-stale";
 

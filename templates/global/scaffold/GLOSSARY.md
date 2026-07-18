@@ -10,6 +10,7 @@
 | codebaseEvery | Interval for full codebase-check via `taskCount % codebaseEvery`. |
 | initialTaskCount | Seeds `verify-state.json` when **`/daf-setup`** creates verify-state. |
 | defaultBranch | Optional: Git default branch name for **maintaining** branch guard; omit to infer from `origin/HEAD` or `main` (see `phases/maintaining.md`). |
+| Git worktree | Linked checkout sharing one `.git` with the main worktree; each has its own working tree and `.agent/` when present. Branch guard may suggest `git worktree add` instead of switching away from the default branch. |
 | Hotfix exception | User explicitly allows fixing on the default branch without switching (see **maintaining**). |
 | Maintaining bar | Branch guard, mandatory failing test when feasible, green **`config.check`** every session task end (see `phases/maintaining.md`). |
 | Task summary | Brief wrap-up when declaring done; commits committable changes per `IDENTITY.md` and ends with **Committed:** `<hash>` — `<subject>` (see phase files). |

@@ -6,7 +6,7 @@
 import { existsSync, readFileSync } from "node:fs";
 import { homedir } from "node:os";
 import { dirname, join, resolve } from "node:path";
-import { checkDafVersion, formatStatusLine, readPin, resolveRepoHead } from "./daf-version-lib.mjs";
+import { checkDafVersion, formatStatusLine, readPin, resolveDafRepoForVersionCheck, resolveRepoHead } from "./daf-version-lib.mjs";
 
 function findAgentDir(start) {
   let dir = resolve(start);
@@ -58,7 +58,12 @@ function parseArgs(argv) {
 const { cwd, repoRoot: repoArg } = parseArgs(process.argv.slice(2));
 const globalDir = process.env.DAFE_GLOBAL_ROOT?.trim() || join(homedir(), ".config", "agent");
 const agentDir = findAgentDir(cwd);
-const repoRoot = repoArg ?? readDafRepoFile(globalDir);
+const fileRepo = readDafRepoFile(globalDir);
+const repoRoot = resolveDafRepoForVersionCheck({
+  cwd,
+  envRepo: repoArg ?? process.env.DAF_REPO,
+  fileRepo,
+});
 
 const globalPin = await readPin(globalDir);
 const projectPin = agentDir ? await readPin(agentDir) : null;
