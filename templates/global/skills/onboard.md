@@ -29,24 +29,30 @@ Ask which IDE platforms this machine uses (one or more). v1 ids:
 
 If the user is unsure on **Cursor**, default to including **`cursor`** when running in Cursor. Minimum useful set is often **`generic`** plus the IDEs they actually use.
 
-## Step 2 — Run the onboarding script
+## Step 2 — Run onboard
 
-1. Read **`templates/global/onboarding/global-setup.md`** from the DAF monorepo when available (walk up to `templates/global/onboarding/global-setup.md`, or use `~/.config/agent/onboarding/global-setup.md` after a prior install).
-2. From the **DAF repo root**, you run all shell steps — **never** ask the user to run `npm install`, `npm run build`, or install globals themselves.
-   - If `packages/cli/dist/cli.js` is missing (or `node_modules` is missing), run `npm install` then `npm run build`.
-   - Prefer the **`daf`** CLI (after build):
+**Preferred** — `daf` on PATH (from `npm install -g @daniels-agent-framework/cli` or `npx`):
 
 ```bash
 daf onboard --platforms generic,cursor,claude,codex [--force]
 ```
 
-   - Or the repo script (equivalent):
+**DAF monorepo** — you run build/install; never ask the user to:
 
 ```bash
-node scripts/global-install.mjs --platforms generic,cursor,claude,codex [--force]
+npm install && npm run build
+daf onboard --platforms generic,cursor,claude,codex [--force]
+# or: node scripts/global-install.mjs --platforms ...
 ```
 
-3. If not in the DAF repo and `daf` is on PATH (e.g. `npm install -g` from a built package), run `daf onboard` with the user's platform ids. Otherwise ask them to clone/open the DAF repo once, or follow **manual fallback** in `global-setup.md` with explicit consent.
+**No CLI and no monorepo** — ask the user to run once:
+
+```bash
+npm install -g @daniels-agent-framework/cli
+daf onboard --platforms generic,cursor
+```
+
+Or follow **manual fallback** in `global-setup.md` only with explicit consent.
 
 ## Step 3 — Verify and handoff
 

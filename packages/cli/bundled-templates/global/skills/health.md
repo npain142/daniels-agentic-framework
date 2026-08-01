@@ -9,14 +9,13 @@
 1. From repo root (or project root), run:
 
 ```bash
-npm run daf -- health
+daf health
 ```
 
-For a bare `daf` on PATH (optional, once per machine):
+If `daf` is not on PATH:
 
 ```bash
-ln -sf "$(pwd)/scripts/daf" ~/.local/bin/daf   # ensure ~/.local/bin is on PATH
-daf health
+npx @daniels-agent-framework/cli health
 ```
 
 2. Present the output as-is (short). Do not bulk-read config files unless `daf health` fails or the user asks for detail.

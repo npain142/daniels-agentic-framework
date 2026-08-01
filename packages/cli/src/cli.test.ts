@@ -5,11 +5,12 @@ import { describe, expect, it } from "vitest";
 import { getRepoRoot } from "./paths.js";
 
 describe("cli contract", () => {
-  it("packages/cli exposes daf bin", async () => {
+  it("cli package is publishable with bundled templates", async () => {
     const pkg = JSON.parse(
       await readFile(join(getRepoRoot(), "packages", "cli", "package.json"), "utf8"),
-    ) as { bin?: Record<string, string> };
-    expect(pkg.bin?.daf).toBe("./dist/cli.js");
+    ) as { private?: boolean; bin?: Record<string, string> };
+    expect(pkg.private).not.toBe(true);
+    expect(pkg.bin?.daf).toBe("dist/cli.js");
   });
 
   it("health skill references daf health", async () => {

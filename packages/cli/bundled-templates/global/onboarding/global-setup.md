@@ -1,6 +1,6 @@
 # Onboarding script: global setup
 
-**Purpose:** Install machine-wide DAF context under `~/.config/agent/`, write **`platforms.json`**, and install native skills per IDE. The agent runs this via **`/daf-onboard`** or the **`daf onboard`** CLI.
+**Purpose:** Install machine-wide DAF context under `~/.config/agent/`, write **`platforms.json`**, and install native skills per IDE. Run via **`daf onboard`** or **`/daf-onboard`** in chat.
 
 **When to use:** First machine setup, after pulling DAF template changes, or when globals are missing/corrupt.
 
@@ -24,10 +24,13 @@
 
 ## 1 — Mechanical install (preferred)
 
-When **`$T/global/skill-manifest.json`** exists (DAF repo or clone):
+When **`daf`** is on PATH (`npm install -g @daniels-agent-framework/cli`):
 
-1. From the **DAF repo root**, the **agent** runs `npm install` and `npm run build` when `node_modules` or `packages/cli/dist/cli.js` is missing — do not instruct the user to run these.
-2. Run (shell, from repo root) — prefer **`daf onboard`**; equivalent:
+```bash
+daf onboard --platforms generic,cursor,claude,codex [--force]
+```
+
+When developing **this monorepo**, the agent runs `npm install` and `npm run build` when needed, then:
 
 ```bash
 daf onboard --platforms generic,cursor,claude,codex [--force]

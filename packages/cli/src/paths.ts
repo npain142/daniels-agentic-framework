@@ -3,35 +3,63 @@ import { homedir } from "node:os";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
+import { readPin, resolveRepoHead } from "./daf-version.js";
+
 const MANIFEST_REL = join("global", "skill-manifest.json");
 
-function getCliPackageRoot(): string {
+/** npm package root (`packages/cli` in monorepo, or global install dir). */
+export function getCliPackageRoot(): string {
   const here = dirname(fileURLToPath(import.meta.url));
-  // packages/cli/dist -> ..
+  // dist -> package root
   return join(here, "..");
 }
 
+/** DAF monorepo root when developing this repo; null when only the npm package is installed. */
+export function resolveMonorepoRoot(): string | null {
+  const root = join(getCliPackageRoot(), "..", "..");
+  if (existsSync(join(root, "templates", MANIFEST_REL))) {
+    return root;
+  }
+  return null;
+}
+
 /**
- * Repo root (contains `templates/` and `packages/`).
+ * Monorepo root when present, else the installed CLI package root.
  */
 export function getRepoRoot(): string {
-  const here = dirname(fileURLToPath(import.meta.url));
-  // packages/cli/dist -> ../../../
-  return join(here, "..", "..", "..");
+  return resolveMonorepoRoot() ?? getCliPackageRoot();
 }
 
 export function getTemplatesRoot(): string {
-  const monorepoTemplates = join(getRepoRoot(), "templates");
-  if (existsSync(join(monorepoTemplates, MANIFEST_REL))) {
-    return monorepoTemplates;
+  const monorepo = resolveMonorepoRoot();
+  if (monorepo) {
+    const monorepoTemplates = join(monorepo, "templates");
+    if (existsSync(join(monorepoTemplates, MANIFEST_REL))) {
+      return monorepoTemplates;
+    }
   }
   const bundled = join(getCliPackageRoot(), "bundled-templates");
   if (existsSync(join(bundled, MANIFEST_REL))) {
     return bundled;
   }
   throw new Error(
-    "DAF templates not found. Run from the DAF monorepo, run `npm run build` in packages/cli, or reinstall the daf package.",
+    "DAF templates not found. Reinstall @daniels-agent-framework/cli or run `npm run build` in the DAF monorepo.",
   );
+}
+
+/** Git HEAD at install root, else pin baked into the published package at build time. */
+export async function resolveInstallPin(installRoot: string): Promise<string | null> {
+  const fromGit = resolveRepoHead(installRoot);
+  if (fromGit) return fromGit;
+  for (const dir of [
+    join(installRoot, "bundled-templates", "global"),
+    join(installRoot, "global"),
+    installRoot,
+  ]) {
+    const pin = await readPin(dir);
+    if (pin) return pin;
+  }
+  return null;
 }
 
 /** ~/.config/agent unless DAFE_GLOBAL_ROOT is set (tests / overrides). */

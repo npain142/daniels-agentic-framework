@@ -11,9 +11,8 @@ import {
   readPin,
   resolveDafRepoForVersionCheck,
   resolveDafRepoRoot,
-  resolveRepoHead,
 } from "../packages/cli/dist/daf-version.js";
-import { getGlobalAgentDir, getRepoRoot } from "../packages/cli/dist/paths.js";
+import { getGlobalAgentDir, getRepoRoot, resolveInstallPin } from "../packages/cli/dist/paths.js";
 
 function findAgentDir(start) {
   let dir = resolve(start);
@@ -69,7 +68,7 @@ const repoRoot = resolveDafRepoForVersionCheck({
 
 const globalPin = await readPin(globalDir);
 const projectPin = agentDir ? await readPin(agentDir) : null;
-const repoHead = repoRoot ? resolveRepoHead(repoRoot) : null;
+const repoHead = repoRoot ? await resolveInstallPin(repoRoot) : null;
 
 const status = checkDafVersion({ globalPin, projectPin, repoHead });
 console.log(formatStatusLine(status));

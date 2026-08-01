@@ -20,7 +20,8 @@
     "daf:version-check": "node scripts/daf-version-check.mjs",
     "daf:project-update": "node scripts/daf-project-update.mjs",
     "kg:bootstrap": "node scripts/kg-bootstrap.mjs",
-    "kg:ingest": "node scripts/kg-ingest.mjs"
+    "kg:ingest": "node scripts/kg-ingest.mjs",
+    "publish:cli": "npm run build --workspace=@daniels-agent-framework/cli && npm publish --workspace=@daniels-agent-framework/cli --access public --userconfig packages/cli/.npmrc.publish"
   },
   "dependencies": {
     "@daniels-agent-framework/cli": "workspace:*"

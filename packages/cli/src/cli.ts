@@ -1,4 +1,7 @@
 #!/usr/bin/env node
+import { readFile } from "node:fs/promises";
+import { join } from "node:path";
+
 import { installGlobalAgent } from "./global-install.js";
 import { collectHealthReport, formatHealthReport } from "./health.js";
 import {
@@ -7,10 +10,13 @@ import {
   readPin,
   resolveDafRepoForVersionCheck,
   resolveDafRepoRoot,
-  resolveRepoHead,
 } from "./daf-version.js";
 import { parsePlatformsList } from "./platform.js";
-import { findAgentDir, getGlobalAgentDir } from "./paths.js";
+import { findAgentDir, getCliPackageRoot, getGlobalAgentDir, resolveInstallPin } from "./paths.js";
+
+const PKG_VERSION = await readFile(join(getCliPackageRoot(), "package.json"), "utf8")
+  .then((raw) => (JSON.parse(raw) as { version?: string }).version ?? "0.0.0")
+  .catch(() => "0.0.0");
 
 function usage(): never {
   console.error(`Usage: daf <command> [options]
@@ -27,7 +33,7 @@ Options (onboard):
 
 Options (version-check, health):
   --cwd <path>        Project directory (default: cwd)
-  --repo <path>       DAF monorepo for version comparison`);
+  --repo <path>       DAF install root for version comparison`);
   process.exit(2);
 }
 
@@ -114,7 +120,7 @@ async function runVersionCheck(cwd: string, repoArg: string | null): Promise<voi
   });
   const globalPin = await readPin(globalDir);
   const projectPin = agentDir ? await readPin(agentDir) : null;
-  const repoHead = repoRoot ? resolveRepoHead(repoRoot) : null;
+  const repoHead = repoRoot ? await resolveInstallPin(repoRoot) : null;
   const status = checkDafVersion({ globalPin, projectPin, repoHead });
   console.log(formatStatusLine(status));
 }
@@ -138,7 +144,13 @@ async function runOnboard(platforms: string[], force: boolean): Promise<void> {
 }
 
 async function main(): Promise<void> {
-  const { command, platforms, force, cwd, repo } = parseArgs(process.argv.slice(2));
+  const args = process.argv.slice(2);
+  if (args.includes("--version") || args.includes("-V")) {
+    console.log(PKG_VERSION);
+    return;
+  }
+
+  const { command, platforms, force, cwd, repo } = parseArgs(args);
   if (!command) usage();
 
   switch (command) {

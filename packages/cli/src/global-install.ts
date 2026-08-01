@@ -1,7 +1,7 @@
 import { cp, mkdir, readdir } from "node:fs/promises";
 import { dirname, join } from "node:path";
 import { existsSync } from "node:fs";
-import { resolveRepoHead, writeDafRepoPath, writePin } from "./daf-version.js";
+import { writeDafRepoPath, writePin } from "./daf-version.js";
 import { installFlatMarkdownSkills } from "./platforms/cursor.js";
 import { installCursorGlobalSkills } from "./platforms/cursor.js";
 import { installClaudeGlobalSkills } from "./platforms/claude.js";
@@ -13,14 +13,15 @@ import {
   getClaudeSkillsRoot,
   getCodexHome,
   getCursorSkillsRoot,
+  getCliPackageRoot,
   getGlobalAgentDir,
   getRepoRoot,
   getTemplatesRoot,
+  resolveInstallPin,
 } from "./paths.js";
 
 async function installVersionCheckTools(globalDir: string, force: boolean): Promise<void> {
-  const repoRoot = getRepoRoot();
-  const libSrc = join(repoRoot, "packages", "cli", "dist", "daf-version.js");
+  const libSrc = join(getCliPackageRoot(), "dist", "daf-version.js");
   const checkTpl = join(getTemplatesRoot(), "global", "daf-version-check.mjs");
   if (!existsSync(libSrc) || !existsSync(checkTpl)) return;
 
@@ -157,12 +158,12 @@ export async function installGlobalAgent(opts: InstallGlobalAgentOpts): Promise<
 
   await writeGlobalPlatforms(globalDir, { platforms });
 
-  const dafRepoRoot = getRepoRoot();
-  const head = resolveRepoHead(dafRepoRoot);
+  const installRoot = getRepoRoot();
+  const head = await resolveInstallPin(installRoot);
   if (head) {
     await writePin(globalDir, head);
   }
-  await writeDafRepoPath(globalDir, dafRepoRoot);
+  await writeDafRepoPath(globalDir, installRoot);
   await installVersionCheckTools(globalDir, opts.force);
 
   return { globalDir, platforms, cursorSkillsRoot, claudeSkillsRoot, codexHome };

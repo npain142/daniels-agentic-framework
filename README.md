@@ -97,44 +97,64 @@ You do not “graduate” out of DAF in maintaining — you **tighten** the loop
 
 ## What you need
 
-- **Node.js** (for `/daf-onboard` in this repo — the agent runs install/build)
+- **Node.js** 18+
 - **An agentic IDE** (Cursor, Claude Code, Codex, …)
-- **This repo cloned** once per machine for global install
 
-After setup, invoke DAF with **`/daf-<slug>`** in chat (e.g. `/daf-setup`, `/daf-issue`). Skills are **not** terminal commands; do not use unprefixed `/setup` or `/onboard` for DAF workflows.
-
-**Also useful to know**
-
-- **Skills** — Markdown playbooks (`/daf-setup`, `/daf-issue`, …).
-- **Platforms** — IDEs chosen at `/daf-onboard` → `~/.config/agent/platforms.json`; `/daf-setup` merges hooks per platform.
-- **Verification** — `taskCheck` (fast, per goal) and `check` (full suite); cadence depends on phase.
+Install the **`daf`** CLI once per machine, then use **`/daf-<slug>`** skills in chat for project work (`/daf-setup`, `/daf-issue`, …).
 
 ---
 
-## Guided start (first time ever)
+## Quick start (first time ever)
 
-**You only clone and chat**; the agent runs installs.
+### 1 — Install the CLI
 
-### 1 — Clone and open this repo
+**From npm** (recommended once published):
+
+```bash
+npm install -g @daniels-agent-framework/cli
+```
+
+No global npm write access? Use a user prefix:
+
+```bash
+npm install -g @daniels-agent-framework/cli --prefix ~/.local
+# fish: fish_add_path ~/.local/bin
+```
+
+One-shot without installing:
+
+```bash
+npx @daniels-agent-framework/cli onboard --platforms generic,cursor
+```
+
+**From this repo** (contributors / before publish):
 
 ```bash
 git clone <your-fork-or-upstream-url> daniels-agent-framework
 cd daniels-agent-framework
+npm install && npm run build
+npm run daf -- onboard --platforms generic,cursor
 ```
 
-Open in your IDE → agent chat.
+### 2 — Machine setup
 
-### 2 — Machine setup: `/daf-onboard`
-
-```text
-/daf-onboard
+```bash
+daf onboard --platforms generic,cursor
 ```
 
-Picks platforms, installs `~/.config/agent/` and IDE skills, writes `platforms.json`. Once per machine.
+Installs `~/.config/agent/`, IDE skills, and `platforms.json`. Pick platforms for your IDEs (`generic` is always included).
 
-### 3 — Project setup: `/daf-setup`
+**Or** in agent chat (if you opened the DAF repo): `/daf-onboard` — the agent runs the same install.
 
-In **any** repo (side project, startup MVP, existing app):
+Verify:
+
+```bash
+daf health
+```
+
+### 3 — Project setup
+
+Open **any** repo in your IDE → chat:
 
 ```text
 /daf-setup
@@ -160,7 +180,7 @@ Scaffolds `.agent/`, merges IDE overlays. New products usually start in `plannin
 
 Brownfield: `/daf-setup` interviews you and may set phase/stack immediately.
 
-### 5 — Day-to-day (by intent)
+### Day-to-day (by intent)
 
 
 | I want to…                     | Skill                           |
@@ -257,6 +277,9 @@ Chat: `/daf-help`, `/daf-how-it-works <topic>`.
 | Command                                               | Meaning                          |
 | ----------------------------------------------------- | -------------------------------- |
 | `npm run build`                                       | Build CLI                        |
+| `npm run daf -- onboard --platforms cursor`           | Machine install (no agent)       |
+| `npm run publish:cli`                                 | Publish CLI to npm (org + login) |
+| `npm run daf -- health`                               | Project status dashboard         |
 | `npm run check`                                       | typecheck + lint + test          |
 | `npm run global-install -- --platforms cursor,claude` | Globals without agent (CI/debug) |
 

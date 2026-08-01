@@ -1,11 +1,14 @@
 {
   "name": "@daniels-agent-framework/cli",
   "version": "0.1.0",
+  "description": "Daniels Agentic Framework (DAF) — machine bootstrap and project health (`daf onboard`, `daf health`).",
   "license": "MIT",
-  "private": true,
   "type": "module",
   "bin": {
-    "daf": "./dist/cli.js"
+    "daf": "dist/cli.js"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "exports": {
     "./*": "./dist/*.js"
@@ -14,12 +17,27 @@
     "dist",
     "bundled-templates"
   ],
+  "engines": {
+    "node": ">=18"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/daniel-feustel/daniels-agent-framework.git",
+    "directory": "packages/cli"
+  },
+  "keywords": [
+    "daf",
+    "agent",
+    "cursor",
+    "ai",
+    "scaffold"
+  ],
   "scripts": {
     "build": "tsc && node scripts/bundle-templates.mjs",
     "typecheck": "tsc --noEmit",
     "lint": "eslint src --max-warnings 0",
     "test": "vitest run",
-    "prepublishOnly": "pnpm build"
+    "prepublishOnly": "npm run build"
   },
   "devDependencies": {
     "@eslint/js": "^9.17.0",

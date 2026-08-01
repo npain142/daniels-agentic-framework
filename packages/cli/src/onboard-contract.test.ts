@@ -4,10 +4,10 @@ import { describe, expect, it } from "vitest";
 import { getRepoRoot } from "./paths.js";
 
 describe("onboard UX contract (templates)", () => {
-  it("README quickstart is agent-first (/daf-onboard only)", async () => {
+  it("README quickstart documents install and /daf-onboard", async () => {
     const readme = await readFile(join(getRepoRoot(), "README.md"), "utf8");
     expect(readme).toContain("/daf-onboard");
-    expect(readme).not.toMatch(/^```bash\nnpm install/m);
+    expect(readme).toMatch(/@daniels-agent-framework\/cli|daf onboard/);
     expect(readme).not.toContain("Optional verify:");
   });
 
@@ -22,13 +22,14 @@ describe("onboard UX contract (templates)", () => {
     expect(rule).toContain("do not read `daf-pin`");
   });
 
-  it("onboard skill tells agent to run npm install/build, not the user", async () => {
+  it("onboard skill prefers daf CLI; agent runs build in monorepo", async () => {
     const skill = await readFile(
       join(getRepoRoot(), "templates/global/skills/onboard.md"),
       "utf8",
     );
-    expect(skill).toContain("you run all shell steps");
-    expect(skill).toContain("never** ask the user to run `npm install`");
+    expect(skill).toContain("npm install -g @daniels-agent-framework/cli");
+    expect(skill).toContain("daf onboard");
+    expect(skill).toContain("never ask the user to");
     expect(skill).toContain("npm run build");
   });
 });
