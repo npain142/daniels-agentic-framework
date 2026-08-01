@@ -33,7 +33,7 @@ Follow **`/daf-phase-transition`** — it enforces the planning-exit checklist a
 - `/daf-pivot` — restructure or redesign a feature or concept; update PRD/glossary/architecture before code.
 - `/daf-onboard` — **machine setup:** install globals when missing (before first `/daf-setup` on a machine).
 - `/daf-setup` — **project setup:** greenfield scaffold; brownfield inventory + interview then merge scaffold and populate docs; verify-state; optional Cursor overlay.
-- `/daf-grill-me` — **product grill** in planning (one question at a time, assumption audit) → `PRD.md`; stack recommendation; agent sets `config.stack` after user agrees (unless set at end of brownfield `/daf-setup`).
+- `/daf-grill-me` — **product grill** in planning (one question at a time, assumption audit) → `PRD.md`; discuss stack candidates with user before setting `config.stack`.
 - `/daf-start` — when exit criteria pass: validate checklist, set `developing`, kick off first build session (reads backlog if present).
 - `/daf-remember` — save standing instructions for the project.
 - `/daf-retro` — capture learnings.

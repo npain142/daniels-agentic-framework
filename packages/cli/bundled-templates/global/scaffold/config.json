@@ -1,0 +1,8 @@
+{
+  "phase": "planning",
+  "stack": null,
+  "taskCheck": "npm run test",
+  "check": "npm run check",
+  "codebaseEvery": 5,
+  "initialTaskCount": 0
+}

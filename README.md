@@ -4,7 +4,7 @@
 
 DAF is for **solo and small-team builders** shipping like a startup: move quickly with an AI agent in the loop, but capture enough structure (PRD, glossary, architecture, verification) that the same repo does not turn into prompt spaghetti six months later.
 
-It is **markdown-first context** — instructions your IDE agent reads every session. You invoke workflows with **skills** (`/daf-onboard`, `/daf-setup`, `/daf-grill-me`, …) in chat, not a `daf` shell command (contributors only use `npm` scripts in this repo).
+It is **markdown-first context** — instructions your IDE agent reads every session. You invoke workflows with **skills** (`/daf-onboard`, `/daf-setup`, `/daf-grill-me`, …) in chat. A small **`daf`** CLI (`daf onboard`, `daf health`, `daf version-check`) handles machine bootstrap and status without opening the monorepo.
 
 ---
 
@@ -56,7 +56,7 @@ This is the spine of DAF. `config.phase` in `.agent/config.json` is the single s
 
 ### `planning` — validate before you build the wrong thing
 
-Use this when the product is still forming (greenfield) or you are re-scoping (`/daf-pivot`, `/daf-grill-me` realignment).
+Use this when the product is still forming (greenfield) or you are re-scoping (`/daf-pivot`, `/daf-realign`).
 
 - `/daf-grill-me` — one question at a time; fills `PRD.md` and recommends a **stack**.
 - `/daf-discuss`, `/daf-backlog-add` — explore and park ideas without committing to implementation.

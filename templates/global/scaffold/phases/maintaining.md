@@ -57,7 +57,7 @@ Imperative mood; match repo commit style. Omit the commit line if nothing to com
 
 ## Allowed
 
-- `/daf-help`, `/daf-issue`, `/daf-improvement`, `/daf-pivot`, `/daf-discuss`, `/daf-backlog-add`, `/daf-backlog-work`, `/daf-remember`, `/daf-retro`, `/daf-grill-me` (realignment), `/daf-how-it-works`, `/daf-ltm-checkup`
+- `/daf-help`, `/daf-issue`, `/daf-improvement`, `/daf-pivot`, `/daf-discuss`, `/daf-backlog-add`, `/daf-backlog-work`, `/daf-remember`, `/daf-retro`, `/daf-realign`, `/daf-how-it-works`, `/daf-ltm-checkup`, `/daf-health`
 - Incremental glossary and architecture updates
 
 ## Forbidden
@@ -75,6 +75,8 @@ Imperative mood; match repo commit style. Omit the commit line if nothing to com
 - `/daf-pivot` — restructure or redesign existing feature or concept.
 - `/daf-discuss` — explore ideas; no implementation unless asked.
 - `/daf-backlog-add`, `/daf-backlog-work` — same as developing (markdown archive to `LOGBACK.md` on acceptance; use `/daf-linear-work` when Linear is active).
+- `/daf-realign` — resync intent with PRD, architecture, code, and backlog.
+- `/daf-health` — one-screen project status.
 - `/daf-remember`, `/daf-retro`
 - `/daf-phase-transition` — when checklists pass (e.g. back to `planning` or forward to `developing`).
 

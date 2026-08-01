@@ -3,6 +3,14 @@ import { homedir } from "node:os";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
+const MANIFEST_REL = join("global", "skill-manifest.json");
+
+function getCliPackageRoot(): string {
+  const here = dirname(fileURLToPath(import.meta.url));
+  // packages/cli/dist -> ..
+  return join(here, "..");
+}
+
 /**
  * Repo root (contains `templates/` and `packages/`).
  */
@@ -13,7 +21,17 @@ export function getRepoRoot(): string {
 }
 
 export function getTemplatesRoot(): string {
-  return join(getRepoRoot(), "templates");
+  const monorepoTemplates = join(getRepoRoot(), "templates");
+  if (existsSync(join(monorepoTemplates, MANIFEST_REL))) {
+    return monorepoTemplates;
+  }
+  const bundled = join(getCliPackageRoot(), "bundled-templates");
+  if (existsSync(join(bundled, MANIFEST_REL))) {
+    return bundled;
+  }
+  throw new Error(
+    "DAF templates not found. Run from the DAF monorepo, run `npm run build` in packages/cli, or reinstall the daf package.",
+  );
 }
 
 /** ~/.config/agent unless DAFE_GLOBAL_ROOT is set (tests / overrides). */

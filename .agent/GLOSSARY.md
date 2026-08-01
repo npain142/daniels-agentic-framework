@@ -25,7 +25,8 @@
 | **Task summary** | Brief wrap-up when declaring done after a session task; commits committable changes per `IDENTITY.md` and ends with **Committed:** `<hash>` — `<subject>`. |
 | **Backlog** | Open follow-ups: repo-root `BACKLOG.md` (`## Open`, optional `## In progress`) via `/daf-backlog-add` and `/daf-backlog-work`; or Linear backlog issues via `/daf-backlog-add` when `integrations` includes `"linear"`. Not session goals in `.agent/`. |
 | **Logback** | Fading archive at repo root in `LOGBACK.md` (markdown mode only): short artifacts from completed backlog items; auto-pruned (7d untagged, 14d tagged, `#keep` retained). Superseded by Linear issue history when Linear is active. |
-| **Realignment** | `/daf-grill-me` in **developing** or **maintaining**: resync user intent with PRD, architecture, code, and backlog. |
+| **Realignment** | `/daf-realign` in **developing** or **maintaining**: resync user intent with PRD, architecture, code, and backlog. |
+| **Product grill** | `/daf-grill-me` in **planning** only: skeptical PRD interview. |
 | **LTM** | Long-term memory outside `.agent/` (e.g. Notion); reconciled via `/daf-ltm-checkup`. |
 | **Knowledge graph (KG)** | Project graph in `graphify-out/` (Graphify): domain/concept nodes from canonical `.agent/` docs + code nodes from AST. |
 | **Domain graph** | Semantic layer: concepts, phases, skills, rationale from PRD/GLOSSARY/ARCHITECTURE and bootstrap sources — created at **planning → developing** transition. |

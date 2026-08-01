@@ -56,7 +56,9 @@ Imperative mood; match repo commit style. Omit the commit line if nothing to com
 
 - `/daf-help` — short DAF orientation (phases, skills, build loop).
 - `/daf-start` — enter or kick off **developing** (planning exit + first session goal).
-- `/daf-grill-me` — **realignment** with user vs PRD/architecture/code/backlog (not greenfield PRD grill).
+- `/daf-realign` — resync intent with PRD, architecture, code, and backlog.
+- `/daf-health` — one-screen project status.
+- `/daf-realign` — resync intent with canon and backlog in **developing** or **maintaining**.
 - `/daf-how-it-works` — implementation-precise explanation of a code topic; no changes unless asked.
 - `/daf-ltm-checkup` — reconcile `.agent/` canon with external LTM (e.g. Notion MCP).
 - `/daf-new-feature` — clarify → plan → test → implement per this phase → review → `/daf-retro`.

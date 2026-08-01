@@ -6,12 +6,16 @@
   "workspaces": [
     "packages/*"
   ],
+  "bin": {
+    "daf": "./packages/cli/dist/cli.js"
+  },
   "scripts": {
     "check": "npm run typecheck && npm run lint && npm run test",
     "typecheck": "npm run typecheck --workspaces --if-present",
     "lint": "npm run lint --workspaces --if-present",
     "test": "npm run test --workspaces --if-present",
     "build": "npm run build --workspaces --if-present",
+    "daf": "node packages/cli/dist/cli.js",
     "global-install": "node scripts/global-install.mjs",
     "daf:version-check": "node scripts/daf-version-check.mjs",
     "daf:project-update": "node scripts/daf-project-update.mjs",
